@@ -1,0 +1,171 @@
+//  clearfix
+.PageListSelectHeader{
+	.clearfix();
+}
+
+.container {
+.clearfix();
+}
+
+.logo{
+	margin: 2em auto 3em;
+	float: left;
+	width: 30%;
+	max-width: 230px;
+}
+
+
+img{
+	max-width: 100%;
+	height: auto;
+}
+
+.align_left {
+	float: left;
+	margin: 0 1em 0.5em 0;
+}
+
+.align_right {
+	float: right;
+	margin: 0 0 0.5em 1em;
+}
+.align_center {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.copy{
+	// background: darken(@baseSoft, 5%);
+	// border-top: 1px solid darken(@baseSoft, 12%);
+	font-weight: bold;
+	display: block;
+	padding: 1em;
+	color: darken(@baseSoft, 36%);
+	a{
+		color:  darken(@baseSoft, 50%);
+		&:hover{
+			color: @orange;
+		}
+	}
+	margin: 0;
+}
+.text_center{
+	text-align: center;
+}
+
+.fright{
+	float: right;
+}
+.fleft{
+	float: left;
+}
+
+#notices{
+	ul{
+		width: 100%;
+		margin: 0 !important;
+		padding: 0 !important;
+		list-style: none;
+		li{
+			padding: 0.6em 1em;
+			margin: 0 !important;
+			font-weight: bold;
+			text-transform: uppercase;
+			&.success{
+				background: @green;
+				color: lighten(@green, 25%);
+				a{
+					color: darken(@greenDark, 10%);
+					font-weight: bold;
+				}
+			}
+			&.error{
+				background: @red;
+
+				color: lighten(@red, 25%);
+				a{
+					color: darken(@redDark, 10%);
+					font-weight: bold;
+				}
+			}
+		}
+	}
+}
+
+
+
+.InputfieldMarkup .ui-state-highlight,
+.notes{
+	padding: 8px 8px;
+	display: block;
+	margin: 4px 0 12px 0;
+	border: 0;
+	font-size: 11px;
+	font-weight: bold;
+	line-height: 11px;
+	color: @grayDark;
+	background: @yellowLight;
+	.ui-icon{
+		float: left;
+		margin: -2px 8px 0 0;
+	}
+}
+.notes{
+	margin: 1em 0 0 0;
+}
+td .notes{
+	margin-bottom: 0.6em;
+}
+
+.InputfieldMarkup .ui-state-highlight{
+	margin: 4px 0;
+}
+
+
+.gravatar{
+	position: relative;
+	display: block;
+	height: 48px;
+	width: 48px;
+
+}
+.gravatar-wrapper{
+	border-radius: 50%;
+	overflow: hidden;
+	float: left;
+	border: 6px solid darken(#eee, 6%) ;
+	display: inline-block;
+	margin: 1em;
+}
+#user-menu{
+	// position: absolute;
+	// width: 100%;
+	left: 0;
+	bottom: 0;
+	float: left;
+	// background: darken(@base, 4%);
+	// border-top: 1px solid darken(@base, 7%);
+}
+.user-menu{
+	display: inline-block;
+	vertical-align: middle;
+	margin: 1.8em 0;
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 15px;
+	width: 50%;
+	a:hover{
+		color: @orange !important;
+
+	}
+}
+.user-name{
+	color: #fff;
+	&:hover{
+	}
+}
+.user-logout{
+	color: #aaa;
+	font-size: 12px;
+}

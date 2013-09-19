@@ -1,0 +1,58 @@
+#breadcrumbs {
+	padding: 0;
+	margin: 0;
+	overflow: hidden;
+	// border-left: 1px solid @grayLighter;
+	li {
+		display: inline-block;
+		font-size: 14px;
+		a{
+			color: lighten(@blue, 10%);
+			padding: 0 0 0 1em;
+			font-weight: bold;
+			// display: block;
+			line-height: 3em;
+			position: relative;
+			text-transform: uppercase;
+			&:after, &:before {
+				content: "";
+				display: block;
+				width: 0;
+				height: 0;
+				// border-top: 17px solid transparent;           /* Go big on the size, and let overflow hide */
+				// border-bottom: 17px solid transparent;
+				// border-left: 13px solid darken(@grayLighter, 3%);
+				position: absolute;
+				top: -2px;
+				right: -14px;
+				z-index: 1;
+			}
+			&:before {
+				font-size: 1.2em;
+				right: -13px;
+				z-index: 2;
+			}
+			&:hover {
+				color: #fff;
+			}
+		}
+		&:first-child a{
+			padding-left: 14px;
+		}
+	}
+	li.fright a{
+		padding: 0 8px;
+		&:after, &:before {
+			display: none!important;
+		}
+	}
+	li:first-child{
+		// border-left: 1px solid #fff;
+	}
+
+}
+#bread{
+	color: lighten(@blue, 10%);
+	background: darken(@blue, 3%);
+	position: relative;
+}

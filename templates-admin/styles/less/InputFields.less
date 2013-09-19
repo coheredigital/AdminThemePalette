@@ -1,0 +1,627 @@
+@InputBorder: darken(@baseSoft, 16%);
+
+.Inputfields {
+	padding: 0;
+	margin: 0;
+	textarea,
+	.InputfieldMaxWidth,
+	.InputfieldDatetimeDatepicker  {
+		width: 100%;
+	}
+	input:focus, select:focus, textarea:focus {
+		outline: none;
+	}
+
+	> li.InputfieldColumnWidth {
+		float: left;
+		clear: none;
+		margin-top: 0;
+		margin-left: 1%;
+	}
+	> li.InputfieldColumnWidth.InputfieldColumnWidthFirst {
+		clear: both;
+		margin-left: 0;
+	}
+}
+
+.Inputfield{
+	
+	margin-bottom: 2em;
+	clear: both;
+	// background: #fff;
+	padding: 0 !important;
+	input, select, textarea{
+		background: darken(@baseSoft, 4%);
+		background: #fff;
+		.box-sizing(border-box);
+		margin: 0;
+		padding: 6px;
+		box-shadow: inset 0 1px 1px rgba(0,0,0,0.1);
+		border: 1px solid darken(@baseSoft,15%);
+	}
+	select{
+		padding: 5px;	
+	}
+	input:hover, select:hover, textarea:hover{
+		border-color: #bbb;
+	}
+	input:focus, select:focus, textarea:focus{
+		box-shadow: 0 1px 2px @green;
+		border-color: @green;
+		background: #fff;
+	}
+
+	> label.ui-widget-header{
+		margin: 0;
+		padding: 1em;
+		display: block;
+		height: 1.1em;
+		color: darken(@orange, 10%);
+		color: @base;
+		border-top: 1px solid @InputBorder;
+		border-left: 1px solid @InputBorder;
+		.ui-icon{
+			color: @baseLighter;
+			font-size: 1.3em;
+			margin-left: 0.5em !important;
+			&:hover{
+				color: @orange;
+			}
+		}
+	}
+
+	> .ui-widget-content {
+		padding: 1.2em 1em;
+		// padding-top: 0;
+		border-top: 0;
+		border-left: 1px solid @InputBorder;
+		position: relative;
+		background: transparent;
+		.clearfix();
+		// border-radius: 0.3em;
+	}
+	.PageListRoot{
+		padding-bottom: 0;
+		line-height: 29px;
+		.PageListSelectActionToggle{
+		    padding: 7px 8px!important;
+		    color: @grayDark!important;
+		    color: #fff!important;
+		    background: @base;
+		    border: 1px solid rgba(0,0,0,0.15);
+		    text-transform: uppercase;
+		    font-size: 11px;
+		    font-weight: bold;
+
+			&:hover{
+				
+				background: @orange;
+			}
+		}
+		> .PageList{
+			margin: 4px 0 0 0!important;
+		}
+	}
+
+}
+
+.InputfieldFieldsetOpen {
+	.Inputfields{
+		.Inputfield{
+			> label.ui-widget-header,
+			> .ui-widget-content {
+				color: @baseLighter;
+				border-color: darken(@baseSoft, 8%);
+			}
+		}
+	}
+}
+
+// delete state
+.InputfieldRepeaterDeletePending .ui-widget-header,
+.Inputfield > .ui-widget-header.ui-state-error{
+    color: @red!important;
+}
+
+
+
+.InputfieldStateCollapsed{
+	opacity: 0.6;
+	// background: #fff;
+	> label.ui-widget-header{
+		color: @base;
+		.ui-icon {
+			color: @base !important;
+			background-image: url(jqueryui/images/ui-icons.png);
+			opacity: 1;
+		}
+	}
+}
+.InputfieldStateToggle:hover{
+	// background: #fafafa !important;
+}
+.InputfieldStateCollapsed:hover{
+	> label.ui-widget-header{
+		color: @orange !important;
+		// background: transparent !important;
+
+	}
+	opacity: 1 !important;
+	// background: lighten(@baseLighter, 5%);
+
+}
+
+
+// FILE FIELD
+.InputfieldFileName{
+	margin-left: 4px;
+}
+
+.InputfieldFile.ui-widget{
+	margin:  0 0 9px 0;
+	padding: 0;
+}
+.InputfieldFileUpload{
+	padding: 0;
+	position: static !important;
+	input{
+		.box-shadow(none);
+		border: 0 !important;
+		padding: 0!important;
+		background: transparent !important;
+		position: relative!important;
+		margin: 1.2em 0 0 !important;
+		line-height: 1.2em !important;
+		font-size: 1.2em;
+	}
+
+	.AjaxUploadDropHere{
+		width: 100%;
+		position: absolute;
+		bottom: 0;
+		top: auto !important;
+		display: block !important;
+		margin: 0 -1px -1px 1px;
+		padding: 6px 0;
+		font-size: 1.2em;
+		text-transform: uppercase;
+		text-shadow: 1px 1px 1px #fff;
+		font-style: normal;
+		font-weight: bold;
+		color: darken(@gray, 5%);
+		text-align: center;
+		opacity: 1 !important;
+		.ui-icon.ui-icon-arrowreturnthick-1-s{
+			display: inline-block;
+			vertical-align: text-top;
+			background-position: 0 -48px;
+			opacity: 0.6;
+		}
+	}
+	.InputfieldFileValidExtensions{	
+		color: @gray;
+	}
+}
+
+.ui-widget-content.ui-state-hover .AjaxUploadDropHere{
+	color: @green !important;
+	.ui-icon.ui-icon-arrowreturnthick-1-s{
+		background-position: -64px -48px;
+		opacity: 0.9;
+	}
+}
+.InputfieldFileList{
+	padding: 0;
+	.InputfieldFile{
+		border: none !important;
+		background: #fff !important;
+		border: 1px solid darken(@baseSoft, 6%) !important;
+		// padding: 0.5em 0;
+		width: auto;
+		position: relative;
+		.InputfieldFileInfo{
+			position: relative;
+			color: @base;
+			background: transparent !important;
+			font-size: 14px !important;
+			line-height: 1.2em !important;
+			padding: 0.6em 0.4em 0 0.4em !important;
+			.ui-icon-arrowthickstop-1-n,
+			.ui-icon-arrowthickstop-1-s{
+				
+				position: absolute;
+				right: 37px;
+				top: auto !important;
+				bottom: 3px;
+			}
+			.InputfieldFileMove{
+				display: none !important;
+			}	
+			.ui-icon-arrowthickstop-1-s{
+				right: 19px;
+			}
+			line-height: 16px;
+			height: auto !important;
+			padding: 2px 4px;
+			overflow: hidden;
+			border: 0 !important;
+			font-weight: normal;
+			font-size: 12px;
+
+			span, a, label{
+				color: #333 !important;
+				// display: inline-block !important;
+				vertical-align: middle !important;
+			}
+
+			.InputfieldFileName{
+				// float: left;
+				color: #fff;
+				display: inline-block !important; 
+				text-overflow: ellipsis;
+				overflow: hidden;
+				max-width: 90%;
+				white-space: nowrap;
+			}
+
+
+			.InputfieldFileStats{
+				display: inline-block !important; 
+				font-weight: normal;
+				// white-space: nowrap;
+				font-size: 11px;
+			}
+
+			&.ui-state-hover{
+				// background:  ;
+			}
+			&.ui-state-highlight{
+				background: @yellow !important;
+			}
+			&.ui-state-error{
+				background: @red !important;
+			}
+
+		}
+		.InputfieldFileData{
+			padding: 12px!important;
+			border: 0;
+			border-top: none;
+			label .detail{
+				display: block !important;
+				color: @gray;
+				clear: both;
+				padding: 0.2em 0;
+			}
+		}
+		input{
+			width: 100% !important;
+		}
+		&.ui-sortable-helper{
+			.InputfieldFileStats,
+			.InputfieldFileName{
+				text-shadow: none;
+				color: @grayDark;
+			}
+		}
+		&.AjaxUpload{
+			.InputfieldFileInfo{
+				background-color: transparent !important;
+				border-color: transparent !important;
+				z-index: 5;
+				position: relative;
+			}
+		}
+	}
+}
+
+/**
+ * REPEATER field
+ */
+.InputfieldRepeater{
+	
+		.Inputfield{
+			.box-shadow(none);
+			label{
+				text-shadow: none;
+			}
+		}
+	
+}
+
+// .InputfieldMarkup{
+// 	padding-top: 0.5em;
+// }
+
+.InputfieldRepeaterDeletePending > label.ui-state-error{
+	background: @red !important;
+	.ui-icon{
+		background-image: url(jqueryui/images/ui-icons-white.png);
+		opacity: 1;
+	}
+}
+.InputfieldRepeaterAddItem{
+	float: right;
+	position: relative;
+	.InputfieldRepeaterAddLink{
+		.ui-state-default();
+	    .ui-button();
+	   
+	    padding-left: 26px!important;
+	    display: block;
+	    
+	}
+
+    .ui-icon{
+    	background-image: url(jqueryui/images/ui-icons-white.png);
+    	position: absolute;
+    	float: left;
+    	z-index: 5;
+    	top:6px;
+    	left: 6px;
+    }
+	
+}
+
+
+.InputfieldRepeaterAddItem:hover{
+   
+    .InputfieldRepeaterAddLink{
+
+	    .ui-button.ui-state-hover();
+	    color: #fff;
+	    
+	}
+   
+	
+}
+.InputfieldRepeater{
+	.InputfieldFieldset{
+
+		> .ui-widget-header.ui-state-default{
+			background: lighten(@grayLighter, 4%);;
+			color: @grayDark!important;
+		}
+		> label.ui-widget-header:hover{;
+			background: @base;
+			// color: #fff!important;
+		}
+		> .ui-widget-header.ui-state-focus{
+			background: @baseDark!important;
+		}
+		> .ui-widget-header.ui-state-highlight{
+			background: @yellow!important;
+			color: @grayDark!important;
+			.ui-icon {background-image: url(jqueryui/images/ui-icons.png)!important; }
+		}
+	}
+
+}
+
+/**
+ * PageListSelect
+ */
+
+.InputfieldPageListSelectMultiple{
+
+	ol{
+		padding: 0 !important;
+		margin: 0 0 1em 0 !important;
+	}
+	li{
+		width: auto !important;
+	}
+	.PageListSelectName,
+	.PageListSelectHeader{
+		display: block !important;
+	}
+}
+
+.InputfieldPageAutocomplete{
+	ol{
+		padding: 0;
+	}
+}
+.ui-state-hover .AjaxUploadDropHere{
+	border-color: @base;
+}
+
+
+.InputfieldStateToggle.ui-widget-header {
+	padding: 0 0 0 9px;
+	background: transparent;
+	font-size: 16px;
+
+	&.ui-state-default{ // reapeter uses this
+		background: white;
+	}
+
+}
+
+.InputfieldCheckboxesStacked{
+	padding: 0;
+	li{
+		padding-bottom: 0.4em;
+		input{
+			margin-right: 0.2em;
+		}
+	}
+}
+
+.InputfieldButton, .InputfieldSubmit{
+	background-color: transparent;
+	padding: 0;
+	.box-shadow( none);
+	padding: 0;
+	.ui-widget-content{
+		padding: 0;
+		border: none;
+		.box-shadow( none);
+		background: transparent;
+		label{
+			padding: 0 0.6em;
+			display: inline-block;
+		}
+		select{
+			margin: 0;
+		}
+		label, input{
+			margin: 0.1em;
+			vertical-align: text-top;
+		}
+	}
+}
+
+#ProcessPageEdit.ProcessPageEditContent > .Inputfields{
+	overflow: hidden;
+	background: transparent;
+	padding: 0;
+	padding-top: 12px;
+	border: none!important;
+	.box-shadow( none );
+	#submit_save{
+		float: none!important;
+	}
+	> .Inputfield{
+		float: left;
+		clear: none;
+		margin: 0;
+		.box-shadow( none );
+
+	}
+	.ui-widget-content{
+		padding: 0;
+		.box-shadow( none );
+		border: none;
+		margin: 0;
+
+	}
+}
+
+.ui-state-hover .InputfieldFileUpload .AjaxUploadDropHere{
+	border-color: @base;
+	color: #222;
+}
+
+.InputfieldSubmit, .InputfieldMarkup, .InputfieldFile  {
+	.ui-widget-content{
+		display: block;
+
+	}
+}
+.InputfieldStateToggle {
+	cursor: pointer;
+	span.ui-icon{float: right}
+}
+.InputfieldStateError{
+	.ui-widget-header{
+		background: @red!important;
+	}
+	span.ui-state-error{
+		background: transparent;
+		// border: 0;
+		color: @redDark;
+		font-weight: bold;
+	}
+}
+
+
+#fieldgroupContext{
+	position: static;
+	overflow: hidden;
+	float: right;
+	padding: 0 0 12px;
+	select{
+		margin: 0 0 0 8px;
+	}
+}
+#ProcessPageSearchOptionsForm{
+	input, select{
+		width: 100%;
+	}
+}
+
+
+.InputfieldSubmit,
+.InputfieldFieldsetTabOpen,
+.InputfieldWrapper{
+	background-color: transparent;
+	border: 0;
+	padding: 0;
+}
+
+
+// sortable
+.InputfieldPageAutocompleteSortable{
+	margin-bottom: 1em!important;
+}
+.ui-sortable{
+	position: relative;
+	li{
+		.box-sizing(border-box)!important;
+	}
+	li:last-child{
+		margin-bottom: 1px!important;
+	}
+	.ui-sortable-helper{
+		left: 0;
+		right: 0;
+		// display: block !important;
+	}
+}
+
+.LanguageSupport {
+	margin: 0 0 0.8em 0;
+}
+.LanguageSupport:last-child{
+	margin: 0;
+}
+
+.LanguageSupportLabel {
+	margin: 0 0 0.2em 0;
+	color: @gray;
+	// text-transform: uppercase;
+	font-size: 12px;
+	font-weight: bold;
+	// text-align: right;
+	display: block;
+}
+.Inputfield_language_files .ui-widget{
+	border: 1px solid rgba(0,0,0,0.15) !important;
+	.InputfieldFileData {
+		border: none !important;
+	}
+	.notes{
+		background-color: transparent !important;
+		border: none;
+		padding: 0;
+		color: #999;
+		.ui-state-error-text{
+			color: #c00;
+		}
+	}
+	.InputfieldFileInfo{
+		margin: -1px;
+	}
+	.InputfieldFileLanguageInfo{
+		clear: both;
+		margin-top: -0.2em;
+		.actions{
+			a{
+			 	.ui-state-default();
+		    	.ui-button();
+			}
+			a:hover{
+
+		    	background: #d52978;
+
+			}
+		}	
+	}
+}
+
+
+.ui-sortable li{
+	// padding: 0.6em 0.4em !important;
+	// margin-bottom: 0.4em !important;
+}

@@ -1,0 +1,52 @@
+.WireTabs {
+	left: 0!important;
+	margin: 0;
+	top: -2em;
+	// margin-top: -1px !important;
+	margin-bottom: 0 !important;
+	display: block;
+	// border-bottom: 4px solid #ddd;
+	list-style: none!important;
+	list-style-type: none!important;
+	.clearfix();
+	padding: 0 !important;
+	li {
+		background: transparent !important;
+		display: inline-block!important;
+		padding: 0 !important;
+		a{
+		    color: lighten(@base, 20%);
+		   	padding: 1em !important;
+		   	display: inline-block!important;
+		   	// float: left;
+		   	border: 0;
+		   	font-size: 14px;
+		   	margin: 0 1em 0 0;
+		    font-weight: bold;
+		    text-transform: uppercase;
+		    border-top: 1px solid transparent !important;
+		}
+		a:hover {
+		    color: @grayDark;
+		}
+		a.on:hover, 
+		a.on{
+			color: @base;
+			// background: #fff;
+			border-color: @orange !important ;
+			// border-top: 0;
+		}
+	}
+}
+
+#_ProcessPageEditView{
+	float: right;
+	margin: 0;
+	padding: 1em !important;
+	color: @orange;
+	// background: #ddd;
+}
+#_ProcessPageEditView:hover{
+	color: darken(@green, 10%);
+	// background: @greenDark;
+}

@@ -1,0 +1,371 @@
+// .ui-widget-content{
+// 	.clearfix();
+// }
+
+/**
+ * jQuery UI tooltips
+ *
+ */
+
+.ui-icon{
+    // padding: 0!important;
+    font-weight: normal !important;
+}
+.ui-tooltip {
+	z-index: 100;
+    margin: 0 -6px 0 6px !important;
+	border: none;
+	padding: 0.6em 1em;
+	background: @grayDark;
+	color: #fff;
+    .border-radius(0);
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 13px !important;
+
+}
+.ui-tooltip:before {
+    content: "";
+    position: absolute!important;
+    left: 50%;
+    top: 100%;
+    margin: 0 0 0 -5px;
+    width: 0;
+    z-index: 0;
+
+    height: 0;
+    border-style: solid;
+    border-width: 6px 6px 0 6px;
+    border-color: @grayDark transparent transparent transparent;
+}
+.tooltip{
+    background-color: transparent !important;
+    .ui-icon{
+        background-color: transparent !important;
+        background-image: url(jqueryui/images/ui-icons.png)!important;
+        
+
+    }
+
+}
+
+// SLIDER
+
+#columnWidthSlider{
+    width: 88%;
+    float: right;
+    margin: 7px 1%;
+}
+.ui-slider{
+    padding: 0!important;
+    overflow: visible!important;
+}
+input#columnWidth{
+    width: 8%;
+    text-align: center;
+}
+
+
+
+// buttons
+.InputfieldPageAdd .InputfieldPageAddButton > a,
+.ui-button.ui-state-default,
+.ui-button{
+    margin: 0;
+    border-radius: 0.3em;
+    font-size: 16px !important;
+    padding: 0.8em 1.2em !important;
+    text-transform: uppercase;
+    margin-right: 1em;
+    -webkit-font-smoothing: antialiased;
+    // border-color: transparent!important;
+    background: @green;
+    color: #fff!important;
+}
+.ui-button{
+    .ui-icon{
+        color: #fff !important;
+    }
+}
+.InputfieldPageAdd .InputfieldPageAddButton > a:hover,
+.ui-button.ui-state-hover,
+.ui-button:hover{
+    background: @greenDark;
+}
+.ui-button-text{
+    padding: 0 !important;
+    line-height: 1em !important;
+}
+.ui-button.ui-priority-secondary{
+    background: @gray !important;
+    opacity: 1;
+}
+.ui-button.ui-priority-secondary:hover{
+    background: @orange !important;
+}
+.Inputfields .InputfieldSubmit, .Inputfields .InputfieldSubmit .ui-widget-content{
+    display: block !important;
+}
+
+#submit_publish,
+#submit_publish_copy,
+#submit_save,
+#submit_save_copy,
+#submit_save_form_fields,
+#submit_save_form_fields_copy,
+#Inputfield_submit,
+#Inputfield_submit_copy{
+    background: @green;
+    color: #fff;
+    text-transform: uppercase;
+}
+#submit_publish_copy:hover,
+#submit_publish:hover,
+#submit_save_form_fields_copy:hover,
+#submit_save_form_fields:hover,
+#submit_save_copy:hover,
+#submit_save:hover,
+#Inputfield_submit_copy:hover,
+#Inputfield_submit:hover{
+    background: @greenDark;
+}
+
+
+
+.error-text,
+#_ProcessPageEditDelete,
+.PageListActionEmpty a,
+#_WireTabDelete{
+    color: @red!important;
+}
+#_ProcessPageEditDelete:hover,
+.PageListActionEmpty a:hover,
+#_WireTabDelete:hover{
+    color: @redDark!important;
+}
+.PageListActionEmpty a:hover,
+a.on#_ProcessPageEditDelete,
+a.on#_WireTabDelete{
+    color: #fff!important;
+    background: @red !important;
+}
+
+
+.InputfieldPageAddButton{
+    .clearfix();
+    padding: 2px 0!important;
+    a{
+        text-transform: uppercase;
+        float: right;
+        .ui-button();
+        .ui-state-default();
+    }
+    .ui-icon{
+        display: none!important;
+    }
+}
+.InputfieldPageAddButton a:hover{
+    .ui-state-hover();
+}
+
+
+
+
+
+.ui-autocomplete-input{
+    padding-left: 25px!important;
+    width: 100%!important;
+}
+.InputfieldPageAutocompleteStatus{
+    margin: 4px;
+}
+
+
+.InputfieldStateError span.ui-state-error{
+    border: none!important;
+}
+
+
+// ui-dialog
+.ui-dialog{
+    padding: 0;
+    border: 0;
+    z-index: 10001 !important;
+    iframe{
+        padding: 0 !important;
+
+    }
+}
+.ui-dialog-buttonpane,
+.ui-dialog-titlebar{
+    z-index: 100;
+    position: relative;
+}
+.ui-dialog-buttonpane{
+    margin: -3px 0 0 0 !important;
+    padding: 8px 10px !important;
+}
+.ui-dialog-title{
+    margin: 2px 0 !important;
+}
+.modal .nav-wrap{
+    display: none !important;
+}
+.ui-widget-overlay{
+    background: #666;
+    opacity: 0.8;
+    z-index: 10000 !important;
+}
+.ui-dialog-titlebar-close{
+    width: auto !important;
+    right: 8px !important;
+    .border-radius(16px);
+    text-align: center  !important;
+    span{
+        margin: 1px !important;
+    }
+}
+#select_images{
+
+    li{
+        opacity: 0;
+        margin: 0 1em 1em 0;
+    }
+}
+
+.ui-dialog-titlebar-close:hover{
+    background-color: @grayDark;
+}
+#selected_image_settings{
+    #wrap_info{
+        .detail{
+            display: block;
+            margin-top: -1.4em !important;
+        }
+        padding-bottom: 1em;
+    }
+    #wrap_description{
+        padding: 1.3em 0 1em 0 !important;
+        label{
+            top: 1.9em;
+            left: 8px;
+        }
+    }
+
+    #wrap_class{
+        float: none;
+        padding-top: 1.3em !important;
+    }
+    #wrap_link_original{
+        padding-bottom: 1em;
+        label{
+            line-height: 12px;
+        }
+        label input{
+            // vertical-align: text-top;
+
+        }
+        .detail{
+            font-family: monospace;
+            color: #999;
+            font-size: 12px;
+        }
+    }
+}
+#selected_image_pixels{
+    .clearfix();
+    display: block;
+    margin-top: 1em !important;
+
+    label{
+        float: left !important;
+        margin-right: 1em;
+    }
+}
+
+.ui-progressbar{
+    background: @grayLighter !important;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 21px !important;
+    overflow: visible;
+    position: absolute;
+    z-index: 0;
+    .ui-progressbar-value{
+        background: @green;
+
+        margin: -1px 0 -1px -1px !important;
+    }
+
+}
+.langTabsContainer{
+     padding: 0 !important;
+     .description{
+        padding: 1em 1.2em;
+     }
+}
+
+.langTabs.ui-tabs{
+    border: 0;
+    clear: both;
+    background-color: transparent !important;
+    .ui-tabs-nav{
+        padding: 0 !important;
+        // background: lighten(#eee, 4%) !important;
+        background: transparent !important;
+        border: 0 !important;
+        position: relative;
+        z-index: 0;
+        // margin: 0 -1em;
+        margin-top: -1px;
+        .box-sizing(border-box);
+        li{
+            margin-left: 0.6em !important;
+            position: relative;
+            padding: 0 !important;
+            z-index: 1000;
+            // bottom: -1px;
+            &.ui-state-default{
+                background: transparent!important;
+                border: 0 !important;
+                border-top: 1px solid transparent !important;
+                color: @base !important;
+                margin-left: 1em;
+                a{
+                    color: @base;
+                }
+            }
+
+            &.ui-state-default.ui-state-hover{
+                // background: @base!important;
+                border-color: @base !important;
+                a{
+                    color: @baseDarker !important;
+                }
+            }
+            &.ui-state-default.ui-state-active{
+                // background: @orange !important;
+                border-color: @orange !important;
+                a{
+                    color: darken(@orange, 5%) !important;
+                }
+            }
+            a{
+                margin: 0;
+
+                background: transparent !important;
+                text-transform: uppercase;
+                font-size: 12px !important;
+                padding: 0.8em 1.2em  !important;
+            }
+        }
+    }
+    .ui-tabs-panel{
+        margin-bottom: 0;
+    }
+} 
+
+.ui-sortable-helper{
+    .box-shadow(0 1px 5px rgba(0,0,0,0.2)) !important;
+}

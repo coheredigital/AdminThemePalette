@@ -1,0 +1,63 @@
+@import "less/vars.less";
+@import "less/mixins.less";
+.InputfieldRadiosStacked input,
+#roles_editor input,
+.InputfieldCheckbox  input,
+.InputfieldPageAutocomplete .ui-state-default,
+.ui-widget-header,
+.ui-button{
+	border: none !important;
+}
+
+#header,
+.WireTabs{
+	border: 1px solid @grayLight;
+}
+
+.Inputfield .ui-widget-content{
+	border-color: @grayLight;
+}
+
+.InputfieldFieldset.Inputfield .Inputfields .Inputfield>label.ui-widget-header, 
+.InputfieldFieldsetOpen.Inputfield .Inputfields .Inputfield>label.ui-widget-header{
+	background: @grayLight;
+}
+
+#user-menu{
+	> a,
+	.user-menu{
+		float: left;
+		display: block;
+	}
+	> a{
+		width: 56px;
+		height: 56px;
+		margin-right: 1em;
+	}
+}
+#breadcrumbs {
+	li {
+		
+		a{
+			position: relative;
+			&:before {
+				content: "\203A";
+				top: -3px;
+				right: 0;
+				font-size: 20px;
+				font-family: Verdana, Geneva, sans-serif;
+				font-weight: bold;
+				border: none !important;
+				color: #ccc;
+			}			
+			&:after {
+				z-index: -1;
+				display: none;
+			}
+		}
+
+	}
+}
+#ProcessPageSearchQuery{
+	min-width: 300px;
+}
