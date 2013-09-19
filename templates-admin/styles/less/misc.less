@@ -40,15 +40,15 @@ img{
 	// border-top: 1px solid darken(@baseSoft, 12%);
 	font-weight: bold;
 	display: block;
-	padding: 1em;
-	color: darken(@baseSoft, 36%);
+	padding: 1em 0;
+	text-align: center;
+	color: #aaa;
 	a{
-		color:  darken(@baseSoft, 50%);
+		color:  #888;
 		&:hover{
 			color: @orange;
 		}
 	}
-	margin: 0;
 }
 .text_center{
 	text-align: center;
@@ -133,35 +133,31 @@ td .notes{
 .gravatar-wrapper{
 	border-radius: 50%;
 	overflow: hidden;
-	float: left;
-	border: 6px solid darken(#eee, 6%) ;
 	display: inline-block;
-	margin: 1em;
+	border: 6px solid darken(#eee, 12%) ;
+	margin-right: 1em;
+	vertical-align: middle;
 }
 #user-menu{
-	// position: absolute;
-	// width: 100%;
 	left: 0;
 	bottom: 0;
-	float: left;
-	// background: darken(@base, 4%);
-	// border-top: 1px solid darken(@base, 7%);
+	display: inline-block;
+	width: 50%;
+	padding: 2em 0;
 }
 .user-menu{
 	display: inline-block;
 	vertical-align: middle;
-	margin: 1.8em 0;
+	margin: 0;
 	text-transform: uppercase;
 	font-weight: bold;
 	font-size: 15px;
-	width: 50%;
 	a:hover{
 		color: @orange !important;
-
 	}
 }
 .user-name{
-	color: #fff;
+	color: @gray;
 	&:hover{
 	}
 }

@@ -81,6 +81,7 @@ input#columnWidth{
     // border-color: transparent!important;
     background: @green;
     color: #fff!important;
+    .box-shadow(inset 0 -0.2em 0 rgba(0,0,0,0.15));
 }
 .ui-button{
     .ui-icon{
@@ -133,19 +134,14 @@ input#columnWidth{
 
 
 .error-text,
-#_ProcessPageEditDelete,
-.PageListActionEmpty a,
-#_WireTabDelete{
+.PageListActionEmpty a{
     color: @red!important;
 }
-#_ProcessPageEditDelete:hover,
-.PageListActionEmpty a:hover,
-#_WireTabDelete:hover{
+
+.PageListActionEmpty a:hover{
     color: @redDark!important;
 }
-.PageListActionEmpty a:hover,
-a.on#_ProcessPageEditDelete,
-a.on#_WireTabDelete{
+.PageListActionEmpty a:hover{
     color: #fff!important;
     background: @red !important;
 }

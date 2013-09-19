@@ -5,40 +5,32 @@
 	// border-left: 1px solid @grayLighter;
 	li {
 		display: inline-block;
-		font-size: 14px;
 		a{
-			color: lighten(@blue, 10%);
+			color: lighten(@blue, 20%);
 			padding: 0 0 0 1em;
 			font-weight: bold;
 			// display: block;
 			line-height: 3em;
 			position: relative;
+			display: block;
+			float: left;
 			text-transform: uppercase;
-			&:after, &:before {
-				content: "";
-				display: block;
-				width: 0;
-				height: 0;
-				// border-top: 17px solid transparent;           /* Go big on the size, and let overflow hide */
-				// border-bottom: 17px solid transparent;
-				// border-left: 13px solid darken(@grayLighter, 3%);
-				position: absolute;
-				top: -2px;
-				right: -14px;
-				z-index: 1;
-			}
-			&:before {
-				font-size: 1.2em;
-				right: -13px;
-				z-index: 2;
-			}
-			&:hover {
+			&:after{
+				content: "\203A";
+				font-size: 22px;
+				position: relative;
+				top: 0.05em;
+				
+			}			
+			&:hover{
 				color: #fff;
+				
 			}
 		}
 		&:first-child a{
-			padding-left: 14px;
+			padding-left: 0;
 		}
+
 	}
 	li.fright a{
 		padding: 0 8px;
@@ -46,13 +38,16 @@
 			display: none!important;
 		}
 	}
-	li:first-child{
-		// border-left: 1px solid #fff;
-	}
 
 }
 #bread{
 	color: lighten(@blue, 10%);
 	background: darken(@blue, 3%);
 	position: relative;
+}
+#view-site{
+	padding: 0 !important;
+	line-height: 3.4em !important;
+	float: right;
+	display: block;
 }

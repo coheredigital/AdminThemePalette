@@ -10,7 +10,7 @@
 			else{
 				$class = 'success';
 			}
-			echo "<li class='".$class."'>".$text."</li>";
+			echo "<li class='".$class."'><div class='container'>".$text."</div></li>";
 		}
 	?>
 	</ul>	

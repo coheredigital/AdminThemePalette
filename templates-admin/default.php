@@ -84,7 +84,7 @@ $config->scripts->append($config->urls->adminTemplates . "scripts/jquery.collage
 					foreach($this->fuel('breadcrumbs') as $breadcrumb) {
 						$class = strpos($page->path, $breadcrumb->path) === 0 ? " class='active'" : '';
 						$title = htmlspecialchars(strip_tags($breadcrumb->title));
-						echo "<li $class><a href='{$breadcrumb->url}'>{$title} </a> &rsaquo; </li>";
+						echo "<li $class><a href='{$breadcrumb->url}'>{$title} </a> </li>";
 					}
 				?>
 				<li class="fright"><a target="_blank" id="view-site" href="<?php echo $config->urls->root; ?>">View Site</a></li>
@@ -116,32 +116,29 @@ $config->scripts->append($config->urls->adminTemplates . "scripts/jquery.collage
 
 			</div>
 			
-			<div class="container">
-				<div id="user-menu">
-					<?php $gravatar = "http://www.gravatar.com/avatar/" . md5( strtolower( trim( $user->email ) ) ) . "?d=mm&s=50"; ?>
-					<?php if ($gravatar): ?>
-						<?php $edit = __("Edit Profile"); ?>
-						<div class="gravatar-wrapper clearfix">
-							<img class="gravatar" src="<?php echo $gravatar; ?>" alt="">
-						</div>
-					<?php endif ?>
-										
-					<div class="user-menu">
-						<?php if ($user->hasPermission('profile-edit')) echo "<a class='user-name' href='{$config->urls->admin}profile/'>{$user->name}</a>" ?><br>
-						<a class="user-logout" href='<?php echo $config->urls->admin; ?>login/logout/'><?php echo __('logout', __FILE__); ?></a>
-					</div>
-				</div>
-				<div id="search-box">
-					<?php echo $searchForm; ?>
-				</div>
-			</div>
+
 
 			</div>	
 		
 
-				<div id="footer" class="copy">
+				<div id="footer">
 					<div class="container">
-						<p class=" fright"><a href="http://processwire.com/">ProcessWire</a> <?php echo $config->version; ?> - Copyright &copy; <?php echo date("Y"); ?> by Ryan Cramer</p>
+						<div id="user-menu">
+							<?php $gravatar = "http://www.gravatar.com/avatar/" . md5( strtolower( trim( $user->email ) ) ) . "?d=mm&s=50"; ?>
+							<?php if ($gravatar): ?>
+								<?php $edit = __("Edit Profile"); ?>
+								<div class="gravatar-wrapper clearfix">
+									<img class="gravatar" src="<?php echo $gravatar; ?>" alt="">
+								</div><?php endif ?><div class="user-menu">
+								<?php if ($user->hasPermission('profile-edit')) echo "<a class='user-name' href='{$config->urls->admin}profile/'>{$user->name}</a>" ?><br>
+								<a class="user-logout" href='<?php echo $config->urls->admin; ?>login/logout/'><?php echo __('logout', __FILE__); ?></a>
+							</div>
+						</div><div id="search-box">
+							<?php echo $searchForm; ?>
+						</div>
+					</div>
+					<div class="container copy">
+						<p><a href="http://processwire.com/">ProcessWire</a> <?php echo $config->version; ?> - Copyright &copy; <?php echo date("Y"); ?> by Ryan Cramer</p>
 					</div>
 				</div>
 

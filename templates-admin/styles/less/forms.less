@@ -30,12 +30,20 @@ input:invalid{
 #ProcessPageEdit, .InputfieldWrapper{
 	list-style: none!important;
 }
-
+#search-box{
+	width: 50%;
+	display: inline-block;
+	text-align: right;
+	vertical-align: middle;
+}
 #ProcessPageSearchForm{
 	// position: absolute;
 	right: 12px;
 	float: none;
 	top: 0;
+	width: 50%;
+	display: inline-block;
+	text-align: right;
 	// border-right: 1px solid #fff;
 
 }
@@ -44,7 +52,7 @@ input#ProcessPageSearchQuery{
 	margin: 0;
 	border: 0;
 	float: right;
-	height: 2.4em;
+	height: 2.8em;
 	font-size: 16px;
 	position: relative;
 	z-index: 20;
@@ -54,17 +62,20 @@ input#ProcessPageSearchQuery{
 	.box-sizing(border-box);
 	padding: 8px;
 	width: 100%;
+	max-width: 300px;
 	text-align: right;
 	opacity: 1!important;
-	background: #eee;
+	background: #fff;
 	font-weight: bold;
-	color: darken(@blue, 12%);
+	color: @gray;
+	border: 4px solid #ddd;
 }
 
 input#ProcessPageSearchQuery:focus{
 	text-transform: none;
 	// background: #fff;
 	// color: #fff;
+	border-color: @blue;
 }
 
 .search.on .searchform{
