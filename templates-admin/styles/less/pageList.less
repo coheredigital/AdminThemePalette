@@ -8,7 +8,7 @@ a.PageListPage{
 }
 a.PageListPage,
 a.PageListPage:hover {
-	color: #444;
+	color: @blue;
 	background: transparent!important;
 }
 a.PageListPage:hover {
@@ -16,6 +16,8 @@ a.PageListPage:hover {
 }
 
 .PageList{
+	position: relative;
+	// border-left: 2px dotted #ddd;
 	margin-top: 0!important;
 	.PageListItem + .PageListActions{
 		margin-bottom: 0.5em !important;
@@ -31,13 +33,24 @@ a.PageListPage:hover {
 	}
 
 }
+// .PageList:before {
+// 	content: "";
+// 	position: absolute;
+// 	width: 0.6em;
+// 	// height: 100%;
+// 	left: 0;
+// 	margin-top: -0.2em;
+// 	top: 2em;
+// 	bottom: 2em;
+// 	border-left: 2px dotted #ddd;
+// }
 
 .PageListItem {
 	position: relative;
 	clear: both;
 	line-height: 24px;
 	padding: 0.8em 1em !important;
-	margin-bottom: 0.5em;
+	// margin: 2em 0 -1.5em;
 	// border-radius: 0.4em;
 	// border: 1px solid transparent;
 	&.PageListStatusUnpublished a{
@@ -45,7 +58,8 @@ a.PageListPage:hover {
 		}
 	.PageListActions {
 		margin-left: 1em !important;
-		background: darken(@orange, 10%);
+		background: darken(@orange, 5%);
+		background: #aaa;
 		border-radius: 1em;
 		padding: 0.4em !important;
 		// line-height: 24px;
@@ -62,12 +76,37 @@ a.PageListPage:hover {
 		width: 98%!important;
 	}
 }
+.PageListItem:first-child {
+	// padding-top: 0 !important;
+}
+.PageListItem:before {
+	content: "";
+	position: absolute;
+	width: 0.6em;
+	left: 0;
+	margin-top: -0.2em;
+	top: 50%;
+	border-bottom: 2px dotted #ddd;
+}
+.PageListItem:first-child:before {
+	width: 2.6em;
+	left: -2em;
+}
+.PageListItem:after {
+	content: "";
+	position: absolute;
+	left: -0.3em;
+	top: 50%;
+	bottom: -1.6em;
+	border-left: 2px dotted #ddd;
+}
+
 
 .PageList .PageListItem.PageListItemOpen{
-	background: @orange;
-	border-color: darken(@orange, 6%);
+	background: transparent;
+
 	> .PageListPage{
-		color: darken(@orange, 20%);
+		color: darken(@blue, 20%);
 	}
 	.PageListActions{
 		display: inline-block !important;
@@ -107,6 +146,7 @@ a.PageListPage:hover {
 	    padding: 0;
 	    // color: #fff;
 	    color: lighten(@orange, 25%);
+	    color: #fff;
 	    text-transform: uppercase;
 	    font-weight: bold;
 	}

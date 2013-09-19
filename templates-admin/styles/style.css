@@ -1580,6 +1580,7 @@ body {
   display: inline-block;
   text-align: right;
   padding: 0;
+  margin-left: 1em;
   line-height: 3em;
   color: #7ebae6;
   font-weight: bold;
@@ -1673,15 +1674,19 @@ ul#nav li:hover .subnav {
   padding: 0 !important;
 }
 .WireTabs li a {
-  color: #708199;
+  color: #7ebae6;
+  text-decoration: none !important;
   padding: 1em !important;
+  border: 0 !important;
   display: inline-block !important;
-  border: 0;
   font-size: 14px;
   margin: 0 1em 0 0;
   font-weight: bold;
   text-transform: uppercase;
-  border-top: 1px solid transparent !important;
+}
+.WireTabs li a em {
+  border: 0 !important;
+  font-style: normal;
 }
 .WireTabs li a:hover {
   color: #333333;
@@ -1689,13 +1694,12 @@ ul#nav li:hover .subnav {
 .WireTabs li a.on:hover,
 .WireTabs li a.on {
   color: #444f5f;
-  border-color: #f2673a !important;
+  background: #eee;
 }
 #_ProcessPageEditView {
   float: right;
   margin: 0;
   padding: 1em !important;
-  color: #f2673a;
 }
 #_ProcessPageEditView:hover {
   color: #359461;
@@ -2539,13 +2543,14 @@ a.PageListPage {
 }
 a.PageListPage,
 a.PageListPage:hover {
-  color: #444;
+  color: #2a8dd4;
   background: transparent!important;
 }
 a.PageListPage:hover {
   color: #f2673a;
 }
 .PageList {
+  position: relative;
   margin-top: 0!important;
 }
 .PageList .PageListItem + .PageListActions {
@@ -2563,14 +2568,14 @@ a.PageListPage:hover {
   clear: both;
   line-height: 24px;
   padding: 0.8em 1em !important;
-  margin-bottom: 0.5em;
 }
 .PageListItem.PageListStatusUnpublished a {
   color: #999999;
 }
 .PageListItem .PageListActions {
   margin-left: 1em !important;
-  background: #ea450f;
+  background: #f05522;
+  background: #aaa;
   border-radius: 1em;
   padding: 0.4em !important;
   vertical-align: text-bottom;
@@ -2583,12 +2588,32 @@ a.PageListPage:hover {
   padding: 8px 1%!important;
   width: 98%!important;
 }
+.PageListItem:before {
+  content: "";
+  position: absolute;
+  width: 0.6em;
+  left: 0;
+  margin-top: -0.2em;
+  top: 50%;
+  border-bottom: 2px dotted #ddd;
+}
+.PageListItem:first-child:before {
+  width: 2.6em;
+  left: -2em;
+}
+.PageListItem:after {
+  content: "";
+  position: absolute;
+  left: -0.3em;
+  top: 50%;
+  bottom: -1.6em;
+  border-left: 2px dotted #ddd;
+}
 .PageList .PageListItem.PageListItemOpen {
-  background: #f2673a;
-  border-color: #f0511d;
+  background: transparent;
 }
 .PageList .PageListItem.PageListItemOpen > .PageListPage {
-  color: #ba370c;
+  color: #19547f;
 }
 .PageList .PageListItem.PageListItemOpen .PageListActions {
   display: inline-block !important;
@@ -2616,6 +2641,7 @@ a.PageListPage:hover {
   margin: 0 0.7em!important;
   padding: 0;
   color: #fac3b2;
+  color: #fff;
   text-transform: uppercase;
   font-weight: bold;
 }

@@ -15,16 +15,22 @@
 		display: inline-block!important;
 		padding: 0 !important;
 		a{
-		    color: lighten(@base, 20%);
+		    color: lighten(@blue, 20%);
+		    text-decoration: none !important;
 		   	padding: 1em !important;
+		   	border: 0 !important;
 		   	display: inline-block!important;
 		   	// float: left;
-		   	border: 0;
+		   	
 		   	font-size: 14px;
 		   	margin: 0 1em 0 0;
 		    font-weight: bold;
 		    text-transform: uppercase;
-		    border-top: 1px solid transparent !important;
+		    // border-top: 1px solid transparent !important;
+		    em{
+		    	border: 0 !important;
+		    	font-style: normal;
+		    }
 		}
 		a:hover {
 		    color: @grayDark;
@@ -32,8 +38,9 @@
 		a.on:hover, 
 		a.on{
 			color: @base;
+			background: #eee;
 			// background: #fff;
-			border-color: @orange !important ;
+			// border-color: @orange !important ;
 			// border-top: 0;
 		}
 	}
@@ -43,7 +50,7 @@
 	float: right;
 	margin: 0;
 	padding: 1em !important;
-	color: @orange;
+	// color: @orange;
 	// background: #ddd;
 }
 #_ProcessPageEditView:hover{
