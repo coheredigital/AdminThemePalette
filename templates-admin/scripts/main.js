@@ -179,10 +179,11 @@ $(document).ready(function() {
 
 	var saveP;
 	var windowP;
-	$lastInputfield = $(".InputfieldSubmit").parent().prev();
+	$Submitfield = $("#wrap_submit_save");
+	$lastInputfield = $Submitfield.parent();
 
 	function getPositions(){
-
+		if (!$lastInputfield.length) return;
 		saveP = Math.round($lastInputfield.offset().top + $lastInputfield.outerHeight());
 		windowP = $(window).scrollTop() + $(window).height();
 		console.log("SAVE: "+saveP+" WINDOW:"+windowP);
@@ -194,10 +195,10 @@ $(document).ready(function() {
     $(window).scroll(getPositions);
 
 	function stickSave(){
-		$(".InputfieldSubmit").parent().addClass("fixed-nav");
+		$Submitfield.addClass("fixed-nav");
 	}
     function unstickSave(){
-		$(".InputfieldSubmit").parent().removeClass("fixed-nav");
+		$Submitfield.removeClass("fixed-nav");
 	}    
 
 

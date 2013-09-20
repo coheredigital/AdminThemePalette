@@ -101,7 +101,7 @@
 	top: -1.6em;
 	z-index: 0;
 	bottom: -1.6em;
-	border-left: 2px dotted #ddd;
+	border-left: 1px dotted #ccc;
 }
 .PageListRoot > .PageList:before,
 .PageListRoot > .PageList > .PageList:before{
@@ -126,7 +126,7 @@
 		}
 	.PageListActions {
 		margin-left: 1em !important;
-		background: #ccc;
+		background: #999;
 		// background: #aaa;
 		border-radius: 1em;
 		padding: 0.4em !important;
@@ -160,7 +160,7 @@
 	left: -4px;
 	margin-top: -1px;
 	top: 50%;
-	border-bottom: 2px solid #ddd;
+	border-bottom: 1px solid #ccc;
 	z-index: 1;
 }
 
@@ -183,7 +183,7 @@
 	left: -4px;
 	top: -20px;
 	bottom: 20px;
-	border-left: 2px solid #ddd;
+	border-left: 1px solid #ccc;
 	z-index: 1;
 }
 
@@ -217,9 +217,9 @@
 		color: @orange;
 	}
 }
-.PageListItem.PageListItemOpen:hover > .PageListActions{
-	background: @orange;
-}
+// .PageListItem.PageListItemOpen:hover > .PageListActions{
+// 	background: @orange;
+// }
 .PageListItem.PageListID7  > .PageListActions{
 	background: @red !important;
 	a{
@@ -269,7 +269,8 @@
 	a:hover{
 		// background: #fff;
 		color: #fff;
-		color: darken(@orange, 20%);
+		// color: darken(@orange, 20%);
+		color: @grayDark;
 	}
 }
 
@@ -384,13 +385,13 @@ ul.PageListPagination{
 	z-index: 50;
 	background: #fff;
 	// background-color: transparent !important;
-	border: 2px solid #ddd;
+	border: 1px solid #ccc;
 	float: left;
 	height: auto !important;
 	display: block !important;
 	margin: 0 -16px!important;
 	li{
-		margin: -1px 0;
+		margin: 0 0 0 1px;
 		line-height: 18px;
 		// background-color: transparent !important;
 		padding: 0 !important;
@@ -415,12 +416,15 @@ ul.PageListPagination{
 			background-color: #444;
 			color: #fff;
 		}
+		&:first-child{
+			margin: 0;
+		}
 	}
 	
 	.PageListPaginationCurrent{
 		a{
-			background: #ddd !important;
-			color: @gray !important;
+			background: #ccc !important;
+			color: #fff !important;
 			opacity: 1!important;
 		}
 	}

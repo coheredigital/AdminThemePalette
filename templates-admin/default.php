@@ -12,6 +12,7 @@ $searchForm = $user->hasPermission('page-edit') ? $modules->get('ProcessPageSear
 $bodyClass = $input->get->modal ? 'modal' : '';
 if(!isset($content)) $content = '';
 $config->styles->prepend($config->urls->adminTemplates . "styles/jqueryui/jqui.css");
+$config->styles->prepend($config->urls->adminTemplates . "styles/font-awesome/css/font-awesome.css");
 $config->styles->prepend($config->urls->adminTemplates . "styles/style.css");
 $config->scripts->append($config->urls->adminTemplates . "scripts/main.js");
 $config->scripts->append($config->urls->adminTemplates . "scripts/jquery.collagePlus.min.js");

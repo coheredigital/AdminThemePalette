@@ -413,6 +413,16 @@ a .ui-icon-flip-vertical:before {
 .ui-icon-caret-right:before {
   content: "\f0da";
 }
+.ui-icon-triangle-1-n:before,
+.ui-icon-caret-up:before {
+  content: "\f0d8";
+}
+.ui-icon-triangle-1-w:before,
+.ui-icon-caret-left:before {
+  content: "\f0d9";
+}
+
+
 
 .ui-icon-glass:before {
   content: "\f000";
@@ -998,14 +1008,6 @@ a .ui-icon-flip-vertical:before {
 }
 .ui-icon-money:before {
   content: "\f0d6";
-}
-
-
-.ui-icon-caret-up:before {
-  content: "\f0d8";
-}
-.ui-icon-caret-left:before {
-  content: "\f0d9";
 }
 
 .ui-icon-columns:before {

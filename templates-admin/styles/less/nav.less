@@ -101,27 +101,25 @@ ul#nav li:hover .subnav{
 // 	width: 100%;
 // }
 
-#ProcessPageEdit.ProcessPageEditContent > .Inputfields.fixed-nav{
+#content #ProcessPageEdit > .Inputfields > .fixed-nav{
 	.clearfix();
 	position: fixed;
-	bottom: 0;
+	bottom: 0 !important;
 	z-index: 10;
-	background: #fff !important;
-	padding: 1em 1em !important;
+	margin: 0 !important;
+	// background: #fff;
+	background: rgba(255, 255, 255, 0.7);
+	padding: 1em 0 !important;
 	right: 0;
 	left: 0;
 	border-top: 1px solid #ddd !important;
+	.box-shadow(0 0 5px rgba(0,0,0,0.1));
+	> .ui-widget-content{
+		max-width: 1200px;
+		width: 96%;
+		padding: 0 2%;
+		margin: 0 auto !important;
+		position: relative;
+	}
 
-}
-#fixed-save{
-	.clearfix();
-	position: fixed;
-	bottom: 0;
-	z-index: 10;
-	background: #fff !important;
-	padding: 1em 1em !important;
-	right: 0;
-	left: 0;
-	border-top: 1px solid #ddd !important;
-	display: none;
 }
