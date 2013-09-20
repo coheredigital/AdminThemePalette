@@ -474,14 +474,11 @@ a .ui-icon-flip-vertical:before {
   content: "\f013";
 }
 .ui-icon-trash{
- height: 0;
- width: 0;
- overflow: hidden;
  font-size: 0;
 }
 .ui-icon-trash:before {
   content: "\f014";
-  font-size: 16px;
+  font-size: 18px;
 }
 .ui-icon-home:before {
   content: "\f015";

@@ -25,7 +25,7 @@
 }
 
 .Inputfield{
-	background: #f7f7f7;
+	// background: #f7f7f7;
 	margin-bottom: 2em;
 	clear: both;
 	padding: 0 !important;
@@ -52,17 +52,19 @@
 
 	> label.ui-widget-header{
 		margin: 0;
-		padding: 1em;
+		padding: 0.9em;
+		background: @grayDark;
 		display: block;
 		height: 1.1em;
-		color: darken(@orange, 10%);
-		color: @base;
+		font-weight: normal;
+		color: lighten(@blue, 35%);
+		color: @grayLight;
 		// border: 1px solid #ddd;
 		border-bottom: 0;
 		// border-left: 1px solid @InputBorder;
-		border-left: 3px solid @blue;
+		// border-left: 3px solid darken(@blue, 10%);
 		.ui-icon{
-			color: @baseLighter;
+			color: @gray !important;
 			font-size: 1.3em;
 			margin-left: 0.5em !important;
 			&:hover{
@@ -71,20 +73,17 @@
 		}
 	}	
 	> label.ui-widget-header:hover{
-		border-color: @orange;
+		border-color: lighten(@blue, 20%);
 	}
 
 	> .ui-widget-content {
-		padding: 1.2em 1em;
-		padding-top: 0;
-		background: #fff;
-		// border: 1px solid #ddd;
+		padding: 1em 0.8em;
+		border: 1px solid #ddd;
+		// border-left-width: 3px;
 		border-top: 0;
-		border-left: 3px solid #ddd;
 		position: relative;
 		background: transparent;
 		.clearfix();
-		// border-radius: 0.3em;
 	}
 	.PageListRoot{
 		padding-bottom: 0;
@@ -117,10 +116,20 @@
 .InputfieldFieldsetOpen {
 	.Inputfields{
 		.Inputfield{
-			> label.ui-widget-header,
+			margin-bottom: 1em;
+			> label.ui-widget-header{
+				border-color: #ddd;
+				background: #eee;
+				color: #777;
+				.ui-icon{
+					color: #aaa !important;
+				}
+			}
+
+
 			> .ui-widget-content {
 				color: @baseLighter;
-				border-color: darken(@baseSoft, 8%);
+				// border-color: darken(@baseSoft, 8%);
 			}
 		}
 	}
@@ -138,28 +147,16 @@
 	opacity: 0.6;
 	// background: #fff;
 	> label.ui-widget-header{
-		color: @base;
+		// color: @base;
 		// border-bottom: 1px solid #ddd;
-		border-color: @gray;
-		.ui-icon {
-			color: @base !important;
-			background-image: url(jqueryui/images/ui-icons.png);
-			opacity: 1;
-		}
+		border-color: darken(@blue, 10%);
 	}
 }
 .InputfieldStateToggle:hover{
 	// background: #fafafa !important;
 }
 .InputfieldStateCollapsed:hover{
-	> label.ui-widget-header{
-		color: @orange !important;
-		// background: transparent !important;
-
-	}
 	opacity: 1 !important;
-	// background: lighten(@baseLighter, 5%);
-
 }
 
 
@@ -226,17 +223,21 @@
 	.InputfieldFile{
 		border: none !important;
 		background: #fff !important;
-		border: 1px solid darken(@baseSoft, 6%) !important;
+		// border: 1px solid darken(@baseSoft, 6%) !important;
 		// padding: 0.5em 0;
 		width: auto;
 		position: relative;
 		.InputfieldFileInfo{
 			position: relative;
 			color: @base;
-			background: transparent !important;
+			border: 1px solid #ddd;
+			background: #ddd;
+			line-height: 16px;
+			height: auto !important;
+			padding: 2px 4px;
 			font-size: 14px !important;
 			line-height: 1.2em !important;
-			padding: 0.6em 0.4em 0 0.4em !important;
+			padding: 0.6em 0.4em !important;
 			.ui-icon-arrowthickstop-1-n,
 			.ui-icon-arrowthickstop-1-s{
 				
@@ -251,13 +252,7 @@
 			.ui-icon-arrowthickstop-1-s{
 				right: 19px;
 			}
-			line-height: 16px;
-			height: auto !important;
-			padding: 2px 4px;
-			overflow: hidden;
-			border: 0 !important;
-			font-weight: normal;
-			font-size: 12px;
+
 
 			span, a, label{
 				color: #333 !important;
@@ -267,7 +262,7 @@
 
 			.InputfieldFileName{
 				// float: left;
-				color: #fff;
+				font-weight: normal;
 				display: inline-block !important; 
 				text-overflow: ellipsis;
 				overflow: hidden;
@@ -291,12 +286,15 @@
 			}
 			&.ui-state-error{
 				background: @red !important;
+				border-color: @red !important;
 			}
 
 		}
 		.InputfieldFileData{
+
+			border: 1px solid darken(@baseSoft, 6%);
+			border-top: 0;
 			padding: 12px!important;
-			border: 0;
 			border-top: none;
 			label .detail{
 				display: block !important;
@@ -441,7 +439,7 @@
 .InputfieldStateToggle.ui-widget-header {
 	padding: 0 0 0 9px;
 	background: transparent;
-	font-size: 16px;
+	font-size: 14px;
 
 	&.ui-state-default{ // reapeter uses this
 		background: white;
@@ -642,12 +640,12 @@
 .InputfieldPageListSelectMultiple ol li.ui-state-default,
 #content .InputfieldPageAutocomplete ol li.ui-state-default,
 .Inputfields .asmListItem{
-	background: #fff !important;
+	background: #eee !important;
 }
 .InputfieldPageListSelectMultiple ol li.ui-state-hover,
 #content .InputfieldPageAutocomplete ol li.ui-state-hover,
 .Inputfields .asmListItem.ui-state-hover{
-	background: @orange !important;
+	background: @blue !important;
 }
 .asmListItemLabel, .asmListItemStatus,
 .InputfieldPageListSelectMultiple ol li .itemLabel,

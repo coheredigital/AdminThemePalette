@@ -61,7 +61,7 @@
 .cke,
 .cke_reset{
 	.transition(box-shadow 0.4s);
-	.box-shadow(none) !important;
+	.box-shadow(0 0 0 transparent) !important;
 	.cke_top,
 	.cke_bottom {
 		background: @grayLighter !important;
@@ -78,20 +78,29 @@
 	.cke_combo_off:hover a.cke_combo_button,
 	.cke_button_off:hover{
 		background: #fff !important;
-		.box-shadow(0 0 4px #ccc) !important;
+		.box-shadow(none) !important;
 	}
 	.cke_button_on,
 	.cke_combo_on a.cke_combo_button{
-		background: @green !important;
-		.box-shadow(inset 0 0 3px rgba(0,0,0,0.1)) !important;
+		background: @blue;
+
+		.box-shadow(none) !important;
 		span{
 			opacity: 0.5;
 		}
 	}
+	.cke_combo_on:hover a.cke_combo_button{
+		.box-shadow(none) !important;
+		background: lighten(@blue, 15%);
+	}
+	.cke_button_on:hover{
+		.box-shadow(none) !important;
+		background: lighten(@blue, 15%);
+	}
 }
 .cke_focus.cke{
-	.box-shadow( 0 0 3px @green ) !important;
-	border: 1px solid @green !important;
+	.box-shadow( none) !important;
+	border: 1px solid @blue !important;
 }
 #user-menu a.tooltip.ui-state-hover{
 	padding: 0;

@@ -2,13 +2,10 @@
 .PageListPage{
 	// font-size: 16px;
 	font-weight: bold;
-	line-height: 1.8em;
-	padding-left: 1em;
+	line-height: 18px;
 	display: inline-block;
 	vertical-align: middle;
-	.PageListNote{
-		vertical-align: text-top;
-	}
+
 }
 .PageListID1 > .PageListPage {
 	padding: 0;
@@ -23,57 +20,40 @@
 .PageListPage:hover {
 	color: @orange;
 }
-.PageListPage:after {
+.PageListPage:before {
 	content:"";
 	background: @green;
 	// background: #fff;
 	height: 10px;
 	width: 10px;
-	position: absolute;
-	left: 8px;
-	top: 50%;
-	margin-top: -8px;
-	z-index: 5;
-	border-radius: 50%;
-	border: 3px solid #fff;
-}
-
-.PageListPage:before {
-	content:"";
-	background: @green;
-	height: 10px;
-	width: 10px;
-	// position: absolute;
-	display: none;
-	vertical-align: text-top;
-	line-height: 1.2em;
-
-	margin: 0 0.2em 0 -0.4em;
+	display: inline-block;
+	vertical-align: baseline;
 	// margin-top: -8px;
+	margin: 0 8px 0 2px;
 	z-index: 5;
 	border-radius: 50%;
-	border: 3px solid #fff;
-	background: @red;
+	// border: 3px solid #fff;
 }
+
 
 // no dot for home
-.PageListID1 > .PageListPage:after {
+.PageListID1 > .PageListPage:before {
 	display: none;
 }
 
 // page states
-.PageListStatusUnpublished .PageListPage:after {
+.PageListStatusUnpublished .PageListPage:before {
 	background: @orange;
 }
 
-.PageListStatusSystem  .PageListPage:after {
+.PageListStatusSystem  .PageListPage:before {
 	background: @blue;
 }
 
-.PageListStatusHidden .PageListPage:after {
+.PageListStatusHidden .PageListPage:before {
 	background: @purple;
 }
-.PageListAccessOff  .PageListPage:after {
+.PageListAccessOff  .PageListPage:before {
 	background: @red;
 }
 
@@ -88,15 +68,15 @@
 	position: relative;
 	// border-left: 2px dotted #ddd;
 	margin: 0!important;
-	padding: 0 0 0 2.4em;
+	padding: 0 0 0 24px;
 	.PageListItem + .PageListActions{
-		margin-bottom: 1em !important;
+		margin-bottom: 12px !important;
 		display: block;
 		.PageListActionMore{
 			background: @blue;
-			padding: 0.6em 1em;
-			border-radius: 0.3em;
-			margin: -0.3em;
+			padding: 8px 12px;
+			border-radius: 3px;
+			margin: -3px;
 			.box-shadow(inset 0 -0.2em 0 rgba(0,0,0,0.1));
 			a{
 				margin: 0 !important;
@@ -115,9 +95,9 @@
 .PageList:before {
 	content: "";
 	position: absolute;
-	width: 0.6em;
-	left: -0.3em;
-	margin-top: -0.2em;
+	width: 0;
+	left: -4px;
+	margin-top: -3px;
 	top: -1.6em;
 	z-index: 0;
 	bottom: -1.6em;
@@ -126,7 +106,6 @@
 .PageListRoot > .PageList:before,
 .PageListRoot > .PageList > .PageList:before{
 	display: none !important;
-	// overflow: hidden;
 }
 
 .PageListRoot > .PageList{
@@ -164,6 +143,9 @@
 		padding: 8px 1%!important;
 		width: 98%!important;
 	}
+	.PageListNote{
+		vertical-align: text-bottom;
+	}
 }
 .PageListRootHidden > .PageList > .PageListItem:first-child{
 	margin-top: -0.5em;
@@ -175,8 +157,8 @@
 	content: "";
 	position: absolute;
 	width: 1em;
-	left: -0.3em;
-	margin-top: -0.1em;
+	left: -4px;
+	margin-top: -1px;
 	top: 50%;
 	border-bottom: 2px solid #ddd;
 	z-index: 1;
@@ -198,9 +180,9 @@
 .PageListItem:after {
 	content: "";
 	position: absolute;
-	left: -0.3em;
-	top: -1.7em;
-	bottom: 1.7em;
+	left: -4px;
+	top: -20px;
+	bottom: 20px;
 	border-left: 2px solid #ddd;
 	z-index: 1;
 }
@@ -238,6 +220,16 @@
 .PageListItem.PageListItemOpen:hover > .PageListActions{
 	background: @orange;
 }
+.PageListItem.PageListID7  > .PageListActions{
+	background: @red !important;
+	a{
+		color: lighten(@red, 30%) !important;
+	}
+	a:hover{
+		color: #fff !important;
+	}
+}
+
 
 .PageListSelectHeader{
 	margin: 6px 0 19px 0;
@@ -396,7 +388,7 @@ ul.PageListPagination{
 	float: left;
 	height: auto !important;
 	display: block !important;
-	margin: 0 -1.3em!important;
+	margin: 0 -16px!important;
 	li{
 		margin: -1px 0;
 		line-height: 18px;
@@ -470,12 +462,12 @@ ul.PageListPagination{
 .PageListPagination:before {
 	content: "";
 	position: absolute;
-	width: 0.6em;
-	left: 0.8em;
+	width: 0;
+	left: 10px;
 	margin-top: -0.2em;
-	top: -0.8em;
+	top: -10px;
 	z-index: -1;
-	bottom:100%;
+	bottom: 100%;
 	border-left: 2px solid #ddd;
 }
 #ProcessPageSearchResults > .MarkupPagerNav{
@@ -517,21 +509,16 @@ ul.PageListPagination{
 
 	background: @grayDark;
 	display: block;
-
-	// background: #fff;
 	height: 10px;
 	width: 10px;
 	position: absolute;
-	left: 8px;
+	left: 16px;
 	padding: 0 !important;
-	margin: -8px 0 0 0 !important;
+	margin: -5px 0 0 0 !important;
 	top: 50%;
 	margin-top: ;
 	z-index: 5 !important;
 	border-radius: 50%;
-	border: 3px solid #fff;
-
-	// animation
 	.animation(~"loading 0.8s infinite");
 
 }
@@ -539,16 +526,13 @@ ul.PageListPagination{
 
 	background: transparent;
 	display: block;
-
-	// background: #fff;
-	height: 3.6em;
+	position: absolute;
 	width: 0;
-	
-	left: 2.1em;
+	height: auto;
+	left: 20px !important;
 	margin: 0 !important;
-	top: auto;
-	bottom: 4.2em;
-	margin-top: ;
+	top: 0 !important;
+	bottom: 45px !important;
 	z-index: 5 !important;
 	border-radius: 0;
 	border: 0;
@@ -560,6 +544,7 @@ ul.PageListPagination{
 
 
 .PageListRoot,
+.PageListID1,
 .PageListPagination{
 	> .PageListLoading{
 		display: none !important;

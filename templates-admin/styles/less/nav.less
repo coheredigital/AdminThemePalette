@@ -29,7 +29,7 @@
 			padding: 0;
 			margin-left: 1em;
 			// margin-bottom: 1em;
-			line-height: 3em;
+			line-height: 1.8em;
 			
 			color: lighten(@blue, 25%);
 			font-weight: bold;
@@ -94,4 +94,34 @@ ul#nav li:hover .subnav{
 	max-height: 400px;
 	opacity: 1;
 	padding: 4px 0 0 0 !important;
+}
+
+// #nav-wrap{
+// 	background: darken(@blue, 4%);
+// 	width: 100%;
+// }
+
+#ProcessPageEdit.ProcessPageEditContent > .Inputfields.fixed-nav{
+	.clearfix();
+	position: fixed;
+	bottom: 0;
+	z-index: 10;
+	background: #fff !important;
+	padding: 1em 1em !important;
+	right: 0;
+	left: 0;
+	border-top: 1px solid #ddd !important;
+
+}
+#fixed-save{
+	.clearfix();
+	position: fixed;
+	bottom: 0;
+	z-index: 10;
+	background: #fff !important;
+	padding: 1em 1em !important;
+	right: 0;
+	left: 0;
+	border-top: 1px solid #ddd !important;
+	display: none;
 }
