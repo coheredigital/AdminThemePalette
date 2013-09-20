@@ -58,7 +58,8 @@
 		height: 1.1em;
 		color: darken(@orange, 10%);
 		color: @base;
-		border: 1px solid #eee;
+		border: 1px solid #ddd;
+		border-bottom: 0;
 		// border-left: 1px solid @InputBorder;
 		.ui-icon{
 			color: @baseLighter;
@@ -72,8 +73,8 @@
 
 	> .ui-widget-content {
 		padding: 1.2em 1em;
-		// padding-top: 0;
-		border: 1px solid #eee;
+		padding-top: 0;
+		border: 1px solid #ddd;
 		border-top: 0;
 		// border-left: 1px solid @InputBorder;
 		position: relative;
@@ -131,6 +132,7 @@
 	// background: #fff;
 	> label.ui-widget-header{
 		color: @base;
+		border-bottom: 1px solid #ddd;
 		.ui-icon {
 			color: @base !important;
 			background-image: url(jqueryui/images/ui-icons.png);
