@@ -25,10 +25,9 @@
 }
 
 .Inputfield{
-	
+	background: #f7f7f7;
 	margin-bottom: 2em;
 	clear: both;
-	// background: #f7f7f7;
 	padding: 0 !important;
 	input, select, textarea{
 		background: darken(@baseSoft, 4%);
@@ -36,8 +35,8 @@
 		.box-sizing(border-box);
 		margin: 0;
 		padding: 6px;
-		box-shadow: inset 0 1px 1px rgba(0,0,0,0.1);
-		border: 1px solid darken(@baseSoft,15%);
+		box-shadow: inset 0 2px 0 rgba(0,0,0,0.05);
+		border: 1px solid #ccc;
 	}
 	select{
 		padding: 5px;	
@@ -46,7 +45,7 @@
 		border-color: #bbb;
 	}
 	input:focus, select:focus, textarea:focus{
-		box-shadow: 0 1px 2px @green;
+		// box-shadow: 0 1px 2px @blue;
 		border-color: @green;
 		background: #fff;
 	}
@@ -58,9 +57,10 @@
 		height: 1.1em;
 		color: darken(@orange, 10%);
 		color: @base;
-		border: 1px solid #ddd;
+		// border: 1px solid #ddd;
 		border-bottom: 0;
 		// border-left: 1px solid @InputBorder;
+		border-left: 3px solid @blue;
 		.ui-icon{
 			color: @baseLighter;
 			font-size: 1.3em;
@@ -69,14 +69,18 @@
 				color: @orange;
 			}
 		}
+	}	
+	> label.ui-widget-header:hover{
+		border-color: @orange;
 	}
 
 	> .ui-widget-content {
 		padding: 1.2em 1em;
 		padding-top: 0;
-		border: 1px solid #ddd;
+		background: #fff;
+		// border: 1px solid #ddd;
 		border-top: 0;
-		// border-left: 1px solid @InputBorder;
+		border-left: 3px solid #ddd;
 		position: relative;
 		background: transparent;
 		.clearfix();
@@ -86,13 +90,14 @@
 		padding-bottom: 0;
 		line-height: 29px;
 		.PageListSelectActionToggle{
-		    padding: 7px 8px!important;
+		    padding: 0.7em 1em!important;
 		    color: @grayDark!important;
 		    color: #fff!important;
-		    background: @base;
-		    border: 1px solid rgba(0,0,0,0.15);
+		    background: @blue;
+		    .box-shadow(inset 0 -0.2em rgba(0,0,0,0.1));
+		    border-radius: 0.3em;
 		    text-transform: uppercase;
-		    font-size: 11px;
+		    font-size: 12px;
 		    font-weight: bold;
 
 			&:hover{
@@ -106,7 +111,9 @@
 	}
 
 }
-
+.InputfieldButton{
+	margin-bottom: 0;
+}
 .InputfieldFieldsetOpen {
 	.Inputfields{
 		.Inputfield{
@@ -132,7 +139,8 @@
 	// background: #fff;
 	> label.ui-widget-header{
 		color: @base;
-		border-bottom: 1px solid #ddd;
+		// border-bottom: 1px solid #ddd;
+		border-color: @gray;
 		.ui-icon {
 			color: @base !important;
 			background-image: url(jqueryui/images/ui-icons.png);
@@ -623,7 +631,64 @@
 }
 
 
-.ui-sortable li{
-	// padding: 0.6em 0.4em !important;
-	// margin-bottom: 0.4em !important;
+
+// overriding ui-sortable individually because..... .. . .?
+.InputfieldPageListSelectMultiple ol li,
+#content .InputfieldPageAutocomplete ol li,
+.Inputfields .asmListItem{
+
+	margin-bottom: 0.2em !important;
+}
+.InputfieldPageListSelectMultiple ol li.ui-state-default,
+#content .InputfieldPageAutocomplete ol li.ui-state-default,
+.Inputfields .asmListItem{
+	background: #fff !important;
+}
+.InputfieldPageListSelectMultiple ol li.ui-state-hover,
+#content .InputfieldPageAutocomplete ol li.ui-state-hover,
+.Inputfields .asmListItem.ui-state-hover{
+	background: @orange !important;
+}
+.asmListItemLabel, .asmListItemStatus,
+.InputfieldPageListSelectMultiple ol li .itemLabel,
+#content .InputfieldPageAutocomplete ol li .itemLabel{
+	padding: 0.5em 0.6em !important;
+	vertical-align: middle;
+}
+.asmListItemRemove,
+#content .InputfieldPageAutocomplete ol li .itemRemove{
+	padding: 0.4em !important;
+
+}
+
+// delete icon size fix
+.itemRemove .ui-icon{
+	margin: 0em !important;
+	line-height: 1.2em;
+	top: 1em !important;
+	vertical-align: bottom;
+}
+.itemRemove .ui-icon:before{
+	font-size: 18px !important;
+	margin: 0 0.2em;
+	top: 0.4em !important;
+	vertical-align: bottom;
+}
+
+.asmListItemRemove:hover,
+#content .InputfieldPageAutocomplete ol li .itemRemove:hover{
+	color: @base !important;
+
+}
+
+span.asmListItemDesc{
+	padding: 0.5em 0 !important;
+}
+span.asmListItemStatus{
+	padding: 0.5em 0 !important;
+	.ui-icon {
+		top: 0.1em;
+
+		padding: 0 0.2em;
+	}
 }

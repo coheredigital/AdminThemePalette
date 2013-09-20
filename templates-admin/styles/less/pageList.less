@@ -5,7 +5,10 @@
 	line-height: 1.8em;
 	padding-left: 1em;
 	display: inline-block;
-	vertical-align: text-bottom;
+	vertical-align: middle;
+	.PageListNote{
+		vertical-align: text-top;
+	}
 }
 .PageListID1 > .PageListPage {
 	padding: 0;
@@ -149,7 +152,7 @@
 		border-radius: 1em;
 		padding: 0.4em !important;
 		// line-height: 24px;
-		vertical-align: text-bottom;
+		vertical-align: text-top;
 		li{
 			border: none;
 		}
@@ -161,6 +164,9 @@
 		padding: 8px 1%!important;
 		width: 98%!important;
 	}
+}
+.PageListRootHidden > .PageList > .PageListItem:first-child{
+	margin-top: -0.5em;
 }
 .PageListItem.PageListID1 {
 	padding-top: 0 !important;
@@ -176,12 +182,15 @@
 	z-index: 1;
 }
 
+
 .PageListRoot > .PageList > .PageListItem{
 	padding-left: 0 !important;
 }
+
 .PageListRoot > .PageList > .PageListItem:before{
 	display: none;
 }
+.PageListRootHidden > .PageList > .PageListItem:first-child:after,
 .PageListRoot > .PageList > .PageListItem:after{
 	display: none;
 }
@@ -195,6 +204,9 @@
 	border-left: 2px solid #ddd;
 	z-index: 1;
 }
+
+
+
 .PageListItem:first-child:after {
 	top: -0.8em;
 }
@@ -216,7 +228,7 @@
 		color: @grayDark;
 	}
 	.PageListActions{
-		display: inline-block !important;
+		// display: inline-block !important;
 	}
 
 	.PageListNumChildren{
@@ -340,6 +352,7 @@
  	}
 }
 
+
 .PageListMoveNote{
 	font-weight: bold;
 	vertical-align: middle;
@@ -378,22 +391,24 @@ ul.PageListPagination{
 	position: relative;
 	z-index: 50;
 	background: #fff;
+	// background-color: transparent !important;
 	border: 2px solid #ddd;
 	float: left;
 	height: auto !important;
 	display: block !important;
-	margin: 0 -1.5em!important;
+	margin: 0 -1.3em!important;
 	li{
 		margin: -1px 0;
-		// line-height: 18px;
+		line-height: 18px;
+		// background-color: transparent !important;
 		padding: 0 !important;
 		display: block;
 		float: left;
 		background: transparent;
 		border: none;
 		a{
-			border-radius: 50%;
-			background: transparent;
+			border-radius: 2em;
+			background: transparent ;
 			color: @blue;
 			padding: 8px;
 			min-width:10px;
@@ -456,7 +471,7 @@ ul.PageListPagination{
 	content: "";
 	position: absolute;
 	width: 0.6em;
-	left: 1.1em;
+	left: 0.8em;
 	margin-top: -0.2em;
 	top: -0.8em;
 	z-index: -1;

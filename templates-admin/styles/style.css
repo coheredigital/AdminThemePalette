@@ -825,7 +825,6 @@ button.ui-button::-moz-focus-inner {
 .ui-state-default,
 .ui-widget-content .ui-state-default,
 .ui-widget-header .ui-state-default {
-  background: #eeeeee;
   font-weight: bold;
   color: #444444;
 }
@@ -1239,7 +1238,6 @@ input#columnWidth {
   -webkit-box-shadow: inset 0 -0.2em 0 rgba(0, 0, 0, 0.15);
   -moz-box-shadow: inset 0 -0.2em 0 rgba(0, 0, 0, 0.15);
   box-shadow: inset 0 -0.2em 0 rgba(0, 0, 0, 0.15);
-  background: #eeeeee;
   font-weight: bold;
   color: #444444;
 }
@@ -1534,7 +1532,6 @@ body {
   height: 93px;
 }
 #main {
-  background: #fff;
   *zoom: 1;
 }
 #main:before,
@@ -1998,6 +1995,7 @@ td .notes {
   margin-left: 0;
 }
 .Inputfield {
+  background: #f7f7f7;
   margin-bottom: 2em;
   clear: both;
   padding: 0 !important;
@@ -2012,8 +2010,8 @@ td .notes {
   box-sizing: border-box;
   margin: 0;
   padding: 6px;
-  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.1);
-  border: 1px solid #c1c1c1;
+  box-shadow: inset 0 2px 0 rgba(0, 0, 0, 0.05);
+  border: 1px solid #ccc;
 }
 .Inputfield select {
   padding: 5px;
@@ -2026,7 +2024,6 @@ td .notes {
 .Inputfield input:focus,
 .Inputfield select:focus,
 .Inputfield textarea:focus {
-  box-shadow: 0 1px 2px #43b979;
   border-color: #43b979;
   background: #fff;
 }
@@ -2037,8 +2034,8 @@ td .notes {
   height: 1.1em;
   color: #ea450f;
   color: #444444;
-  border: 1px solid #ddd;
   border-bottom: 0;
+  border-left: 3px solid #2a8dd4;
 }
 .Inputfield > label.ui-widget-header .ui-icon {
   color: #6d6d6d;
@@ -2048,11 +2045,15 @@ td .notes {
 .Inputfield > label.ui-widget-header .ui-icon:hover {
   color: #f2673a;
 }
+.Inputfield > label.ui-widget-header:hover {
+  border-color: #f2673a;
+}
 .Inputfield > .ui-widget-content {
   padding: 1.2em 1em;
   padding-top: 0;
-  border: 1px solid #ddd;
+  background: #fff;
   border-top: 0;
+  border-left: 3px solid #ddd;
   position: relative;
   background: transparent;
   *zoom: 1;
@@ -2071,13 +2072,16 @@ td .notes {
   line-height: 29px;
 }
 .Inputfield .PageListRoot .PageListSelectActionToggle {
-  padding: 7px 8px!important;
+  padding: 0.7em 1em!important;
   color: #444444 !important;
   color: #fff!important;
-  background: #444444;
-  border: 1px solid rgba(0, 0, 0, 0.15);
+  background: #2a8dd4;
+  -webkit-box-shadow: inset 0 -0.2em rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: inset 0 -0.2em rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0 -0.2em rgba(0, 0, 0, 0.1);
+  border-radius: 0.3em;
   text-transform: uppercase;
-  font-size: 11px;
+  font-size: 12px;
   font-weight: bold;
 }
 .Inputfield .PageListRoot .PageListSelectActionToggle:hover {
@@ -2085,6 +2089,9 @@ td .notes {
 }
 .Inputfield .PageListRoot > .PageList {
   margin: 4px 0 0 0!important;
+}
+.InputfieldButton {
+  margin-bottom: 0;
 }
 .InputfieldFieldsetOpen .Inputfields .Inputfield > label.ui-widget-header,
 .InputfieldFieldsetOpen .Inputfields .Inputfield > .ui-widget-content {
@@ -2100,7 +2107,7 @@ td .notes {
 }
 .InputfieldStateCollapsed > label.ui-widget-header {
   color: #444444;
-  border-bottom: 1px solid #ddd;
+  border-color: #999999;
 }
 .InputfieldStateCollapsed > label.ui-widget-header .ui-icon {
   color: #444444 !important;
@@ -2280,7 +2287,6 @@ td .notes {
   position: relative;
 }
 .InputfieldRepeaterAddItem .InputfieldRepeaterAddLink {
-  background: #eeeeee;
   font-weight: bold;
   color: #444444;
   display: inline-block;
@@ -2534,7 +2540,6 @@ td .notes {
   margin-top: -0.2em;
 }
 .Inputfield_language_files .ui-widget .InputfieldFileLanguageInfo .actions a {
-  background: #eeeeee;
   font-weight: bold;
   color: #444444;
   display: inline-block;
@@ -2565,12 +2570,67 @@ td .notes {
 .Inputfield_language_files .ui-widget .InputfieldFileLanguageInfo .actions a:hover {
   background: #d52978;
 }
+.InputfieldPageListSelectMultiple ol li,
+#content .InputfieldPageAutocomplete ol li,
+.Inputfields .asmListItem {
+  margin-bottom: 0.2em !important;
+}
+.InputfieldPageListSelectMultiple ol li.ui-state-default,
+#content .InputfieldPageAutocomplete ol li.ui-state-default,
+.Inputfields .asmListItem {
+  background: #fff !important;
+}
+.InputfieldPageListSelectMultiple ol li.ui-state-hover,
+#content .InputfieldPageAutocomplete ol li.ui-state-hover,
+.Inputfields .asmListItem.ui-state-hover {
+  background: #f2673a !important;
+}
+.asmListItemLabel,
+.asmListItemStatus,
+.InputfieldPageListSelectMultiple ol li .itemLabel,
+#content .InputfieldPageAutocomplete ol li .itemLabel {
+  padding: 0.5em 0.6em !important;
+  vertical-align: middle;
+}
+.asmListItemRemove,
+#content .InputfieldPageAutocomplete ol li .itemRemove {
+  padding: 0.4em !important;
+}
+.itemRemove .ui-icon {
+  margin: 0em !important;
+  line-height: 1.2em;
+  top: 1em !important;
+  vertical-align: bottom;
+}
+.itemRemove .ui-icon:before {
+  font-size: 18px !important;
+  margin: 0 0.2em;
+  top: 0.4em !important;
+  vertical-align: bottom;
+}
+.asmListItemRemove:hover,
+#content .InputfieldPageAutocomplete ol li .itemRemove:hover {
+  color: #444444 !important;
+}
+span.asmListItemDesc {
+  padding: 0.5em 0 !important;
+}
+span.asmListItemStatus {
+  padding: 0.5em 0 !important;
+}
+span.asmListItemStatus .ui-icon {
+  top: 0.1em;
+  padding: 0 0.2em;
+}
 .PageListPage {
   font-weight: bold;
   line-height: 1.8em;
   padding-left: 1em;
   display: inline-block;
-  vertical-align: text-bottom;
+  vertical-align: middle;
+}
+.PageListPage .PageListNote {
+  vertical-align: text-top;
 }
 .PageListID1 > .PageListPage {
   padding: 0;
@@ -2687,7 +2747,7 @@ td .notes {
   background: #ccc;
   border-radius: 1em;
   padding: 0.4em !important;
-  vertical-align: text-bottom;
+  vertical-align: text-top;
 }
 .PageListItem .PageListActions li {
   border: none;
@@ -2696,6 +2756,9 @@ td .notes {
   background: #fff;
   padding: 8px 1%!important;
   width: 98%!important;
+}
+.PageListRootHidden > .PageList > .PageListItem:first-child {
+  margin-top: -0.5em;
 }
 .PageListItem.PageListID1 {
   padding-top: 0 !important;
@@ -2716,6 +2779,7 @@ td .notes {
 .PageListRoot > .PageList > .PageListItem:before {
   display: none;
 }
+.PageListRootHidden > .PageList > .PageListItem:first-child:after,
 .PageListRoot > .PageList > .PageListItem:after {
   display: none;
 }
@@ -2745,9 +2809,6 @@ td .notes {
 }
 .PageList .PageListItem.PageListItemOpen > .PageListPage {
   color: #444444;
-}
-.PageList .PageListItem.PageListItemOpen .PageListActions {
-  display: inline-block !important;
 }
 .PageList .PageListItem.PageListItemOpen .PageListNumChildren {
   color: #f2673a;
@@ -2876,11 +2937,12 @@ ul.PageListPagination {
   float: left;
   height: auto !important;
   display: block !important;
-  margin: 0 -1.5em !important;
+  margin: 0 -1.3em !important;
 }
 ul.MarkupPagerNav li,
 ul.PageListPagination li {
   margin: -1px 0;
+  line-height: 18px;
   padding: 0 !important;
   display: block;
   float: left;
@@ -2889,8 +2951,8 @@ ul.PageListPagination li {
 }
 ul.MarkupPagerNav li a,
 ul.PageListPagination li a {
-  border-radius: 50%;
-  background: transparent;
+  border-radius: 2em;
+  background: transparent ;
   color: #2a8dd4;
   padding: 8px;
   min-width: 10px;
@@ -2954,7 +3016,7 @@ ul.PageListPagination .ui-priority-secondary:hover:before {
   content: "";
   position: absolute;
   width: 0.6em;
-  left: 1.1em;
+  left: 0.8em;
   margin-top: -0.2em;
   top: -0.8em;
   z-index: -1;
@@ -3429,38 +3491,4 @@ ul.changes .details {
 }
 #content > h2 {
   display: none;
-}
-.InputfieldPageListSelectMultiple ol li,
-#content .InputfieldPageAutocomplete ol li,
-.Inputfields .asmListItem {
-  background: #fff !important;
-  margin-bottom: 0.2em !important;
-}
-#content .InputfieldPageAutocomplete ol li:hover,
-.Inputfields .asmListItem:hover {
-  background: #f2673a !important;
-}
-.asmListItemLabel,
-.asmListItemStatus,
-.InputfieldPageListSelectMultiple ol li .itemLabel,
-#content .InputfieldPageAutocomplete ol li .itemLabel {
-  padding: 0.5em 0.6em !important;
-}
-.asmListItemRemove,
-#content .InputfieldPageAutocomplete ol li .itemRemove {
-  padding: 0.4em !important;
-}
-.asmListItemRemove:hover,
-#content .InputfieldPageAutocomplete ol li .itemRemove:hover {
-  color: #444444 !important;
-}
-span.asmListItemDesc {
-  padding: 0.5em 0 !important;
-}
-span.asmListItemStatus {
-  padding: 0.5em 0 !important;
-}
-span.asmListItemStatus .ui-icon {
-  top: 0.1em;
-  padding: 0 0.2em;
 }
