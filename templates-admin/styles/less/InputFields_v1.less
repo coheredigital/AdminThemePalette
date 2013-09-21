@@ -25,11 +25,11 @@
 }
 
 .Inputfield{
-	// box-shadow: 0 2px 0 rgba(0, 0, 0, 0.1);
-	// border-radius:  5px;
+	box-shadow: 0 2px 0 rgba(0, 0, 0, 0.1);
+	border-radius:  5px;
 	margin-bottom: 1em;
 	clear: both;
-	background: #fafafa;
+	background: #fff;
 	padding: 0 !important;
 	input, select, textarea{
 		background: #f7f7f7;
@@ -53,21 +53,20 @@
 		margin: 0;
 		padding: 0.8em;
 		padding-bottom: 0.9em;
-		// border-radius: 4px 4px 0 0;
+		border-radius: 4px 4px 0 0;
 		display: block;
-		background: @grayDark;
+		// background: @blue;
 		height: 1em;
 		
 		// color: darken(@orange, 10%);
-		// color: @blue;
+		color: @blue;
 		// color: lighten(@blue, 30%);
-		color: @gray;
-		// border: 1px solid @InputBorder;
+		border: 1px solid @InputBorder;
 		border-bottom-width: 0;
 
 		.ui-icon{
 			// color: lighten(@blue, 20%) !important;
-			color: @gray !important;
+			color: @blue !important;
 			font-size: 1.3em;
 			margin-left: 0.5em !important;
 			&:hover{
@@ -77,12 +76,12 @@
 	}
 
 	> .ui-widget-content {
-		// border-radius:  0 0 4px 4px;
+		border-radius:  0 0 4px 4px;
 		padding: 1.2em 1em;
 		// padding-top: 0;
 		border-top: 0;
-		// border-left: 1px solid @InputBorder;
-		// border: 1px solid @InputBorder;
+		border-left: 1px solid @InputBorder;
+		border: 1px solid @InputBorder;
 		border-top: 0;
 		position: relative;
 		background: transparent;
@@ -144,8 +143,8 @@
 	opacity: 0.6;
 
 	> label.ui-widget-header{
-		// border-radius: 4px;
-		// border-bottom-width: 1px;
+		border-radius: 4px;
+		border-bottom-width: 1px;
 	}
 }
 
