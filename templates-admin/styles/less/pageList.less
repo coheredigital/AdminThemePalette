@@ -1,20 +1,20 @@
 
-.PageListPage{
+#content .PageListPage{
 	// font-size: 16px;
 	font-weight: bold;
-	line-height: 18px;
+	line-height: 22px !important;
 	display: inline-block;
-	vertical-align: middle;
-
+	vertical-align: baseline;
+	padding: 0 10px 0 5px;
+	margin-left: -2px;
+	text-transform: uppercase;
 }
 .PageListID1 > .PageListPage {
 	padding: 0;
 }
 
-.PageListPage,
-.PageListPage:hover {
+.PageListPage {
 	color: @blue;
-	background: transparent!important;
 }
 
 .PageListPage:hover {
@@ -29,7 +29,9 @@
 	display: inline-block;
 	vertical-align: baseline;
 	// margin-top: -8px;
-	margin: 0 8px 0 2px;
+	position: relative;
+	// top: 1px;
+	margin: 0 8px 0 1px;
 	z-index: 5;
 	border-radius: 50%;
 	// border: 3px solid #fff;
@@ -68,13 +70,15 @@
 	position: relative;
 	// border-left: 2px dotted #ddd;
 	margin: 0!important;
-	padding: 0 0 0 24px;
+	padding: 0 0 0 23px;
 	.PageListItem + .PageListActions{
 		margin-bottom: 12px !important;
 		display: block;
 		.PageListActionMore{
 			background: @blue;
 			padding: 8px 12px;
+			text-transform: uppercase;
+			font-weight: bold;
 			border-radius: 3px;
 			margin: -3px;
 			.box-shadow(inset 0 -0.2em 0 rgba(0,0,0,0.1));
@@ -100,7 +104,7 @@
 	margin-top: -3px;
 	top: -1.6em;
 	z-index: 0;
-	bottom: -1.6em;
+	bottom: -20px;
 	border-left: 1px dotted #ccc;
 }
 .PageListRoot > .PageList:before,
@@ -117,31 +121,46 @@
 
 .PageListItem {
 	position: relative;
-	clear: both;
-	line-height: 24px;
-	padding: 0.8em 1em !important;
+	clear: both !important;
+	line-height: 21px !important;
+	padding: 10px 12px !important;
 	padding-right: 0 !important;
 	&.PageListStatusUnpublished a{
 			color: @gray;
 		}
 	.PageListActions {
 		margin-left: 1em !important;
-		background: #999;
+		background: #e5e5e5;
 		// background: #aaa;
 		border-radius: 1em;
-		padding: 0.4em !important;
+		padding: 3px !important;
+		// margin: -2px;
 		// line-height: 24px;
-		vertical-align: text-top;
+		vertical-align: middle !important;
 		li{
 			border: none;
 		}
 
+		a {
+			margin: 0 0.7em!important;
+		    padding: 0;
+		    // color: #fff;
+		    color: #888;
+		    text-transform: uppercase;
+		    font-weight: bold;
+		}
+		a:hover{
+			color: @grayDark;
+		}
 	}
 
 	&.ui-sortable-helper{
-		background: #fff;
-		padding: 8px 1%!important;
-		width: 98%!important;
+		.PageListMoveNote,
+		&.PageListItem:after,
+		&.PageListItem:before{
+			display: none !important;
+	 	}
+			
 	}
 	.PageListNote{
 		vertical-align: text-bottom;
@@ -156,9 +175,9 @@
 .PageListItem:before {
 	content: "";
 	position: absolute;
-	width: 1em;
+	width: 14px;
 	left: -4px;
-	margin-top: -1px;
+
 	top: 50%;
 	border-bottom: 1px solid #ccc;
 	z-index: 1;
@@ -204,15 +223,6 @@
 }
 
 .PageList .PageListItem.PageListItemOpen{
-	background: transparent;
-
-	> .PageListPage{
-		// color: @grayDark;
-	}
-	.PageListActions{
-		// display: inline-block !important;
-	}
-
 	.PageListNumChildren{
 		color: @orange;
 	}
@@ -256,23 +266,7 @@
 	vertical-align: text-bottom;
 }
 
-.PageList .PageListActionMore,
-.PageListItem .PageListActions{
-	a {
-		margin: 0 0.7em!important;
-	    padding: 0;
-	    // color: #fff;
-	    color: #fff;
-	    text-transform: uppercase;
-	    font-weight: bold;
-	}
-	a:hover{
-		// background: #fff;
-		color: #fff;
-		// color: darken(@orange, 20%);
-		color: @grayDark;
-	}
-}
+
 
 .PageListSelectActionToggle{
 	padding: 4px!important;
@@ -282,16 +276,25 @@
 
 
 
-.PageListSortItem{
-	background: #fff !important;
+#content .PageListSortItem{
+	// background: #fff !important;
 	font-size: 14px !important;
-	line-height: 1em !important;
+	line-height: 20px !important;
+
+	// &.PageListItem:after,
+	// &.PageListItem:before{
+	// 	display: none !important;
+ // 	}
 	.PageListNumChildren{
 		color: #444 !important;
 		display: none !important;
 	}
 	.PageListPage{
-		vertical-align: baseline;
+		background: #444 !important;
+		border-radius: 1em;
+		color: #fff;
+		// border: 1px solid #bbb !important;
+		// vertical-align: baseline;
 		// color: #fff !important;
 	}
 }
@@ -305,7 +308,7 @@
 	// margin: 0 0 -1px 0!important;
 	background: transparent!important;
 	border: none!important;
-	border-bottom: 2px dashed darken(@baseSoft, 20%)!important;
+	border-bottom: 1px dashed darken(@baseSoft, 20%)!important;
 	width: auto!important;
 	z-index: 10;
 }
@@ -314,43 +317,68 @@
 	width: 0px !important;
 	position: absolute;
 	left: -6px;
-	top: -9px;
+	top: -8px;
 	padding: 0;
 	height: 0px !important 	;
 	border-style: solid;
-	border-width: 10px 0 10px 14px;
+	border-width: 8px 0 8px 10px;
 	z-index: 10;
-	border-color: transparent transparent transparent @green;
+	border-color: transparent transparent transparent @blue;
 }
 
 .PageListSortPlaceholder:after {
 	content : "";
-	width: 16px !important;
-	height: 10px !important ;
-	background: @green;
+	width: 12px !important;
+	height: 6px !important ;
+	background: @blue;
 	position: absolute;
-	left: -16px;
-	top: -4px;
+	left: -12px;
+	top: -3px;
 	padding: 0;
 }
 
+
  .PageListPlaceholder{
-	// overflow: hidden;
  	.PageListPlaceholderItem{
-		border: 2px dashed darken(@baseSoft, 20%) !important;
-		background: @baseSoft;
-		height: 3em !important;
+		border: 1px dashed #aaa !important;
+		background: #f6f6f6 !important;
+		position: relative;
+		width: 150px;
+		height: 22px !important;
+		border-radius: 11px;
 		padding: 0 !important;
-		margin: 0 0 2em 0 !important;
+		margin: 0 12px 18px 12px !important;
  	}
+
+}
+
+.PageListPlaceholderItem:before {
+	content: "";
+	position: absolute;
+	width: 14px;
+	left: -15px;
+
+	top: 50%;
+	border-bottom: 1px solid #ccc;
+	z-index: 1;
+}
+.PageListPlaceholderItem:after {
+	content: "";
+	position: absolute;
+	left: -17px;
+	top: -20px;
+	bottom: -12px;
+	border-left: 1px solid #ccc;
+	z-index: 1;
 }
 
 
 .PageListMoveNote{
 	font-weight: bold;
-	vertical-align: middle;
-	color: lighten(@base, 40%) ;
+	color: @gray;
 	margin-left: 1em;
+	font-size: 1em !important;
+	padding: 0 !important;
 	text-transform: uppercase;
 	> a{
 		// position: absolute;
@@ -358,17 +386,14 @@
 		background: @red;
 		color: lighten(@red, 30%) !important;
 		display: inline-block;
-		vertical-align: middle;
-		position: relative;
-		// height: 100%;
-		top: -0.1em;
 		margin: 0 1em!important;
 		padding: 0 1em !important;
-		line-height: 2em;
-		border-radius: 2em
+		line-height: 22px;
+		border-radius: 11px;
 	}	
 	> a:hover{
 		background: @redDark;
+		color: #fff !important;
 		// color: lighten(@red, 10%) !important;
 	}
 }
@@ -392,7 +417,7 @@ ul.PageListPagination{
 	margin: 0 -16px!important;
 	li{
 		margin: 0 0 0 1px;
-		line-height: 18px;
+		line-height: 14px;
 		// background-color: transparent !important;
 		padding: 0 !important;
 		display: block;
@@ -400,10 +425,9 @@ ul.PageListPagination{
 		background: transparent;
 		border: none;
 		a{
-			border-radius: 2em;
 			background: transparent ;
-			color: @blue;
-			padding: 8px;
+			color: @gray;
+			padding: 6px;
 			min-width:10px;
 			height: 10px;
 			font-weight: bold;
@@ -413,8 +437,8 @@ ul.PageListPagination{
 			display: block;
 		}
 		a:hover{
-			background-color: #444;
-			color: #fff;
+			// background-color: #444;
+			color: @grayDark;
 		}
 		&:first-child{
 			margin: 0;
@@ -423,8 +447,8 @@ ul.PageListPagination{
 	
 	.PageListPaginationCurrent{
 		a{
-			background: #bbb !important;
-			color: #fff !important;
+			// background: @grayDark !important;
+			color: @blue !important;
 			opacity: 1!important;
 		}
 	}
@@ -443,13 +467,13 @@ ul.PageListPagination{
 	}	
 	a.ui-priority-secondary:before{
 		color: #bbb;
-		font-size: 14px;
+		font-size: 12px;
 		vertical-align: middle;
 		line-height: 12px;
 		  font-family: FontAwesome;
 		display: inline-block;
 		text-align: center;
-		 content: "\f054";
+		content: "\f054";
 	}
 
 	li:first-child .ui-priority-secondary:before{
@@ -467,12 +491,12 @@ ul.PageListPagination{
 	content: "";
 	position: absolute;
 	width: 0;
-	left: 10px;
+	left: 11px;
 	margin-top: -0.2em;
-	top: -10px;
+	top: -8px;
 	z-index: -1;
 	bottom: 100%;
-	border-left: 2px solid #ddd;
+	border-left: 1px solid #ccc;
 }
 #ProcessPageSearchResults > .MarkupPagerNav{
 	margin-top: 0 !important;
@@ -513,10 +537,10 @@ ul.PageListPagination{
 
 	background: @grayDark;
 	display: block;
-	height: 10px;
-	width: 10px;
+	height: 11px;
+	width: 11px;
 	position: absolute;
-	left: 16px;
+	left: 15px;
 	padding: 0 !important;
 	margin: -5px 0 0 0 !important;
 	top: 50%;

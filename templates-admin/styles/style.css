@@ -1432,11 +1432,6 @@ input#columnWidth {
 .langTabs.ui-tabs .ui-tabs-panel {
   margin-bottom: 0;
 }
-.ui-sortable-helper {
-  -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
-  -moz-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
-  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
-}
 input {
   vertical-align: middle;
 }
@@ -1549,6 +1544,7 @@ body {
   z-index: 5;
 }
 #footer {
+  border-top: 1px dashed #ccc;
   position: relative;
   bottom: 0;
   right: 0;
@@ -2017,13 +2013,13 @@ td .notes {
 .Inputfield {
   margin-bottom: 1em;
   clear: both;
-  background: #fafafa;
+  background: #f8f8f8;
   padding: 0 !important;
 }
 .Inputfield input,
 .Inputfield select,
 .Inputfield textarea {
-  background: #f7f7f7;
+  background: #fff;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -2037,8 +2033,7 @@ td .notes {
 .Inputfield input:focus,
 .Inputfield select:focus,
 .Inputfield textarea:focus {
-  box-shadow: 0 2px 0 #43b979;
-  border-color: #43b979;
+  border-color: #2a8dd4;
   background: #fff;
 }
 .Inputfield > label.ui-widget-header {
@@ -2623,19 +2618,20 @@ span.asmListItemStatus .ui-icon {
   top: 0.1em;
   padding: 0 0.2em;
 }
-.PageListPage {
+#content .PageListPage {
   font-weight: bold;
-  line-height: 18px;
+  line-height: 22px !important;
   display: inline-block;
-  vertical-align: middle;
+  vertical-align: baseline;
+  padding: 0 10px 0 5px;
+  margin-left: -2px;
+  text-transform: uppercase;
 }
 .PageListID1 > .PageListPage {
   padding: 0;
 }
-.PageListPage,
-.PageListPage:hover {
+.PageListPage {
   color: #2a8dd4;
-  background: transparent!important;
 }
 .PageListPage:hover {
   color: #f2673a;
@@ -2647,7 +2643,8 @@ span.asmListItemStatus .ui-icon {
   width: 10px;
   display: inline-block;
   vertical-align: baseline;
-  margin: 0 8px 0 2px;
+  position: relative;
+  margin: 0 8px 0 1px;
   z-index: 5;
   border-radius: 50%;
 }
@@ -2669,7 +2666,7 @@ span.asmListItemStatus .ui-icon {
 .PageList {
   position: relative;
   margin: 0!important;
-  padding: 0 0 0 24px;
+  padding: 0 0 0 23px;
 }
 .PageList .PageListItem + .PageListActions {
   margin-bottom: 12px !important;
@@ -2678,6 +2675,8 @@ span.asmListItemStatus .ui-icon {
 .PageList .PageListItem + .PageListActions .PageListActionMore {
   background: #2a8dd4;
   padding: 8px 12px;
+  text-transform: uppercase;
+  font-weight: bold;
   border-radius: 3px;
   margin: -3px;
   -webkit-box-shadow: inset 0 -0.2em 0 rgba(0, 0, 0, 0.1);
@@ -2700,7 +2699,7 @@ span.asmListItemStatus .ui-icon {
   margin-top: -3px;
   top: -1.6em;
   z-index: 0;
-  bottom: -1.6em;
+  bottom: -20px;
   border-left: 1px dotted #ccc;
 }
 .PageListRoot > .PageList:before,
@@ -2715,9 +2714,9 @@ span.asmListItemStatus .ui-icon {
 }
 .PageListItem {
   position: relative;
-  clear: both;
-  line-height: 24px;
-  padding: 0.8em 1em !important;
+  clear: both !important;
+  line-height: 21px !important;
+  padding: 10px 12px !important;
   padding-right: 0 !important;
 }
 .PageListItem.PageListStatusUnpublished a {
@@ -2725,18 +2724,28 @@ span.asmListItemStatus .ui-icon {
 }
 .PageListItem .PageListActions {
   margin-left: 1em !important;
-  background: #999;
+  background: #e5e5e5;
   border-radius: 1em;
-  padding: 0.4em !important;
-  vertical-align: text-top;
+  padding: 3px !important;
+  vertical-align: middle !important;
 }
 .PageListItem .PageListActions li {
   border: none;
 }
-.PageListItem.ui-sortable-helper {
-  background: #fff;
-  padding: 8px 1%!important;
-  width: 98%!important;
+.PageListItem .PageListActions a {
+  margin: 0 0.7em!important;
+  padding: 0;
+  color: #888;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.PageListItem .PageListActions a:hover {
+  color: #444444;
+}
+.PageListItem.ui-sortable-helper .PageListMoveNote,
+.PageListItem.ui-sortable-helper.PageListItem:after,
+.PageListItem.ui-sortable-helper.PageListItem:before {
+  display: none !important;
 }
 .PageListItem .PageListNote {
   vertical-align: text-bottom;
@@ -2750,9 +2759,8 @@ span.asmListItemStatus .ui-icon {
 .PageListItem:before {
   content: "";
   position: absolute;
-  width: 1em;
+  width: 14px;
   left: -4px;
-  margin-top: -1px;
   top: 50%;
   border-bottom: 1px solid #ccc;
   z-index: 1;
@@ -2788,9 +2796,6 @@ span.asmListItemStatus .ui-icon {
 .PageListItem:hover > .PageListNumChildren {
   color: #444444;
 }
-.PageList .PageListItem.PageListItemOpen {
-  background: transparent;
-}
 .PageList .PageListItem.PageListItemOpen .PageListNumChildren {
   color: #f2673a;
 }
@@ -2821,34 +2826,22 @@ span.asmListItemStatus .ui-icon {
   padding: 0;
   vertical-align: text-bottom;
 }
-.PageList .PageListActionMore a,
-.PageListItem .PageListActions a {
-  margin: 0 0.7em!important;
-  padding: 0;
-  color: #fff;
-  text-transform: uppercase;
-  font-weight: bold;
-}
-.PageList .PageListActionMore a:hover,
-.PageListItem .PageListActions a:hover {
-  color: #fff;
-  color: #444444;
-}
 .PageListSelectActionToggle {
   padding: 4px!important;
   color: #fff!important;
 }
-.PageListSortItem {
-  background: #fff !important;
+#content .PageListSortItem {
   font-size: 14px !important;
-  line-height: 1em !important;
+  line-height: 20px !important;
 }
-.PageListSortItem .PageListNumChildren {
+#content .PageListSortItem .PageListNumChildren {
   color: #444 !important;
   display: none !important;
 }
-.PageListSortItem .PageListPage {
-  vertical-align: baseline;
+#content .PageListSortItem .PageListPage {
+  background: #444 !important;
+  border-radius: 1em;
+  color: #fff;
 }
 .PageListSortPlaceholder {
   height: 0!important;
@@ -2856,7 +2849,7 @@ span.asmListItemStatus .ui-icon {
   position: relative;
   background: transparent!important;
   border: none!important;
-  border-bottom: 2px dashed #b4b4b4 !important;
+  border-bottom: 1px dashed #b4b4b4 !important;
   width: auto!important;
   z-index: 10;
 }
@@ -2865,36 +2858,58 @@ span.asmListItemStatus .ui-icon {
   width: 0px !important;
   position: absolute;
   left: -6px;
-  top: -9px;
+  top: -8px;
   padding: 0;
   height: 0px !important 	;
   border-style: solid;
-  border-width: 10px 0 10px 14px;
+  border-width: 8px 0 8px 10px;
   z-index: 10;
-  border-color: transparent transparent transparent #43b979;
+  border-color: transparent transparent transparent #2a8dd4;
 }
 .PageListSortPlaceholder:after {
   content: "";
-  width: 16px !important;
-  height: 10px !important ;
-  background: #43b979;
+  width: 12px !important;
+  height: 6px !important ;
+  background: #2a8dd4;
   position: absolute;
-  left: -16px;
-  top: -4px;
+  left: -12px;
+  top: -3px;
   padding: 0;
 }
 .PageListPlaceholder .PageListPlaceholderItem {
-  border: 2px dashed #b4b4b4 !important;
-  background: #e7e7e7;
-  height: 3em !important;
+  border: 1px dashed #aaa !important;
+  background: #f6f6f6 !important;
+  position: relative;
+  width: 150px;
+  height: 22px !important;
+  border-radius: 11px;
   padding: 0 !important;
-  margin: 0 0 2em 0 !important;
+  margin: 0 12px 18px 12px !important;
+}
+.PageListPlaceholderItem:before {
+  content: "";
+  position: absolute;
+  width: 14px;
+  left: -15px;
+  top: 50%;
+  border-bottom: 1px solid #ccc;
+  z-index: 1;
+}
+.PageListPlaceholderItem:after {
+  content: "";
+  position: absolute;
+  left: -17px;
+  top: -20px;
+  bottom: -12px;
+  border-left: 1px solid #ccc;
+  z-index: 1;
 }
 .PageListMoveNote {
   font-weight: bold;
-  vertical-align: middle;
-  color: #aaaaaa;
+  color: #999999;
   margin-left: 1em;
+  font-size: 1em !important;
+  padding: 0 !important;
   text-transform: uppercase;
 }
 .PageListMoveNote > a {
@@ -2902,16 +2917,14 @@ span.asmListItemStatus .ui-icon {
   background: #d12b33;
   color: #eda8ab !important;
   display: inline-block;
-  vertical-align: middle;
-  position: relative;
-  top: -0.1em;
   margin: 0 1em!important;
   padding: 0 1em !important;
-  line-height: 2em;
-  border-radius: 2em;
+  line-height: 22px;
+  border-radius: 11px;
 }
 .PageListMoveNote > a:hover {
   background: #a72229;
+  color: #fff !important;
 }
 ul.MarkupPagerNav,
 ul.PageListPagination {
@@ -2929,7 +2942,7 @@ ul.PageListPagination {
 ul.MarkupPagerNav li,
 ul.PageListPagination li {
   margin: 0 0 0 1px;
-  line-height: 18px;
+  line-height: 14px;
   padding: 0 !important;
   display: block;
   float: left;
@@ -2938,10 +2951,9 @@ ul.PageListPagination li {
 }
 ul.MarkupPagerNav li a,
 ul.PageListPagination li a {
-  border-radius: 2em;
   background: transparent ;
-  color: #2a8dd4;
-  padding: 8px;
+  color: #999999;
+  padding: 6px;
   min-width: 10px;
   height: 10px;
   font-weight: bold;
@@ -2952,8 +2964,7 @@ ul.PageListPagination li a {
 }
 ul.MarkupPagerNav li a:hover,
 ul.PageListPagination li a:hover {
-  background-color: #444;
-  color: #fff;
+  color: #444444;
 }
 ul.MarkupPagerNav li:first-child,
 ul.PageListPagination li:first-child {
@@ -2961,8 +2972,7 @@ ul.PageListPagination li:first-child {
 }
 ul.MarkupPagerNav .PageListPaginationCurrent a,
 ul.PageListPagination .PageListPaginationCurrent a {
-  background: #bbb !important;
-  color: #fff !important;
+  color: #2a8dd4 !important;
   opacity: 1!important;
 }
 ul.MarkupPagerNav a.ui-priority-secondary,
@@ -2982,7 +2992,7 @@ ul.PageListPagination a.ui-priority-secondary.ui-state-hover {
 ul.MarkupPagerNav a.ui-priority-secondary:before,
 ul.PageListPagination a.ui-priority-secondary:before {
   color: #bbb;
-  font-size: 14px;
+  font-size: 12px;
   vertical-align: middle;
   line-height: 12px;
   font-family: FontAwesome;
@@ -3007,12 +3017,12 @@ ul.PageListPagination .ui-priority-secondary:hover:before {
   content: "";
   position: absolute;
   width: 0;
-  left: 10px;
+  left: 11px;
   margin-top: -0.2em;
-  top: -10px;
+  top: -8px;
   z-index: -1;
   bottom: 100%;
-  border-left: 2px solid #ddd;
+  border-left: 1px solid #ccc;
 }
 #ProcessPageSearchResults > .MarkupPagerNav {
   margin-top: 0 !important;
@@ -3070,10 +3080,10 @@ ul.PageListPagination .ui-priority-secondary:hover:before {
 #content .PageListLoading {
   background: #444444;
   display: block;
-  height: 10px;
-  width: 10px;
+  height: 11px;
+  width: 11px;
   position: absolute;
-  left: 16px;
+  left: 15px;
   padding: 0 !important;
   margin: -5px 0 0 0 !important;
   top: 50%;
