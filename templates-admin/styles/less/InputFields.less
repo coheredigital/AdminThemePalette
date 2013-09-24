@@ -27,7 +27,7 @@
 .Inputfield{
 	// box-shadow: 0 2px 0 rgba(0, 0, 0, 0.1);
 	// border-radius:  5px;
-	margin-bottom: 1em;
+	margin-bottom: 1.2em;
 	clear: both;
 	background: #f8f8f8;
 	padding: 0 !important;
@@ -77,13 +77,9 @@
 	}
 
 	> .ui-widget-content {
-		// border-radius:  0 0 4px 4px;
+
 		padding: 1.2em 1em;
-		// padding-top: 0;
-		border-top: 0;
-		// border-left: 1px solid @InputBorder;
-		// border: 1px solid @InputBorder;
-		// border-bottom: 1px solid #ddd;
+		border: 1px solid @InputBorder;
 		border-top: 0;
 		position: relative;
 		background: transparent;
@@ -115,20 +111,35 @@
 
 }
 
-.InputfieldFieldset {
+.InputfieldFieldset,
+.InputfieldFieldsetOpen {
+	> .ui-widget-content{
+		padding-bottom: 0 !important;
+	}
+	
 	.Inputfields{
 		.Inputfield{
 			margin-bottom: 1.2em;
-			.box-shadow(none) !important;
-			> label.ui-widget-header,
+			background: #fff;
+			> label.ui-widget-header{
+				background: #fff;
+				// color: #fff;
+				border: 1px solid @InputBorder;
+				border-bottom: 0;
+			}
 			> .ui-widget-content {
-				color: @baseLighter;
-				border-color: darken(@baseSoft, 8%);
 
+				
 			}
 		}
 		.Inputfield:last-child{
 			margin-bottom: 0.2em;
+		}
+		.InputfieldStateCollapsed{
+			> label.ui-widget-header{
+				border: 1px solid @InputBorder;
+			}
+			
 		}
 	}
 }
@@ -404,7 +415,6 @@
 		> .ui-widget-header.ui-state-highlight{
 			background: @yellow!important;
 			color: @grayDark!important;
-			.ui-icon {background-image: url(jqueryui/images/ui-icons.png)!important; }
 		}
 	}
 
@@ -530,7 +540,7 @@
 }
 .InputfieldStateToggle {
 	cursor: pointer;
-	span.ui-icon{float: right}
+	span.ui-icon{float: right;}
 }
 .InputfieldStateError{
 	.ui-widget-header{
