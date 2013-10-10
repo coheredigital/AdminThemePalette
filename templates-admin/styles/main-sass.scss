@@ -44,12 +44,13 @@ body {
 		background-color: $text-bg; 
 	}
 
-.container, 
-.ui-dialog,
-.ui-menu .ui-menu-item a {
+// this shouldn't be needed, set body font-size to a pixel value and go from there
+// .container, 
+// .ui-dialog,
+// .ui-menu .ui-menu-item a {
 	// line-height: $base-line-height; 
 	// font-size: $base-font-size; 
-}
+// }
 
 .container {
 	position: relative; 
@@ -57,7 +58,11 @@ body {
 	max-width: 1200px; 
 	margin: 0 auto; 
 }
-
+#wrapper .container{
+	width: auto;
+	padding: 0;
+	margin: 0 1.6em;
+}
 a {
 	/* standard link color */
 	color: $link-color; 
@@ -98,13 +103,19 @@ a {
 	left: -3px; 
 	margin-top: 0.7em; 
 }
-
+#wrapper{
+	box-shadow: $main-shadow;
+	position: relative;
+	z-index: 0;
+}
 
 #masthead {
 	// background: $masthead-bg; 
 	position: relative; 
-
+	z-index: 5;
 	#topnav {
+		z-index: 5;
+		position: relative;
 		float: left; 
 		// margin-top: 0.5em; 
 
@@ -113,6 +124,7 @@ a {
 			margin: 0;
 			list-style: none;
 			display: inline;
+			text-transform: uppercase;
 		}
 
 		> li > a {
@@ -130,7 +142,7 @@ a {
 
 		> li > a.hover, 
 		> li > a:hover {
-			background: $topnav-link-hover-bg;
+			// background: $topnav-link-hover-bg;
 			color: $topnav-link-hover-color; 
 			text-decoration: none; 
 		}
@@ -149,8 +161,8 @@ a {
 
 
 #breadcrumbs {
-	padding-top: 1em;
-	padding-bottom: 1em;
+	padding-top: 0.6em;
+	padding-bottom: 1.5em;
 	color: $breadcrumbs-color;
 	// background: $breadcrumbs-bg; 
 	border-bottom: $breadcrumbs-border; 
@@ -164,14 +176,15 @@ a {
 			padding: 0;
 			line-height: 1em;
 			white-space: nowrap;
-			padding-right: 0.5em;
 
+			padding-right: 0.5em;
+			text-transform: uppercase;
 
 		}
-
 		a {
 			color: $breadcrumbs-link-color; 
 			margin-right: 0.5em; 
+			font-size: 0.9em;
 		}
 
 		a:hover {
@@ -183,11 +196,7 @@ a {
 		a.sitelink {
 			float: left; 	
 
-			.ui-icon {
-				float: left; 
-				position: relative;
-				top: -2px; 	
-			}
+
 		}
 
 	}
@@ -200,19 +209,24 @@ a {
 	width: 25%; 
 	max-width: 200px; 
 	min-width: 90px; 
+	position: relative;
 
 	#ProcessPageSearchQuery {
 		margin: 0;
-		height: auto; 
-		padding: 0.4em 0.8em; 
+		height: 100%; 
+		padding: 0.8em 0.8em; 
 		font-size: 1em; 
 		width: 100%; 
-		background: $masthead-bg; 
+		background: $main-bg; 
+		text-align: right;
 		color: $white; 
 		border: 1px solid darken($breadcrumbs-bg, 10%); 
 		border: none; 
-		border-radius: $button-radius; 
+		// border-radius: $button-radius; 
 		outline: none; 
+	}	
+	#ProcessPageSearchQuery:hover {
+		background: darken($main-bg, 4%);
 	}
 		#ProcessPageSearchQuery:focus {
 			background: $text-bg; 
@@ -223,8 +237,8 @@ a {
 
 	#ProcessPageSearchStatus {
 		position: absolute;
-		top: 0;
-		right: 10px; 
+		top: 0.8em;
+		left: 1em; 
 		color: $light-text-color; 
 	}
 
@@ -235,8 +249,8 @@ a {
 	position: relative; 
 	z-index: 2; 
 	background: $headline-bg; 
-	// border-bottom: $headline-border; 
-	padding: 1.5em 0  0.5em; 
+	border-bottom: $headline-border; 
+	padding: 1.5em 0; 
 
 	.container {
 		position: relative; 
@@ -248,7 +262,7 @@ a {
 		/* The main/primary button for a listing screen, appears in the masthead */
 		position: absolute; 
 		margin: 0;
-		top: -0.5em;
+		top: -0.3em;
 		right: 0; 
 		z-index: 2;
 
@@ -285,9 +299,7 @@ a {
 	padding: 0;
 	z-index: 0; 
 }
-	#content .container {
-		min-height: 50px; 
-	}
+
 		#content .container > form,
 		#content .container > .ui-helper-clearfix > form {
 			position: relative;
@@ -1062,9 +1074,7 @@ body.modal {
 	top: $form-top-margin-adjustment; 
 }
 
-body:not(.hasWireTabs) #headline .container {
-	min-height: 40px; 
-}
+
 
 body.hasWireTabs #content {
 	border-top: 3em solid $headline-bg; 
@@ -1136,18 +1146,8 @@ body.hasWireTabs .InputfieldForm {
 /* All Mobile Sizes (devices and browser) */
 @media only screen and (max-width: 767px) {
 
-	#masthead {
-		padding-top: 0;
-	}
 
-	#masthead #topnav {
-		float: left; 
-	}
 
-	#breadcrumbs {
-		padding-top: 0.4em;
-		padding-bottom: 0.4em; 
-	}
 
 	body #masthead #topnav a,
 	body #content .WireTabs li a {

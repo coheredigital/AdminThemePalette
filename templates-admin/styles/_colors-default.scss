@@ -40,6 +40,7 @@ $brown: #821038;
 
 
 $main-bg: #333539;
+$main-shadow: 0 0 12px darken($main-bg, 5%);
 
 
 $subtle-bg: darken(#E8F0F5, 2%);
@@ -56,7 +57,7 @@ $masthead-secondary-border: none; /* 1px solid transparentize($subtle-bg, 0.9); 
 
 $headline-bg: #eee;  
 $headline-color: $gray; 
-$headline-border: 1px solid $headline-bg;
+$headline-border: 1px solid darken($headline-bg, 5%);
 
 $medium-text-color: #777; 
 $light-text-color: #999; 
@@ -64,14 +65,14 @@ $reverse-text-color: $white;
 
 $breadcrumbs-bg: $light-blue;
 $breadcrumbs-bg: $masthead-secondary-bg;
-$breadcrumbs-color: transparentize($text-color, 0.7); 
-$breadcrumbs-link-color: $white; 
-$breadcrumbs-link-hover-color: $text-color;
+$breadcrumbs-color: darken($main-bg, 12%); 
+$breadcrumbs-link-color: lighten($main-bg, 40%); 
+$breadcrumbs-link-hover-color: $white;
 $breadcrumbs-border: none; 
 
-$topnav-link-color: $reverse-text-color;
+$topnav-link-color: lighten($main-bg, 40%);
 $topnav-link-bg: none; 
-$topnav-link-hover-color: $pink;
+$topnav-link-hover-color: $white;
 $topnav-link-hover-bg: $white; 
 $topnav-link-current-color: $gray; 
 $topnav-link-current-bg: $headline-bg; 
@@ -128,7 +129,7 @@ $table-th-active-color: $blue;
 
 $pagelist-link-color: #333; 
 $pagelist-link-hover-color: $blue;
-$pagelist-link-open-color: $pink;
+$pagelist-link-open-color: $main-bg;
 $pagelist-link-open-bg: #ffffdd; 
 $pagelist-link-active-color: $dark-blue; 
 $pagelist-link-icon-color: $dark-pink; /*#CC0048; */

@@ -100,7 +100,7 @@ if(!$browserTitle) $browserTitle = __(strip_tags($page->get('title|name')), __FI
 	<div id='breadcrumbs'>
 		<div class='container'>
 
-			<?php echo tabIndent($searchForm, 3); ?>
+			
 
 			<ul class='nav'>
 
@@ -117,11 +117,12 @@ if(!$browserTitle) $browserTitle = __(strip_tags($page->get('title|name')), __FI
 	</div>
 
 	<?php endif; ?>	
-	
+
 	<div id="masthead" class="masthead ui-helper-clearfix">
 		<div class="container">
 
 			
+			<?php echo tabIndent($searchForm, 3); ?>
 
 			<ul id='topnav'>
 				<?php include($config->paths->adminTemplates . "topnav.inc"); ?>
@@ -149,32 +150,35 @@ if(!$browserTitle) $browserTitle = __(strip_tags($page->get('title|name')), __FI
 
 
 	<div class="container">
-		<div id="headline">
-			<div class="container">
-				<h1 id='title'><?php echo __(strip_tags($this->fuel->processHeadline ? $this->fuel->processHeadline : $page->get("title|name")), __FILE__); ?></h1>
+		<div id="wrapper">
+			<div id="headline">
+				<div class="container">
+					<h1 id='title'><?php echo __(strip_tags($this->fuel->processHeadline ? $this->fuel->processHeadline : $page->get("title|name")), __FILE__); ?></h1>
 
-				<?php 
-				if(in_array($page->id, array(2,3,8))) { // page-list
-					echo "<div id='head_button'>";
-					include($config->paths->adminTemplates . "shortcuts.inc"); 
-					echo "</div>";
-				}
-				?>
+					<?php 
+					if(in_array($page->id, array(2,3,8))) { // page-list
+						echo "<div id='head_button'>";
+						include($config->paths->adminTemplates . "shortcuts.inc"); 
+						echo "</div>";
+					}
+					?>
 
 
+				</div>
 			</div>
+			<div id="content" class="content fouc_fix">
+				<div class="container">
+
+					<?php if(trim($page->summary)) echo "<h2>{$page->summary}</h2>"; ?>
+
+					<?php if($page->body) echo $page->body; ?>
+
+					<?php echo $content?>
+
+				</div>
+			</div>	
 		</div>
-		<div id="content" class="content fouc_fix">
-			<div class="container">
 
-				<?php if(trim($page->summary)) echo "<h2>{$page->summary}</h2>"; ?>
-
-				<?php if($page->body) echo $page->body; ?>
-
-				<?php echo $content?>
-
-			</div>
-		</div>	
 	</div>
 
 

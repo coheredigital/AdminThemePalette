@@ -3412,6 +3412,12 @@ body.modal {
   margin: 0 auto;
 }
 
+#wrapper .container {
+  width: auto;
+  padding: 0;
+  margin: 0 1.6em;
+}
+
 a {
   /* standard link color */
   color: #f21e69;
@@ -3454,11 +3460,21 @@ a:active {
   margin-top: 0.7em;
 }
 
+#wrapper {
+  -webkit-box-shadow: 0 0 12px #27282c;
+  box-shadow: 0 0 12px #27282c;
+  position: relative;
+  z-index: 0;
+}
+
 #masthead {
   position: relative;
+  z-index: 5;
 }
 
 #masthead #topnav {
+  z-index: 5;
+  position: relative;
   float: left;
 }
 
@@ -3467,11 +3483,12 @@ a:active {
   margin: 0;
   list-style: none;
   display: inline;
+  text-transform: uppercase;
 }
 
 #masthead #topnav > li > a {
   background: none;
-  color: white;
+  color: #979aa2;
   display: block;
   float: left;
   margin: 0 2px 0 0;
@@ -3481,8 +3498,7 @@ a:active {
 
 #masthead #topnav > li > a.hover,
 #masthead #topnav > li > a:hover {
-  background: white;
-  color: #f21e69;
+  color: white;
   text-decoration: none;
 }
 
@@ -3496,28 +3512,30 @@ a:active {
 /* #masthead */
 
 #breadcrumbs {
-  padding-top: 1em;
-  padding-bottom: 1em;
-  color: rgba(34, 34, 34, 0.3);
+  padding-top: 0.6em;
+  padding-bottom: 1.5em;
+  color: #161719;
   border-bottom: none;
 }
 
 #breadcrumbs ul li {
-  color: rgba(34, 34, 34, 0.3);
+  color: #161719;
   display: inline-block;
   padding: 0;
   line-height: 1em;
   white-space: nowrap;
   padding-right: 0.5em;
+  text-transform: uppercase;
 }
 
 #breadcrumbs ul a {
-  color: white;
+  color: #979aa2;
   margin-right: 0.5em;
+  font-size: 0.9em;
 }
 
 #breadcrumbs ul a:hover {
-  color: #222222;
+  color: white;
   background: none;
   text-decoration: underline;
 }
@@ -3526,32 +3544,31 @@ a:active {
   float: left;
 }
 
-#breadcrumbs ul a.sitelink .ui-icon {
-  float: left;
-  position: relative;
-  top: -2px;
-}
-
 #ProcessPageSearchForm {
   float: right;
   margin: 0;
   width: 25%;
   max-width: 200px;
   min-width: 90px;
+  position: relative;
 }
 
 #ProcessPageSearchForm #ProcessPageSearchQuery {
   margin: 0;
-  height: auto;
-  padding: 0.4em 0.8em;
+  height: 100%;
+  padding: 0.8em 0.8em;
   font-size: 1em;
   width: 100%;
-  background: #418feb;
+  background: #333539;
+  text-align: right;
   color: white;
   border: 1px solid #388aea;
   border: none;
-  border-radius: 5px;
   outline: none;
+}
+
+#ProcessPageSearchForm #ProcessPageSearchQuery:hover {
+  background: #292b2e;
 }
 
 #ProcessPageSearchForm #ProcessPageSearchQuery:focus {
@@ -3563,8 +3580,8 @@ a:active {
 
 #ProcessPageSearchForm #ProcessPageSearchStatus {
   position: absolute;
-  top: 0;
-  right: 10px;
+  top: 0.8em;
+  left: 1em;
   color: #999999;
 }
 
@@ -3572,7 +3589,8 @@ a:active {
   position: relative;
   z-index: 2;
   background: #eeeeee;
-  padding: 1.5em 0  0.5em;
+  border-bottom: 1px solid #e1e1e1;
+  padding: 1.5em 0;
 }
 
 #headline .container {
@@ -3584,7 +3602,7 @@ a:active {
   /* The main/primary button for a listing screen, appears in the masthead */
   position: absolute;
   margin: 0;
-  top: -0.5em;
+  top: -0.3em;
   right: 0;
   z-index: 2;
 }
@@ -3615,10 +3633,6 @@ a:active {
   background: white;
   padding: 0;
   z-index: 0;
-}
-
-#content .container {
-  min-height: 50px;
 }
 
 #content .container > form,
@@ -3960,7 +3974,7 @@ ol,
 }
 
 .content .PageList .PageListItemOpen > a.PageListPage {
-  color: #f21e69;
+  color: #333539;
 }
 
 .content .PageList .PageListStatusHidden:not(.PageListItemOpen) > a.PageListPage {
@@ -4399,10 +4413,6 @@ body.modal #headline {
   top: 0;
 }
 
-body:not(.hasWireTabs) #headline .container {
-  min-height: 40px;
-}
-
 body.hasWireTabs #content {
   border-top: 3em solid #eeeeee;
 }
@@ -4468,19 +4478,6 @@ body.hasWireTabs #content {
 /* All Mobile Sizes (devices and browser) */
 
 @media only screen and (max-width: 767px) {
-  #masthead {
-    padding-top: 0;
-  }
-
-  #masthead #topnav {
-    float: left;
-  }
-
-  #breadcrumbs {
-    padding-top: 0.4em;
-    padding-bottom: 0.4em;
-  }
-
   body #masthead #topnav a,
   body #content .WireTabs li a {
     padding-left: 0.75em;
