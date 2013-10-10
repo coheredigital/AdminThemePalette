@@ -1,22 +1,23 @@
 <?php
 
-/**
- * ProcessWire 2.x Admin Markup Template
- *
- * Copyright 2012 by Ryan Cramer
- *
- *
- */
-
 $searchForm = $user->hasPermission('page-edit') ? $modules->get('ProcessPageSearch')->renderSearchForm() : '';
-$bodyClass = $input->get->modal ? 'modal' : '';
+$bodyClass = $input->get->modal ? 'modal ' : '';
+$bodyClass .= "id-{$page->id} template-{$page->template->name}";
 if(!isset($content)) $content = '';
-$config->styles->prepend($config->urls->adminTemplates . "styles/jqueryui/jqui.css");
-$config->styles->prepend($config->urls->adminTemplates . "styles/font-awesome/css/font-awesome.css");
-$config->styles->prepend($config->urls->adminTemplates . "styles/style.css");
-$config->scripts->append($config->urls->adminTemplates . "scripts/main.js");
-$config->scripts->append($config->urls->adminTemplates . "scripts/jquery.collagePlus.min.js");
-$config->scripts->append($config->urls->root . "wire/templates-admin/scripts/inputfields.js");
+
+$defaultColorTheme = 'default';
+if($input->get->colors && !$user->isGuest()) $colors = $sanitizer->pageName($input->get->colors); 
+	else if($session->adminThemeColors) $colors = $session->adminThemeColors; 
+	else if($config->adminThemeColors) $colors = $sanitizer->pageName($config->adminThemeColors); 
+	else $colors = $defaultColorTheme;
+
+if(is_file(dirname(__FILE__) . "/styles/main-$colors.css")) $session->adminThemeColors = $colors;
+	else $session->adminThemeColors = $defaultColorTheme;
+
+$config->styles->prepend($config->urls->adminTemplates . "styles/main-$session->adminThemeColors.css?v=6"); 
+$config->styles->append($config->urls->root . "wire/templates-admin/styles/font-awesome/css/font-awesome.min.css"); 
+$config->scripts->append($config->urls->root . "wire/templates-admin/scripts/inputfields.js?v=5"); 
+$config->scripts->append($config->urls->adminTemplates . "scripts/main.js?v=5"); 
 
 $browserTitle = wire('processBrowserTitle'); 
 if(!$browserTitle) $browserTitle = __(strip_tags($page->get('title|name')), __FILE__) . ' &bull; ProcessWire';
@@ -31,148 +32,180 @@ if(!$browserTitle) $browserTitle = __(strip_tags($page->get('title|name')), __FI
  * __("Modules"); 
  * __("Access"); 
  * __("Admin"); 
+ * __("Site"); 
+ * __("Languages"); 
+ * __("Users"); 
+ * __("Roles"); 
+ * __("Permissions"); 
+ * __("Templates"); 
+ * __("Fields"); 
+ * __("Add New"); 
+ * __("Not yet configured: See template family settings."); 
  * 
  */
 
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="<?php echo __('en', __FILE__); // HTML tag lang attribute
+	/* this intentionally on a separate line */ ?>"> 
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 	<meta name="robots" content="noindex, nofollow" />
-	<title><?php echo $browserTitle ?></title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title><?php echo $browserTitle; ?></title>
+
 	<script type="text/javascript">
-	<?php
-	$jsConfig = $config->js();
-	$jsConfig['debug'] = $config->debug;
-	$jsConfig['urls'] = array(
-		'root' => $config->urls->root,
-		'admin' => $config->urls->admin,
-		'modules' => $config->urls->modules,
-		'core' => $config->urls->core,
-		'files' => $config->urls->files,
-		'templates' => $config->urls->templates,
-		'adminTemplates' => $config->urls->adminTemplates,
-		);
-	?>
-	var config = <?php echo json_encode($jsConfig); ?>;
+		<?php
+
+		$jsConfig = $config->js();
+		$jsConfig['debug'] = $config->debug;
+		$jsConfig['urls'] = array(
+			'root' => $config->urls->root, 
+			'admin' => $config->urls->admin, 
+			'modules' => $config->urls->modules, 
+			'core' => $config->urls->core, 
+			'files' => $config->urls->files, 
+			'templates' => $config->urls->templates,
+			'adminTemplates' => $config->urls->adminTemplates,
+			); 
+
+		if(!empty($jsConfig['JqueryWireTabs'])) $bodyClass .= ' hasWireTabs'; 
+		?>
+
+		var config = <?php echo json_encode($jsConfig); ?>;
 	</script>
+
 	<?php foreach($config->styles->unique() as $file) echo "\n\t<link type='text/css' href='$file' rel='stylesheet' />"; ?>
-	<!--[if lt IE 9 ]>
-	<link rel="stylesheet" type="text/css" href="<? echo $config->urls->adminTemplates ?>styles/ie.css" />
+
+
+	<!--[if IE]>
+	<link rel="stylesheet" type="text/css" href="<?php echo $config->urls->adminTemplates; ?>styles/ie.css" />
+	<![endif]-->	
+
+	<!--[if lt IE 8]>
+	<link rel="stylesheet" type="text/css" href="<?php echo $config->urls->adminTemplates; ?>styles/ie7.css" />
 	<![endif]-->
+
 	<?php foreach($config->scripts->unique() as $file) echo "\n\t<script type='text/javascript' src='$file'></script>"; ?>
+
 </head>
+<body<?php if($bodyClass) echo " class='$bodyClass'"; ?>>
 
-<?php if($user->isGuest()):?>
+	<?php if(count($notices)) include($config->paths->adminTemplates . "notices.inc"); ?>
 
+	<?php if(!$user->isGuest()): ?>
 
-<body id="branded" class="login">
-	<?php if(count($notices)) include("notices.inc"); ?>
-	<div class="login-box">
-		<div id="logo">
-        	<img src="<?php echo $config->urls->adminTemplates ?>styles/images/logo.png">
-        </div>
-        <div class="login-form">
-        	<?php echo $content?>
-        </div>
-	</div>
-	<script>
-	$(document).ready(function() {
-		$(".Inputfields > .Inputfield > .ui-widget-header").unbind('click');
-	});
-	</script>
-</body>
+	<div id='breadcrumbs'>
+		<div class='container'>
 
+			<?php echo tabIndent($searchForm, 3); ?>
 
-<?php else: ?>
+			<ul class='nav'>
 
-
-<body <?php if($bodyClass) echo " class='$bodyClass'"; ?> >
-	<div id="wrapper">
-
-		<div id="header">
-			<div class="container">	
-				<!-- <img class=" logo" src="<?php echo $config->urls->adminTemplates ?>styles/images/logo.png"> -->
-
-				<div id="heading-text">
-					<h1><?php echo __(strip_tags($this->fuel->processHeadline ? $this->fuel->processHeadline : $page->get("title|name")), __FILE__); ?></h1>
-			    	<div id="summary"><?php if(trim($page->summary)) echo "<h2>{$page->summary}</h2>"; ?></div>
-				</div><div class="nav-wrap">					
-					<?php include("topnav.inc"); ?>
-				</div>	
-			</div>
-			<div id="bread">
-				<div class="container">
-					<ul id="breadcrumbs">
-					<?php
-						foreach($this->fuel('breadcrumbs') as $breadcrumb) {
-							$class = strpos($page->path, $breadcrumb->path) === 0 ? " class='active'" : '';
-							$title = __($breadcrumb->title, __FILE__);
-							echo "<li $class><a href='{$breadcrumb->url}'>{$title} </a> </li>";
-						}
-					?>
-					<li class="fright"><a target="_blank" id="view-site" href="<?php echo $config->urls->root; ?>"><?php echo __('Site', __FILE__); ?></a></li>
-					</ul>
-				</div>
-			</div>	
+				<?php
+				echo "<li><a class='sitelink' href='{$config->urls->root}'><i class='icon-home'></i></a><i class='icon-angle-right'></i></li>"; 
+				foreach($this->fuel('breadcrumbs') as $breadcrumb) {
+					$title = __($breadcrumb->title, __FILE__); 
+					echo "<li><a href='{$breadcrumb->url}'>{$title}</a><i class='icon-angle-right'></i></li>";
+				}
+				unset($title);
+				?>
+			</ul>
 		</div>
-		
+	</div>
 
-		
-			<div id="main">
-				<?php if(count($notices)) include("notices.inc"); ?>
-				<div class="container">
-					<div id="main-header">				
-						
+	<?php endif; ?>	
+	
+	<div id="masthead" class="masthead ui-helper-clearfix">
+		<div class="container">
 
-					</div>
-				</div>
 			
 
+			<ul id='topnav'>
+				<?php include($config->paths->adminTemplates . "topnav.inc"); ?>
+				<?php if(!$user->isGuest()): ?>
+				<li>
+					<a class='dropdown-toggle' href='<?php echo $config->urls->admin?>profile/'><i class='icon-user'></i></a>
+					<ul class='dropdown-menu topnav' data-my='left-1 top' data-at='left bottom'>
+						<?php if($user->hasPermission('profile-edit')): ?>
+						<li><a href='<?php echo $config->urls->admin?>profile/'><?php echo __('Profile', __FILE__); ?> <small><?php echo $user->name?></small></a></li>
+						<?php endif; ?>
+						<li><a href='<?php echo $config->urls->admin?>login/logout/'><?php echo __('Logout', __FILE__); ?> <i class='icon-signout'></i></a></li>
+					</ul>
+				</li>
+				<?php endif; ?>
+			</ul>
 
-				<div class="container">
-					
-				    <div id="content" class="fouc_fix">
-						<?php if($page->body) echo $page->body; ?>
-						<?php echo $content?>
-						<?php if($config->debug && $this->user->isSuperuser()) include($config->paths->adminTemplates . "debug.inc"); ?>
-					</div>
-				</div>
+		</div>
+	</div>
+
+
+
+
+
+
+
+
+	<div class="container">
+		<div id="headline">
+			<div class="container">
+				<h1 id='title'><?php echo __(strip_tags($this->fuel->processHeadline ? $this->fuel->processHeadline : $page->get("title|name")), __FILE__); ?></h1>
+
+				<?php 
+				if(in_array($page->id, array(2,3,8))) { // page-list
+					echo "<div id='head_button'>";
+					include($config->paths->adminTemplates . "shortcuts.inc"); 
+					echo "</div>";
+				}
+				?>
+
 
 			</div>
+		</div>
+		<div id="content" class="content fouc_fix">
+			<div class="container">
+
+				<?php if(trim($page->summary)) echo "<h2>{$page->summary}</h2>"; ?>
+
+				<?php if($page->body) echo $page->body; ?>
+
+				<?php echo $content?>
+
+			</div>
+		</div>	
+	</div>
+
+
+
+	<div id="footer" class="footer">
+		<div class="container">
+			
+			<?php if(!$user->isGuest()): ?>
+
 			
 
+			<span id='userinfo'>
+				<i class='icon-user'></i> 
+				<?php 
+				if($user->hasPermission('profile-edit')): ?> 
+				<a class='action' href='<?php echo $config->urls->admin; ?>profile/'><?php echo $user->name; ?></a> |
+				<?php endif; ?>
 
-			</div>	
-		
+				<a class='action' href='<?php echo $config->urls->admin; ?>login/logout/'><?php echo __('Logout', __FILE__); ?></a>
+			</span>
+			<a id='logo' href='<?php echo $config->urls->admin?>'><img width='130' src="<?php echo $config->urls->adminTemplates?>styles/images/logo.png" alt="ProcessWire" /></a>
+			<?php endif; ?>
+			<p>
+				ProcessWire <?php echo $config->version . ' <!--v' . $config->systemVersion; ?>--> &copy; <?php echo date("Y"); ?> Ryan Cramer 
+			</p>
+			
+			
 
-				<div id="footer">
-					<div class="container">
-						<div id="user-menu">
-							<?php $gravatar = "http://www.gravatar.com/avatar/" . md5( strtolower( trim( $user->email ) ) ) . "?d=mm&s=50"; ?>
-							<?php if ($gravatar): ?>
-								<?php $edit = __('profile', __FILE__); ?>
-								<div class="gravatar-wrapper clearfix">
-									<img class="gravatar" src="<?php echo $gravatar; ?>" alt="">
-								</div><?php endif ?><div class="user-menu">
-								<?php if ($user->hasPermission('profile-edit')) echo "<a class='user-name' href='{$config->urls->admin}profile/'>{$user->name}</a>" ?><br>
-								<a class="user-logout" href='<?php echo $config->urls->admin; ?>login/logout/'><?php echo __('logout', __FILE__); ?></a>
-							</div>
-						</div><div id="search-box">
-							<?php echo $searchForm; ?>
-						</div>
-					</div>
-					
-				</div>
-				<div id="copy">
-					<div class="container">
-						<p><a href="http://processwire.com/">ProcessWire</a> <?php echo $config->version; ?> - Copyright &copy; <?php echo date("Y"); ?> by Ryan Cramer</p>
-					</div>
-				</div>
-		
-
+			<?php if($config->debug && $this->user->isSuperuser()) include($config->paths->adminTemplates . "debug.inc"); ?>
+		</div>
+	</div>
 
 </body>
-<?php endif; ?>
 </html>

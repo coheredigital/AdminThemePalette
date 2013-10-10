@@ -1,28 +1,14 @@
-<ul id="nav">
 <?php
-$nav = "";
-foreach($pages->get($wire->config->adminRootPageID)->children("check_access=0") as $p) {
 
-	if(!$p->viewable()) continue; 
+function renderTopNavItem(Page $p, $level = 0) {
 
-	$nav .= "\n\t\t\t\t<li>";
-
-	$showItem = $user->isSuperuser() ? true : false;
+	$showItem = wire('user')->isSuperuser() ? true : false;
 	$info = array();
+	$children = $p->numChildren && !$level && $p->name != 'page' ? $p->children("check_access=0") : array();
+	$out = '';
 
-	if ($p->children() && $p->id !== 3) {
-		
-		$nav .=	"\n\t\t\t\t<ul class='subnav'>";
-		foreach ($p->children as $c) {
-			$subclass = strpos($page->path, $c->path) === 0 ? " class='on'" : '';
-			$nav .=	"\n\t\t\t\t<li><a href='{$c->url}'{$subclass}>$c->title</a></li>";
-		}
-		$nav .=	"\n\t\t\t\t</ul>";
-
-	}
-
-	if(!$showItem) { 
-		$checkPages = $p->numChildren ? $p->children("check_access=0") : array($p); 
+	if(!$level && !$showItem) { 
+		$checkPages = count($children) ? $children : array($p); 
 		foreach($checkPages as $child) {
 			if($child->viewable()) {
 				$showItem = true;
@@ -31,16 +17,32 @@ foreach($pages->get($wire->config->adminRootPageID)->children("check_access=0") 
 		}
 	}
 
-	if($showItem) { 
-		$class = strpos($page->path, $p->path) === 0 ? " class='on'" : '';
-		$title = strip_tags((string)$p->get('title|name')); 
-		$title = __($title, dirname(__FILE__) . '/default.php'); // translate from context of default.php
-		$nav .= "<a href='{$p->url}'$class>$title</a></li>"; 
+	if(!$showItem) return '';
+
+	$class = strpos(wire('page')->path, $p->path) === 0 ? 'on' : '';
+	$title = strip_tags((string)$p->get('title|name')); 
+	$title = __($title, dirname(__FILE__) . '/default.php'); // translate from context of default.php
+	$out .= "<li>";
+
+	if(!$level && count($children)) {
+		$class = trim("$class dropdown-toggle"); 
+		$out .= "<a href='$p->url' class='$class'>$title</a>"; 
+		$out .= "<ul class='dropdown-menu topnav' data-my='left-1 top' data-at='left bottom'>";
+		foreach($children as $c) $out .= renderTopNavItem($c, $level+1);
+		$out .= "</ul>";
+	} else {
+		$class = $class ? " class='$class'" : '';
+		$out .= "<a href='$p->url'$class>$title</a>"; 
 	}
+
+	$out .= "</li>";
+
+	return $out; 
 }
-?>	
 
-<?php echo $nav ?>
+foreach($pages->get($wire->config->adminRootPageID)->children("check_access=0") as $p) {
+	if(!$p->viewable()) continue; 
+	echo renderTopNavItem($p);
+}
 
-</ul>
 

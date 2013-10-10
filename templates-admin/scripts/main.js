@@ -12,11 +12,14 @@ var ProcessWireAdminTheme = {
 	 *
 	 */
 	init: function() {
-		// this.setupCloneButton();
+		this.setupCloneButton();
 		this.setupButtonStates();
 		this.setupFieldFocus();
 		this.setupTooltips();
+		this.setupSearch();
+		this.setupDropdowns();
 		// this.sizeTitle();
+		if($("body").hasClass('hasWireTabs') && $("ul.WireTabs").size() == 0) $("body").removeClass('hasWireTabs'); 
 		$('#content').removeClass('fouc_fix'); // FOUC fix
 		this.browserCheck();
 	},
@@ -59,7 +62,7 @@ var ProcessWireAdminTheme = {
 		// don't continue if no buttons here or if we're in IE
 		if($buttons.size() == 0 || $.browser.msie) return;
 
-		var $head = $("<div id='head_button'></div>").appendTo("#masthead .container").show();
+		var $head = $("<div id='head_button'></div>").appendTo("#headline .container").show();
 		$buttons.each(function() {
 			var $t = $(this);
 			var $a = $t.parent('a'); 
@@ -112,53 +115,124 @@ var ProcessWireAdminTheme = {
 
 	},
 
+
 	/**
-	 * Adjust the font-size of the #title to fit within the screen's width
-	 *
-	 * If we get below a certain size, then we introduce line wrap
-	 *
+	 * Make the site search use autocomplete
+	 * 
 	 */
-	sizeTitle: function() {
-		// adjust the font-size of #title to fit within the screen's width
-		var $title = $("#title"); 
+	setupSearch: function() {
 
-		// don't bother continuing if the title isn't a consideration
-		if($title.size() == 0 || $title.text().length < 35) return;
-
-		var titleSizePx = $title.css('font-size'); // original/starting size (likely 37px)
-		var titleSize = parseInt(titleSizePx); // size integer without 'px'
-		var fitTitle = function() {
-			// determine size of possible #head_button so that we don't overlap with it
-			var buttonWidth = 0;
-			var $button = $("#head_button button"); 
-			if($button.size() > 0) buttonWidth = $button.width()+20; // 20=padding
-
-			// maxTitleWidth is the width of #title's parent minus the buttonWidth
-			maxTitleWidth = $title.parent().width() - buttonWidth; 
-			
-			// our default CSS settings when no resizing is needed
-			$title.css({ whiteSpace: 'nowrap', marginTop: '0', paddingRight: '0' }); 
-
-			// keep reducing the font-size of title until it fits
-			while($title.width() > maxTitleWidth) {
-				if(--titleSize < 22) {
-					// if we get below 22px, lets wordwrap instead, and then get out
-					$title.css({ marginTop: '-0.75em', whiteSpace: 'normal', paddingRight: buttonWidth + 'px' })
-					break;
-				}
-				$title.css('font-size', titleSize + 'px');
+		$.widget( "custom.adminsearchautocomplete", $.ui.autocomplete, {
+			_renderMenu: function(ul, items) {
+				var that = this;
+				var currentType = "";
+				$.each(items, function(index, item) {
+					if (item.type != currentType) {
+						ul.append("<li class='ui-widget-header'><a>" + item.type + "</a></li>" );
+						currentType = item.type;
+					}
+					ul.attr('id', 'ProcessPageSearchAutocomplete'); 
+					that._renderItemData(ul, item);
+				});
+			},
+			_renderItemData: function(ul, item) {
+				if(item.label == item.template) item.template = '';
+				ul.append("<li><a href='" + item.edit_url + "'>" + item.label + " <small>" + item.template + "</small></a></li>"); 
 			}
-		}
+		});
+		
+		var $input = $("#ProcessPageSearchQuery"); 
+		var $status = $("#ProcessPageSearchStatus"); 
+		
+		$input.adminsearchautocomplete({
+			minLength: 2,
+			position: { my : "right top", at: "right bottom" },
+			search: function(event, ui) {
+				$status.html("<img src='" + config.urls.modules + "Process/ProcessPageList/images/loading.gif'>");
+			},
+			source: function(request, response) {
+				var url = $input.parents('form').attr('action') + 'for?get=template_label,title&include=all&admin_search=' + request.term;
+				$.getJSON(url, function(data) {
+					var len = data.matches.length; 
+					if(len < data.total) $status.text(data.matches.length + '/' + data.total); 
+						else $status.text(len); 
+					response($.map(data.matches, function(item) {
+						return {
+							label: item.title,
+							value: item.title,
+							page_id: item.id,
+							template: item.template_label ? item.template_label : '',
+							edit_url: item.editUrl,
+							type: item.type
+						}
+					}));
+				});
+			},
+			select: function(event, ui) { }
+		}).blur(function() {
+			$status.text('');	
+		});
+		
+	},
 
-		// when the window is resized, update the title size
-		$(window).resize(function() {
-			$title.css('font-size', titleSizePx);
-			titleSize = parseInt(titleSizePx);
-			fitTitle();
+	setupDropdowns: function() {
+
+		$("ul.dropdown-menu").each(function() {
+			var $ul = $(this).hide();
+			var $a = $ul.siblings(".dropdown-toggle"); 
+
+			if($a.is("button")) {
+				$a.button();
+			} else {
+				$ul.css({ 'border-top-right-radius': 0 }); 
+			}
+
+			// hide nav when an item is selected to avoid the whole nav getting selected
+			$ul.find('a').click(function() {
+				$ul.hide();
+				return true; 
+			});
+
+			var lastOffset = null; 
+
+			$a.mouseenter(function() {
+				var offset = $a.offset();	
+				if(lastOffset != null) {
+					if(offset.top != lastOffset.top || offset.left != lastOffset.left) {
+						// dropdown-toggle has moved, destroy and re-create
+						$ul.menu('destroy').removeClass('dropdown-ready');
+					}
+				}	
+				if(!$ul.hasClass('dropdown-ready')) {
+					$ul.css('position', 'absolute'); 
+					$ul.prependTo($('body')).addClass('dropdown-ready').menu();
+					var position = { my: 'right top', at: 'right bottom', of: $a };
+					var my = $ul.attr('data-my'); 
+					var at = $ul.attr('data-at'); 
+					if(my) position.my = my; 
+					if(at) position.at = at; 
+					$ul.position(position).css('z-index', 200);
+				}
+				$a.addClass('hover'); 
+				$ul.fadeIn('fast');
+				lastOffset = offset; 
+
+			}).mouseleave(function() {
+				setTimeout(function() {
+					if($ul.is(":hover")) return;
+					$ul.hide();
+					$a.removeClass('hover');
+				}, 250); 
+			}); 
+
+			$ul.mouseleave(function() {
+				if($a.is(":hover")) return;
+				$ul.hide();
+				$a.removeClass('hover'); 
+			}); 
 		});
 
-		fitTitle();
-	},
+	}, 	
 
 	/**
 	 * Give a notice to IE versions we don't support
@@ -169,40 +243,12 @@ var ProcessWireAdminTheme = {
 			$("#content .container").html("<h2>ProcessWire does not support IE7 and below at this time. Please try again with a newer browser.</h2>").show();
 	}
 
-}; 
-
+};
 
 $(document).ready(function() {
 	ProcessWireAdminTheme.init();
 
-	$("#content > h2").appendTo("#heading-text");
-
-	var saveP;
-	var windowP;
-	$Submitfield = $("#wrap_submit_save");
-	$lastInputfield = $Submitfield.parent();
-
-	function getPositions(){
-		if (!$lastInputfield.length) return;
-		saveP = Math.round($lastInputfield.offset().top + $lastInputfield.outerHeight());
-		windowP = $(window).scrollTop() + $(window).height();
-		console.log("SAVE: "+saveP+" WINDOW:"+windowP);
-
-		if (saveP > windowP) stickSave();
-		else unstickSave();
-	}
-	getPositions();
-    $(window).scroll(getPositions);
-
-	function stickSave(){
-		$Submitfield.addClass("fixed-nav");
-	}
-    function unstickSave(){
-		$Submitfield.removeClass("fixed-nav");
-	}    
-
-
+	$("#notices a.notice-remove").click(function() {
+		$("#notices").slideUp('fast', function() { $(this).remove(); }); 
+	}); 
 }); 
-
-
-

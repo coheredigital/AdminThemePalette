@@ -5,23 +5,16 @@
 	// border-left: 1px solid @grayLighter;
 	li {
 		display: inline-block;
+		line-height: 1em;
+		margin: 1em 0;
 		a{
 			color: lighten(@blue, 20%);
-			padding: 0 0 0 1em;
+			padding: 0 0.4em;
 			font-weight: bold;
-			// display: block;
-			line-height: 3em;
 			position: relative;
 			display: block;
 			float: left;
-			text-transform: uppercase;
-			&:after{
-				content: "\203A";
-				font-size: 22px;
-				position: relative;
-				top: 0.05em;
-				
-			}			
+			text-transform: uppercase;		
 			&:hover{
 				color: #fff;
 				
@@ -29,6 +22,9 @@
 		}
 		&:first-child a{
 			padding-left: 0;
+		}
+		i{
+			vertical-align: text-top;
 		}
 
 	}

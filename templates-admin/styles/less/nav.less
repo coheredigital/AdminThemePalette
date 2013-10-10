@@ -6,7 +6,7 @@
 	text-align: right;
 	// float: left;
 }
-#nav {
+#topnav {
 	list-style: none;
 	position: relative;
 	z-index: 9;
@@ -52,54 +52,11 @@
 	.search, .changes{
 		float: right;
 	}
-}
-
-
-
-#nav .subnav{
-	visibility: none;
-	.transition(all 0.4s);
-	top: 100%;
-	max-height: 0;
-	overflow: hidden;
-	background: @grayDark;
-	position: absolute;
-	z-index: 500;
-	// border-bottom: 1px solid lighten(@grayDark, 3%) !important;
-	> li{
-		display: block;
-		float: none !important;
-		> a{
-			color: lighten(@gray, 12%) !important;
-			float: none !important;
-			border: none !important;
-			white-space: nowrap;
-			height: auto !important;
-			width: auto;
-			text-shadow: none;
-			&:hover{
-				color: #fff !important;
-				background: @base;
-				.transition(all 0.2s);
-			}
-			&.on{
-				color: #fff !important;
-			}
+		ul.dropdown-menu {
+			display: none; 
 		}
-	}
-	display: none !important;
-}
-ul#nav li:hover .subnav{
-	display: block;
-	max-height: 400px;
-	opacity: 1;
-	padding: 4px 0 0 0 !important;
 }
 
-// #nav-wrap{
-// 	background: darken(@blue, 4%);
-// 	width: 100%;
-// }
 
 #content #ProcessPageEdit > .Inputfields > .fixed-nav{
 	.clearfix();
