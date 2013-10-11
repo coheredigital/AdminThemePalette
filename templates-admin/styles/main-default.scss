@@ -1058,10 +1058,12 @@ a {
 		#_ProcessPageEditView {
 			position: absolute;
 			right: 0;
+			// background: $subtle-border;
 			border-bottom: 0;
+			border-left: $headline-border !important;
 			margin-right: 0;
 			font-weight: bold;
-			color: $blue;
+			color: $dark-gray;
 			-webkit-font-smoothing: antialiased;
 		}
 
