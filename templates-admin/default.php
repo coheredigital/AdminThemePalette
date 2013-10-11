@@ -128,7 +128,8 @@ if(!$browserTitle) $browserTitle = __(strip_tags($page->get('title|name')), __FI
 				<?php include($config->paths->adminTemplates . "topnav.inc"); ?>
 				<?php if(!$user->isGuest()): ?>
 				<li>
-					<a class='dropdown-toggle' href='<?php echo $config->urls->admin?>profile/'><i class='icon-user'></i></a>
+					<?php $class = $page->name == "profile" ? "on" : "" ?>
+					<a class='dropdown-toggle <?php echo $class ?>' href='<?php echo $config->urls->admin?>profile/'><i class='icon-user'></i></a>
 					<ul class='dropdown-menu topnav' data-my='left-1 top' data-at='left bottom'>
 						<?php if($user->hasPermission('profile-edit')): ?>
 						<li><a href='<?php echo $config->urls->admin?>profile/'><?php echo __('Profile', __FILE__); ?> <small><?php echo $user->name?></small></a></li>
@@ -167,15 +168,12 @@ if(!$browserTitle) $browserTitle = __(strip_tags($page->get('title|name')), __FI
 				</div>
 			</div>
 			<div id="content" class="content fouc_fix">
-				<div class="container">
 
 					<?php if(trim($page->summary)) echo "<h2>{$page->summary}</h2>"; ?>
 
 					<?php if($page->body) echo $page->body; ?>
 
 					<?php echo $content?>
-
-				</div>
 			</div>	
 		</div>
 
@@ -199,7 +197,7 @@ if(!$browserTitle) $browserTitle = __(strip_tags($page->get('title|name')), __FI
 
 				<a class='action' href='<?php echo $config->urls->admin; ?>login/logout/'><?php echo __('Logout', __FILE__); ?></a>
 			</span>
-			<a id='logo' href='<?php echo $config->urls->admin?>'><img width='130' src="<?php echo $config->urls->adminTemplates?>styles/images/logo.png" alt="ProcessWire" /></a>
+			<!-- <a id='logo' href='<?php echo $config->urls->admin?>'><img width='130' src="<?php echo $config->urls->adminTemplates?>styles/images/logo.png" alt="ProcessWire" /></a> -->
 			<?php endif; ?>
 			<p>
 				ProcessWire <?php echo $config->version . ' <!--v' . $config->systemVersion; ?>--> &copy; <?php echo date("Y"); ?> Ryan Cramer 

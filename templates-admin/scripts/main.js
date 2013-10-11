@@ -247,7 +247,7 @@ var ProcessWireAdminTheme = {
 
 $(document).ready(function() {
 	ProcessWireAdminTheme.init();
-
+	$("#ProcessPageSearchForm").append("<i class='icon-search'></i>");
 	$("#notices a.notice-remove").click(function() {
 		$("#notices").slideUp('fast', function() { $(this).remove(); }); 
 	}); 
