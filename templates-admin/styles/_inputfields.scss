@@ -140,8 +140,9 @@
 		}
 		i.toggle-icon {
 			padding-right: 0.5em; 
-			color: lighten($label-link-color, 60%); 
-			line-height: 1.7em; 
+			vertical-align: middle;
+			// color: lighten($label-link-color, 60%); 
+			// line-height: 1.7em;  WHHHHHHY!?!!?!?
 		}
 
 		.ui-icon + .ui-icon,
@@ -272,11 +273,18 @@
 		margin-top: 0;
 	}
 	.InputfieldFileList .InputfieldFileItem {
-		border: $item-border; 
+		// border: $item-border; 
 	}
 
 	.InputfieldFileList .InputfieldFileItem .ui-widget-content {
-		border: none; 
+		border: $headline-border; 
+		border-top: 0;
+		background: $subtle-bg;
+	}
+	
+	.InputfieldImageGrid .InputfieldFileItem .ui-widget-content{
+		border: 0;
+		background: none;
 	}
 
 	.InputfieldItemList .InputfieldItemHeader {
@@ -284,10 +292,10 @@
 		border: none;
 		background: $item-header-bg; /* LIGHT-GREEN */
 		color: $item-header-color; /* WHITE */
-		padding-left: 0.25em; 
-		padding-right: 0.5em; 
+		padding: 0.4em 0.25em 0.4em 0.5em; 
 		cursor: move; 
 		font-weight: normal;
+		vertical-align: middle;
 
 		a {
 			/* link in file or repeater item header */
@@ -305,7 +313,7 @@
 		}
 
 		.ui-icon {
-			margin-top: 2px; 
+			// margin-top: 2px; 
 		}
 	}
 

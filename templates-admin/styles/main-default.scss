@@ -31,6 +31,7 @@ $form-top-margin-adjustment: -2px;
 body {
 	background: $main-bg; 
 	font-size: $base-font-size; 
+	color: $text-color;
 }
 	body,
 	.ui-dialog,
@@ -38,9 +39,6 @@ body {
 	input,
 	textarea {
 		font-family: $regular-font; 
-	}
-	body {
-	;	color: $text-color; 
 	}
 	body.modal {
 		background-color: $text-bg; 
@@ -59,6 +57,11 @@ body {
 	width: 95%; 
 	max-width: 1200px; 
 	margin: 0 auto; 
+	&:after {
+		content: "";
+		display: table;
+		clear: both;
+	}
 }
 #wrapper .container{
 	width: auto;
@@ -115,9 +118,10 @@ a {
 	// background: $masthead-bg; 
 	position: relative; 
 	z-index: 5;
-	// .container{
-	// 	background: $dark-gray;
-	// }
+	> .container{
+		background:$topnav-link-bg;
+
+	}
 } 	
 #topnav {
 	z-index: 5;
@@ -149,7 +153,7 @@ a {
 
 	> li > a.hover, 
 	> li > a:hover {
-		// background: $topnav-link-hover-bg;
+		background: $topnav-link-hover-bg;
 		color: $topnav-link-hover-color; 
 		text-decoration: none; 
 	}
@@ -474,17 +478,17 @@ a {
 		dt {
 			display: block;
 			font-weight: bold; 
-			padding-top: 0.75em; 
+			padding-top: 1em; 
 		}
 		dt a {
-			text-transform: none; 
+			// text-transform: none; 
 			color: $link-color; 
 		}
 		dt a:hover {
 			color: $link-hover-color; 
 		}
 		dl dd {
-			padding-bottom: 0.75em; 
+			padding-bottom: 1em; 
 			border-bottom: 1px solid $subtle-border; 
 		}
 
@@ -545,7 +549,82 @@ a {
 			&:first-child:after {
 				top: -0.6em;
 			}
+
+
+			&.PageListSortItem{
+				// background: #fff !important;
+				// font-size: 14px !important;
+				line-height: 20px !important;
+
+				// &.PageListItem:after,
+				// &.PageListItem:before{
+				// 	display: none !important;
+			 // 	}
+				.PageListNumChildren{
+					color: #444 !important;
+					display: none !important;
+				}
+				.PageListPage{
+					background: #444 !important;
+					border-radius: 1em;
+					color: #fff !important;
+					padding: 0.2em 0.5em 0.2em 0.3em;
+					text-decoration: none !important;
+				}
+				.PageListMoveNote{
+					margin: 0 0.6em;
+					i.icon-angle-right{
+						display: none;
+					}
+					a{
+						display: inline-block;
+						// background: $dark-red;
+						color: $red;
+						text-transform: uppercase;
+						font-weight: bold;
+						margin: 0 0.6em;
+					}
+				}
+
+			}
 		}
+		.PageListSortPlaceholder {
+			height: 0!important;
+			padding: 0!important;
+			// top: -1px;
+			position: relative;
+			// margin: 0 0 -1px 0!important;
+			background: transparent!important;
+			border: none!important;
+			border-bottom: 1px dashed $subtle-border!important;
+			width: auto!important;
+			z-index: 10;
+		}
+		.PageListSortPlaceholder:before {
+			content : "";
+			width: 0px !important;
+			position: absolute;
+			left: -6px;
+			top: -8px;
+			padding: 0;
+			height: 0px !important 	;
+			border-style: solid;
+			border-width: 8px 0 8px 10px;
+			z-index: 10;
+			border-color: transparent transparent transparent $blue;
+		}
+
+		.PageListSortPlaceholder:after {
+			content : "";
+			width: 12px !important;
+			height: 6px !important ;
+			background: $blue;
+			position: absolute;
+			left: -12px;
+			top: -3px;
+			padding: 0;
+		}
+
 
 		.PageListItem + .PageListActions{
 			margin-bottom: 12px !important;
@@ -697,7 +776,7 @@ a {
 	.AdminDataList td {
 		border-bottom: 1px solid $subtle-border; 
 		padding: 0.5em 0;
-		vertical-align: middle;
+		vertical-align: middle !important;
 	}	
 	.AdminDataList button{
 		font-size: 0.85em !important;
@@ -708,7 +787,8 @@ a {
 	}
 	.AdminDataList td a {
 		color: $link-color; 
-	}	
+		// vertical-align: middle;
+	}		
 	.AdminDataList td a:hover {
 		color: $link-hover-color; 
 	}
@@ -859,11 +939,10 @@ a {
 	 * WireTabs
 	 *
 	 */
-	padding: 0 1em;
+	padding: 0 1.5em;
 	overflow: hidden;
 	padding-bottom: 1em;
 	.WireTabs {
-		overflow: hidden;
 		background: darken($subtle-bg,2%);
 		position: relative;
 		padding: 0 1em;
@@ -890,7 +969,7 @@ a {
 			border-top: 0 !important; 
 			border-bottom: 0 !important; 
 			color: $wiretab-link-color;
-			margin-bottom: -1px;
+			margin-bottom: 0px;
 			background: $wiretab-link-bg; 
 		}
 
@@ -1152,9 +1231,9 @@ body.modal {
 .dropdown-menu{
 	display: none;
 	border-radius: 0 !important; 
-	// border: 1px solid #ddd !important;
+	// border: 1px solid $main-bg !important;
 	border: 0 !important;
-	border: 0 !important;
+
 	.ui-menu-item{
 		min-width: 10px;
 		border: 0 !important;
@@ -1212,6 +1291,7 @@ body.modal {
 
 		#ProcessPageSearchQuery{
 			padding: 0.6em;
+			padding-right: 2.2em;
 			width: 100%;
 			background: lighten($main-bg, 5%);
 			border: 1px solid darken($main-bg, 5%);
@@ -1250,6 +1330,7 @@ body.modal {
 	 */
 	#ProcessPageSearchQuery{
 		text-align: center;
+		border-width: 0 0 1px 0 !important;
 	}
 
 	.Inputfield {

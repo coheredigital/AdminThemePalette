@@ -211,7 +211,11 @@ var ProcessWireAdminTheme = {
 					var at = $ul.attr('data-at'); 
 					if(my) position.my = my; 
 					if(at) position.at = at; 
-					$ul.position(position).css('z-index', 200);
+					$ul.position(position).css({
+						'z-index': 200,
+						'margin-top':"-1px",
+						'margin-left':"1px",
+					});
 				}
 				$a.addClass('hover'); 
 				$ul.fadeIn('fast');

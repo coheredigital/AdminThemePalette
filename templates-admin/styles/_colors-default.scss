@@ -46,10 +46,10 @@ $main-shadow: 0 0 4px darken($main-bg, 5%);
 
 
 $subtle-bg: #eee;
-$subtle-border: darken($subtle-bg, 5%);
+$subtle-border: darken($subtle-bg, 6%);
 
 $text-bg: $white; 
-$text-color: $black;
+$text-color: $dark-gray;
 
 $headline-bg: $subtle-bg;  
 $headline-color: $dark-gray; 
@@ -67,17 +67,15 @@ $breadcrumbs-link-hover-color: $white;
 $breadcrumbs-border: 1px solid darken($main-bg, 3%); 
 
 $topnav-link-color: lighten($main-bg, 40%);
-$topnav-link-bg: none; 
+$topnav-link-bg: darken($main-bg, 3%); 
 $topnav-link-hover-color: $white;
-$topnav-link-hover-bg: $white; 
+$topnav-link-hover-bg: darken($main-bg, 6%); 
 $topnav-link-current-color: $gray; 
 $topnav-link-current-bg: $headline-bg; 
 
-
-
 $item-header-hover-color: $white;
-$item-header-hover-bg: $pink; 
-$item-header-bg: $green;
+$item-header-hover-bg: $blue; 
+$item-header-bg: $dark-gray;
 $item-header-color: $white; 
 $item-border: 1px solid $subtle-bg; 
 
@@ -91,7 +89,7 @@ $link-active-color: $dark-pink;
 $link-active-bg: none; 
 
 $action-link-font-size: 1em;
-$action-link-bg: $main-bg;
+$action-link-bg: $gray;
 $action-link-color: $white;
 $action-link-border: none; 
 $action-link-hover-color: $dark-gray;
@@ -118,12 +116,13 @@ $ui-state-hover-color: $reverse-text-color;
 
 $label-link-color: $blue;
 $label-link-bg: #fff; 
-$label-link-collapsed-color: #69B7EF; /*lighten($dark-blue, 35%); */
+$label-link-collapsed-color: $gray; /*lighten($dark-blue, 35%); */
 $label-link-collapsed-bg: #fff; 
-$label-link-hover-color: #000; 
+$label-link-hover-color: $link-hover-color; 
 
-$table-th-color: #b0ced8; /* darken($light-blue, 15%); */
-$table-th-active-color: $blue; 
+$table-th-color: $gray;
+$table-th-active-color: $dark-gray; 
+$table-th-active-color: $orange; 
 
 $pagelist-link-color: #333; 
 $pagelist-link-hover-color: $blue;
