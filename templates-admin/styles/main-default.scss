@@ -411,7 +411,7 @@ a {
 		padding: 3px !important;
 		// margin: -2px;
 		// line-height: 24px;
-		vertical-align: middle !important;
+		// vertical-align: middle !important;
 		li{
 			border: none;
 		}
@@ -520,7 +520,7 @@ a {
 			position: relative;
 			clear: both;
 			line-height: 21px !important;
-			padding: 10px 12px !important;
+			padding: 7px 12px !important;
 			padding-right: 0 !important;
 			line-height: 1.3em; 
 			&:before {
@@ -528,7 +528,7 @@ a {
 				position: absolute;
 				width: 13px;
 				left: -4px;
-
+				margin-top: -1px;
 				top: 50%;
 				border-bottom: 1px solid #ccc;
 				z-index: 1;
@@ -537,13 +537,13 @@ a {
 				content: "";
 				position: absolute;
 				left: -4px;
-				top: -20px;
-				bottom: 20px;
+				top: -18px;
+				bottom: 18px;
 				border-left: 1px solid #ccc;
 				z-index: 1;
 			}
 			&:first-child:after {
-				top: -0.8em;
+				top: -0.6em;
 			}
 		}
 
@@ -570,7 +570,9 @@ a {
 			}
 
 		}
-
+		.PageListLoading{
+			margin: 0 0.5em;
+		}
 		.PageListPlaceholderItem {
 			border: none;
 			padding: 0;
