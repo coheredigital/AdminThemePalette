@@ -14,6 +14,7 @@ tmp/
 local.properties
 .classpath
 .settings/
+.sass-cache/
 .loadpath
 
 # External tool builders
@@ -38,6 +39,7 @@ local.properties
 
 # User-specific files
 *.suo
+*.scssc
 *.user
 *.sln.docstates
 

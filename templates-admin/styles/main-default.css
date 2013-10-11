@@ -2603,7 +2603,7 @@ body .ui-tooltip {
 }
 
 /**
- * Highlight and error states 
+ * Highlight and error states
  *
  */
 
@@ -2659,7 +2659,7 @@ p span.ui-state-error {
 .ui-dialog .ui-dialog-title {
   font-weight: normal;
   /* same color as label.ui-widget-header */
-  color: #418feb;
+  color: #668bc0;
   /* BROWN */
 }
 
@@ -2727,7 +2727,7 @@ div + a > .ui-button {
 
 /**
  * ui-slider
- * 
+ *
  */
 
 .ui-slider .ui-slider-range,
@@ -2768,7 +2768,7 @@ div + a > .ui-button {
 
 .ui-menu .ui-menu-item a:hover,
 .ui-autocomplete li a:hover {
-  color: #418feb;
+  color: #668bc0;
 }
 
 .ui-autocomplete li small {
@@ -2782,7 +2782,7 @@ div + a > .ui-button {
 .ui-autocomplete .ui-widget-header a,
 .ui-autocomplete .ui-widget-header a:hover {
   font-weight: bold;
-  background: #418feb;
+  background: #668bc0;
   color: white;
   text-shadow: none;
   margin-top: 1px;
@@ -2834,44 +2834,42 @@ div + a > .ui-button {
   border: 2px solid white;
 }
 
-.arrow {
-  width: 70px;
-  height: 16px;
-  overflow: hidden;
-  position: absolute;
-  left: 50%;
-  margin-left: -35px;
-  bottom: -16px;
+.ui-tooltip {
+  z-index: 100;
+  margin: 0 -6px -6px 6px !important;
+  border: none;
+  padding: 0.6em 1em;
+  background: #444444;
+  color: #fff;
+  border-radius: 0;
+  -webkit-box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+  text-transform: uppercase;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
 }
 
-.arrow.top {
-  top: -16px;
-  bottom: auto;
-}
-
-.arrow.left {
-  left: 20%;
-}
-
-.arrow:after {
+.ui-tooltip:before {
   content: "";
-  position: absolute;
-  left: 20px;
-  top: -20px;
-  width: 25px;
-  height: 25px;
-  -webkit-box-shadow: 6px 5px 9px -9px #444444;
-  box-shadow: 6px 5px 9px -9px #444444;
-  -webkit-transform: rotate(45deg);
-  -moz-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  -o-transform: rotate(45deg);
-  tranform: rotate(45deg);
+  position: absolute !important;
+  left: 50%;
+  top: 100%;
+  margin: 0 0 0 -5px;
+  width: 0;
+  z-index: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 6px 6px 0 6px;
+  border-color: #444444 transparent transparent transparent;
 }
 
-.arrow.top:after {
-  bottom: -20px;
-  top: auto;
+.tooltip {
+  background-color: transparent !important;
+}
+
+.tooltip .ui-icon {
+  background-color: transparent !important;
+  background-image: url(jqueryui/images/ui-icons.png) !important;
 }
 
 .InputfieldForm {
@@ -3114,7 +3112,7 @@ div + a > .ui-button {
 }
 
 .Inputfields .InputfieldRepeater > .InputfieldContent .InputfieldRepeaterItem > .InputfieldHeader:hover {
-  background: #418feb;
+  background: #668bc0;
   color: white;
   border: none;
 }
@@ -3182,7 +3180,7 @@ div + a > .ui-button {
 
 .Inputfields .InputfieldItemList .InputfieldItemHeader:hover {
   /* file or repeater item header in hover state */
-  background: #418feb;
+  background: #668bc0;
   color: white;
   border: none;
 }
@@ -3385,7 +3383,7 @@ div + a > .ui-button {
 .cke .cke_combo_on a.cke_combo_button,
 .cke_reset .cke_button_on,
 .cke_reset .cke_combo_on a.cke_combo_button {
-  background: #418feb;
+  background: #668bc0;
   -webkit-box-shadow: none !important;
   box-shadow: none !important;
 }
@@ -3401,20 +3399,20 @@ div + a > .ui-button {
 .cke_reset .cke_combo_on:hover a.cke_combo_button {
   -webkit-box-shadow: none !important;
   box-shadow: none !important;
-  background: #86b8f2;
+  background: #9cb4d6;
 }
 
 .cke .cke_button_on:hover,
 .cke_reset .cke_button_on:hover {
   -webkit-box-shadow: none !important;
   box-shadow: none !important;
-  background: #86b8f2;
+  background: #9cb4d6;
 }
 
 .cke_focus.cke {
   -webkit-box-shadow: none !important;
   box-shadow: none !important;
-  border: 1px solid #418feb !important;
+  border: 1px solid #668bc0 !important;
 }
 
 /***********************************************************************************************
@@ -3428,7 +3426,7 @@ div + a > .ui-button {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  outline-color: #418feb;
+  outline-color: #668bc0;
 }
 
 body {
@@ -3470,7 +3468,7 @@ body.modal {
 
 a {
   /* standard link color */
-  color: #418feb;
+  color: #668bc0;
 }
 
 a:hover {
@@ -3530,6 +3528,7 @@ a:active {
   z-index: 5;
   position: relative;
   float: left;
+  -webkit-font-smoothing: antialiased;
 }
 
 #topnav > li {
@@ -3564,7 +3563,8 @@ a:active {
 }
 
 #breadcrumbs {
-  padding: 0.6em 0;
+  padding: 0.5em 0;
+  line-height: 1em;
   margin-bottom: 1em;
   color: #869db5;
   border-bottom: 1px solid #5a7694;
@@ -3606,12 +3606,15 @@ a:active {
   position: relative;
 }
 
-#ProcessPageSearchForm > i {
+#ProcessPageSearchForm > label {
   color: #afbece;
-  position: absolute;
+  position: absolute !important;
   right: 0.7em;
-  top: 50%;
-  margin-top: -0.5em;
+  top: 50% !important;
+  display: block !important;
+  opacity: 1 !important;
+  z-index: 120;
+  margin-top: -0.6em !important;
 }
 
 #ProcessPageSearchForm #ProcessPageSearchQuery {
@@ -3807,6 +3810,8 @@ ol,
   background: #999999;
   border-radius: 1em;
   padding: 3px !important;
+  -webkit-font-smoothing: antialiased;
+  vertical-align: baseline !important;
 }
 
 .content .PageListActions li {
@@ -3853,7 +3858,7 @@ ol,
 }
 
 .content dl {
-  margin: 1em 0;
+  margin: 0 0 1em 0;
 }
 
 .content .container > dl:first-child {
@@ -3868,7 +3873,7 @@ ol,
 }
 
 .content dt a {
-  color: #418feb;
+  color: #668bc0;
 }
 
 .content dt a:hover {
@@ -3881,7 +3886,7 @@ ol,
 }
 
 .content #PageListContainer {
-  padding: 1em 0;
+  padding: 0;
 }
 
 .content .InputfieldContent > #PageListContainer {
@@ -3901,19 +3906,19 @@ ol,
   width: 0;
   left: -4px;
   margin-top: -3px;
-  top: -1.6em;
+  top: -16px;
   z-index: 0;
-  bottom: -20px;
+  bottom: -16px;
   border-left: 1px dotted #ccc;
 }
 
 .content .PageList .PageListItem {
   position: relative;
   clear: both;
-  line-height: 21px !important;
-  padding: 7px 12px !important;
+  line-height: 32px;
+  height: 32px;
+  padding: 0 12px !important;
   padding-right: 0 !important;
-  line-height: 1.3em;
 }
 
 .content .PageList .PageListItem:before {
@@ -3921,7 +3926,6 @@ ol,
   position: absolute;
   width: 13px;
   left: -4px;
-  margin-top: -1px;
   top: 50%;
   border-bottom: 1px solid #ccc;
   z-index: 1;
@@ -3931,18 +3935,14 @@ ol,
   content: "";
   position: absolute;
   left: -4px;
-  top: -18px;
-  bottom: 18px;
+  top: -16px;
+  bottom: 16px;
   border-left: 1px solid #ccc;
   z-index: 1;
 }
 
 .content .PageList .PageListItem:first-child:after {
-  top: -0.6em;
-}
-
-.content .PageList .PageListItem.PageListSortItem {
-  line-height: 20px !important;
+  top: -5.33333px;
 }
 
 .content .PageList .PageListItem.PageListSortItem .PageListNumChildren {
@@ -3954,7 +3954,7 @@ ol,
   background: #444 !important;
   border-radius: 1em;
   color: #fff !important;
-  padding: 0.2em 0.5em 0.2em 0.3em;
+  padding: 0.2em 0.6em 0.2em 0.3em;
   text-decoration: none !important;
 }
 
@@ -3974,10 +3974,49 @@ ol,
   margin: 0 0.6em;
 }
 
+.content .PageList .PageListItem.ui-sortable-helper .PageListMoveNote,
+.content .PageList .PageListItem.ui-sortable-helper.PageListItem:after,
+.content .PageList .PageListItem.ui-sortable-helper.PageListItem:before {
+  display: none !important;
+}
+
+.content .PageList .PageListPlaceholderItem {
+  display: none !important;
+  border: 1px dashed #aaa !important;
+  background: #f6f6f6 !important;
+  position: relative;
+  width: 150px;
+  height: 22px !important;
+  border-radius: 11px;
+  padding: 0 !important;
+  margin: 0 0 10.66667px 12px !important;
+}
+
+.content .PageList .PageListPlaceholderItem:before {
+  content: "";
+  position: absolute;
+  width: 13px;
+  left: -15px;
+  top: 50%;
+  border-bottom: 1px dashed #ccc;
+  z-index: 1;
+}
+
+.content .PageList .PageListPlaceholderItem:after {
+  content: "";
+  position: absolute;
+  left: -17px;
+  top: -20px;
+  bottom: -12px;
+  border-left: 1px solid #ccc;
+  z-index: 1;
+}
+
 .content .PageList .PageListSortPlaceholder {
   height: 0 !important;
   padding: 0 !important;
   position: relative;
+  margin: 0 0 -1px 0 !important;
   background: transparent !important;
   border: none !important;
   border-bottom: 1px dashed #dfdfdf !important;
@@ -3996,14 +4035,14 @@ ol,
   border-style: solid;
   border-width: 8px 0 8px 10px;
   z-index: 10;
-  border-color: transparent transparent transparent #418feb;
+  border-color: transparent transparent transparent #668bc0;
 }
 
 .content .PageList .PageListSortPlaceholder:after {
   content: "";
   width: 12px !important;
   height: 6px !important;
-  background: #418feb;
+  background: #668bc0;
   position: absolute;
   left: -12px;
   top: -3px;
@@ -4017,7 +4056,7 @@ ol,
 }
 
 .content .PageList .PageListItem + .PageListActions .PageListActionMore {
-  background: #418feb;
+  background: #668bc0;
   padding: 8px 12px;
   text-transform: uppercase;
   font-weight: bold;
@@ -4034,16 +4073,11 @@ ol,
 }
 
 .content .PageList .PageListItem + .PageListActions .PageListActionMore:hover {
-  background: #66a5ef;
+  background: #83a1cc;
 }
 
 .content .PageList .PageListLoading {
   margin: 0 0.5em;
-}
-
-.content .PageList .PageListPlaceholderItem {
-  border: none;
-  padding: 0;
 }
 
 .content .PageList a.PageListPage {
@@ -4077,7 +4111,7 @@ ol,
 }
 
 .content .PageList .PageListStatusSystem .PageListPage:before {
-  background: #418feb;
+  background: #668bc0;
 }
 
 .content .PageList .PageListStatusHidden .PageListPage:before {
@@ -4090,12 +4124,12 @@ ol,
 
 .content .PageList .PageListItem > a.PageListPage:hover {
   text-decoration: underline;
-  color: #418feb;
+  color: #668bc0;
 }
 
 .content .PageList .PageListItem > a.PageListPage:active {
   text-decoration: underline;
-  color: #1c79e7;
+  color: #4a75b3;
 }
 
 .content .PageList .PageListItem > a.PageListPage i {
@@ -4128,7 +4162,7 @@ ol,
 }
 
 .content .PageList .PageListItemOpen .PageListNumChildren {
-  color: #418feb;
+  color: #668bc0;
 }
 
 .content .PageListRoot .PageListID1 {
@@ -4178,7 +4212,7 @@ ol,
 }
 
 .content .AdminDataList td a {
-  color: #418feb;
+  color: #668bc0;
 }
 
 .content .AdminDataList td a:hover {
@@ -4271,7 +4305,7 @@ ol,
 
 .content ul.MarkupPagerNav .PageListPaginationCurrent a,
 .content ul.PageListPagination .PageListPaginationCurrent a {
-  color: #418feb !important;
+  color: #668bc0 !important;
   opacity: 1 !important;
 }
 
@@ -4315,7 +4349,7 @@ ol,
 
 .content ul.MarkupPagerNav .ui-priority-secondary:hover:before,
 .content ul.PageListPagination .ui-priority-secondary:hover:before {
-  color: #418feb !important;
+  color: #668bc0 !important;
   background-color: transparent !important;
 }
 
@@ -4340,7 +4374,7 @@ ol,
    * WireTabs
    *
    */
-  padding: 0 1.5em;
+  padding: 1em 1.5em 0;
   overflow: hidden;
   padding-bottom: 1em;
 }
@@ -4372,13 +4406,13 @@ ol,
   border-top: 0 !important;
   border-bottom: 0 !important;
   color: #999999;
-  margin-bottom: 0px;
+  margin-bottom: -1px;
   background: transparent;
 }
 
 #content .WireTabs a:hover {
   border: 1px solid transparent;
-  color: #418feb;
+  color: #668bc0;
   background: transparent;
 }
 
@@ -4447,6 +4481,7 @@ ol,
   padding: 2em 0;
   font-size: 0.875em;
   color: #99acc1;
+  -webkit-font-smoothing: antialiased;
 }
 
 #footer a {
@@ -4571,8 +4606,7 @@ body.modal #headline {
 
 .hasWireTabs #content {
   /* context selection in field editor */
-  padding-left: 0;
-  padding-right: 0;
+  padding: 0;
 }
 
 .hasWireTabs .content #fieldgroupContext {
@@ -4584,11 +4618,15 @@ body.modal #headline {
 
 #wrap_Inputfield_submit,
 #wrap_submit_save {
-  padding: 0 1em;
+  padding: 1em 1em 0;
+}
+
+#ModuleEditForm #wrap_Inputfield_submit {
+  padding: 0;
 }
 
 #ModuleEditForm .AdminDataTable tr td:first-child {
-  color: #c4c4c4;
+  color: #999999;
 }
 
 #addLinksMenu {

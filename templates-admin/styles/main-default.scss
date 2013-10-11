@@ -1,18 +1,18 @@
 
-$regular-font: Arial, sans-serif; 
-$button-radius: 5px; 
-$tabs-radius: 6px; 
-$tabs-height: 35px; 
+$regular-font: Arial, sans-serif;
+$button-radius: 5px;
+$tabs-radius: 6px;
+$tabs-height: 35px;
 $tabs-font-weight: normal;
 $base-font-size: 0.875em;
-$base-line-height: 1.6em; 
-$footer-font-size: 0.875em; 
-$form-top-margin-adjustment: -2px; 
+$base-line-height: 1.6em;
+$footer-font-size: 0.875em;
+$form-top-margin-adjustment: -2px;
 
 @import 'compass';
 @import 'colors-default';
 @import 'reset';
-@import 'jquery-ui'; 
+@import 'jquery-ui';
 @import 'ui';
 @import 'inputfields';
 @import 'cke';
@@ -25,12 +25,12 @@ $form-top-margin-adjustment: -2px;
 
 *, *:before, *:after {
 	box-sizing: border-box;
-	outline-color: $blue; 
+	outline-color: $blue;
  }
 
 body {
-	background: $main-bg; 
-	font-size: $base-font-size; 
+	background: $main-bg;
+	font-size: $base-font-size;
 	color: $text-color;
 }
 	body,
@@ -38,25 +38,25 @@ body {
 	.ui-button,
 	input,
 	textarea {
-		font-family: $regular-font; 
+		font-family: $regular-font;
 	}
 	body.modal {
-		background-color: $text-bg; 
+		background-color: $text-bg;
 	}
 
 // this shouldn't be needed, set body font-size to a pixel value and go from there
-// .container, 
+// .container,
 // .ui-dialog,
 // .ui-menu .ui-menu-item a {
-	// line-height: $base-line-height; 
-	// font-size: $base-font-size; 
+	// line-height: $base-line-height;
+	// font-size: $base-font-size;
 // }
 
 .container {
-	position: relative; 
-	width: 95%; 
-	max-width: 1200px; 
-	margin: 0 auto; 
+	position: relative;
+	width: 95%;
+	max-width: 1200px;
+	margin: 0 auto;
 	&:after {
 		content: "";
 		display: table;
@@ -70,28 +70,28 @@ body {
 }
 a {
 	/* standard link color */
-	color: $link-color; 
+	color: $link-color;
 }
 	a:hover {
 		/* hovered link color */
-		color: $link-hover-color; 
-		background: $link-hover-bg; 
+		color: $link-hover-color;
+		background: $link-hover-bg;
 	}
 
 	a.on {
 		/* on/active link color */
-		background: $link-current-bg; 
-		color: $link-current-color; 
+		background: $link-current-bg;
+		color: $link-current-color;
 	}
 	a:active {
 		color: $link-active-color;
-		background: $link-active-bg; 
+		background: $link-active-bg;
 	}
 
 .WireFatalError {
-	background: $error-bg; 
-	color: $reverse-text-color; 
-	padding: 1em; 
+	background: $error-bg;
+	color: $reverse-text-color;
+	padding: 1em;
 	position: relative;
 	z-index: 9999;
 }
@@ -103,10 +103,10 @@ a {
  *
  */
 #logo {
-	float: left; 
-	position: relative; 
-	left: -3px; 
-	margin-top: 0.7em; 
+	float: left;
+	position: relative;
+	left: -3px;
+	margin-top: 0.7em;
 }
 #wrapper{
 	box-shadow: $main-shadow;
@@ -115,20 +115,21 @@ a {
 }
 
 #masthead {
-	// background: $masthead-bg; 
-	position: relative; 
+	// background: $masthead-bg;
+	position: relative;
 	z-index: 5;
 	> .container{
 		background:$topnav-link-bg;
 
 	}
-} 	
+}
 #topnav {
 	z-index: 5;
 	position: relative;
 	float: left;
+	-webkit-font-smoothing: antialiased;
 	// display: inline-block;
-	// margin-top: 0.5em; 
+	// margin-top: 0.5em;
 
 	> li {
 		padding: 0;
@@ -139,30 +140,30 @@ a {
 	}
 
 	> li > a {
-		background: $topnav-link-bg; 
-		color: $topnav-link-color; 
+		background: $topnav-link-bg;
+		color: $topnav-link-color;
 		display: block;
-		float: left; 
+		float: left;
 		// margin: 0 2px 0 0;
-		padding: 0.7em 0.9em; 
+		padding: 0.7em 0.9em;
 		// border-top-right-radius: $tabs-radius;
-		// border-top-left-radius: $tabs-radius; 
+		// border-top-left-radius: $tabs-radius;
 		font-weight: $tabs-font-weight;
 	}
 
 
-	> li > a.hover, 
+	> li > a.hover,
 	> li > a:hover {
 		background: $topnav-link-hover-bg;
-		color: $topnav-link-hover-color; 
-		text-decoration: none; 
+		color: $topnav-link-hover-color;
+		text-decoration: none;
 	}
 
 	a.on:hover,
 	a.on {
 		color: $topnav-link-current-color;
 		background: $topnav-link-current-bg;
-		text-decoration: none; 
+		text-decoration: none;
 	}
 
 
@@ -170,17 +171,18 @@ a {
 
 
 #breadcrumbs {
-	padding: 0.6em 0;
+	padding: 0.5em 0;
+	line-height: 1em;
 	margin-bottom: 1em;
 	color: $breadcrumbs-color;
-	// background: $breadcrumbs-bg; 
-	border-bottom: $breadcrumbs-border; 
+	// background: $breadcrumbs-bg;
+	border-bottom: $breadcrumbs-border;
 
 	ul {
 
 
 		li {
-			color: $breadcrumbs-color; 
+			color: $breadcrumbs-color;
 			display: inline-block;
 			padding: 0;
 			line-height: 1em;
@@ -191,19 +193,19 @@ a {
 
 		}
 		a {
-			color: $breadcrumbs-link-color; 
-			margin-right: 0.5em; 
+			color: $breadcrumbs-link-color;
+			margin-right: 0.5em;
 			font-size: 0.85em;
 		}
 
 		a:hover {
-			color: $breadcrumbs-link-hover-color; 
-			background: none; 
+			color: $breadcrumbs-link-hover-color;
+			background: none;
 			text-decoration: underline;
 		}
 
 		a.sitelink {
-			float: left; 	
+			float: left;
 			font-size: 14px;
 
 		}
@@ -213,50 +215,53 @@ a {
 }
 
 #ProcessPageSearchForm {
-	float: right; 
-	margin: 0; 
-	width: 25%; 
-	max-width: 200px; 
-	min-width: 90px; 
+	float: right;
+	margin: 0;
+	width: 25%;
+	max-width: 200px;
+	min-width: 90px;
 	position: relative;
-	
-	> i{
-		color: $search-input-color; 
-		position: absolute;
+
+	> label{
+		color: $search-input-color;
+		position: absolute !important;
 		right: 0.7em;
-		top: 50%;
-		margin-top: -0.5em;
+		top: 50% !important;
+		display: block !important;
+		opacity: 1 !important;
+		z-index: 120;
+		margin-top: -0.6em !important;
 	}
 	#ProcessPageSearchQuery {
 		margin: 0;
-		height: 100%; 
-		padding: 0.7em 0.8em; 
+		height: 100%;
+		padding: 0.7em 0.8em;
 		padding-right: 2.3em;
-		font-size: 1em; 
-		width: 100%; 
-		background: transparent; 
+		font-size: 1em;
+		width: 100%;
+		background: transparent;
 		text-align: right;
-		color: $search-input-color; 
-		// border: 1px solid darken($breadcrumbs-bg, 10%); 
-		border: none; 
-		// border-radius: $button-radius; 
-		outline: none; 
-	}	
+		color: $search-input-color;
+		// border: 1px solid darken($breadcrumbs-bg, 10%);
+		border: none;
+		// border-radius: $button-radius;
+		outline: none;
+	}
 	#ProcessPageSearchQuery:hover {
 		background: darken($main-bg, 4%);
 	}
 		#ProcessPageSearchQuery:focus {
-			background: $text-bg; 
-			color: $text-color; 
-			text-transform: none; 
+			background: $text-bg;
+			color: $text-color;
+			text-transform: none;
 			font-weight: normal;
 		}
 
 	#ProcessPageSearchStatus {
 		position: absolute;
 		top: 0.7em;
-		left: 0.6em; 
-		color: $search-input-color; 
+		left: 0.6em;
+		color: $search-input-color;
 		font-weight: bold;
 	}
 
@@ -264,41 +269,41 @@ a {
 
 
 #headline {
-	position: relative; 
-	z-index: 5; 
-	background: $headline-bg; 
-	border-bottom: $headline-border; 
-	padding: 1.5em 0; 
+	position: relative;
+	z-index: 5;
+	background: $headline-bg;
+	border-bottom: $headline-border;
+	padding: 1.5em 0;
 	margin-bottom: -1px;
 	.container {
-		position: relative; 
+		position: relative;
 	}
 
 
 	#head_button {
 		/* The main/primary button for a listing screen, appears in the masthead */
-		position: absolute; 
+		position: absolute;
 		margin: 0;
 		margin-top: -1.3em;
 		top: 50%;
-		right: 0; 
+		right: 0;
 		z-index: 2;
 
 		button {
-			font-size: 1.3em; 
-			margin-right: 0; 
-			margin-left: 10px; 
-			float: right; 
+			font-size: 1.3em;
+			margin-right: 0;
+			margin-left: 10px;
+			float: right;
 		}
 	}
 
 	#title {
-		font-size: 1.7em; 
+		font-size: 1.7em;
 		line-height: 1em;
 		vertical-align: middle;
 		margin: 0;
 		padding: 0;
-		color: $headline-color; 
+		color: $headline-color;
 		padding-right: 5em;
 	}
 
@@ -313,16 +318,16 @@ a {
  */
 
 #content {
-	position: relative; 
-	background: $white; 
+	position: relative;
+	background: $white;
 	padding: 0;
-	z-index: 4; 
+	z-index: 4;
 }
 
 		#content .container > form,
 		#content .container > .ui-helper-clearfix > form {
 			position: relative;
-			top: -1px; 
+			top: -1px;
 		}
 
 .content {
@@ -332,7 +337,7 @@ a {
 	}
 
 	.nav a.label {
-		font-size: 1em; 
+		font-size: 1em;
 	}
 
 	p,
@@ -342,46 +347,46 @@ a {
 		margin: 1em 0;
 	}
 
-	table th, 
+	table th,
 	table th.header,
-	table.AdminDataList th, 
+	table.AdminDataList th,
 	h4 {
-		color: $table-th-color; 
+		color: $table-th-color;
 	}
-	
+
 	table.AdminDataList th.headerSortUp,
 	table.AdminDataList th.headerSortDown,
 	table th.headerSortUp,
 	table th.headerSortDown,
 	table th:hover {
-		color: $table-th-active-color; 
+		color: $table-th-active-color;
 	}
 
 	table.AdminDataList {
-		margin-top: 0; 
+		margin-top: 0;
 	}
 		.container > table.AdminDataList {
-			margin-top: 1em; 
+			margin-top: 1em;
 		}
 
 	h2 {
 		margin: 1em 0;
-		font-size: 1.4em; 
-		line-height: 1.2em; 
-		color: $medium-text-color; 
+		font-size: 1.4em;
+		line-height: 1.2em;
+		color: $medium-text-color;
 	}
 		h2 a {
 			text-decoration: underline;
 		}
 		h2 a:hover {
-			color: $reverse-text-color; 
+			color: $reverse-text-color;
 			background: $link-hover-color;
 			text-decoration: none;
 		}
 
 	h3 {
 		margin: 1em 0;
-		font-size: 1.2em; 
+		font-size: 1.2em;
 	}
 
 	h4 {
@@ -392,15 +397,15 @@ a {
 	}
 
 	li {
-		margin: 1em 0; 
+		margin: 1em 0;
 		display: block;
-		list-style: disc; 
+		list-style: disc;
 	}
 
 	ol li {
-		display: list-item; 
+		display: list-item;
 		list-style-type: decimal;
-		margin-left: 1em; 
+		margin-left: 1em;
 	}
 
 	/**
@@ -413,9 +418,10 @@ a {
 		background: $action-link-bg;
 		border-radius: 1em;
 		padding: 3px !important;
+		-webkit-font-smoothing: antialiased;
 		// margin: -2px;
 		// line-height: 24px;
-		// vertical-align: middle !important;
+		vertical-align: baseline !important;
 		li{
 			border: none;
 		}
@@ -434,7 +440,7 @@ a {
 	}
 
 	.PageListStatusIcon {
-		color: lighten($text-color, 40%); 
+		color: lighten($text-color, 40%);
 		font-size: 14px;
 		margin: 0 0.3em;
 	}
@@ -442,24 +448,24 @@ a {
 		ul.actions li,
 		.PageListActions li,
 		li.action {
-			border: none; 
-			padding: 0 1px; 
+			border: none;
+			padding: 0 1px;
 
-		
+
 		}
 
 
 
-		
+
 	.PageListMoveNote {
-		text-transform: lowercase; 
-		cursor: move; 
+		text-transform: lowercase;
+		cursor: move;
 	}
 
 	.PageListSelectName {
-		margin-right: 0.5em; 
+		margin-right: 0.5em;
 		i {
-			margin-right: 0.25em; 
+			margin-right: 0.25em;
 		}
 	}
 
@@ -469,7 +475,7 @@ a {
 	 *
 	 */
 	dl {
-		margin: 1em 0;
+		margin: 0 0 1em 0;
 	}
 		.container > dl:first-child {
 			margin-top: 0;
@@ -477,19 +483,19 @@ a {
 		dt,
 		dt {
 			display: block;
-			font-weight: bold; 
-			padding-top: 1em; 
+			font-weight: bold;
+			padding-top: 1em;
 		}
 		dt a {
-			// text-transform: none; 
-			color: $link-color; 
+			// text-transform: none;
+			color: $link-color;
 		}
 		dt a:hover {
-			color: $link-hover-color; 
+			color: $link-hover-color;
 		}
 		dl dd {
-			padding-bottom: 1em; 
-			border-bottom: 1px solid $subtle-border; 
+			padding-bottom: 1em;
+			border-bottom: 1px solid $subtle-border;
 		}
 
 	/**
@@ -498,7 +504,7 @@ a {
 	 */
 
 	#PageListContainer {
-		padding: 1em 0; 
+		padding: 0;
 	}
 	.InputfieldContent > #PageListContainer{
 		padding: 0;
@@ -514,25 +520,25 @@ a {
 			width: 0;
 			left: -4px;
 			margin-top: -3px;
-			top: -1.6em;
+			top: -($pagelist-item-height/2);
 			z-index: 0;
-			bottom: -20px;
+			bottom: -($pagelist-item-height/2);
 			border-left: 1px dotted #ccc;
 		}
 		.PageListItem {
-			// border-bottom: 1px solid lighten($subtle-border, 4%); 
+			// border-bottom: 1px solid lighten($subtle-border, 4%);
 			position: relative;
 			clear: both;
-			line-height: 21px !important;
-			padding: 7px 12px !important;
+			line-height: $pagelist-item-height;
+			height: $pagelist-item-height;
+			padding: 0 12px !important;
 			padding-right: 0 !important;
-			line-height: 1.3em; 
 			&:before {
 				content: "";
 				position: absolute;
 				width: 13px;
 				left: -4px;
-				margin-top: -1px;
+				// margin-top: -1px;
 				top: 50%;
 				border-bottom: 1px solid #ccc;
 				z-index: 1;
@@ -541,25 +547,17 @@ a {
 				content: "";
 				position: absolute;
 				left: -4px;
-				top: -18px;
-				bottom: 18px;
+				top: -($pagelist-item-height/2);
+				bottom: ($pagelist-item-height/2);
 				border-left: 1px solid #ccc;
 				z-index: 1;
 			}
 			&:first-child:after {
-				top: -0.6em;
+				top: -($pagelist-item-height/6);
 			}
 
 
 			&.PageListSortItem{
-				// background: #fff !important;
-				// font-size: 14px !important;
-				line-height: 20px !important;
-
-				// &.PageListItem:after,
-				// &.PageListItem:before{
-				// 	display: none !important;
-			 // 	}
 				.PageListNumChildren{
 					color: #444 !important;
 					display: none !important;
@@ -568,8 +566,9 @@ a {
 					background: #444 !important;
 					border-radius: 1em;
 					color: #fff !important;
-					padding: 0.2em 0.5em 0.2em 0.3em;
+					padding: 0.2em 0.6em 0.2em 0.3em;
 					text-decoration: none !important;
+
 				}
 				.PageListMoveNote{
 					margin: 0 0.6em;
@@ -587,13 +586,53 @@ a {
 				}
 
 			}
+			&.ui-sortable-helper{
+				.PageListMoveNote,
+				&.PageListItem:after,
+				&.PageListItem:before{
+					display: none !important;
+			 	}
+
+			}
 		}
+		.PageListPlaceholderItem{
+			display: none !important; // looks like this isn't needed anymore  :(
+			border: 1px dashed #aaa !important;
+			background: #f6f6f6 !important;
+			position: relative;
+			width: 150px;
+			height: 22px !important;
+			border-radius: 11px;
+			padding: 0 !important;
+			margin: 0 0 ($pagelist-item-height/3) 12px !important;
+
+
+			&:before {
+				content: "";
+				position: absolute;
+				width: 13px;
+				left: -15px;
+
+				top: 50%;
+				border-bottom: 1px dashed #ccc;
+				z-index: 1;
+			}
+			&:after {
+				content: "";
+				position: absolute;
+				left: -17px;
+				top: -20px;
+				bottom: -12px;
+				border-left: 1px solid #ccc;
+				z-index: 1;
+			}
+	 	}
 		.PageListSortPlaceholder {
 			height: 0!important;
 			padding: 0!important;
 			// top: -1px;
 			position: relative;
-			// margin: 0 0 -1px 0!important;
+			margin: 0 0 -1px 0!important;
 			background: transparent!important;
 			border: none!important;
 			border-bottom: 1px dashed $subtle-border!important;
@@ -652,13 +691,9 @@ a {
 		.PageListLoading{
 			margin: 0 0.5em;
 		}
-		.PageListPlaceholderItem {
-			border: none;
-			padding: 0;
-		}
 
 		a.PageListPage {
-			color: $pagelist-link-color; 
+			color: $pagelist-link-color;
 			opacity: 1.0;
 			text-decoration: none;
 			line-height: 21px !important;
@@ -703,33 +738,33 @@ a {
 
 		.PageListItem > a.PageListPage:hover {
 			text-decoration: underline;
-			color: $pagelist-link-hover-color; 
+			color: $pagelist-link-hover-color;
 		}
 		.PageListItem > a.PageListPage:active {
 			text-decoration: underline;
-			color: $pagelist-link-active-color; 
+			color: $pagelist-link-active-color;
 		}
 		.PageListItem > a.PageListPage i {
 			padding: 0 0.4em 0 0;
-			color: $pagelist-link-icon-color; 
+			color: $pagelist-link-icon-color;
 		}
-		.PageListItem > a.PageListPage i.icon-lock, 
+		.PageListItem > a.PageListPage i.icon-lock,
 		.PageListItem > a.PageListPage i.icon-unlock,
 		.PageListItem > a.PageListPage i.icon-trash {
 			padding: 0 0 0 0.25em;
 			color: #777;
 		}
 		.PageListItem > a.PageListPage:hover i {
-			text-decoration: none; 
+			text-decoration: none;
 		}
 
 		.PageListItemOpen > a.PageListPage  {
-			color: $pagelist-link-open-color; 
-			// background-color: $pagelist-link-open-bg; 
+			color: $pagelist-link-open-color;
+			// background-color: $pagelist-link-open-bg;
 		}
 
 		.PageListStatusHidden:not(.PageListItemOpen) > a.PageListPage {
-			opacity: 0.75; 
+			opacity: 0.75;
 		}
 
 		.PageListNumChildren {
@@ -754,7 +789,7 @@ a {
 				display: none !important;
 			}
 			> .PageList{
-				
+
 				padding-left: 5px;
 				&:before{
 					display: none !important;
@@ -766,7 +801,7 @@ a {
 			}
 		}
 	}
-	
+
 	.PageListRootHidden > .PageList > .PageListItem:first-child:after,
 	.PageListRoot > .PageList > .PageListItem:after{
 		display: none !important;
@@ -774,29 +809,29 @@ a {
 	/* MarkupAdminDataTable */
 	.AdminDataList th,
 	.AdminDataList td {
-		border-bottom: 1px solid $subtle-border; 
+		border-bottom: 1px solid $subtle-border;
 		padding: 0.5em 0;
 		vertical-align: middle !important;
-	}	
+	}
 	.AdminDataList button{
 		font-size: 0.85em !important;
 	}
 	.AdminDataList tr:hover td,
 	.AdminDataList tr:hover th {
-		background: $subtle-bg; 
+		background: $subtle-bg;
 	}
 	.AdminDataList td a {
-		color: $link-color; 
+		color: $link-color;
 		// vertical-align: middle;
-	}		
+	}
 	.AdminDataList td a:hover {
-		color: $link-hover-color; 
+		color: $link-hover-color;
 	}
 	.AdminDataList td i,
 	.AdminDataList td .fieldFlag{
-		color: $gray; 
+		color: $gray;
 		vertical-align: text-top;
-	}	
+	}
 	.AdminDataList td .fieldFlag:hover{
 			color: $dark-gray;
 	}
@@ -830,7 +865,7 @@ a {
 	}
 
 	/* Pagination */
-	
+
 	ul.MarkupPagerNav,
 	ul.PageListPagination{
 		padding: 0 !important;
@@ -873,7 +908,7 @@ a {
 				margin: 0;
 			}
 		}
-		
+
 		.PageListPaginationCurrent{
 			a{
 				// background: $dark-gray !important;
@@ -881,7 +916,7 @@ a {
 				opacity: 1!important;
 			}
 		}
-		
+
 		a.ui-priority-secondary{
 			color: transparent !important;
 			background: transparent !important;
@@ -893,7 +928,7 @@ a {
 				border-color: transparent !important;
 				opacity: 1 ;
 			}
-		}	
+		}
 		a.ui-priority-secondary:before{
 			color: #bbb;
 			font-size: 12px;
@@ -907,10 +942,10 @@ a {
 
 		li:first-child .ui-priority-secondary:before{
 			content: "\f053";
-		}		
+		}
 		li:first-child a{
 			margin: 0 !important;
-		}	
+		}
 		.ui-priority-secondary:hover:before{
 			color: $blue !important;
 			background-color: transparent !important;
@@ -939,7 +974,7 @@ a {
 	 * WireTabs
 	 *
 	 */
-	padding: 0 1.5em;
+	padding: 1em 1.5em 0;
 	overflow: hidden;
 	padding-bottom: 1em;
 	.WireTabs {
@@ -949,13 +984,13 @@ a {
 		margin: 0;
 		// margin-bottom: -1px;
 		left: 0;
-		width: 100%; 
-		z-index: 104; 
-		overflow: visible; 
+		width: 100%;
+		z-index: 104;
+		overflow: visible;
 		text-transform: uppercase;
 
 		li {
-			background: none; 
+			background: none;
 			margin: 0;
 			padding: 0;
 		}
@@ -965,36 +1000,36 @@ a {
 			padding: 0.7em 1em;
 			display: inline-block;
 			line-height: 1em;
-			border: $wiretab-link-border; 
-			border-top: 0 !important; 
-			border-bottom: 0 !important; 
+			border: $wiretab-link-border;
+			border-top: 0 !important;
+			border-bottom: 0 !important;
 			color: $wiretab-link-color;
-			margin-bottom: 0px;
-			background: $wiretab-link-bg; 
+			margin-bottom: -1px;
+			background: $wiretab-link-bg;
 		}
 
 
 		a:hover {
-			border: $wiretab-link-hover-border; 
-			color: $wiretab-link-hover-color; 
-			background: $wiretab-link-hover-bg; 
+			border: $wiretab-link-hover-border;
+			color: $wiretab-link-hover-color;
+			background: $wiretab-link-hover-bg;
 
 			em {
-				border: none; 
+				border: none;
 			}
 		}
 
 		a:active{
-			// background: $wiretab-link-active-bg; 
-			color: $wiretab-link-active-color; 
+			// background: $wiretab-link-active-bg;
+			color: $wiretab-link-active-color;
 		}
 		a.on:hover,
 		a.on {
-			color: $wiretab-link-current-color; 
-			border: $wiretab-link-current-border; 
-			background: $wiretab-link-current-bg; 
+			color: $wiretab-link-current-color;
+			border: $wiretab-link-current-border;
+			background: $wiretab-link-current-bg;
 			position: relative;
-			z-index: 100; 
+			z-index: 100;
 		}
 
 		a em {
@@ -1006,10 +1041,10 @@ a {
 
 		/*
 		#_ProcessPageEditView {
-			float: right; 
+			float: right;
 			border: $wiretab-link-current-border;
-			border-bottom: none; 
-			margin-right: 0; 
+			border-bottom: none;
+			margin-right: 0;
 		}
 		*/
 
@@ -1018,18 +1053,18 @@ a {
 
 
 .description {
-	color: $medium-text-color; 
+	color: $medium-text-color;
 	margin: 0.5em 0;
 }
 
-.notes, 
+.notes,
 .detail {
-	color: $medium-text-color; 
+	color: $medium-text-color;
 	font-size: 0.875em;
-	line-height: 1.3em; 
+	line-height: 1.3em;
 }
 .notes {
-	background: $notes-bg; 
+	background: $notes-bg;
 	color: $notes-color;
 	border: $notes-border;
 	padding: 0.3em 0.6em !important;
@@ -1037,15 +1072,15 @@ a {
 
 .description strong,
 .notes strong {
-	color: $medium-text-color; 
-	font-weight: bold; 
+	color: $medium-text-color;
+	font-weight: bold;
 }
 
 .error {
-	background: $error-bg; 
-	color: $error-color; 
-	font-weight: bold; 
-	font-size: 0.9166666em;	
+	background: $error-bg;
+	color: $error-color;
+	font-weight: bold;
+	font-size: 0.9166666em;
 }
 
 /***********************************************************************************************
@@ -1054,15 +1089,16 @@ a {
  */
 
 #footer {
-	padding: 2em 0; 
-	font-size: $footer-font-size; 
-	color: $footer-color; 
+	padding: 2em 0;
+	font-size: $footer-font-size;
+	color: $footer-color;
+	-webkit-font-smoothing: antialiased;
 	// background: $footer-bg;
 	a {
-		color: $footer-link-color; 
+		color: $footer-link-color;
 	}
 	a:hover {
-		text-decoration: underline; 
+		text-decoration: underline;
 	}
 
 	p {
@@ -1070,9 +1106,9 @@ a {
 	}
 
 	#userinfo {
-		display: block; 
-		float: right; 
-		
+		display: block;
+		float: right;
+
 		a{
 			font-weight: bold;
 			text-transform: uppercase;
@@ -1116,37 +1152,37 @@ a {
 
 
 #debug {
-	margin-top: 2em; 
+	margin-top: 2em;
 
 	.container {
-		width: 100%; 
+		width: 100%;
 	}
 
 	p {
-		margin: 1em 0; 
+		margin: 1em 0;
 	}
 
 	ol {
-		margin: 1em 0; 
+		margin: 1em 0;
 	}
 
 	h4 {
-		font-weight: bold; 
+		font-weight: bold;
 	}
 
 	table {
-		width: 100%; 
+		width: 100%;
 
 		th {
 			font-weight: bold;
 		}
 
 		td, th {
-			vertical-align: top; 
-			padding: 3px 5px; 	
-			border-bottom: 1px dotted $light-text-color; 
-			border-left: 1px dotted $light-text-color; 
-			font-size: 12px; 
+			vertical-align: top;
+			padding: 3px 5px;
+			border-bottom: 1px dotted $light-text-color;
+			border-left: 1px dotted $light-text-color;
+			font-size: 12px;
 		}
 
 	}
@@ -1161,20 +1197,20 @@ a {
 body.modal {
 
 	.container {
-		margin: 0; 
-		width: 100%; 
-		min-width: 300px; 
+		margin: 0;
+		width: 100%;
+		min-width: 300px;
 	}
 
 	.content h2 {
 		margin: 0.5em 0;
-		font-size: 1.3em; 
+		font-size: 1.3em;
 	}
 
 	#footer,
 	#masthead,
 	#headline {
-		display: none; 
+		display: none;
 	}
 
 }
@@ -1188,13 +1224,13 @@ body.modal {
 // #content .container > form,
 // #content .container > .ui-helper-clearfix > form {
 // 	/* for wiretabs and/or forms to line up with headline area */
-// 	// top: $form-top-margin-adjustment; 
+// 	// top: $form-top-margin-adjustment;
 // }
 
 
 
 // body.hasWireTabs #content {
-// 	border-top: 3em solid $headline-bg; 
+// 	border-top: 3em solid $headline-bg;
 // }
 
 // body.hasWireTabs .InputfieldForm {
@@ -1204,33 +1240,38 @@ body.modal {
 
 .hasWireTabs #content  {
 	/* context selection in field editor */
-	padding-left: 0;
-	padding-right: 0;
+	padding: 0;
 }
 
 .hasWireTabs .content #fieldgroupContext {
 	/* context selection in field editor */
 	top: -2.25em;
-	right: 0; 
-	z-index: 102; 
+	right: 0;
+	z-index: 102;
 }
 
 #wrap_Inputfield_submit,
 #wrap_submit_save{
-	padding: 0 1em;
+	padding: 1em 1em 0;
+}
+#ModuleEditForm{
+	#wrap_Inputfield_submit{
+		padding: 0;
+	}
+	.AdminDataTable tr td:first-child {
+		color: $gray;
+	}
 }
 
-#ModuleEditForm .AdminDataTable tr td:first-child {
-	color: lighten($text-color, 50%);
-}
+
 
 #addLinksMenu {
-	min-width: 150px; 
+	min-width: 150px;
 }
 
 .dropdown-menu{
 	display: none;
-	border-radius: 0 !important; 
+	border-radius: 0 !important;
 	// border: 1px solid $main-bg !important;
 	border: 0 !important;
 
@@ -1238,7 +1279,7 @@ body.modal {
 		min-width: 10px;
 		border: 0 !important;
 		a{
-			border-radius: 0 !important; 
+			border-radius: 0 !important;
 			small{
 				font-size: 1em;
 				color: $gray;
@@ -1246,7 +1287,7 @@ body.modal {
 				margin: 0  0.4em;
 			}
 		}
-	} 
+	}
 }
 
 .align_left,
@@ -1258,14 +1299,14 @@ body.modal {
 .align_right,
 .align-right {
 	float: right;
-	margin: 0 0 0.5em 1em; 
+	margin: 0 0 0.5em 1em;
 }
 
 .align_center,
 .align-center {
 	display: block;
 	margin-left: auto;
-	margin-right: auto; 
+	margin-right: auto;
 }
 
 /***********************************************************************************************
@@ -1303,16 +1344,16 @@ body.modal {
 	}
 
 	#logo {
-		display: none; 
+		display: none;
 	}
 
 
 	#head_button {
-		top: 102px; 
+		top: 102px;
 	}
 
 	#fieldgroupContext {
-		display: none; 
+		display: none;
 	}
 
 }
@@ -1340,19 +1381,19 @@ body.modal {
 	}
 
 	.container {
-		width: 100%; 
+		width: 100%;
 	}
 	#footer #userinfo {
 		float: none;
 	}
 	#footer {
-		text-align: center; 
-	}	
+		text-align: center;
+	}
  	#breadcrumbs,
 	.AjaxUploadDropHere {
-		display: none !important; 
+		display: none !important;
 	}
-		
+
 
 }
 
