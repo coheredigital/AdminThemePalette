@@ -6,7 +6,6 @@ $white: #FFF;
 $black: #222; 
 $gray: #999;
 $dark-gray: #444;
-$light-khaki: #E4EBEE;
 
 $orange : #f2673a;
 $dark-orange : darken($orange, 8%);
@@ -18,57 +17,54 @@ $dark-red: darken($red, 10%);
 $purple: #BA79C7;
 $light-purple: lighten($purple, 8%);
 $dark-purple: lighten($purple, 8%);
+
 $pink: #F21E69; 
 $dark-pink: darken($pink, 10%); 
+
 $blue: #418FEB;
 $light-blue: lighten($blue, 8%); 
 $dark-blue: darken($blue, 8%); 
-
 
 $green: #43b979;
 $light-green: lighten($green, 5%);
 $dark-green: darken($green, 5%);
 
-
 $yellow: #ffec9f;
-$dark-yellow: #cfb138;
-$light-yellow: #fff6d3;
-
+$dark-yellow: darken($yellow, 40%);
+$light-yellow: lighten($yellow, 12%);
 
 $cyan: #0EDCB9;
 $brown: #821038;
 
 
-$main-bg: #333539;
-$main-shadow: 0 0 12px darken($main-bg, 5%);
+$main-bg: #607E9E;
+// $main-bg: #365163;
+// $main-bg: #5B7D7C;
+// $main-bg: #7A372C;
+// $main-bg: #6B525E;
+$main-shadow: 0 0 4px darken($main-bg, 5%);
 
 
-$subtle-bg: darken(#E8F0F5, 2%);
+$subtle-bg: #eee;
 $subtle-border: darken($subtle-bg, 5%);
 
 $text-bg: $white; 
 $text-color: $black;
 
-$masthead-bg: $blue; 
-$masthead-secondary-bg: lighten($masthead-bg, 8%); 
-
-$masthead-secondary-border: none; /* 1px solid transparentize($subtle-bg, 0.9); */
-
-
-$headline-bg: #eee;  
-$headline-color: $gray; 
-$headline-border: 1px solid darken($headline-bg, 5%);
+$headline-bg: $subtle-bg;  
+$headline-color: $dark-gray; 
+$headline-border: 1px solid $subtle-border;
 
 $medium-text-color: #777; 
 $light-text-color: #999; 
 $reverse-text-color: $white;
 
-$breadcrumbs-bg: $light-blue;
-$breadcrumbs-bg: $masthead-secondary-bg;
-$breadcrumbs-color: darken($main-bg, 12%); 
-$breadcrumbs-link-color: lighten($main-bg, 40%); 
+// $breadcrumbs-bg: darken($main-bg, 3%);
+// $breadcrumbs-bg: none;
+$breadcrumbs-color: lighten($main-bg, 12%); 
+$breadcrumbs-link-color: lighten($main-bg, 30%); 
 $breadcrumbs-link-hover-color: $white;
-$breadcrumbs-border: none; 
+$breadcrumbs-border: 1px solid darken($main-bg, 3%); 
 
 $topnav-link-color: lighten($main-bg, 40%);
 $topnav-link-bg: none; 
@@ -86,8 +82,8 @@ $item-header-color: $white;
 $item-border: 1px solid $subtle-bg; 
 
 $alt-link-color: $dark-pink; 
-$link-color: $pink;
-$link-hover-color: $dark-pink;
+$link-color: $blue;
+$link-hover-color: $orange;
 $link-hover-bg: none; 
 $link-current-color: $alt-link-color;
 $link-current-bg: none; 
@@ -95,10 +91,10 @@ $link-active-color: $dark-pink;
 $link-active-bg: none; 
 
 $action-link-font-size: 1em;
-$action-link-bg: $subtle-bg;
-$action-link-color: $dark-blue;
+$action-link-bg: $dark-gray;
+$action-link-color: $subtle-bg;
 $action-link-border: none; 
-$action-link-hover-color: $white;
+$action-link-hover-color: $orange;
 $action-link-hover-border: 1px solid $pink;
 $action-link-hover-bg: $pink;
 $action-link-active-color: $white; 
@@ -108,17 +104,19 @@ $action-link-active-bg: $dark-pink;
 $button-bg: $green; 
 $button-border: 0 !important;
 $button-color: $white;
-$button-hover-bg: $pink;
-$button-hover-border: $pink;
+$button-hover-bg: $dark-green;
+// $button-hover-border: $pink;
 $button-radius: 5px; 
-$button-shadow: inset 0 -0.2em 0 rgba(0,0,0,0.15) !important; 
+$button-shadow: inset 0 -0.2em 0 rgba(0,0,0,0.15); 
+
+$search-input-color: lighten($main-bg, 25%);
 
 $ui-state-default-bg: darken($green, 5%);
 $ui-state-default-color: $reverse-text-color; 
 $ui-state-hover-bg: $pink;
 $ui-state-hover-color: $reverse-text-color; 
 
-$label-link-color: $dark-blue;
+$label-link-color: $blue;
 $label-link-bg: #fff; 
 $label-link-collapsed-color: #69B7EF; /*lighten($dark-blue, 35%); */
 $label-link-collapsed-bg: #fff; 
@@ -132,7 +130,7 @@ $pagelist-link-hover-color: $blue;
 $pagelist-link-open-color: $main-bg;
 $pagelist-link-open-bg: #ffffdd; 
 $pagelist-link-active-color: $dark-blue; 
-$pagelist-link-icon-color: $dark-pink; /*#CC0048; */
+$pagelist-link-icon-color: $gray; /*#CC0048; */
 
 $pagination-font-size: 0.769230769230769em; 
 $pagination-link-color: $reverse-text-color;
@@ -145,21 +143,21 @@ $pagination-link-active-color: $white;
 $pagination-link-active-bg: $dark-pink; 
 $pagination-link-border-radius: 2px; 
 
-$wiretab-link-bg: none; 
+$wiretab-link-bg: transparent; 
 $wiretab-link-border: 1px solid transparent; 
-$wiretab-link-color: lighten($light-blue, 25%); 
-$wiretab-link-hover-bg: $pink;
-$wiretab-link-hover-color: $white; 
+$wiretab-link-color: $gray; 
+$wiretab-link-hover-bg: transparent;
+$wiretab-link-hover-color: $blue; 
 $wiretab-link-hover-border: 1px solid transparent; 
-$wiretab-link-current-bg: $white; 
-$wiretab-link-current-color: $pink;
-$wiretab-link-current-border: 1px solid $breadcrumbs-bg;
+$wiretab-link-current-bg: $white !important; 
+$wiretab-link-current-color: $dark-gray;
+$wiretab-link-current-border: $headline-border ;
 $wiretab-link-active-bg: $dark-pink;
 $wiretab-link-active-color: $white; 
 
 $footer-bg: #eee; /* transparentize($subtle-bg, 0.5); */
-$footer-color: $light-text-color; 
-$footer-link-color: $pink;
+$footer-color: lighten($main-bg, 18%); 
+$footer-link-color: lighten($main-bg, 40%);
 
 $highlight-bg: $green;
 $highlight-color: $white; 
@@ -169,11 +167,13 @@ $error-bg: $red;
 $error-border: $red; 
 $error-color: #fff; 
 
-$notes-bg: #ffffdd; 
+$notes-bg: $light-yellow; 
+$notes-color: $dark-yellow; 
+$notes-border: 1px solid $yellow; 
 $notes-font-size: 0.846153846153846em;
 
 $tabs-radius: 4px; 
-$tabs-font-weight: bold; 
+$tabs-font-weight: normal; 
 
 $form-top-margin-adjustment: 0; 
 

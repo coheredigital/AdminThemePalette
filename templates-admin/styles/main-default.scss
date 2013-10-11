@@ -15,6 +15,7 @@ $form-top-margin-adjustment: -2px;
 @import 'jquery-ui'; 
 @import 'ui';
 @import 'inputfields';
+@import 'cke';
 
 
 /***********************************************************************************************
@@ -24,6 +25,7 @@ $form-top-margin-adjustment: -2px;
 
 *, *:before, *:after {
 	box-sizing: border-box;
+	outline-color: $blue; 
  }
 
 body {
@@ -61,7 +63,7 @@ body {
 #wrapper .container{
 	width: auto;
 	padding: 0;
-	margin: 0 1.6em;
+	margin: 0 1em;
 }
 a {
 	/* standard link color */
@@ -113,56 +115,59 @@ a {
 	// background: $masthead-bg; 
 	position: relative; 
 	z-index: 5;
-	#topnav {
-		z-index: 5;
-		position: relative;
-		float: left; 
-		// margin-top: 0.5em; 
+	// .container{
+	// 	background: $dark-gray;
+	// }
+} 	
+#topnav {
+	z-index: 5;
+	position: relative;
+	float: left;
+	// display: inline-block;
+	// margin-top: 0.5em; 
 
-		> li {
-			padding: 0;
-			margin: 0;
-			list-style: none;
-			display: inline;
-			text-transform: uppercase;
-		}
-
-		> li > a {
-			background: $topnav-link-bg; 
-			color: $topnav-link-color; 
-			display: block;
-			float: left; 
-			margin: 0 2px 0 0;
-			padding: 0.8em 1em; 
-			// border-top-right-radius: $tabs-radius;
-			// border-top-left-radius: $tabs-radius; 
-			font-weight: $tabs-font-weight;
-		}
-
-
-		> li > a.hover, 
-		> li > a:hover {
-			// background: $topnav-link-hover-bg;
-			color: $topnav-link-hover-color; 
-			text-decoration: none; 
-		}
-
-		a.on:hover,
-		a.on {
-			color: $topnav-link-current-color;
-			background: $topnav-link-current-bg;
-			text-decoration: none; 
-		}
-
-
+	> li {
+		padding: 0;
+		margin: 0;
+		list-style: none;
+		display: inline;
+		text-transform: uppercase;
 	}
 
-} /* #masthead */
+	> li > a {
+		background: $topnav-link-bg; 
+		color: $topnav-link-color; 
+		display: block;
+		float: left; 
+		// margin: 0 2px 0 0;
+		padding: 0.7em 0.9em; 
+		// border-top-right-radius: $tabs-radius;
+		// border-top-left-radius: $tabs-radius; 
+		font-weight: $tabs-font-weight;
+	}
+
+
+	> li > a.hover, 
+	> li > a:hover {
+		// background: $topnav-link-hover-bg;
+		color: $topnav-link-hover-color; 
+		text-decoration: none; 
+	}
+
+	a.on:hover,
+	a.on {
+		color: $topnav-link-current-color;
+		background: $topnav-link-current-bg;
+		text-decoration: none; 
+	}
+
+
+}
 
 
 #breadcrumbs {
-	padding-top: 0.6em;
-	padding-bottom: 1.5em;
+	padding: 0.6em 0;
+	margin-bottom: 1em;
 	color: $breadcrumbs-color;
 	// background: $breadcrumbs-bg; 
 	border-bottom: $breadcrumbs-border; 
@@ -184,7 +189,7 @@ a {
 		a {
 			color: $breadcrumbs-link-color; 
 			margin-right: 0.5em; 
-			font-size: 0.9em;
+			font-size: 0.85em;
 		}
 
 		a:hover {
@@ -195,7 +200,7 @@ a {
 
 		a.sitelink {
 			float: left; 	
-
+			font-size: 14px;
 
 		}
 
@@ -210,17 +215,25 @@ a {
 	max-width: 200px; 
 	min-width: 90px; 
 	position: relative;
-
+	
+	> i{
+		color: $search-input-color; 
+		position: absolute;
+		right: 0.7em;
+		top: 50%;
+		margin-top: -0.5em;
+	}
 	#ProcessPageSearchQuery {
 		margin: 0;
 		height: 100%; 
-		padding: 0.8em 0.8em; 
+		padding: 0.7em 0.8em; 
+		padding-right: 2.3em;
 		font-size: 1em; 
 		width: 100%; 
-		background: $main-bg; 
+		background: transparent; 
 		text-align: right;
-		color: $white; 
-		border: 1px solid darken($breadcrumbs-bg, 10%); 
+		color: $search-input-color; 
+		// border: 1px solid darken($breadcrumbs-bg, 10%); 
 		border: none; 
 		// border-radius: $button-radius; 
 		outline: none; 
@@ -237,9 +250,10 @@ a {
 
 	#ProcessPageSearchStatus {
 		position: absolute;
-		top: 0.8em;
-		left: 1em; 
-		color: $light-text-color; 
+		top: 0.7em;
+		left: 0.6em; 
+		color: $search-input-color; 
+		font-weight: bold;
 	}
 
 }
@@ -247,14 +261,13 @@ a {
 
 #headline {
 	position: relative; 
-	z-index: 2; 
+	z-index: 5; 
 	background: $headline-bg; 
 	border-bottom: $headline-border; 
 	padding: 1.5em 0; 
-
+	margin-bottom: -1px;
 	.container {
 		position: relative; 
-		min-height: 30px; 
 	}
 
 
@@ -262,7 +275,8 @@ a {
 		/* The main/primary button for a listing screen, appears in the masthead */
 		position: absolute; 
 		margin: 0;
-		top: -0.3em;
+		margin-top: -1.3em;
+		top: 50%;
 		right: 0; 
 		z-index: 2;
 
@@ -275,12 +289,13 @@ a {
 	}
 
 	#title {
-		font-size: 2em; 
+		font-size: 1.7em; 
 		line-height: 1em;
+		vertical-align: middle;
 		margin: 0;
 		padding: 0;
 		color: $headline-color; 
-		padding-right: 3em;
+		padding-right: 5em;
 	}
 
 
@@ -297,7 +312,7 @@ a {
 	position: relative; 
 	background: $white; 
 	padding: 0;
-	z-index: 0; 
+	z-index: 4; 
 }
 
 		#content .container > form,
@@ -391,8 +406,7 @@ a {
 
 	.PageListActions {
 		margin-left: 1em !important;
-		background: #e5e5e5;
-		// background: #aaa;
+		background: $action-link-bg;
 		border-radius: 1em;
 		padding: 3px !important;
 		// margin: -2px;
@@ -405,13 +419,13 @@ a {
 		a {
 			margin: 0 0.7em!important;
 		    padding: 0;
-		    // color: #fff;
-		    color: #888;
+		    color: $action-link-color;
 		    text-transform: uppercase;
 		    font-weight: bold;
+		    font-size: 0.85em;
 		}
 		a:hover{
-			color: $dark-gray;
+			color: $action-link-hover-color;
 		}
 	}
 
@@ -464,7 +478,7 @@ a {
 		}
 		dt a {
 			text-transform: none; 
-			color: $alt-link-color; 
+			color: $link-color; 
 		}
 		dt a:hover {
 			color: $link-hover-color; 
@@ -480,9 +494,11 @@ a {
 	 */
 
 	#PageListContainer {
-		padding-top: 1em; 
+		padding: 1em 0; 
 	}
-
+	.InputfieldContent > #PageListContainer{
+		padding: 0;
+	}
 	.PageList {
 		position: relative !important;
 		overflow: visible !important;
@@ -542,7 +558,7 @@ a {
 				font-weight: bold;
 				border-radius: 3px;
 				margin: 0 -6px;
-				box-shadow: inset 0 -0.2em 0 rgba(0,0,0,0.1);
+				box-shadow: $button-shadow;
 				a{
 					margin: 0 !important;
 					color: #fff !important;
@@ -613,7 +629,7 @@ a {
 			color: $pagelist-link-active-color; 
 		}
 		.PageListItem > a.PageListPage i {
-			padding: 0 0.25em 0 0;
+			padding: 0 0.4em 0 0;
 			color: $pagelist-link-icon-color; 
 		}
 		.PageListItem > a.PageListPage i.icon-lock, 
@@ -677,17 +693,30 @@ a {
 	/* MarkupAdminDataTable */
 	.AdminDataList th,
 	.AdminDataList td {
-		border-color: darken($subtle-border, 5%); 
+		border-bottom: 1px solid $subtle-border; 
+		padding: 0.5em 0;
+		vertical-align: middle;
+	}	
+	.AdminDataList button{
+		font-size: 0.85em !important;
 	}
 	.AdminDataList tr:hover td,
 	.AdminDataList tr:hover th {
-		background: $notes-bg; 
+		background: $subtle-bg; 
 	}
 	.AdminDataList td a {
-		color: $alt-link-color; 
-	}
+		color: $link-color; 
+	}	
 	.AdminDataList td a:hover {
 		color: $link-hover-color; 
+	}
+	.AdminDataList td i,
+	.AdminDataList td .fieldFlag{
+		color: $gray; 
+		vertical-align: text-top;
+	}	
+	.AdminDataList td .fieldFlag:hover{
+			color: $dark-gray;
 	}
 
 	/* MarkupPagerNav */
@@ -746,13 +775,13 @@ a {
 				background: transparent ;
 				color: $gray;
 				padding: 6px;
-				min-width:10px;
-				height: 10px;
+				min-width:22px;
+				height: 22px;
 				font-weight: bold;
-				line-height: 0.8em;
+				line-height: 10px;
 				text-align: center;
 				margin:  0 0 !important;
-				display: block;
+				display: inline-block;
 			}
 			a:hover{
 				// background-color: #444;
@@ -828,16 +857,21 @@ a {
 	 * WireTabs
 	 *
 	 */
+	padding: 0 1em;
+	overflow: hidden;
 	padding-bottom: 1em;
 	.WireTabs {
+		overflow: hidden;
+		background: darken($subtle-bg,2%);
 		position: relative;
-		top: (-1 * $tabs-height); 
-		height: $tabs-height;
-		margin-bottom: (-1 * $tabs-height);
+		padding: 0 1em;
+		margin: 0;
+		// margin-bottom: -1px;
 		left: 0;
 		width: 100%; 
-		z-index: 102; 
+		z-index: 104; 
 		overflow: visible; 
+		text-transform: uppercase;
 
 		li {
 			background: none; 
@@ -847,32 +881,20 @@ a {
 
 		a {
 			font-weight: $tabs-font-weight;
-			padding: 6px 11px;
-			padding: 0.5em 1em 0.5em 1em;;
+			padding: 0.7em 1em;
 			display: inline-block;
-			// border-top-left-radius: $tabs-radius;
-			// border-top-right-radius: $tabs-radius; 
+			line-height: 1em;
 			border: $wiretab-link-border; 
-			border-bottom: none; 
-			// margin-right: -1px; 
+			border-top: 0 !important; 
+			border-bottom: 0 !important; 
 			color: $wiretab-link-color;
-			height: $tabs-height;
+			margin-bottom: -1px;
 			background: $wiretab-link-bg; 
-			position: relative;
-			top: 1px; 
 		}
-		a.on {
-			color: $wiretab-link-current-color; 
-			border: $wiretab-link-current-border; 
-			border-bottom: 1px solid $wiretab-link-current-bg;
-			background: $wiretab-link-current-bg; 
-			position: relative;
-			z-index: 100; 
-		}
+
 
 		a:hover {
 			border: $wiretab-link-hover-border; 
-			border-bottom: none; 
 			color: $wiretab-link-hover-color; 
 			background: $wiretab-link-hover-bg; 
 
@@ -882,13 +904,23 @@ a {
 		}
 
 		a:active{
-			background: $wiretab-link-active-bg; 
+			// background: $wiretab-link-active-bg; 
 			color: $wiretab-link-active-color; 
+		}
+		a.on:hover,
+		a.on {
+			color: $wiretab-link-current-color; 
+			border: $wiretab-link-current-border; 
+			background: $wiretab-link-current-bg; 
+			position: relative;
+			z-index: 100; 
 		}
 
 		a em {
 			font-weight: $tabs-font-weight;
 			font-style: normal;
+			text-decoration: none;
+			border: 0;
 		}
 
 		/*
@@ -913,10 +945,13 @@ a {
 .detail {
 	color: $medium-text-color; 
 	font-size: 0.875em;
-	line-height: 1.5em; 
+	line-height: 1.3em; 
 }
 .notes {
 	background: $notes-bg; 
+	color: $notes-color;
+	border: $notes-border;
+	padding: 0.3em 0.6em !important;
 }
 
 .description strong,
@@ -958,7 +993,7 @@ a {
 		float: right; 
 		
 		a{
-			color: $gray;
+			font-weight: bold;
 			text-transform: uppercase;
 		}
 	}
@@ -971,10 +1006,11 @@ a {
 		margin: 0 !important;
 		padding: 0 !important;
 		list-style: none;
+		font-size: 0.85em;
 		li{
-			padding: 0.6em 1em;
+			padding: 0.6em 0;
 			margin: 0 !important;
-			font-weight: bold;
+			// font-weight: bold;
 			text-transform: uppercase;
 			&.success{
 				background: $green;
@@ -1068,28 +1104,39 @@ body.modal {
  *
  */
 
-#content .container > form,
-#content .container > .ui-helper-clearfix > form {
-	/* for wiretabs and/or forms to line up with headline area */
-	top: $form-top-margin-adjustment; 
+// #content .container > form,
+// #content .container > .ui-helper-clearfix > form {
+// 	/* for wiretabs and/or forms to line up with headline area */
+// 	// top: $form-top-margin-adjustment; 
+// }
+
+
+
+// body.hasWireTabs #content {
+// 	border-top: 3em solid $headline-bg; 
+// }
+
+// body.hasWireTabs .InputfieldForm {
+// }
+
+
+
+.hasWireTabs #content  {
+	/* context selection in field editor */
+	padding-left: 0;
+	padding-right: 0;
 }
-
-
-
-body.hasWireTabs #content {
-	border-top: 3em solid $headline-bg; 
-}
-
-body.hasWireTabs .InputfieldForm {
-}
-
-
 
 .hasWireTabs .content #fieldgroupContext {
 	/* context selection in field editor */
 	top: -2.25em;
 	right: 0; 
 	z-index: 102; 
+}
+
+#wrap_Inputfield_submit,
+#wrap_submit_save{
+	padding: 0 1em;
 }
 
 #ModuleEditForm .AdminDataTable tr td:first-child {
@@ -1103,12 +1150,20 @@ body.hasWireTabs .InputfieldForm {
 .dropdown-menu{
 	display: none;
 	border-radius: 0 !important; 
-	border: 1px solid #ddd !important;
+	// border: 1px solid #ddd !important;
+	border: 0 !important;
+	border: 0 !important;
 	.ui-menu-item{
 		min-width: 10px;
 		border: 0 !important;
 		a{
 			border-radius: 0 !important; 
+			small{
+				font-size: 1em;
+				color: $gray;
+				font-weight: bold;
+				margin: 0  0.4em;
+			}
 		}
 	} 
 }
@@ -1148,11 +1203,21 @@ body.hasWireTabs .InputfieldForm {
 
 
 
+	#ProcessPageSearchForm{
+		width: 100%;
+		max-width: 100%;
+		margin-bottom: 1em;
 
+		#ProcessPageSearchQuery{
+			padding: 0.6em;
+			width: 100%;
+			background: lighten($main-bg, 5%);
+			border: 1px solid darken($main-bg, 5%);
+		}
+	}
 	body #masthead #topnav a,
 	body #content .WireTabs li a {
-		padding-left: 0.75em;
-		padding-right: 0.75em; 
+		padding: 0.6em;
 	}
 
 	#logo {
@@ -1181,6 +1246,10 @@ body.hasWireTabs .InputfieldForm {
 	 * Disregard column width when at mobile size
 	 *
 	 */
+	#ProcessPageSearchQuery{
+		text-align: center;
+	}
+
 	.Inputfield {
 		clear: both !important;
 		width: 100% !important;
@@ -1196,7 +1265,7 @@ body.hasWireTabs .InputfieldForm {
 	#footer {
 		text-align: center; 
 	}	
-
+ 	#breadcrumbs,
 	.AjaxUploadDropHere {
 		display: none !important; 
 	}

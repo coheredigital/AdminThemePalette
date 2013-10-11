@@ -31,7 +31,7 @@
 	li.ui-state-default,
 	.ui-widget-content li.ui-state-default {
 		background: $ui-state-default-bg; /* LIGHT-ORANGE */
-		border-color: $ui-state-default-bg; /* LIGHT-ORANGE */
+		border: 0 !important; /* LIGHT-ORANGE */
 		color: $ui-state-default-color; /* WHITE */
 	}
 	li.ui-state-default a, 
@@ -41,7 +41,7 @@
 	li.ui-state-hover,
 	.ui-widget-content li.ui-state-hover {
 		background: $ui-state-hover-bg; /* LIGHT-KHAKI */
-		border-color: $ui-state-hover-bg; /* LIGHT-KHAKI */
+		// border-color: $ui-state-hover-bg; /* LIGHT-KHAKI */
 		color: $ui-state-hover-color; 
 	}
 	li.ui-state-hover a,
@@ -79,7 +79,7 @@
 .ui-widget-header .ui-state-highlight {
 	color: $highlight-color; 
 	background: $highlight-bg; /* HIGHLIGHT */
-	border: $highlight-border; 
+	// border: $highlight-border; 
 }
 	
 
@@ -95,7 +95,7 @@
 #notices .ui-state-error {
 	padding: 0.25em 0; 
 	border: none; 
-	border-top: $highlight-border; 
+	// border-top: $highlight-border; 
 }
 	#notices .ui-state-highlight .ui-icon,
 	#notices .ui-state-error .ui-icon {
@@ -147,15 +147,19 @@
  */
 
 .ui-button, 
+button, 
 button.ui-button.ui-state-default, 
 .ui-button.ui-state-default {
-	box-shadow: $button-shadow; 
+	box-shadow: $button-shadow !important; 
 	text-shadow: none !important; 
 	color: $button-color; /* WHITE */ 
 	background: $button-bg; /* LIGHT-GREEN */
 	border: $button-border; /* LIGHT-GREEN */
+	border: 0 !important; /* LIGHT-GREEN */
+	outline: 0 !important;
 	font-weight: bold;
 	padding: 0.5em 1em; 
+	cursor: pointer;
 	text-transform: uppercase;
 	font-size: 1em !important; 
 	border-radius: $button-radius; 
@@ -165,11 +169,13 @@ button.ui-button.ui-state-default,
 	}
 
 	.ui-button:hover, 
+	button:hover,
 	button.ui-button.ui-state-hover, 
 	.ui-button.ui-state-hover {
 		color: $reverse-text-color; 
+		box-shadow: $button-shadow !important;
 		background: $button-hover-bg; /* CYAN */
-		border: 1px solid $button-hover-border; /* CYAN */
+		// border: 1px solid $button-hover-border; /* CYAN */
 		font-weight: bold;
 		font-size: 1em !important;
 		text-decoration: none; 
@@ -206,7 +212,6 @@ button.ui-button.ui-state-default,
 .ui-autocomplete li,
 .ui-menu .ui-menu-item {
 	border-bottom: 1px solid darken($subtle-bg, 5%); /* LIGHT-KHAKI */
-
 }
 .ui-menu .ui-menu-item a, 
 .ui-autocomplete li a {
