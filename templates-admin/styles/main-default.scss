@@ -29,9 +29,11 @@ $form-top-margin-adjustment: -2px;
  }
 
 body {
+
 	background: $main-bg;
 	font-size: $base-font-size;
 	color: $text-color;
+	padding-top: 1em;
 }
 	body,
 	.ui-dialog,
@@ -171,18 +173,17 @@ a {
 
 
 #breadcrumbs {
-	padding: 0.5em 0;
+	padding: 0;
 	line-height: 1em;
-	margin-bottom: 1em;
+	// margin-bottom: 1em;
 	color: $breadcrumbs-color;
-	// background: $breadcrumbs-bg;
-	border-bottom: $breadcrumbs-border;
+	-webkit-font-smoothing: antialiased;
 
 	ul {
 
 
 		li {
-			color: $breadcrumbs-color;
+			color: $gray;
 			display: inline-block;
 			padding: 0;
 			line-height: 1em;
@@ -192,8 +193,16 @@ a {
 			text-transform: uppercase;
 
 		}
+		li.title{
+			display: block;
+			margin-top: 0.2em;
+			color: $dark-gray;
+			font-size: 1.3em;
+			font-weight: bold;
+			text-transform: none;
+		}
 		a {
-			color: $breadcrumbs-link-color;
+			color: $gray;
 			margin-right: 0.5em;
 			font-size: 0.85em;
 		}
@@ -317,12 +326,7 @@ a {
  *
  */
 
-#content {
-	position: relative;
-	background: $white;
-	padding: 0;
-	z-index: 4;
-}
+
 
 		#content .container > form,
 		#content .container > .ui-helper-clearfix > form {
@@ -475,7 +479,7 @@ a {
 	 *
 	 */
 	dl {
-		margin: 0 0 1em 0;
+		margin: 0;
 	}
 		.container > dl:first-child {
 			margin-top: 0;
@@ -484,7 +488,7 @@ a {
 		dt {
 			display: block;
 			font-weight: bold;
-			padding-top: 1em;
+			// padding-top: 1em;
 		}
 		dt a {
 			// text-transform: none;
@@ -494,8 +498,11 @@ a {
 			color: $link-hover-color;
 		}
 		dl dd {
-			padding-bottom: 1em;
-			border-bottom: 1px solid $subtle-border;
+			// padding-bottom: 1em;
+			// border-bottom: 1px solid $subtle-border;
+		}
+		dd + dt{
+			margin-top: 1.5em;
 		}
 
 	/**
@@ -505,6 +512,7 @@ a {
 
 	#PageListContainer {
 		padding: 0;
+		margin-top: -0.5em;
 	}
 	.InputfieldContent > #PageListContainer{
 		padding: 0;
@@ -974,9 +982,14 @@ a {
 	 * WireTabs
 	 *
 	 */
-	padding: 1em 1.5em 0;
+	position: relative;
+	background: $white;
+	padding: 0;
+	z-index: 4;
+	padding: 1.5em 1em;
+	// padding-bottom: 0;
 	overflow: hidden;
-	padding-bottom: 1em;
+	// padding-bottom: 1em;
 	.WireTabs {
 		background: darken($subtle-bg,2%);
 		position: relative;
@@ -993,6 +1006,7 @@ a {
 			background: none;
 			margin: 0;
 			padding: 0;
+			margin-bottom: 0;
 		}
 
 		a {
@@ -1004,7 +1018,7 @@ a {
 			border-top: 0 !important;
 			border-bottom: 0 !important;
 			color: $wiretab-link-color;
-			margin-bottom: -1px;
+
 			background: $wiretab-link-bg;
 		}
 
@@ -1030,6 +1044,7 @@ a {
 			background: $wiretab-link-current-bg;
 			position: relative;
 			z-index: 100;
+
 		}
 
 		a em {
@@ -1039,14 +1054,17 @@ a {
 			border: 0;
 		}
 
-		/*
+
 		#_ProcessPageEditView {
-			float: right;
-			border: $wiretab-link-current-border;
-			border-bottom: none;
+			position: absolute;
+			right: 0;
+			border-bottom: 0;
 			margin-right: 0;
+			font-weight: bold;
+			color: $blue;
+			-webkit-font-smoothing: antialiased;
 		}
-		*/
+
 
 	}
 }
@@ -1240,7 +1258,7 @@ body.modal {
 
 .hasWireTabs #content  {
 	/* context selection in field editor */
-	padding: 0;
+	padding: 0 0 1.5em;
 }
 
 .hasWireTabs .content #fieldgroupContext {
@@ -1250,13 +1268,9 @@ body.modal {
 	z-index: 102;
 }
 
-#wrap_Inputfield_submit,
-#wrap_submit_save{
-	padding: 1em 1em 0;
-}
 #ModuleEditForm{
-	#wrap_Inputfield_submit{
-		padding: 0;
+	.InputfieldSubmit{
+		padding: 0 !important
 	}
 	.AdminDataTable tr td:first-child {
 		color: $gray;

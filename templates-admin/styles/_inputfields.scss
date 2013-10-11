@@ -3,7 +3,7 @@
 .InputfieldForm {
 	position: relative;
 	z-index: 105;
-	margin-bottom: 1em;
+	// margin-bottom: 1em;
 
 	.Inputfields,
 	.Inputfields > .Inputfield {
@@ -13,14 +13,14 @@
 
 	.Inputfields .Inputfields {
 		/* nested .Inputfields list needs no bottom margin since it'll already be offset from the parent's padding */
-		margin-bottom: 0; 
+		margin-bottom: 0;
 	}
 
 	.Inputfields > .InputfieldColumnWidth {
 		/* an Inputfield that has a percentage width assigned to it */
-		float: left; 
-		clear: none; 
-		margin-top: 0; 
+		float: left;
+		clear: none;
+		margin-top: 0;
 	}
 
 	.Inputfields {
@@ -30,23 +30,23 @@
 		.InputfieldColumnWidth + .InputfieldSubmit {
 			/* first Inputfield with a percent width... */
 			/* ...or the last percentage-width Inputifeld before the submit button */
-			clear: both; 
-			margin-left: 0; 
+			clear: both;
+			margin-left: 0;
 		}
-	    
-		.InputfieldColumnWidthFirstTmp, 
+
+		.InputfieldColumnWidthFirstTmp,
 		.InputfieldColumnWidthFirst.InputfieldStateHidden + .Inputfield {
 			/* for support of inputfield dependencies */
 			clear: both;
-			margin-left: 0; 
+			margin-left: 0;
 		}
 
 		.InputfieldColumnWidth:not(.InputfieldColumnWidthFirst) .InputfieldHeader,
 		.InputfieldColumnWidth:not(.InputfieldColumnWidthFirst) .InputfieldContent {
-			margin-left: -1px; 
+			margin-left: -1px;
 		}
 	}
-    
+
 	/**
 	 * Margin and padding tweaks to prevent doubled visual whitespace
 	 *
@@ -71,8 +71,8 @@
 
 	height: auto;
 
-	fieldset, 
-	input, 
+	fieldset,
+	input,
 	select,
 	textarea,
 	label {
@@ -97,22 +97,22 @@
 	input,
 	select,
 	textarea {
-		font-size: 1em; 
-		max-width: 100%; 
+		font-size: 1em;
+		max-width: 100%;
 	}
 
 	input,
 	textarea {
 		/* slight padding for input and textarea elements... */
 		padding: 0.2em 0.4em;
-		line-height: 1.3em; 
+		line-height: 1.3em;
 	}
 
 	textarea,
 	input.InputfieldMaxWidth {
-		width: 100%; 
+		width: 100%;
 	}
-	
+
 	input[type=checkbox],
 	input[type=radio] {
 		/* ...but no padding for checkbox and radios */
@@ -122,11 +122,11 @@
 	.Inputfield {
 		margin-bottom: -1px; /* non doubled border */
 		margin-top: 0;
-		background: $text-bg; 
+		background: $text-bg;
 	}
 
 	.Inputfield.ui-state-error {
-		border: none; 
+		border: none;
 	}
 
 	.InputfieldStateToggle {
@@ -135,20 +135,20 @@
 		span.ui-icon:first-child,
 		i.toggle-icon {
 			/* the open/close icon that goes with most Inputfields */
-			float: right; 
-			padding-right: 0.25em; 
+			float: right;
+			padding-right: 0.25em;
 		}
 		i.toggle-icon {
-			padding-right: 0.5em; 
+			padding-right: 0.5em;
 			vertical-align: middle;
-			// color: lighten($label-link-color, 60%); 
+			// color: lighten($label-link-color, 60%);
 			// line-height: 1.7em;  WHHHHHHY!?!!?!?
 		}
 
 		.ui-icon + .ui-icon,
 		i + i {
-			margin-right: 0.5em; 
-			margin-left: none; 
+			margin-right: 0.5em;
+			margin-left: none;
 		}
 	}
 
@@ -158,11 +158,11 @@
 			// padding-bottom: 0.75em;
 			background: $label-link-collapsed-bg; /* WHITE */
 			border: 1px solid $subtle-border; /* LIGHT-KHAKI */
-			color: $label-link-collapsed-color; 
-		
+			color: $label-link-collapsed-color;
+
 			&:hover {
 				/* style for collapsed header when hovered */
-				color: $label-link-hover-color; 
+				color: $label-link-hover-color;
 				border-color: $subtle-border; /* LIGHT-KHAKI */
 				background: $text-bg; /* WHITE */
 			}
@@ -177,22 +177,22 @@
 	.InputfieldWrapper > .description {
 		background: $label-link-bg; /* WHITE */
 		border: 1px solid $subtle-border; /* LIGHT-KHAKI */
-		border-bottom: none; 
+		border-bottom: none;
 		color: $dark-gray; /* BROWN */
 	}
 		.InputfieldHeader:hover {
-			color: $label-link-hover-color; 
+			color: $label-link-hover-color;
 		}
 		.InputfieldWrapper > .description {
 			margin: 0;
-			padding-bottom: 1em; 
-			margin-bottom: -1em; 
+			padding-bottom: 1em;
+			margin-bottom: -1em;
 		}
 
 	.InputfieldHeader + .InputfieldContent {
 		padding: 0.25em 1em 1.25em 1em;
 		border: 1px solid $subtle-border; /* LIGHT-KHAKI */
-		border-top: none; 
+		border-top: none;
 		background: $text-bg; /* WHITE */
 	}
 
@@ -203,11 +203,11 @@
 
 	.InputfieldMarkup .InputfieldContent {
 		border: 1px solid $subtle-border; /* LIGHT-KHAKI */
-		margin-top: 1em; 
+		margin-top: 1em;
 		padding: 1em;
 	}
 		.InputfieldMarkup .InputfieldHeader + .InputfieldContent {
-			border-top: none; 
+			border-top: none;
 			margin-top: 0;
 			padding-top: 0;
 		}
@@ -227,23 +227,23 @@
 
 			a {
 				color: $item-header-color; /* WHITE */
-				cursor: pointer; 
+				cursor: pointer;
 			}
 
 			&:hover {
-				background: $item-header-hover-bg; 
-				color: $item-header-hover-color; 
-				border: none; 
+				background: $item-header-hover-bg;
+				color: $item-header-hover-color;
+				border: none;
 			}
 
 			i.toggle-icon {
-				color: $item-header-color; 
+				color: $item-header-color;
 			}
 		}
 
 		.InputfieldRepeaterItem > .InputfieldContent {
 			padding: 0;
-			border: none; 
+			border: none;
 		}
 
 		.InputfieldRepeaterItem {
@@ -251,16 +251,16 @@
 		}
 
 		.InputfieldRepeaterItem.InputfieldStateCollapsed {
-			margin-bottom: 1em; 
+			margin-bottom: 1em;
 		}
 
 		.InputfieldRepeaterItem > .InputfieldHeader.ui-state-error {
-			text-decoration: line-through; 
-			background: $error-bg; 
-			border: none; 
+			text-decoration: line-through;
+			background: $error-bg;
+			border: none;
 		}
 		.InputfieldRepeaterItem > .InputfieldHeader .InputfieldRepeaterTrash {
-			right: 2em; 
+			right: 2em;
 		}
 	}
 
@@ -273,15 +273,15 @@
 		margin-top: 0;
 	}
 	.InputfieldFileList .InputfieldFileItem {
-		// border: $item-border; 
+		// border: $item-border;
 	}
 
 	.InputfieldFileList .InputfieldFileItem .ui-widget-content {
-		border: $headline-border; 
+		border: $headline-border;
 		border-top: 0;
 		background: $subtle-bg;
 	}
-	
+
 	.InputfieldImageGrid .InputfieldFileItem .ui-widget-content{
 		border: 0;
 		background: none;
@@ -292,8 +292,8 @@
 		border: none;
 		background: $item-header-bg; /* LIGHT-GREEN */
 		color: $item-header-color; /* WHITE */
-		padding: 0.4em 0.25em 0.4em 0.5em; 
-		cursor: move; 
+		padding: 0.4em 0.25em 0.4em 0.5em;
+		cursor: move;
 		font-weight: normal;
 		vertical-align: middle;
 
@@ -304,30 +304,30 @@
 
 		&:hover {
 			/* file or repeater item header in hover state */
-			background: $item-header-hover-bg; 
-			color: $item-header-hover-color; 
-			border: none; 
+			background: $item-header-hover-bg;
+			color: $item-header-hover-color;
+			border: none;
 			a {
-				color: $item-header-hover-color; 
+				color: $item-header-hover-color;
 			}
 		}
 
 		.ui-icon {
-			// margin-top: 2px; 
+			// margin-top: 2px;
 		}
 	}
 
 	.InputfieldItemList .InputfieldItemHeader.ui-state-error {
 		/* deleted item state */
-		text-decoration: line-through; 
-		background: $error-bg; 
-		border: none; 
+		text-decoration: line-through;
+		background: $error-bg;
+		border: none;
 	}
 
 	.InputfieldPageNameURL {
 		/* page name */
 		/*font-size: 0.923076923076923em;*/
-		font-size: 0.875em; 
+		font-size: 0.875em;
 	}
 
 }
@@ -337,7 +337,7 @@
 
 .Inputfields > .Inputfield {
 	display: block;
-	clear: both; 
+	clear: both;
 }
 
 .Inputfields > .Inputfield > .InputfieldContent:before,
@@ -354,12 +354,12 @@
 }
 
 /**
- * Inputfield containers (InputfieldHeader, InputfieldContent) 
+ * Inputfield containers (InputfieldHeader, InputfieldContent)
  *
  */
 
-.Inputfields .InputfieldHeader, 
-.InputfieldForm .InputfieldHeader, 
+.Inputfields .InputfieldHeader,
+.InputfieldForm .InputfieldHeader,
 .InputfieldForm label.InputfieldHeader,
 .InputfieldWrapper > .description {
 	/* typically the Inputfield's <label> */
@@ -372,7 +372,7 @@
 	display: block;
 	padding: 1em 0.25em 1em 1em;
 	margin: 0;
-	font-weight: bold; 
+	font-weight: bold;
 }
 
 /**
@@ -381,27 +381,27 @@
 
 .InputfieldItemList .InputfieldContent .InputfieldHeader {
 	font-weight: bold;
-	padding: 5px 10px; 
-	text-shadow: none; 
+	padding: 5px 10px;
+	text-shadow: none;
 }
  */
 
 .InputfieldStateRequired > .InputfieldHeader:first-child:after {
 	/* Add asterisk to indicate field is required */
 	content: ' *';
-	color: $red; 
+	color: $red;
 }
 
 /****************************************************************************
  * Specific Inputfield types
  *
- * Defined here rather than as separate CSS files because their styles are 
+ * Defined here rather than as separate CSS files because their styles are
  * shared or there may be relationships with other Inputfields
  *
  */
 
 .Inputfields .InputfieldHidden {
-	display: none; 
+	display: none;
 }
 
 /**
@@ -413,49 +413,52 @@
 .InputfieldForm .Inputfields .InputfieldButton {
 	/* enable horizontal stack of buttons */
 	margin-top: 0;
-	padding-top: 0;
-	clear: none; 
-	background: none; 
+	// padding-top: 0;
+	padding: 1em;
+	padding-bottom: 0;
+	margin: 0;
+	clear: none;
+	background: none;
 
 	.InputfieldHeader {
 		/* no need for a header with buttons */
-		display: none; 
+		display: none;
 	}
 
 	.InputfieldContent {
 		/* we don't need our visual furniture for buttons */
-		padding: 0; 
+		padding: 0;
 		margin: 0;
-		margin-top: 1em; 
-		background: none; 
-		border: none; 
+		margin-top: 1em;
+		background: none;
+		border: none;
 	}
 }
 
 
 .Inputfields > .InputfieldSubmit {
-	float: left; 
-	margin-bottom: 0.5em; 
+	float: left;
+	margin-bottom: 0.5em;
 	margin-top: 0;
 }
 	.Inputfields .InputfieldSubmit + .InputfieldSubmit {
 		/* two buttons next to each other */
-		float: left; 
-		margin-left: 0.5em; 
+		float: left;
+		margin-left: 0.5em;
 		margin-top: 0;
 	}
 
 	.Inputfields .Inputfield:not(.InputfieldSubmit) + .InputfieldSubmit {
-		clear: left; 
+		clear: left;
 	}
 
 
 .Inputfield .LanguageSupport {
-	margin-bottom: 1em; 
+	margin-bottom: 1em;
 }
 
 /****************************************************************************
- * Render Value Mode 
+ * Render Value Mode
  *
  * Used when only values are being rendered in the form (no inputs)
  *
@@ -471,7 +474,7 @@
 
 	.InputfieldSubmit,
 	.InputfieldButton {
-		display: none; 
+		display: none;
 	}
 }
 

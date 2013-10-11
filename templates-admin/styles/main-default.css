@@ -2875,7 +2875,6 @@ div + a > .ui-button {
 .InputfieldForm {
   position: relative;
   z-index: 105;
-  margin-bottom: 1em;
   /**
    * Margin and padding tweaks to prevent doubled visual whitespace
    *
@@ -3222,7 +3221,7 @@ div + a > .ui-button {
 }
 
 /**
- * Inputfield containers (InputfieldHeader, InputfieldContent) 
+ * Inputfield containers (InputfieldHeader, InputfieldContent)
  *
  */
 
@@ -3250,8 +3249,8 @@ div + a > .ui-button {
 
 .InputfieldItemList .InputfieldContent .InputfieldHeader {
 	font-weight: bold;
-	padding: 5px 10px; 
-	text-shadow: none; 
+	padding: 5px 10px;
+	text-shadow: none;
 }
  */
 
@@ -3264,7 +3263,7 @@ div + a > .ui-button {
 /****************************************************************************
  * Specific Inputfield types
  *
- * Defined here rather than as separate CSS files because their styles are 
+ * Defined here rather than as separate CSS files because their styles are
  * shared or there may be relationships with other Inputfields
  *
  */
@@ -3282,7 +3281,9 @@ div + a > .ui-button {
 .InputfieldForm .Inputfields .InputfieldButton {
   /* enable horizontal stack of buttons */
   margin-top: 0;
-  padding-top: 0;
+  padding: 1em;
+  padding-bottom: 0;
+  margin: 0;
   clear: none;
   background: none;
 }
@@ -3325,7 +3326,7 @@ div + a > .ui-button {
 }
 
 /****************************************************************************
- * Render Value Mode 
+ * Render Value Mode
  *
  * Used when only values are being rendered in the form (no inputs)
  *
@@ -3433,6 +3434,7 @@ body {
   background: #607e9e;
   font-size: 0.875em;
   color: #444444;
+  padding-top: 1em;
 }
 
 body,
@@ -3563,15 +3565,14 @@ a:active {
 }
 
 #breadcrumbs {
-  padding: 0.5em 0;
+  padding: 0;
   line-height: 1em;
-  margin-bottom: 1em;
   color: #869db5;
-  border-bottom: 1px solid #5a7694;
+  -webkit-font-smoothing: antialiased;
 }
 
 #breadcrumbs ul li {
-  color: #869db5;
+  color: #999999;
   display: inline-block;
   padding: 0;
   line-height: 1em;
@@ -3580,14 +3581,23 @@ a:active {
   text-transform: uppercase;
 }
 
+#breadcrumbs ul li.title {
+  display: block;
+  margin-top: 0.2em;
+  color: #444444;
+  font-size: 1.3em;
+  font-weight: bold;
+  text-transform: none;
+}
+
 #breadcrumbs ul a {
-  color: #bfcbd8;
+  color: #999999;
   margin-right: 0.5em;
   font-size: 0.85em;
 }
 
 #breadcrumbs ul a:hover {
-  color: white;
+  color: #f2673a;
   background: none;
   text-decoration: underline;
 }
@@ -3694,13 +3704,6 @@ a:active {
  * CONTENT
  *
  */
-
-#content {
-  position: relative;
-  background: white;
-  padding: 0;
-  z-index: 4;
-}
 
 #content .container > form,
 #content .container > .ui-helper-clearfix > form {
@@ -3858,7 +3861,7 @@ ol,
 }
 
 .content dl {
-  margin: 0 0 1em 0;
+  margin: 0;
 }
 
 .content .container > dl:first-child {
@@ -3869,7 +3872,6 @@ ol,
 .content dt {
   display: block;
   font-weight: bold;
-  padding-top: 1em;
 }
 
 .content dt a {
@@ -3880,13 +3882,13 @@ ol,
   color: #f2673a;
 }
 
-.content dl dd {
-  padding-bottom: 1em;
-  border-bottom: 1px solid #dfdfdf;
+.content dd + dt {
+  margin-top: 1.5em;
 }
 
 .content #PageListContainer {
   padding: 0;
+  margin-top: -0.5em;
 }
 
 .content .InputfieldContent > #PageListContainer {
@@ -4374,9 +4376,12 @@ ol,
    * WireTabs
    *
    */
-  padding: 1em 1.5em 0;
+  position: relative;
+  background: white;
+  padding: 0;
+  z-index: 4;
+  padding: 1.5em 1em;
   overflow: hidden;
-  padding-bottom: 1em;
 }
 
 #content .WireTabs {
@@ -4395,6 +4400,7 @@ ol,
   background: none;
   margin: 0;
   padding: 0;
+  margin-bottom: 0;
 }
 
 #content .WireTabs a {
@@ -4406,7 +4412,6 @@ ol,
   border-top: 0 !important;
   border-bottom: 0 !important;
   color: #999999;
-  margin-bottom: -1px;
   background: transparent;
 }
 
@@ -4438,6 +4443,16 @@ ol,
   font-style: normal;
   text-decoration: none;
   border: 0;
+}
+
+#content .WireTabs #_ProcessPageEditView {
+  position: absolute;
+  right: 0;
+  border-bottom: 0;
+  margin-right: 0;
+  font-weight: bold;
+  color: #668bc0;
+  -webkit-font-smoothing: antialiased;
 }
 
 .description {
@@ -4606,7 +4621,7 @@ body.modal #headline {
 
 .hasWireTabs #content {
   /* context selection in field editor */
-  padding: 0;
+  padding: 0 0 1.5em;
 }
 
 .hasWireTabs .content #fieldgroupContext {
@@ -4616,13 +4631,8 @@ body.modal #headline {
   z-index: 102;
 }
 
-#wrap_Inputfield_submit,
-#wrap_submit_save {
-  padding: 1em 1em 0;
-}
-
-#ModuleEditForm #wrap_Inputfield_submit {
-  padding: 0;
+#ModuleEditForm .InputfieldSubmit {
+  padding: 0 !important;
 }
 
 #ModuleEditForm .AdminDataTable tr td:first-child {
