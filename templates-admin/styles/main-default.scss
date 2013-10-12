@@ -33,7 +33,7 @@ body {
 	background: $main-bg;
 	font-size: $base-font-size;
 	color: $text-color;
-	padding-top: 1em;
+	
 }
 	body,
 	.ui-dialog,
@@ -119,6 +119,7 @@ a {
 #masthead {
 	// background: $masthead-bg;
 	position: relative;
+	margin-top: 1em;
 	z-index: 5;
 	> .container{
 		background:$topnav-link-bg;
@@ -678,14 +679,18 @@ a {
 			display: block;
 			background: transparent;
 			.PageListActionMore{
-				background: $blue;
-				padding: 8px 12px;
+				
 				text-transform: uppercase;
 				font-weight: bold;
-				border-radius: 3px;
+				padding: 0;
+				clear: both;
 				margin: 0 -6px;
-				box-shadow: $button-shadow;
 				a{
+					background: $blue;
+					box-shadow: $button-shadow;
+					padding: 5px 12px 6px;
+					border-radius: 3px;
+					
 					margin: 0 !important;
 					color: #fff !important;
 				}
@@ -886,7 +891,7 @@ a {
 		float: left;
 		height: auto !important;
 		display: block !important;
-		margin: 0 -16px!important;
+		margin: 2px -16px!important;
 		li{
 			margin: 0 0 0 1px;
 			line-height: 14px;
@@ -900,10 +905,10 @@ a {
 				background: transparent ;
 				color: $gray;
 				padding: 6px;
-				min-width:22px;
-				height: 22px;
+				min-width:20px;
+				height: 20px;
 				font-weight: bold;
-				line-height: 10px;
+				line-height: 7px;
 				text-align: center;
 				margin:  0 0 !important;
 				display: inline-block;
