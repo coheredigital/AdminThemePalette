@@ -542,6 +542,7 @@ a {
 			height: $pagelist-item-height;
 			padding: 0 12px !important;
 			padding-right: 0 !important;
+			// border-bottom: 1px solid #eee;
 			&:before {
 				content: "";
 				position: absolute;
@@ -574,7 +575,7 @@ a {
 				.PageListPage{
 					background: #444 !important;
 					border-radius: 1em;
-					color: #fff !important;
+					color: $white !important;
 					padding: 0.2em 0.6em 0.2em 0.3em;
 					text-decoration: none !important;
 
@@ -692,7 +693,7 @@ a {
 					border-radius: 3px;
 					
 					margin: 0 !important;
-					color: #fff !important;
+					color: $white !important;
 				}
 				border: none!important;
 				&:hover{
@@ -702,7 +703,40 @@ a {
 
 		}
 		.PageListLoading{
-			margin: 0 0.5em;
+
+			background: $white;
+			display: block;
+			height: 13px;
+			width: 13px;
+			position: absolute;
+			left: 13px;
+			padding: 0 !important;
+			margin: -6px 0 0 0 !important;
+			top: 50%;
+			// margin-top: ;
+			z-index: 5 !important;
+			border-radius: 50%;
+			animation: loading 0.5s infinite;
+
+		}
+		.PageList > .PageListLoading{
+
+			background: transparent;
+			display: block;
+			position: absolute;
+			width: 0;
+			height: auto;
+			left: 19px !important;
+			margin: 0 !important;
+			top: 0 !important;
+			bottom: 0px !important;
+			z-index: 5 !important;
+			border-radius: 0;
+			border: 0;
+			border-left: 1px dotted $white;
+			// animation
+			animation: loading 0.8s infinite;
+
 		}
 
 		a.PageListPage {
@@ -781,8 +815,12 @@ a {
 		}
 
 		.PageListNumChildren {
-			// font-size: 0.833333em;
+			line-height: $pagelist-item-height;
 			font-weight: bold;
+			margin: 0 0.3em;
+			font-style: italic;
+			font-size: 0.85em;
+			color: $gray;
 			float: right;
 		}
 
@@ -885,7 +923,7 @@ a {
 		border-radius: 2em;
 		position: relative;
 		z-index: 50;
-		background: #fff;
+		background: $white;
 		// background-color: transparent !important;
 		border: 1px solid #ccc;
 		float: left;
@@ -1093,6 +1131,9 @@ a {
 	color: $notes-color;
 	border: $notes-border;
 	padding: 0.3em 0.6em !important;
+	clear: both; 
+	display: inline-block;
+	margin-top: 0.3em;
 }
 
 .description strong,
@@ -1307,6 +1348,10 @@ body.modal {
 				font-weight: bold;
 				margin: 0  0.4em;
 			}
+		}
+		a.on{
+			background: $link-color;
+			color: $white;
 		}
 	}
 }

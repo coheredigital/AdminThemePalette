@@ -30,7 +30,7 @@ $light-green: lighten($green, 5%);
 $dark-green: darken($green, 5%);
 
 $yellow: #ffec9f;
-$dark-yellow: darken($yellow, 40%);
+$dark-yellow: darken($yellow, 45%);
 $light-yellow: lighten($yellow, 12%);
 
 $cyan: #0EDCB9;
@@ -77,7 +77,7 @@ $item-header-bg: $dark-gray;
 $item-header-color: $white;
 $item-border: 1px solid $subtle-bg;
 
-$alt-link-color: $dark-pink;
+$alt-link-color: $orange;
 $link-color: $blue;
 $link-hover-color: $orange;
 $link-hover-bg: none;

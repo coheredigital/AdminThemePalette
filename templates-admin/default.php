@@ -126,13 +126,6 @@ if(!$browserTitle) $browserTitle = __(strip_tags($page->get('title|name')), __FI
 		</div>
 	</div>
 
-
-
-
-
-
-
-
 	<div class="container">
 		<div id="wrapper">
 			<div id="headline">
