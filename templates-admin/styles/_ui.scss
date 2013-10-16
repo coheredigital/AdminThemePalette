@@ -14,6 +14,11 @@
 
 .Inputfields li:not(.Inputfield) .ui-widget-header .ui-icon,
 .ui-state-default .ui-icon,
+.ui-state-highlight .ui-icon,
+.ui-state-error .ui-icon {
+	/* use white icons */
+	background-image: url(ui-images/ui-icons_454545_256x240.png);
+}
 .ui-state-hover .ui-icon,
 .ui-state-highlight .ui-icon,
 .ui-state-error .ui-icon {
@@ -31,22 +36,29 @@
 	li.ui-state-default,
 	.ui-widget-content li.ui-state-default {
 		background: $ui-state-default-bg; /* LIGHT-ORANGE */
-		border: 0 !important; /* LIGHT-ORANGE */
-		color: $ui-state-default-color; /* WHITE */
+		border-color: $ui-state-default-border;  /* LIGHT-ORANGE */
+		color: $text-color; /* WHITE */
 	}
 	li.ui-state-default a,
 	.ui-widget-content li.ui-state-default a {
-		color: $ui-state-default-color; /* WHITE */
+		color: $link-color; /* WHITE */
 	}
 	li.ui-state-hover,
 	.ui-widget-content li.ui-state-hover {
 		background: $ui-state-hover-bg; /* LIGHT-KHAKI */
-		// border-color: $ui-state-hover-bg; /* LIGHT-KHAKI */
+		border-color: $ui-state-hover-border; /* LIGHT-KHAKI */
 		color: $ui-state-hover-color;
 	}
 	li.ui-state-hover a,
 	.ui-widget-content li.ui-state-hover a {
 		color: $ui-state-hover-color; /* BLACK */
+	}	
+
+	li.ui-state-highlight a,
+	.ui-widget-content li.ui-state-highlight a {
+		background: $ui-state-hover-bg; /* LIGHT-KHAKI */
+		border-color: $ui-state-hover-border; /* LIGHT-KHAKI */
+		color: $ui-state-hover-color;
 	}
 }
 

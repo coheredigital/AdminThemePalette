@@ -87,10 +87,10 @@ $link-active-color: $dark-pink;
 $link-active-bg: none;
 
 $action-link-font-size: 1em;
-$action-link-bg: $gray;
-$action-link-color: $white;
-$action-link-border: none;
-$action-link-hover-color: $dark-gray;
+$action-link-bg: $subtle-bg;
+$action-link-color: $dark-gray;
+$action-link-border: $subtle-border;
+$action-link-hover-color: $link-color;
 $action-link-hover-border: 1px solid $pink;
 $action-link-hover-bg: $pink;
 $action-link-active-color: $white;
@@ -106,9 +106,11 @@ $button-shadow: inset 0 -0.2em 0 rgba(0,0,0,0.15);
 
 $search-input-color: lighten($main-bg, 25%);
 
-$ui-state-default-bg: darken($green, 5%);
+$ui-state-default-bg: $subtle-bg;
+$ui-state-default-border: darken($ui-state-default-bg, 8%);
 $ui-state-default-color: $reverse-text-color;
-$ui-state-hover-bg: $pink;
+$ui-state-hover-bg: $dark-gray;
+$ui-state-hover-border: darken($ui-state-hover-bg, 8%);
 $ui-state-hover-color: $reverse-text-color;
 
 $label-link-color: $blue;

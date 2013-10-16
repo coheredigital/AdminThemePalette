@@ -1,0 +1,7 @@
+@import './main-default.scss';
+
+#content{
+	.PageListPage:before{
+		display: none !important;
+	}
+}

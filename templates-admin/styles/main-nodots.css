@@ -4084,6 +4084,7 @@ ol,
 .content .PageList .PageListItem + .PageListActions {
   margin-bottom: 12px !important;
   display: block;
+  border: none !important;
   background: transparent;
 }
 
@@ -4093,7 +4094,7 @@ ol,
   padding: 0;
   clear: both;
   margin: 0 -6px;
-  border: none !important;
+  border: 0 !important;
 }
 
 .content .PageList .PageListItem + .PageListActions .PageListActionMore a {
@@ -4871,4 +4872,8 @@ body.modal #headline {
   .AjaxUploadDropHere {
     display: none !important;
   }
+}
+
+#content .PageListPage:before {
+  display: none !important;
 }

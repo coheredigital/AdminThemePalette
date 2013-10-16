@@ -235,12 +235,15 @@ a {
 	> label{
 		color: $search-input-color;
 		position: absolute !important;
-		right: 0.7em;
+		right: 0.7em !important;
+		padding: 0;
+		line-height: 14px !important;
+		font-size: 14px;
 		top: 50% !important;
 		display: block !important;
 		opacity: 1 !important;
 		z-index: 120;
-		margin-top: -0.6em !important;
+		margin-top: -0.55em !important;
 	}
 	#ProcessPageSearchQuery {
 		margin: 0;
@@ -421,6 +424,7 @@ a {
 	.PageListActions {
 		margin-left: 1em !important;
 		background: $action-link-bg;
+		border: 1px solid $action-link-border;
 		border-radius: 1em;
 		padding: 3px !important;
 		-webkit-font-smoothing: antialiased;
@@ -428,16 +432,22 @@ a {
 		// line-height: 24px;
 		vertical-align: baseline !important;
 		li{
-			border: none;
+		    border-left: 1px solid $subtle-border !important;
+		    &:first-child{
+		    	 border-left: 0 !important;
+		    }
 		}
 
 		a {
-			margin: 0 0.7em!important;
-		    padding: 0;
+			margin: 0 !important;
+		    padding: 5px !important;
+		    height: 14px;
+		    // display: inline-block;
 		    color: $action-link-color;
 		    text-transform: uppercase;
 		    font-weight: bold;
 		    font-size: 0.85em;
+
 		}
 		a:hover{
 			color: $action-link-hover-color;
@@ -678,6 +688,7 @@ a {
 		.PageListItem + .PageListActions{
 			margin-bottom: 12px !important;
 			display: block;
+			border: none !important;
 			background: transparent;
 			.PageListActionMore{
 				
@@ -695,7 +706,7 @@ a {
 					margin: 0 !important;
 					color: $white !important;
 				}
-				border: none!important;
+				border: 0 !important;
 				&:hover{
 					background: $light-blue;
 				}
@@ -1331,17 +1342,26 @@ body.modal {
 	min-width: 150px;
 }
 
-.dropdown-menu{
+.ui-menu{
 	display: none;
+	padding: 4px;
 	border-radius: 0 !important;
 	// border: 1px solid $main-bg !important;
 	border: 0 !important;
-
+	i{
+		font-size: 14px !important;
+	}
+	.ui-menu{
+		position: absolute !important;
+	}
 	.ui-menu-item{
-		min-width: 10px;
+		min-width: 120px;
 		border: 0 !important;
 		a{
 			border-radius: 0 !important;
+			span.ui-icon{
+				float: right;
+			}
 			small{
 				font-size: 1em;
 				color: $gray;
@@ -1353,6 +1373,23 @@ body.modal {
 			background: $link-color;
 			color: $white;
 		}
+	}
+	li.add > a{
+		background: $green;
+		color: $white !important;
+		box-shadow: $button-shadow;
+		border-radius: 4px !important;
+		// font-size: 14px;
+		// border-bottom: 1px solid $subtle-bg;
+		color: $green;
+		text-transform: uppercase; 
+		vertical-align: middle;
+		// text-align: center;
+		font-weight: bold;
+	}	
+	li.add > a.ui-state-focus{
+		background: $dark-green;
+		color: $dark-green;
 	}
 }
 
