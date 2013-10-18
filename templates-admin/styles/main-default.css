@@ -2945,7 +2945,6 @@ div + a > .ui-button {
 .InputfieldForm .Inputfields .itemRemove,
 .InputfieldForm .Inputfields .asmListItemRemove {
   padding: 3px 4px 3px 5px;
-  display: none;
   margin: -1px;
   border: 1px solid transparent;
   border-left: 0;
@@ -2960,7 +2959,6 @@ div + a > .ui-button {
 
 .InputfieldForm .Inputfields li:hover > .itemRemove,
 .InputfieldForm .Inputfields .asmListItem:hover > .asmListItemRemove {
-  display: block;
   color: white;
   background: #d12b33;
   border-color: #a72229;

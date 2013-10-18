@@ -63,7 +63,7 @@
 		.itemRemove,
 		.asmListItemRemove {
 			padding: 3px 4px 3px 5px;
-			display: none;
+			// display: none;
 			margin: -1px;
 			border: 1px solid transparent;
 			border-left: 0;
@@ -80,7 +80,7 @@
 		}
 		li:hover > .itemRemove,
 		.asmListItem:hover > .asmListItemRemove {
-			display: block;
+			// display: block;
 			color: $white;
 			background: $red;
 			border-color:$dark-red;
