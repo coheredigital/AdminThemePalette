@@ -45,44 +45,77 @@
 		.InputfieldColumnWidth:not(.InputfieldColumnWidthFirst) .InputfieldContent {
 			margin-left: -1px;
 		}
+
+
+		.InputfieldPageListSelectMultiple ol li,
+		.InputfieldPageAutocomplete ol li,
 		.asmListItem{
-			margin: 0 0 2px 0 !important;
+			// margin: 0 0 2px 0 !important;
 			padding-left: 0.4em;
-			// cursor: move;
-			.asmListItemHandle{
-			
-					color: $gray !important;
-				
-				
-			}
-			.asmListItemLabel {
-				display: inline-block;
-			}
-			.asmListItemRemove {
-				position: static !important;
-				float: right;
-				padding: 3px 4px 3px 7px;
-				margin: -1px;
-				margin-left: 2px;
-				border: 1px solid transparent;
-				border-left: 0;
-				color: $gray;
-
-			}
-			&:hover .asmListItemRemove {
-				color: $white;
-				background: $red;
-				border-color:$dark-red;
-
-			}
-			&:hover .asmListItemRemove:hover {
-				background: darken($red, 10%);
-				border-color: darken($dark-red, 10%);
-
+			height: 22px !important;	
+			position: relative;		
+			> .ui-icon:first-child{
+				position: absolute;
+				margin-top: 3px;
 			}
 		}
+		
+		.itemRemove,
+		.asmListItemRemove {
+			padding: 3px 4px 3px 5px;
+			display: none;
+			margin: -1px;
+			border: 1px solid transparent;
+			border-left: 0;
+			color: $gray;
+			// background: $subtle-bg;
+			position: absolute !important;
+			z-index: 50;
+			top: 0 !important;
+			right: 0 !important;
+
+			height: 22px;
+			width: 22px;
+			
+		}
+		li:hover > .itemRemove,
+		.asmListItem:hover > .asmListItemRemove {
+			display: block;
+			color: $white;
+			background: $red;
+			border-color:$dark-red;
+
+		}
+		li:hover  .itemRemove:hover,
+		.asmListItem:hover .asmListItemRemove:hover {
+			background: darken($red, 10%);
+			border-color: darken($dark-red, 10%);
+
+		}
+		.itemLabel,
+		.asmListItemLabel {
+			padding-left: 1em;
+			display: inline-block;
+			text-overflow:ellipsis;
+		}
+		.itemLabel{
+			max-width: 90%;
+			text-overflow:ellipsis;
+			overflow: hidden;
+			white-space: nowrap;
+		}
+		.asmListItemHandle{
+			color: $gray !important;
+		}
+
+
 		.InputfieldWrapper{
 			margin: 0px -1px;
+			
+		}
+		.InputfieldWrapper > .Inputfields,
+		.InputfieldFieldsetOpen > .InputfieldContent > .Inputfields{
+			border-bottom: 1px solid $subtle-border;
 		}
 	}
 
@@ -159,8 +192,7 @@
 	}
 
 	.Inputfield {
-		margin-bottom: -1px; /* non doubled border */
-		margin-top: 0;
+		margin: 0; 
 		background: $text-bg;
 	}
 
@@ -197,8 +229,9 @@
 			// padding-bottom: 0.75em;
 			background: $label-link-collapsed-bg; /* WHITE */
 			border: 1px solid $subtle-border; /* LIGHT-KHAKI */
+			border-bottom: 0;
 			color: $label-link-collapsed-color;
-
+			opacity: 0.6;
 			&:hover {
 				/* style for collapsed header when hovered */
 				color: $label-link-hover-color;
@@ -232,6 +265,7 @@
 		padding: 0.25em 1em 1.25em 1em;
 		border: 1px solid $subtle-border; /* LIGHT-KHAKI */
 		border-top: none;
+		border-bottom: none;
 		background: $text-bg; /* WHITE */
 	}
 

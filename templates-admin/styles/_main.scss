@@ -410,7 +410,7 @@ a {
 		padding: 3px !important;
 		-webkit-font-smoothing: antialiased;
 		vertical-align: baseline !important;
-		opacity: 0.5;
+		// opacity: 0.5;
 		li{
 		    border-left: 1px solid $subtle-border !important;
 		    &:first-child{
@@ -1050,7 +1050,7 @@ a {
 	background: $white;
 	padding: 0;
 	z-index: 4;
-	padding: 1.5em 1em;
+	padding: 1.2em 1em;
 	// padding-bottom: 0;
 	overflow: hidden;
 	// padding-bottom: 1em;

@@ -163,7 +163,7 @@ button,
 button.ui-button.ui-state-default,
 .ui-button.ui-state-default {
 	box-shadow: $button-shadow !important;
-	text-shadow: none !important;
+	text-shadow: 0 0 0.2em rgba(0,0,0,0.15) !important;
 	color: $button-color; /* WHITE */
 	background: $button-bg; /* LIGHT-GREEN */
 	border: $button-border; /* LIGHT-GREEN */
@@ -177,7 +177,7 @@ button.ui-button.ui-state-default,
 	border-radius: $button-radius;
 }
 	button.ui-button span {
-		text-shadow: none !important;
+		// text-shadow: none !important;
 	}
 
 	.ui-button:hover,

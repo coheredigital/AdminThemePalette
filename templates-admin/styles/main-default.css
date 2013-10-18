@@ -1467,15 +1467,11 @@ a {
   display: inline-block;
   position: relative;
   padding: 0;
-  margin-right: .1em;
   text-decoration: none !important;
   font-weight: bold;
   cursor: pointer;
   text-align: center;
-  zoom: 1;
-  overflow: visible;
-  *display: inline;
-  *zoom: 1;
+  line-height: 1.4;
 }
 
 /* the overflow property removes extra width in IE */
@@ -1504,7 +1500,6 @@ button.ui-button-icons-only {
 
 .ui-button .ui-button-text {
   display: block;
-  line-height: 1.4;
 }
 
 .ui-button-text-only .ui-button-text {
@@ -2702,7 +2697,7 @@ button.ui-button.ui-state-default,
 .ui-button.ui-state-default {
   -webkit-box-shadow: inset 0 -0.2em 0 rgba(0, 0, 0, 0.15) !important;
   box-shadow: inset 0 -0.2em 0 rgba(0, 0, 0, 0.15) !important;
-  text-shadow: none !important;
+  text-shadow: 0 0 0.2em rgba(0, 0, 0, 0.15) !important;
   color: white;
   /* WHITE */
   background: #43b979;
@@ -2718,10 +2713,6 @@ button.ui-button.ui-state-default,
   text-transform: uppercase;
   font-size: 1em !important;
   border-radius: 5px;
-}
-
-button.ui-button span {
-  text-shadow: none !important;
 }
 
 .ui-button:hover,
@@ -2936,43 +2927,76 @@ div + a > .ui-button {
   margin-left: -1px;
 }
 
+.InputfieldForm .Inputfields .InputfieldPageListSelectMultiple ol li,
+.InputfieldForm .Inputfields .InputfieldPageAutocomplete ol li,
 .InputfieldForm .Inputfields .asmListItem {
-  margin: 0 0 2px 0 !important;
   padding-left: 0.4em;
+  height: 22px !important;
+  position: relative;
 }
 
-.InputfieldForm .Inputfields .asmListItem .asmListItemHandle {
-  color: #999999 !important;
+.InputfieldForm .Inputfields .InputfieldPageListSelectMultiple ol li > .ui-icon:first-child,
+.InputfieldForm .Inputfields .InputfieldPageAutocomplete ol li > .ui-icon:first-child,
+.InputfieldForm .Inputfields .asmListItem > .ui-icon:first-child {
+  position: absolute;
+  margin-top: 3px;
 }
 
-.InputfieldForm .Inputfields .asmListItem .asmListItemLabel {
-  display: inline-block;
-}
-
-.InputfieldForm .Inputfields .asmListItem .asmListItemRemove {
-  position: static !important;
-  float: right;
-  padding: 3px 4px 3px 7px;
+.InputfieldForm .Inputfields .itemRemove,
+.InputfieldForm .Inputfields .asmListItemRemove {
+  padding: 3px 4px 3px 5px;
+  display: none;
   margin: -1px;
-  margin-left: 2px;
   border: 1px solid transparent;
   border-left: 0;
   color: #999999;
+  position: absolute !important;
+  z-index: 50;
+  top: 0 !important;
+  right: 0 !important;
+  height: 22px;
+  width: 22px;
 }
 
-.InputfieldForm .Inputfields .asmListItem:hover .asmListItemRemove {
+.InputfieldForm .Inputfields li:hover > .itemRemove,
+.InputfieldForm .Inputfields .asmListItem:hover > .asmListItemRemove {
+  display: block;
   color: white;
   background: #d12b33;
   border-color: #a72229;
 }
 
+.InputfieldForm .Inputfields li:hover .itemRemove:hover,
 .InputfieldForm .Inputfields .asmListItem:hover .asmListItemRemove:hover {
   background: #a72229;
   border-color: #7c1a1e;
 }
 
+.InputfieldForm .Inputfields .itemLabel,
+.InputfieldForm .Inputfields .asmListItemLabel {
+  padding-left: 1em;
+  display: inline-block;
+  text-overflow: ellipsis;
+}
+
+.InputfieldForm .Inputfields .itemLabel {
+  max-width: 90%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.InputfieldForm .Inputfields .asmListItemHandle {
+  color: #999999 !important;
+}
+
 .InputfieldForm .Inputfields .InputfieldWrapper {
   margin: 0px -1px;
+}
+
+.InputfieldForm .Inputfields .InputfieldWrapper > .Inputfields,
+.InputfieldForm .Inputfields .InputfieldFieldsetOpen > .InputfieldContent > .Inputfields {
+  border-bottom: 1px solid #dfdfdf;
 }
 
 .InputfieldForm .Inputfields > .Inputfield:not(.InputfieldSubmit) > .InputfieldContent > *:first-child,
@@ -3053,9 +3077,7 @@ div + a > .ui-button {
 }
 
 .Inputfields .Inputfield {
-  margin-bottom: -1px;
-  /* non doubled border */
-  margin-top: 0;
+  margin: 0;
   background: white;
 }
 
@@ -3091,7 +3113,9 @@ div + a > .ui-button {
   /* WHITE */
   border: 1px solid #dfdfdf;
   /* LIGHT-KHAKI */
+  border-bottom: 0;
   color: #999999;
+  opacity: 0.6;
 }
 
 .Inputfields .InputfieldStateCollapsed .InputfieldHeader:hover {
@@ -3134,6 +3158,7 @@ div + a > .ui-button {
   border: 1px solid #dfdfdf;
   /* LIGHT-KHAKI */
   border-top: none;
+  border-bottom: none;
   background: white;
   /* WHITE */
 }
@@ -3950,7 +3975,6 @@ ol,
   padding: 3px !important;
   -webkit-font-smoothing: antialiased;
   vertical-align: baseline !important;
-  opacity: 0.5;
 }
 
 .content .PageListActions li {
@@ -4602,7 +4626,7 @@ ol,
   background: white;
   padding: 0;
   z-index: 4;
-  padding: 1.5em 1em;
+  padding: 1.2em 1em;
   overflow: hidden;
 }
 
