@@ -1,4 +1,22 @@
-@import './main-default.scss';
+$regular-font: Arial, sans-serif;
+$button-radius: 5px;
+$tabs-radius: 6px;
+$tabs-height: 35px;
+$tabs-font-weight: normal;
+$base-font-size: 0.875em;
+$base-line-height: 1.6em;
+$footer-font-size: 0.875em;
+$form-top-margin-adjustment: -2px;
+
+@import 'compass';
+@import 'colors-default';
+@import 'reset';
+@import 'jquery-ui';
+@import 'ui';
+@import 'inputfields';
+@import 'cke';
+@import 'main';
+
 
 #content{
 	.PageListPage:before{

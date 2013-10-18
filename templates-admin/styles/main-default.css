@@ -2938,6 +2938,37 @@ div + a > .ui-button {
 
 .InputfieldForm .Inputfields .asmListItem {
   margin: 0 0 2px 0 !important;
+  padding-left: 0.4em;
+}
+
+.InputfieldForm .Inputfields .asmListItem .asmListItemHandle {
+  color: #999999 !important;
+}
+
+.InputfieldForm .Inputfields .asmListItem .asmListItemLabel {
+  display: inline-block;
+}
+
+.InputfieldForm .Inputfields .asmListItem .asmListItemRemove {
+  position: static !important;
+  float: right;
+  padding: 3px 4px 3px 7px;
+  margin: -1px;
+  margin-left: 2px;
+  border: 1px solid transparent;
+  border-left: 0;
+  color: #999999;
+}
+
+.InputfieldForm .Inputfields .asmListItem:hover .asmListItemRemove {
+  color: white;
+  background: #d12b33;
+  border-color: #a72229;
+}
+
+.InputfieldForm .Inputfields .asmListItem:hover .asmListItemRemove:hover {
+  background: #a72229;
+  border-color: #7c1a1e;
 }
 
 .InputfieldForm .Inputfields > .Inputfield:not(.InputfieldSubmit) > .InputfieldContent > *:first-child,
@@ -3166,6 +3197,10 @@ div + a > .ui-button {
 
 .Inputfields .InputfieldFileList > li {
   margin-top: 0;
+}
+
+.Inputfields .InputfieldFileMove {
+  float: right;
 }
 
 .Inputfields .InputfieldFileList .InputfieldFileItem .ui-widget-content {
@@ -3435,6 +3470,77 @@ div + a > .ui-button {
   -webkit-box-shadow: none !important;
   box-shadow: none !important;
   border: 1px solid #668bc0 !important;
+}
+
+/* Allow Font Awesome Icons in lieu of jQuery UI and only apply when using a FA icon */
+
+#content .ui-icon {
+  /* Remove the jQuery UI Icon */
+  background: none repeat scroll 0 0 transparent !important;
+  /* Remove the jQuery UI Text Indent */
+  text-indent: 0;
+  /* Bump it up - jQuery UI is -8px */
+  vertical-align: baseline;
+  font-family: FontAwesome;
+  font-weight: normal;
+  font-style: normal;
+  text-decoration: inherit;
+  -webkit-font-smoothing: antialiased;
+  *margin-right: .3em;
+  float: none;
+  display: inline !important;
+}
+
+.ui-icon:before {
+  text-decoration: inherit;
+  speak: none;
+}
+
+/* makes sure icons active on rollover in links */
+
+a .ui-icon,
+a .ui-icon {
+  display: inline;
+}
+
+/* BOOTSTRAP SPECIFIC CLASSES
+ * -------------------------- */
+
+/* Bootstrap 2.0 sprites.less reset */
+
+.ui-icon {
+  display: inline;
+  width: auto;
+  height: auto;
+  line-height: normal;
+  vertical-align: baseline;
+  background-image: none;
+  background-position: 0% 0%;
+  background-repeat: repeat;
+  margin-top: 0;
+}
+
+/* Icons */
+
+.ui-icon-trash {
+  font-size: 0;
+}
+
+.ui-icon-trash:before {
+  content: "\f014";
+  font-size: 14px;
+}
+
+.ui-icon-arrowthickstop-1-n:before {
+  content: "\f148";
+}
+
+.ui-icon-arrowthickstop-1-s:before {
+  content: "\f149";
+}
+
+.ui-icon-arrowthick-2-n-s:before {
+  content: "\f0dc";
 }
 
 /***********************************************************************************************
@@ -3840,6 +3946,7 @@ ol,
   padding: 3px !important;
   -webkit-font-smoothing: antialiased;
   vertical-align: baseline !important;
+  opacity: 0.5;
 }
 
 .content .PageListActions li {
@@ -3862,6 +3969,10 @@ ol,
 
 .content .PageListActions a:hover {
   color: #668bc0;
+}
+
+.content .PageListItem:hover .PageListActions {
+  opacity: 1;
 }
 
 .content .PageListStatusIcon {
@@ -3949,15 +4060,21 @@ ol,
   clear: both;
   line-height: 28px;
   height: 28px;
-  padding: 0 12px !important;
+  padding: 0 6px !important;
+  margin-left: 6px !important;
   padding-right: 0 !important;
+  border-radius: 4px;
+}
+
+.content .PageList .PageListItem:hover {
+  background: #f8f8f8;
 }
 
 .content .PageList .PageListItem:before {
   content: "";
   position: absolute;
   width: 13px;
-  left: -4px;
+  left: -10px;
   top: 50%;
   border-bottom: 1px solid #ccc;
   z-index: 1;
@@ -3966,7 +4083,7 @@ ol,
 .content .PageList .PageListItem:after {
   content: "";
   position: absolute;
-  left: -4px;
+  left: -10px;
   top: -14px;
   bottom: 14px;
   border-left: 1px solid #ccc;
@@ -3975,6 +4092,10 @@ ol,
 
 .content .PageList .PageListItem:first-child:after {
   top: -4.66667px;
+}
+
+.content .PageList .PageListItem.PageListSortItem {
+  background: none !important;
 }
 
 .content .PageList .PageListItem.PageListSortItem .PageListNumChildren {
@@ -3988,6 +4109,11 @@ ol,
   color: white !important;
   padding: 0.2em 0.6em 0.2em 0.3em;
   text-decoration: none !important;
+}
+
+.content .PageList .PageListItem.PageListSortItem .PageListPage:before {
+  -webkit-box-shadow: inset 0 -2px 0 rgba(0, 0, 0, 0.15);
+  box-shadow: inset 0 -2px 0 rgba(0, 0, 0, 0.15);
 }
 
 .content .PageList .PageListItem.PageListSortItem .PageListMoveNote {
@@ -4084,6 +4210,7 @@ ol,
 .content .PageList .PageListItem + .PageListActions {
   margin-bottom: 12px !important;
   display: block;
+  border: none !important;
   background: transparent;
 }
 
@@ -4093,7 +4220,7 @@ ol,
   padding: 0;
   clear: both;
   margin: 0 -6px;
-  border: none !important;
+  border: 0 !important;
 }
 
 .content .PageList .PageListItem + .PageListActions .PageListActionMore a {
@@ -4111,14 +4238,16 @@ ol,
 }
 
 .content .PageList .PageListLoading {
-  background: white;
+  background: #fd0;
+  -webkit-box-shadow: inset 0 -2px 0 #fba, 0 0 5px 1px #ffa;
+  box-shadow: inset 0 -2px 0 #fba, 0 0 5px 1px #ffa;
   display: block;
-  height: 13px;
-  width: 13px;
+  height: 11px;
+  width: 11px;
   position: absolute;
-  left: 13px;
+  left: 8px;
   padding: 0 !important;
-  margin: -6px 0 0 0 !important;
+  margin: -5px 0 0 0 !important;
   top: 50%;
   z-index: 5 !important;
   border-radius: 50%;
@@ -4162,8 +4291,15 @@ ol,
   vertical-align: baseline;
   position: relative;
   margin: 0 8px 0 2px;
+  -webkit-box-shadow: inset 0 -2px 0 rgba(0, 0, 0, 0.15), 0 1px 3px #dddddd;
+  box-shadow: inset 0 -2px 0 rgba(0, 0, 0, 0.15), 0 1px 3px #dddddd;
   z-index: 5;
   border-radius: 50%;
+}
+
+.content .PageList .PageListID1 {
+  background: none !important;
+  margin: 0 !important;
 }
 
 .content .PageList .PageListID1 > .PageListPage:before {
@@ -4223,7 +4359,7 @@ ol,
 .content .PageList .PageListNumChildren {
   line-height: 28px;
   font-weight: bold;
-  margin: 0 0.3em;
+  margin: 0 0.6em;
   font-style: italic;
   font-size: 0.85em;
   color: #999999;
@@ -4267,17 +4403,24 @@ ol,
 .content .AdminDataList th,
 .content .AdminDataList td {
   border-bottom: 1px solid #dfdfdf;
-  padding: 0.5em 0;
+  padding: 0.4em 0.6em;
   vertical-align: middle !important;
+}
+
+.content .AdminDataList td {
+  border-bottom: 0;
 }
 
 .content .AdminDataList button {
   font-size: 0.85em !important;
 }
 
-.content .AdminDataList tr:hover td,
-.content .AdminDataList tr:hover th {
-  background: #eeeeee;
+.content .AdminDataList tr:nth-child(odd) td {
+  background: #fbfbfb;
+}
+
+.content .AdminDataList tr:hover td {
+  background: #eeeeee !important;
 }
 
 .content .AdminDataList td a {
@@ -4296,6 +4439,14 @@ ol,
 
 .content .AdminDataList td .fieldFlag:hover {
   color: #444444;
+}
+
+.content .templateFlag {
+  border: 0 !important;
+}
+
+.content .templateFlag:hover i {
+  color: #668bc0 !important;
 }
 
 .content .MarkupPagerNav {
@@ -4689,6 +4840,10 @@ body.modal #headline {
  * MISC
  *
  */
+
+button.install {
+  float: none !important;
+}
 
 .hasWireTabs #content {
   /* context selection in field editor */

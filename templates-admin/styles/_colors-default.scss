@@ -131,6 +131,7 @@ $pagelist-link-active-color: $dark-blue;
 $pagelist-link-icon-color: $gray; /*#CC0048; */
 
 $pagelist-item-height: 28px;
+$pagelist-item-hover-bg: lighten($subtle-bg, 4%);
 
 $pagination-font-size: 0.769230769230769em;
 $pagination-link-color: $reverse-text-color;

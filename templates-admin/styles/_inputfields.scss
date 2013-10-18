@@ -47,6 +47,39 @@
 		}
 		.asmListItem{
 			margin: 0 0 2px 0 !important;
+			padding-left: 0.4em;
+			// cursor: move;
+			.asmListItemHandle{
+			
+					color: $gray !important;
+				
+				
+			}
+			.asmListItemLabel {
+				display: inline-block;
+			}
+			.asmListItemRemove {
+				position: static !important;
+				float: right;
+				padding: 3px 4px 3px 7px;
+				margin: -1px;
+				margin-left: 2px;
+				border: 1px solid transparent;
+				border-left: 0;
+				color: $gray;
+
+			}
+			&:hover .asmListItemRemove {
+				color: $white;
+				background: $red;
+				border-color:$dark-red;
+
+			}
+			&:hover .asmListItemRemove:hover {
+				background: darken($red, 10%);
+				border-color: darken($dark-red, 10%);
+
+			}
 		}
 	}
 
@@ -278,7 +311,9 @@
 	.InputfieldFileList .InputfieldFileItem {
 		// border: $item-border;
 	}
-
+	.InputfieldFileMove{
+		float: right;
+	}
 	.InputfieldFileList .InputfieldFileItem .ui-widget-content {
 		border: $headline-border;
 		border-top: 0;
