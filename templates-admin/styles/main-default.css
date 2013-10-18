@@ -2971,6 +2971,10 @@ div + a > .ui-button {
   border-color: #7c1a1e;
 }
 
+.InputfieldForm .Inputfields .InputfieldWrapper {
+  margin: 0px -1px;
+}
+
 .InputfieldForm .Inputfields > .Inputfield:not(.InputfieldSubmit) > .InputfieldContent > *:first-child,
 .InputfieldForm .Inputfields > .Inputfield > .InputfieldContent > div > *:first-child,
 .InputfieldForm .Inputfields > .Inputfield:first-child {
