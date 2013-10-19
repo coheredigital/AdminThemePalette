@@ -22,6 +22,7 @@ body {
 	input,
 	textarea {
 		font-family: $regular-font;
+		
 	}
 	body.modal {
 		background-color: $text-bg;
@@ -407,12 +408,13 @@ a {
 		background: $action-link-bg;
 		border: 1px solid $action-link-border;
 		border-radius: 1em;
-		padding: 3px !important;
+		padding: 2px;
 		-webkit-font-smoothing: antialiased;
 		vertical-align: baseline !important;
 		// opacity: 0.5;
 		li{
 		    border-left: 1px solid $subtle-border !important;
+		    line-height: 0.9em !important;
 		    &:first-child{
 		    	 border-left: 0 !important;
 		    }
@@ -420,9 +422,9 @@ a {
 
 		a {
 			margin: 0 !important;
-		    padding: 5px !important;
-		    height: 14px;
-		    // display: inline-block;
+			vertical-align: text-top;
+		    padding: 6px !important;
+		    line-height: 1.5em !important;
 		    color: $action-link-color;
 		    text-transform: uppercase;
 		    font-weight: bold;
@@ -953,7 +955,7 @@ a {
 		margin: 2px -16px!important;
 		li{
 			margin: 0 0 0 1px;
-			line-height: 14px;
+			// line-height: 12px;
 			// background-color: transparent !important;
 			padding: 0 !important;
 			display: inline-block;
@@ -967,7 +969,7 @@ a {
 				min-width:20px;
 				height: 20px;
 				font-weight: bold;
-				line-height: 7px;
+				line-height: 5px;
 				text-align: center;
 				margin:  0 0 !important;
 				display: inline-block;
@@ -1138,6 +1140,8 @@ a {
 
 .description {
 	color: $medium-text-color;
+	font-style: italic;
+
 	margin: 0.5em 0;
 }
 
@@ -1348,7 +1352,9 @@ button.install{
 	}
 }
 
-
+#_ProcessPageEditDelete.on{
+	color: $red !important;
+}
 
 #addLinksMenu {
 	min-width: 150px;

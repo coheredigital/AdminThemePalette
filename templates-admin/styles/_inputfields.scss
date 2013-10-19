@@ -88,8 +88,10 @@
 		}
 		li:hover  .itemRemove:hover,
 		.asmListItem:hover .asmListItemRemove:hover {
-			background: darken($red, 10%);
-			border-color: darken($dark-red, 10%);
+			// background: darken($red, 10%);
+			border-color: $red;
+			box-shadow: 0 0 6px 1px $light-red;
+			color: lighten($light-red, 10%);
 
 		}
 		.itemLabel,
@@ -104,8 +106,38 @@
 			overflow: hidden;
 			white-space: nowrap;
 		}
+		.InputfieldPageListSelectMultiple ol li > .ui-icon:first-child,
+		.InputfieldPageAutocomplete ol li > .ui-icon:first-child,
 		.asmListItemHandle{
 			color: $gray !important;
+		}
+		.InputfieldPageAutocomplete{
+			> p{
+				position: relative;
+			}
+			input{
+				width: 100%;
+			}
+			.InputfieldPageAutocompleteNote{
+				position: absolute;
+				top: 1px;
+				bottom: 1px;
+				right: 1px;
+				// display: inline-block !important;
+				padding: 5px 8px!important;
+				line-height: 13px;
+
+				margin: 0;
+				// background: #eee;
+				border: 0;
+				font-weight: bold;
+				border-left: 1px solid #ddd;
+				// color: $green;
+				font-size: 0.8em;
+				br{
+					display: none;
+				}
+			}
 		}
 
 
@@ -342,6 +374,13 @@
 	 *
 	 */
 
+	.InputfieldImage,
+	.InputfieldFile{
+		input{
+			padding: 0;
+			margin: 0;
+		}
+	}
 	.InputfieldFileList > li {
 		margin-top: 0;
 	}
