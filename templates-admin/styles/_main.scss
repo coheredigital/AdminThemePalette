@@ -139,7 +139,7 @@ a {
 
 	> li > a.hover,
 	> li > a:hover {
-		background: $topnav-link-hover-bg;
+		background: $dark-gray;
 		color: $topnav-link-hover-color;
 		text-decoration: none;
 	}
@@ -209,8 +209,8 @@ a {
 #ProcessPageSearchForm {
 	float: right;
 	margin: 0;
-	width: 25%;
-	max-width: 200px;
+	width: 294px;
+	max-width: 30%;
 	min-width: 90px;
 	position: relative;
 
@@ -261,7 +261,9 @@ a {
 	}
 
 }
-
+#ProcessPageSearchAutocomplete{
+	margin-left: 17px;
+}
 
 #headline {
 	position: relative;
@@ -533,9 +535,9 @@ a {
 			position: relative;
 			clear: both;
 			line-height: $pagelist-item-height;
-			height: $pagelist-item-height;
+			// height: $pagelist-item-height;
 			padding: 0 6px !important;
-			margin-left: 6px !important;
+			margin: 0 0 0 6px !important;
 			padding-right: 0 !important;
 			border-radius: 4px;
 			// border-bottom: 1px solid #eee;
@@ -556,10 +558,10 @@ a {
 				content: "";
 				position: absolute;
 				left: -10px;
-				top: -($pagelist-item-height/2);
-				bottom: ($pagelist-item-height/2);
+				bottom: 50%;
+				height: 100%;
 				border-left: 1px solid #ccc;
-				z-index: 1;
+				z-index: -1;
 			}
 			&:first-child:after {
 				top: -($pagelist-item-height/6);
@@ -750,6 +752,7 @@ a {
 			text-decoration: none;
 			line-height: 21px !important;
 			vertical-align: baseline;
+			// background: #fff;
 		}
 		// page list status dots
 		.PageListPage:before {
@@ -952,7 +955,7 @@ a {
 		float: left;
 		height: auto !important;
 		display: block !important;
-		margin: 2px -16px!important;
+		margin: 2px -16px 4px!important;
 		li{
 			margin: 0 0 0 1px;
 			// line-height: 12px;
@@ -1171,7 +1174,6 @@ a {
 	background: $error-bg;
 	color: $error-color;
 	font-weight: bold;
-	font-size: 0.9166666em;
 }
 
 /***********************************************************************************************
@@ -1209,18 +1211,32 @@ a {
 }
 
 #notices{
+	font-size: 0.85em;
+	.notices-remove{
+		position: absolute;
+		z-index: 20;
+		top: 0.3em;
+		right: 0;
+		color: $white;
+		font-size: 14px;
+		&:hover{
+			color: $dark-gray;
+		}
+	}	
+	
 	ul{
 		width: 100%;
 		margin: 0 !important;
 		padding: 0 !important;
 		list-style: none;
-		font-size: 0.85em;
+		position: relative;
+		
 		li{
 			padding: 0.6em 0;
 			margin: 0 !important;
 			// font-weight: bold;
-			text-transform: uppercase;
-			&.success{
+			// text-transform: uppercase;
+			&.notice-success{
 				background: $green;
 				color: lighten($green, 40%);
 				a{
@@ -1228,7 +1244,7 @@ a {
 					font-weight: bold;
 				}
 			}
-			&.error{
+			&.notice-error{
 				background: $red;
 
 				color: lighten($red, 40%);
@@ -1362,10 +1378,11 @@ button.install{
 
 .ui-menu{
 	display: none;
-	padding: 4px;
+	padding: 0 0 4px 0;
 	border-radius: 0 !important;
 	// border: 1px solid $main-bg !important;
 	border: 0 !important;
+	background: $dark-gray;
 	i{
 		font-size: 14px !important;
 	}
@@ -1377,6 +1394,7 @@ button.install{
 		border: 0 !important;
 		a{
 			border-radius: 0 !important;
+			color: $white;
 			span.ui-icon{
 				float: right;
 			}
@@ -1386,17 +1404,27 @@ button.install{
 				font-weight: bold;
 				margin: 0  0.4em;
 			}
+			&.ui-state-focus{
+				background: $link-color;
+				color: $white;
+			}
+			&.ui-state-active{
+				background: lighten($dark-gray, 12%);
+				color: $gray;
+			}
 		}
 		a.on{
-			background: $link-color;
+			background: $link-color !important;
 			color: $white;
 		}
 	}
+
 	li.add > a{
 		background: $green;
 		color: $white !important;
 		box-shadow: $button-shadow;
 		border-radius: 4px !important;
+		margin: 4px;
 		// font-size: 14px;
 		// border-bottom: 1px solid $subtle-bg;
 		color: $green;
@@ -1459,6 +1487,7 @@ button.install{
 			border: 1px solid darken($main-bg, 5%);
 		}
 	}
+
 	body #masthead #topnav a,
 	body #content .WireTabs li a {
 		padding: 0.6em;

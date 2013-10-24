@@ -1,59 +1,50 @@
 /* Allow Font Awesome Icons in lieu of jQuery UI and only apply when using a FA icon */
-#content .ui-icon{
-    /* Remove the jQuery UI Icon */
-    background: none repeat scroll 0 0 transparent !important;
-    /* Remove the jQuery UI Text Indent */
-    text-indent: 0; 
-    /* Bump it up - jQuery UI is -8px */
-
-    vertical-align: baseline;
-	font-family: FontAwesome;
-	font-weight: normal;
-	font-style: normal;
-	text-decoration: inherit;
-	-webkit-font-smoothing: antialiased;
-	*margin-right: .3em;
-	float: none;
-	display: inline !important;
+body .ui-icon{
+  background: none repeat scroll 0 0 transparent !important;
+  text-indent: 0;
+  vertical-align: middle;
+  font-family: FontAwesome !important;
+  font-weight: normal;
+  font-style: normal;
+  text-decoration: inherit;
+  display: inline-block !important;
+  -webkit-font-smoothing: antialiased;
+  float: none;
+  display: inline !important;
+  font-size: 0;
 }
 .ui-icon:before {
   text-decoration: inherit;
+  text-indent: 0 !important; 
   speak: none;
-}
-
-/* makes sure icons active on rollover in links */
-a .ui-icon,
-a .ui-icon {
-  display: inline;
-}
-
-
-
-/* BOOTSTRAP SPECIFIC CLASSES
- * -------------------------- */
-/* Bootstrap 2.0 sprites.less reset */
-
-.ui-icon {
-  display: inline;
-  width: auto;
-  height: auto;
-  line-height: normal;
-  vertical-align: baseline;
-  background-image: none;
-  background-position: 0% 0%;
-  background-repeat: repeat;
-  margin-top: 0;
+  font-size: 14px;
 }
 
 
 /* Icons */
 
-.ui-icon-trash{
- font-size: 0;
+
+
+.ui-icon-carat-1-s:before {
+  content: "\f0d7";
 }
+
+.ui-icon-carat-1-e:before{
+  content: "\f105";
+}
+
+.ui-icon-carat-1-n:before {
+  content: "\f0d8";
+}
+
+.ui-icon-carat-1-w:before{
+  content: "\f0d9";
+}
+
+
+
 .ui-icon-trash:before {
   content: "\f014";
-  font-size: 14px;
 }
 
 .ui-icon-arrowthickstop-1-n:before {
