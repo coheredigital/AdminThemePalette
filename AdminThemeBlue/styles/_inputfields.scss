@@ -145,10 +145,6 @@
 			margin: 0px -1px;
 			
 		}
-		.InputfieldWrapper > .Inputfields,
-		.InputfieldFieldsetOpen > .InputfieldContent > .Inputfields{
-			border-bottom: 1px solid $subtle-border;
-		}
 	}
 
 	/**
@@ -203,12 +199,14 @@
 	textarea {
 		font-size: 1em;
 		max-width: 100%;
+
 	}
 
 	input,
 	textarea {
 		/* slight padding for input and textarea elements... */
-		padding: 0.2em 0.4em;
+		border: 1px solid $light-gray;
+		padding: 0.4em 0.6em;
 		line-height: 1.3em;
 	}
 
@@ -225,6 +223,7 @@
 
 	.Inputfield {
 		margin: 0; 
+		margin-bottom: -1px;
 		background: $text-bg;
 	}
 
@@ -261,7 +260,7 @@
 			// padding-bottom: 0.75em;
 			background: $label-link-collapsed-bg; /* WHITE */
 			border: 1px solid $subtle-border; /* LIGHT-KHAKI */
-			border-bottom: 0;
+			// border-bottom: 0;
 			color: $label-link-collapsed-color;
 			opacity: 0.6;
 			&:hover {
@@ -297,7 +296,8 @@
 		padding: 0.25em 1em 1.25em 1em;
 		border: 1px solid $subtle-border; /* LIGHT-KHAKI */
 		border-top: none;
-		border-bottom: none;
+
+		// border-bottom: none;
 		background: $text-bg; /* WHITE */
 	}
 
@@ -379,10 +379,17 @@
 		input{
 			padding: 0;
 			margin: 0;
+			border: 0;
 		}
 	}
 	.InputfieldFileList > li {
 		margin-top: 0;
+		.InputfieldFileDescription input{
+			border: 1px solid $light-gray;
+			width: 100%;
+			padding: 0.4em 0.6em;
+		}
+
 	}
 	.InputfieldFileList .InputfieldFileItem {
 		// border: $item-border;
@@ -395,6 +402,8 @@
 		border-top: 0;
 		background: $subtle-bg;
 	}
+
+
 
 	.InputfieldImageGrid .InputfieldFileItem .ui-widget-content{
 		border: 0;

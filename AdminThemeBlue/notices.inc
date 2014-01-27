@@ -1,6 +1,6 @@
 <div id="notices">
 	<div class="container notices-remove-container">
-		<a href="#" class="notices-remove"><span class="icon-remove"></span></a>
+		<a href="#" class="notices-remove"><i class="fa fa-times"></i></a>
 	</div>
 	<ul>
 

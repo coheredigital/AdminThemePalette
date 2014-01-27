@@ -14,7 +14,15 @@ if($input->get->colors && !$user->isGuest()) $colors = $sanitizer->pageName($inp
 if(is_file(dirname(__FILE__) . "/styles/main-$colors.css")) $session->adminThemeColors = $colors;
 	else $session->adminThemeColors = $defaultColorTheme;
 
-$config->styles->prepend($config->urls->adminTemplates . "styles/main-$session->adminThemeColors.css?v=6");
+$config->styles->prepend($config->urls->adminTemplates . "styles/main-default.css?v=6");
+
+if ($adminTheme->disable_dots) {
+	$config->styles->prepend($config->urls->adminTemplates . "styles/nodots.css?v=6");
+}
+
+
+
+
 $config->styles->append($config->urls->root . "wire/templates-admin/styles/font-awesome/css/font-awesome.min.css");
 $config->scripts->append($config->urls->root . "wire/templates-admin/scripts/inputfields.js?v=5");
 $config->scripts->append($config->urls->adminTemplates . "scripts/main.js?v=5");
@@ -89,7 +97,11 @@ if(!$browserTitle) $browserTitle = __(strip_tags($page->get('title|name')), __FI
 	<![endif]-->
 
 	<?php foreach($config->scripts->unique() as $file) echo "\n\t<script type='text/javascript' src='$file'></script>"; ?>
-
+	<?php if ($adminTheme->custom_css): ?>
+		<style>
+			<?php echo $adminTheme->custom_css ?>
+		</style>
+	<?php endif ?>
 </head>
 <body<?php if($bodyClass) echo " class='$bodyClass'"; ?>>
 
@@ -112,12 +124,12 @@ if(!$browserTitle) $browserTitle = __(strip_tags($page->get('title|name')), __FI
 				<?php if(!$user->isGuest()): ?>
 				<li>
 					<?php $class = $page->name == "profile" ? "on" : "" ?>
-					<a class='dropdown-toggle <?php echo $class ?>' href='<?php echo $config->urls->admin?>profile/'><i class='icon-user'></i></a>
+					<a class='dropdown-toggle <?php echo $class ?>' href='<?php echo $config->urls->admin?>profile/'><i class='fa fa-user'></i></a>
 					<ul class='dropdown-menu topnav' data-my='left-1 top' data-at='left bottom'>
 						<?php if($user->hasPermission('profile-edit')): ?>
 						<li><a href='<?php echo $config->urls->admin?>profile/'><?php echo __('Profile', __FILE__); ?> <small><?php echo $user->name?></small></a></li>
 						<?php endif; ?>
-						<li><a href='<?php echo $config->urls->admin?>login/logout/'><?php echo __('Logout', __FILE__); ?> <i class='icon-signout'></i></a></li>
+						<li><a href='<?php echo $config->urls->admin?>login/logout/'><?php echo __('Logout', __FILE__); ?> <i class='fa fa-sign-out'></i></a></li>
 					</ul>
 				</li>
 				<?php endif; ?>
@@ -133,10 +145,10 @@ if(!$browserTitle) $browserTitle = __(strip_tags($page->get('title|name')), __FI
 					<div id='breadcrumbs'>
 						<ul class='nav'>
 							<?php
-							echo "<li><a class='sitelink' href='{$config->urls->root}'><i class='icon-home'></i></a><i class='icon-angle-right'></i></li>";
+							echo "<li><a class='sitelink' href='{$config->urls->root}'><i class='fa fa-home'></i></a><i class='fa fa-angle-right'></i></li>";
 							foreach($this->fuel('breadcrumbs') as $breadcrumb) {
 								$title = __($breadcrumb->title, __FILE__);
-								echo "<li><a href='{$breadcrumb->url}'>{$title}</a><i class='icon-angle-right'></i></li>";
+								echo "<li><a href='{$breadcrumb->url}'>{$title}</a><i class='fa fa-angle-right'></i></li>";
 							}
 							unset($title);
 							echo "<li class='title'>" . __(strip_tags($this->fuel->processHeadline ? $this->fuel->processHeadline : $page->get("title|name")), __FILE__) . "</li>";
@@ -177,13 +189,13 @@ if(!$browserTitle) $browserTitle = __(strip_tags($page->get('title|name')), __FI
 
 
 			<span id='userinfo'>
-				<i class='icon-user'></i>
+				<i class='fa fa-user'></i>
 				<?php
 				if($user->hasPermission('profile-edit')): ?>
 				<a class='action' href='<?php echo $config->urls->admin; ?>profile/'><?php echo $user->name; ?></a> |
 				<?php endif; ?>
 
-				<a class='action' href='<?php echo $config->urls->admin; ?>login/logout/'><?php echo __('Logout', __FILE__); ?></a>
+				<a class='action' href='<?php echo $config->urls->admin; ?>login/logout/'><?php echo __('Logout', __FILE__); ?></a> <i class='fa fa-sign-out'></i>
 			</span>
 			<!-- <a id='logo' href='<?php echo $config->urls->admin?>'><img width='130' src="<?php echo $config->urls->adminTemplates?>styles/images/logo.png" alt="ProcessWire" /></a> -->
 			<?php endif; ?>

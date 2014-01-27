@@ -1,0 +1,49 @@
+<?php
+
+class AdminThemeBlue extends AdminTheme implements Module, ConfigurableModule {
+
+	public static function getModuleInfo() {
+		return array(
+			'title' => 'Blue Admin Theme',
+			'version' => 060,
+			'summary' => 'Beautiful, simple, sensible admin theme.',
+			'autoload' => 'template=admin'
+			); 
+	}
+
+	public static function getModuleConfigInputfields(array $data) {
+		$inputfields = new InputfieldWrapper();
+
+
+		// disable page dots feature
+		$field = wire('modules')->get('InputfieldCheckbox');
+		$field->label = "Disable Page Status Dots";
+		$field->attr('name', 'disable_dots');
+		if ($data['disable_dots']) $field->attr('checked', 'checked'); 
+		$field->set('columnWidth', 50);
+		$inputfields->add($field); 		
+
+
+		// dropdown menu level
+		$field = wire('modules')->get('InputfieldSelect');
+		$field->label = "Dropdown menu depth";
+		$field->attr('name', 'dropdown_depth');
+		$selected = !is_null($data['dropdown_depth']) ? $data['dropdown_depth'] : 1; // default to one level dropdown
+		$field->addOption(0, __("None (disbale dropdown menus)"), $selected == 0 ? array("selected"=>"selected") : null);
+		$field->addOption(1, __("One"), $selected == 1 ? array("selected"=>"selected") : null);
+		$field->addOption(2, __("Two"), $selected == 2 ? array("selected"=>"selected") : null);
+		$field->set('columnWidth', 50);
+		$inputfields->add($field); 		
+
+
+		// css override field (define custom css for easy small tweaks)
+		$field = wire('modules')->get('InputfieldTextarea');
+		$field->label = "Custom CSS (define custom css for easy small tweaks)";
+		$field->attr('name', 'custom_css');
+		$field->attr('value', isset($data['custom_css']) ? $data['custom_css'] : ''); 
+		$field->set('columnWidth', 100);
+		$inputfields->add($field); 		
+
+		return $inputfields;
+	}
+}

@@ -1,6 +1,9 @@
 <?php
 
+	// var_dump($adminTheme->dropdown_depth);
+
 function renderTopNavItem(Page $p, $level = 0) {
+
 
 	$showItem = wire('user')->isSuperuser() ? true : false;
 	$info = array();
@@ -24,7 +27,9 @@ function renderTopNavItem(Page $p, $level = 0) {
 	$title = __($title, dirname(__FILE__) . '/default.php'); // translate from context of default.php
 	$out .= "<li>";
 
-	if(!$level && count($children)) {
+
+
+	if(wire("adminTheme")->dropdown_depth > 0 && !$level && count($children)) {
 
 		$class = trim("$class dropdown-toggle"); 
 		$out .= "<a href='$p->url' class='$class'>$title</a>"; 
@@ -44,7 +49,7 @@ function renderTopNavItem(Page $p, $level = 0) {
 			}
 
 
-			if($items) {
+			if(wire("adminTheme")->dropdown_depth > 1 && $items) {
 				$addLabel = __('Add New', dirname(__FILE__) . '/default.php');
 				$out .= "<li><a href='$c->url'>$c->title</a><ul>" . 
 					"<li class='add'><a href='{$c->url}add'><i class='icon-plus-sign'></i> $addLabel</a></li>";
