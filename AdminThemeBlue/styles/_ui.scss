@@ -36,7 +36,7 @@
 	li.ui-state-default,
 	.ui-widget-content li.ui-state-default {
 		background: $ui-state-default-bg; /* LIGHT-ORANGE */
-		border-color: $ui-state-default-border;  /* LIGHT-ORANGE */
+		border: 1px solid $ui-state-default-border;  /* LIGHT-ORANGE */
 		color: $text-color; /* WHITE */
 	}
 	li.ui-state-default a,

@@ -64,8 +64,6 @@
 		.itemRemove,
 		.asmListItemRemove {
 			padding: 3px 4px 3px 5px;
-			// display: none;
-			margin: -1px;
 			border: 1px solid transparent;
 			border-left: 0;
 			color: $gray;
@@ -180,6 +178,8 @@
 		/* reset */
 		margin: 0;
 		padding: 0;
+		border-radius: 0;
+		vertical-align: baseline;
 	}
 
 	label {
@@ -200,6 +200,7 @@
 	textarea {
 		font-size: 1em;
 		max-width: 100%;
+		padding: 0.4em 0.6em;
 
 	}
 
@@ -207,7 +208,7 @@
 	textarea {
 		/* slight padding for input and textarea elements... */
 		border: 1px solid $light-gray;
-		padding: 0.4em 0.6em;
+		
 		line-height: 1.3em;
 	}
 
