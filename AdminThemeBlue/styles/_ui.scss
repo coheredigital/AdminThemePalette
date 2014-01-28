@@ -157,13 +157,12 @@
  * ui-button
  *
  */
-// #adminTheme{
+
 	.ui-button,
 	button,
 	button.ui-button.ui-state-default,
 	.ui-button.ui-state-default {
 		box-shadow: $button-shadow !important;
-		text-shadow: 0 0 0.2em rgba(0,0,0,0.15) !important;
 		color: $button-color; /* WHITE */
 		background: $button-bg; /* LIGHT-GREEN */
 		border: $button-border; /* LIGHT-GREEN */
@@ -196,22 +195,25 @@
 	div + a > .ui-button {
 		margin-top: 1em;
 	}
-// }
 
+// slider
+#columnWidth{
+	width: 12%;
+	margin-right: 3%;
+}
+#columnWidthSlider{
+	width: 85% !important;
+	// margin: 0 .1%;
+	float: right;
+}
 
-
-
-/**
- * ui-slider
- *
- */
-
-.ui-slider .ui-slider-range,
-.ui-widget .ui-slider .ui-slider-range,
-.ui-widget-content .ui-slider .ui-slider-range {
-	background: $link-hover-color; /* CYAN */
-	/* remove padding added to Inputfields that was getting inherited here */
-	padding: 0;
+@media (max-width: 600px) {
+	#columnWidth,
+	#columnWidthSlider{
+		width: 100% !important;
+		margin: 0;
+		float: none;
+	}
 }
 
 /**

@@ -34,6 +34,7 @@
 			margin-left: 0;
 		}
 
+
 		.InputfieldColumnWidthFirstTmp,
 		.InputfieldColumnWidthFirst.InputfieldStateHidden + .Inputfield {
 			/* for support of inputfield dependencies */
@@ -226,6 +227,7 @@
 		margin-bottom: -1px;
 		background: $text-bg;
 	}
+
 
 	.Inputfield.ui-state-error {
 		border: none;
@@ -535,10 +537,7 @@
 .InputfieldForm .Inputfields .InputfieldSubmit,
 .InputfieldForm .Inputfields .InputfieldButton {
 	/* enable horizontal stack of buttons */
-	margin-top: 0;
-	// padding-top: 0;
-	padding: 1em;
-	padding-bottom: 0;
+	padding: 1em 0 0.5em 0;
 	margin: 0;
 	clear: none;
 	background: none;
@@ -550,9 +549,9 @@
 
 	.InputfieldContent {
 		/* we don't need our visual furniture for buttons */
-		padding: 0;
+		padding: 0 1em;
 		margin: 0;
-		margin-top: 1em;
+		margin-top: 0.5em;
 		background: none;
 		border: none;
 	}

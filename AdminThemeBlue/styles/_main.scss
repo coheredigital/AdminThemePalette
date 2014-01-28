@@ -11,7 +11,7 @@
 
 body {
 
-	background: $main-bg;
+	background: $main-color;
 	font-size: $base-font-size;
 	color: $text-color;
 	
@@ -243,7 +243,7 @@ a {
 		outline: none;
 	}
 	#ProcessPageSearchQuery:hover {
-		background: darken($main-bg, 4%);
+		background: darken($main-color, 4%);
 	}
 		#ProcessPageSearchQuery:focus {
 			background: $text-bg;
@@ -1308,9 +1308,14 @@ a {
 
 body.modal {
 
+	#wrapper{
+		box-shadow: none;
+	}
+
 	.container {
 		margin: 0;
 		width: 100%;
+		max-width: none;
 		min-width: 300px;
 	}
 
@@ -1372,7 +1377,7 @@ button.install{
 	display: none;
 	padding: 0 0 4px 0;
 	border-radius: 0 !important;
-	// border: 1px solid $main-bg !important;
+	// border: 1px solid $main-color !important;
 	border: 0 !important;
 	background: $dark-gray;
 	i{
@@ -1475,8 +1480,8 @@ button.install{
 			padding: 0.6em;
 			padding-right: 2.2em;
 			width: 100%;
-			background: lighten($main-bg, 5%);
-			border: 1px solid darken($main-bg, 5%);
+			background: lighten($main-color, 5%);
+			border: 1px solid darken($main-color, 5%);
 		}
 	}
 
