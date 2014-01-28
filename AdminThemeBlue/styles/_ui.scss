@@ -229,11 +229,13 @@
 }
 .ui-autocomplete li,
 .ui-menu .ui-menu-item {
+	display: block;
 	border-bottom: 1px solid darken($subtle-bg, 5%); /* LIGHT-KHAKI */
 }
 .ui-menu .ui-menu-item a,
 .ui-autocomplete li a {
 	cursor: pointer;
+	display: block;
 }
 .ui-menu .ui-menu-item a {
 	padding: 0.5em 0.75em 0.5em 1em;
