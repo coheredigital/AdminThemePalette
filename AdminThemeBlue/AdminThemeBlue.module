@@ -28,7 +28,10 @@ class AdminThemeBlue extends AdminTheme implements Module, ConfigurableModule {
 		$field = wire('modules')->get('InputfieldSelect');
 		$field->label = "Dropdown menu depth";
 		$field->attr('name', 'dropdown_depth');
-		$selected = !is_null($data['dropdown_depth']) ? $data['dropdown_depth'] : 1; // default to one level dropdown
+		$field->attr('value', !is_null($data['dropdown_depth']) ? $data['dropdown_depth'] : 1); 
+
+		// $selected = !is_null($data['dropdown_depth']) ? $data['dropdown_depth'] : 1; // default to one level dropdown
+		$selected = $data['dropdown_depth']; // default to one level dropdown
 		$field->addOption(0, __("None (disbale dropdown menus)"), $selected == 0 ? array("selected"=>"selected") : null);
 		$field->addOption(1, __("One"), $selected == 1 ? array("selected"=>"selected") : null);
 		$field->addOption(2, __("Two"), $selected == 2 ? array("selected"=>"selected") : null);
@@ -46,4 +49,12 @@ class AdminThemeBlue extends AdminTheme implements Module, ConfigurableModule {
 
 		return $inputfields;
 	}
+
+	public function ___install() {
+		$config = array(
+			'dropdown_depth' => 1
+		);
+		$this->modules->saveModuleConfigData($this, $config);
+	}
+
 }

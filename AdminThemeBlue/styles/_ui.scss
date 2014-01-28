@@ -157,25 +157,25 @@
  * ui-button
  *
  */
-
-.ui-button,
-button,
-button.ui-button.ui-state-default,
-.ui-button.ui-state-default {
-	box-shadow: $button-shadow !important;
-	text-shadow: 0 0 0.2em rgba(0,0,0,0.15) !important;
-	color: $button-color; /* WHITE */
-	background: $button-bg; /* LIGHT-GREEN */
-	border: $button-border; /* LIGHT-GREEN */
-	border: 0 !important; /* LIGHT-GREEN */
-	outline: 0 !important;
-	font-weight: bold;
-	padding: 0.5em 1em;
-	cursor: pointer;
-	text-transform: uppercase;
-	font-size: 1em !important;
-	border-radius: $button-radius;
-}
+// #adminTheme{
+	.ui-button,
+	button,
+	button.ui-button.ui-state-default,
+	.ui-button.ui-state-default {
+		box-shadow: $button-shadow !important;
+		text-shadow: 0 0 0.2em rgba(0,0,0,0.15) !important;
+		color: $button-color; /* WHITE */
+		background: $button-bg; /* LIGHT-GREEN */
+		border: $button-border; /* LIGHT-GREEN */
+		border: 0 !important; /* LIGHT-GREEN */
+		outline: 0 !important;
+		font-weight: bold;
+		padding: 0.5em 1em;
+		cursor: pointer;
+		text-transform: uppercase;
+		font-size: 1em !important;
+		border-radius: $button-radius;
+	}
 	button.ui-button span {
 		// text-shadow: none !important;
 	}
@@ -196,6 +196,10 @@ button.ui-button.ui-state-default,
 	div + a > .ui-button {
 		margin-top: 1em;
 	}
+// }
+
+
+
 
 /**
  * ui-slider

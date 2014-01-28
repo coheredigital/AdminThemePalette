@@ -1,5 +1,5 @@
 /* Allow Font Awesome Icons in lieu of jQuery UI and only apply when using a FA icon */
-body .ui-icon{
+#adminTheme .ui-icon{
   background: none repeat scroll 0 0 transparent !important;
   text-indent: 0;
   vertical-align: middle;
@@ -29,14 +29,16 @@ body .ui-icon{
   content: "\f0d7";
 }
 
+.ui-icon-circle-triangle-e:before,
 .ui-icon-carat-1-e:before{
-  content: "\f105";
+  content: "\f0da";
 }
 
 .ui-icon-carat-1-n:before {
   content: "\f0d8";
 }
 
+.ui-icon-circle-triangle-w:before,
 .ui-icon-carat-1-w:before{
   content: "\f0d9";
 }

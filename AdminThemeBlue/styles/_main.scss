@@ -881,7 +881,11 @@ a {
 		border-bottom: 0;
 	}
 	.AdminDataList button{
-		font-size: 0.85em !important;
+		font-size: 0.9em !important;
+		margin: 0 1em 1em;
+		line-height: 15px;
+		vertical-align: middle;
+		float: right;
 	}
 	.AdminDataList tr:nth-child(odd) td {
 		background: lighten($subtle-bg, 5%);
@@ -899,7 +903,8 @@ a {
 	}
 	.AdminDataList td i,
 	.AdminDataList td .fieldFlag{
-		vertical-align: middle;
+		vertical-align: top;
+		margin-right: 2px;
 		line-height: 14px;
 		font-size: 14px;
 	}
@@ -1328,20 +1333,7 @@ body.modal {
  *
  */
 
-// #content .container > form,
-// #content .container > .ui-helper-clearfix > form {
-// 	/* for wiretabs and/or forms to line up with headline area */
-// 	// top: $form-top-margin-adjustment;
-// }
-
-
-
-// body.hasWireTabs #content {
-// 	border-top: 3em solid $headline-bg;
-// }
-
-// body.hasWireTabs .InputfieldForm {
-// }
+#delete_AdminBar
 
 button.install{
 	float: none !important;

@@ -13,8 +13,9 @@ if($input->get->colors && !$user->isGuest()) $colors = $sanitizer->pageName($inp
 
 if(is_file(dirname(__FILE__) . "/styles/main-$colors.css")) $session->adminThemeColors = $colors;
 	else $session->adminThemeColors = $defaultColorTheme;
-
 $config->styles->prepend($config->urls->adminTemplates . "styles/main-default.css?v=6");
+$config->styles->prepend($config->urls->adminTemplates . "styles/jquery-ui.css");
+
 
 if ($adminTheme->disable_dots) {
 	$config->styles->prepend($config->urls->adminTemplates . "styles/nodots.css?v=6");
@@ -103,7 +104,8 @@ if(!$browserTitle) $browserTitle = __(strip_tags($page->get('title|name')), __FI
 		</style>
 	<?php endif ?>
 </head>
-<body<?php if($bodyClass) echo " class='$bodyClass'"; ?>>
+<!-- adminTheme id used for overrides -->
+<body id="adminTheme" <?php if($bodyClass) echo " class='$bodyClass'"; ?>>
 
 	<?php if(count($notices)) include($config->paths->adminTemplates . "notices.inc"); ?>
 
