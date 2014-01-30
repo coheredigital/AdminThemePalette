@@ -5,11 +5,7 @@ $bodyClass = $input->get->modal ? 'modal ' : '';
 $bodyClass .= "id-{$page->id} template-{$page->template->name}";
 if(!isset($content)) $content = '';
 
-$defaultColorTheme = 'default';
-if($input->get->colors && !$user->isGuest()) $colors = $sanitizer->pageName($input->get->colors);
-	else if($session->adminThemeColors) $colors = $session->adminThemeColors;
-	else if($config->adminThemeColors) $colors = $sanitizer->pageName($config->adminThemeColors);
-	else $colors = $defaultColorTheme;
+
 
 if(is_file(dirname(__FILE__) . "/styles/main-$colors.css")) $session->adminThemeColors = $colors;
 	else $session->adminThemeColors = $defaultColorTheme;
@@ -25,11 +21,19 @@ if ($adminTheme->disable_dots) {
 
 
 $config->styles->append($config->urls->root . "wire/templates-admin/styles/font-awesome/css/font-awesome.min.css");
+
+
+include("includes/theme.inc");
+
 $config->scripts->append($config->urls->root . "wire/templates-admin/scripts/inputfields.js?v=5");
 $config->scripts->append($config->urls->adminTemplates . "scripts/main.js?v=5");
 
 $browserTitle = wire('processBrowserTitle');
 if(!$browserTitle) $browserTitle = __(strip_tags($page->get('title|name')), __FILE__) . ' &bull; ProcessWire';
+
+
+
+
 
 /*
  * Dynamic phrases that we want to be automatically translated
@@ -98,6 +102,8 @@ if(!$browserTitle) $browserTitle = __(strip_tags($page->get('title|name')), __FI
 	<![endif]-->
 
 	<?php foreach($config->scripts->unique() as $file) echo "\n\t<script type='text/javascript' src='$file'></script>"; ?>
+
+
 	<?php if ($adminTheme->custom_css): ?>
 		<style>
 			<?php echo $adminTheme->custom_css ?>
@@ -107,7 +113,7 @@ if(!$browserTitle) $browserTitle = __(strip_tags($page->get('title|name')), __FI
 <!-- adminTheme id used for overrides -->
 <body id="adminTheme" <?php if($bodyClass) echo " class='$bodyClass'"; ?>>
 
-	<?php if(count($notices)) include($config->paths->adminTemplates . "notices.inc"); ?>
+	<?php if(count($notices)) include($config->paths->adminTemplates . "includes/notices.inc"); ?>
 
 	<?php if(!$user->isGuest()): ?>
 
@@ -122,7 +128,7 @@ if(!$browserTitle) $browserTitle = __(strip_tags($page->get('title|name')), __FI
 			<?php echo tabIndent($searchForm, 3); ?>
 
 			<ul id='topnav'>
-				<?php include($config->paths->adminTemplates . "topnav.inc"); ?>
+				<?php include($config->paths->adminTemplates . "includes/topnav.inc"); ?>
 				<?php if(!$user->isGuest()): ?>
 				<li>
 					<?php $class = $page->name == "profile" ? "on" : "" ?>
@@ -161,7 +167,7 @@ if(!$browserTitle) $browserTitle = __(strip_tags($page->get('title|name')), __FI
 					<?php
 					if(in_array($page->id, array(2,3,8))) { // page-list
 						echo "<div id='head_button'>";
-						include($config->paths->adminTemplates . "shortcuts.inc");
+						include($config->paths->adminTemplates . "includes/shortcuts.inc");
 						echo "</div>";
 					}
 					?>
@@ -182,7 +188,7 @@ if(!$browserTitle) $browserTitle = __(strip_tags($page->get('title|name')), __FI
 	</div>
 
 
-
+	<?php if($config->debug && $this->user->isSuperuser()) include($config->paths->adminTemplates . "includes/debug.inc"); ?>
 	<div id="footer" class="footer">
 		<div class="container">
 
@@ -207,9 +213,11 @@ if(!$browserTitle) $browserTitle = __(strip_tags($page->get('title|name')), __FI
 
 
 
-			<?php if($config->debug && $this->user->isSuperuser()) include($config->paths->adminTemplates . "debug.inc"); ?>
+			
 		</div>
 	</div>
+	
 
+	
 </body>
 </html>

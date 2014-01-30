@@ -1,0 +1,31 @@
+body{
+	background: @theme_color;
+}
+#masthead > .container{
+	background: darken(@theme_color, 6%);
+}
+
+#topnav > li > a,
+#ProcessPageSearchForm > label,
+#footer{
+	color: lighten(@theme_color, 25%);
+}
+
+#footer a{
+	color: lighten(@theme_color, 40%);
+}
+
+#ProcessPageSearchForm #ProcessPageSearchQuery:hover {
+	background: darken(@theme_color, 12%);
+}
+
+@media only screen and (max-width: 767px) {
+
+	#ProcessPageSearchForm{
+		#ProcessPageSearchQuery{
+			background: lighten(@theme_color, 5%);
+			border: 1px solid darken(@theme_color, 5%);
+		}
+	}
+
+}

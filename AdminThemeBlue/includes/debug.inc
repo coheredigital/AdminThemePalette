@@ -1,3 +1,5 @@
+<div class="container">
+	
 
 	<p><a id="debug_toggle" href="#debug"><i class='icon-cog'></i> <?php echo __('Debug Mode Tools', __FILE__); ?></a></p>
 
@@ -236,4 +238,4 @@
 			}); 
 		}); 
 	</script>
-
+</div>

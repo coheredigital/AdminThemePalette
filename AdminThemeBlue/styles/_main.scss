@@ -125,7 +125,7 @@ a {
 	}
 
 	> li > a {
-		background: $topnav-link-bg;
+		// background: $topnav-link-bg;
 		color: $topnav-link-color;
 		display: block;
 		float: left;
@@ -236,21 +236,17 @@ a {
 		width: 100%;
 		background: transparent;
 		text-align: right;
-		color: $search-input-color;
 		// border: 1px solid darken($breadcrumbs-bg, 10%);
 		border: none;
 		// border-radius: $button-radius;
 		outline: none;
 	}
-	#ProcessPageSearchQuery:hover {
-		background: darken($main-color, 4%);
+	#ProcessPageSearchQuery:focus {
+		background: $text-bg !important;
+		color: $text-color;
+		text-transform: none;
+		font-weight: normal;
 	}
-		#ProcessPageSearchQuery:focus {
-			background: $text-bg;
-			color: $text-color;
-			text-transform: none;
-			font-weight: normal;
-		}
 
 	#ProcessPageSearchStatus {
 		position: absolute;
@@ -1262,12 +1258,56 @@ a {
 	}
 }
 
-
+#debug_toggle{
+	background: $dark-red;
+	color: #fff;
+	font-weight: bold;
+	text-transform: uppercase;
+	padding: 0.5em 0.7em;
+	text-align: center;
+	display: block;
+	// float: left;
+	clear: both;
+	&:hover{
+		background: $red;
+	}
+}
 #debug {
-	margin-top: 2em;
+	background:#fff;
+	// border-top: 1px dashed $light-gray;
+	.ui-accordion-header{
+		background: $dark-gray;
+		outline: none;
+		padding: 0.5em;
+		outline: none;
+	}	
+
+	.ui-accordion-header.ui-state-hover{
+		background: lighten($dark-gray, 5%);
+		a{
+			color: #fff;
+		}
+	}
+	.ui-accordion-header.ui-accordion-header-active{
+		background: $orange;
+
+		padding: 0.5em;
+		a{
+			color: #fff;
+		}
+	}
+
+	.ui-accordion-content{
+		height: auto !important;
+		background: darken($dark-gray, 7%);
+	}
 
 	.container {
 		width: 100%;
+	}
+	
+	a{
+		color: $gray;
 	}
 
 	p {
@@ -1287,13 +1327,14 @@ a {
 
 		th {
 			font-weight: bold;
+			background:darken($dark-gray, 15%);
 		}
 
 		td, th {
 			vertical-align: top;
-			padding: 3px 5px;
-			border-bottom: 1px dotted $light-text-color;
-			border-left: 1px dotted $light-text-color;
+			padding: 4px 6px;
+			border-bottom: 1px solid $dark-gray;
+			border-left: 1px solid $dark-gray;
 			font-size: 12px;
 		}
 
@@ -1377,7 +1418,6 @@ button.install{
 	display: none;
 	padding: 0 0 4px 0;
 	border-radius: 0 !important;
-	// border: 1px solid $main-color !important;
 	border: 0 !important;
 	background: $dark-gray;
 	i{

@@ -1,0 +1,20 @@
+body {
+  background: #555;
+}
+#masthead > .container {
+  background: #464646;
+}
+#footer {
+  color: #888888;
+}
+#footer a,
+#ProcessPageSearchForm > label,
+#topnav > li > a {
+  color: #bbbbbb;
+}
+@media only screen and (max-width: 767px) {
+  #ProcessPageSearchForm #ProcessPageSearchQuery {
+    background: #626262;
+    border: 1px solid #484848;
+  }
+}

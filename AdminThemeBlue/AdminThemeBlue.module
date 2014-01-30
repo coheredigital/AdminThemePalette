@@ -5,13 +5,22 @@ class AdminThemeBlue extends AdminTheme implements Module, ConfigurableModule {
 	public static function getModuleInfo() {
 		return array(
 			'title' => 'Blue Admin Theme',
-			'version' => 060,
+			'version' => 003,
 			'summary' => 'Beautiful, simple, sensible admin theme.',
 			'autoload' => 'template=admin'
 			); 
 	}
 
+
+
+
+
 	public static function getModuleConfigInputfields(array $data) {
+		// add color picker scripts / styles
+		wire('config')->scripts->append(wire('config')->urls->get( wire('adminTheme')->className() )."scripts/jquery.minicolors.min.js");
+		wire('config')->styles->append(wire('config')->urls->get( wire('adminTheme')->className() )."scripts/jquery.minicolors.css");
+
+
 		$inputfields = new InputfieldWrapper();
 
 
@@ -20,7 +29,7 @@ class AdminThemeBlue extends AdminTheme implements Module, ConfigurableModule {
 		$field->label = "Disable Page Status Dots";
 		$field->attr('name', 'disable_dots');
 		if ($data['disable_dots']) $field->attr('checked', 'checked'); 
-		$field->set('columnWidth', 50);
+		$field->set('columnWidth', 33);
 		$inputfields->add($field); 		
 
 
@@ -29,13 +38,22 @@ class AdminThemeBlue extends AdminTheme implements Module, ConfigurableModule {
 		$field->label = "Dropdown menu depth";
 		$field->attr('name', 'dropdown_depth');
 		$field->attr('value', !is_null($data['dropdown_depth']) ? $data['dropdown_depth'] : 1); 
-
 		// $selected = !is_null($data['dropdown_depth']) ? $data['dropdown_depth'] : 1; // default to one level dropdown
 		$selected = $data['dropdown_depth']; // default to one level dropdown
 		$field->addOption(0, __("None (disbale dropdown menus)"), $selected == 0 ? array("selected"=>"selected") : null);
 		$field->addOption(1, __("One"), $selected == 1 ? array("selected"=>"selected") : null);
 		$field->addOption(2, __("Two"), $selected == 2 ? array("selected"=>"selected") : null);
-		$field->set('columnWidth', 50);
+		$field->set('columnWidth', 34);
+		$inputfields->add($field); 		
+
+
+		// theme color selection
+		$field = wire('modules')->get('InputfieldText');
+		$field->label = "Theme Color";
+		$field->notes = "Color is primarily applied to the background.";
+		$field->attr('name', 'theme_color');
+		$field->attr('value', isset($data['theme_color']) ? $data['theme_color'] : ""); 
+		$field->set('columnWidth', 33);
 		$inputfields->add($field); 		
 
 

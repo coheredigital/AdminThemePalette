@@ -1,0 +1,23 @@
+body {
+  background: #555;
+}
+#masthead > .container {
+  background: #464646;
+}
+#topnav > li > a,
+#ProcessPageSearchForm > label,
+#footer {
+  color: #959595;
+}
+#footer a {
+  color: #bbbbbb;
+}
+#ProcessPageSearchForm #ProcessPageSearchQuery:hover {
+  background: #363636;
+}
+@media only screen and (max-width: 767px) {
+  #ProcessPageSearchForm #ProcessPageSearchQuery {
+    background: #626262;
+    border: 1px solid #484848;
+  }
+}

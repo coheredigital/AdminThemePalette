@@ -40,12 +40,12 @@ $brown: #821038;
 
 /* THEMING */
 
-$main-color: #607E9E;
+// $main-color: #607E9E;
 // $main-color: #365163;
 // $main-color: #5B7D7C;
 // $main-color: #7A372C;
 // $main-color: #6B525E;
-$main-shadow: 0 0 4px darken($main-color, 5%);
+// $main-shadow: 0 0 4px darken($main-color, 5%);
 
 $subtle-bg: #eee;
 $subtle-border: darken($subtle-bg, 6%);
@@ -61,15 +61,15 @@ $medium-text-color: #777;
 $light-text-color: #999;
 $reverse-text-color: $white;
 
-$breadcrumbs-color: lighten($main-color, 12%);
-$breadcrumbs-link-color: lighten($main-color, 30%);
+// $breadcrumbs-color: lighten($main-color, 12%);
+// $breadcrumbs-link-color: lighten($main-color, 30%);
 $breadcrumbs-link-hover-color: $orange;
 // $breadcrumbs-border: 1px solid darken($main-color, 3%);
 
-$topnav-link-color: lighten($main-color, 40%);
-$topnav-link-bg: darken($main-color, 3%);
+// $topnav-link-color: lighten($main-color, 40%);
+// $topnav-link-bg: darken($main-color, 3%);
 $topnav-link-hover-color: $white;
-$topnav-link-hover-bg: darken($main-color, 6%);
+// $topnav-link-hover-bg: darken($main-color, 6%);
 $topnav-link-current-color: $gray;
 $topnav-link-current-bg: $headline-bg;
 
@@ -106,7 +106,6 @@ $button-hover-bg: $dark-green;
 $button-radius: 5px;
 $button-shadow: inset 0 -0.2em 0 rgba(0,0,0,0.15);
 
-$search-input-color: lighten($main-color, 25%);
 
 $ui-state-default-bg: $subtle-bg;
 $ui-state-default-border: darken($ui-state-default-bg, 8%);
@@ -117,7 +116,7 @@ $ui-state-hover-color: $reverse-text-color;
 
 $label-link-color: $blue;
 $label-link-bg: #fff;
-$label-link-collapsed-color: $gray; /*lighten($dark-blue, 35%); */
+$label-link-collapsed-color: $gray; 
 $label-link-collapsed-bg: #fff;
 $label-link-hover-color: $link-hover-color;
 
@@ -127,10 +126,9 @@ $table-th-active-color: $orange;
 
 $pagelist-link-color: #333;
 $pagelist-link-hover-color: $blue;
-$pagelist-link-open-color: $main-color;
 $pagelist-link-open-bg: #ffffdd;
 $pagelist-link-active-color: $dark-blue;
-$pagelist-link-icon-color: $gray; /*#CC0048; */
+$pagelist-link-icon-color: $gray;
 
 $pagelist-item-height: 28px;
 $pagelist-item-hover-bg: lighten($subtle-bg, 4%);
@@ -158,9 +156,6 @@ $wiretab-link-current-border: $headline-border ;
 $wiretab-link-active-bg: $dark-pink;
 $wiretab-link-active-color: $white;
 
-$footer-bg: #eee; /* transparentize($subtle-bg, 0.5); */
-$footer-color: lighten($main-color, 18%);
-$footer-link-color: lighten($main-color, 40%);
 
 $highlight-bg: $green;
 $highlight-color: $white;
