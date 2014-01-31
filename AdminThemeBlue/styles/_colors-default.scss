@@ -61,15 +61,11 @@ $medium-text-color: #777;
 $light-text-color: #999;
 $reverse-text-color: $white;
 
-// $breadcrumbs-color: lighten($main-color, 12%);
-// $breadcrumbs-link-color: lighten($main-color, 30%);
-$breadcrumbs-link-hover-color: $orange;
-// $breadcrumbs-border: 1px solid darken($main-color, 3%);
 
-// $topnav-link-color: lighten($main-color, 40%);
-// $topnav-link-bg: darken($main-color, 3%);
+$breadcrumbs-link-hover-color: $orange;
+
+
 $topnav-link-hover-color: $white;
-// $topnav-link-hover-bg: darken($main-color, 6%);
 $topnav-link-current-color: $gray;
 $topnav-link-current-bg: $headline-bg;
 

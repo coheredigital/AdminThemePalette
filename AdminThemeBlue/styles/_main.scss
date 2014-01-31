@@ -10,11 +10,8 @@
  }
 
 body {
-
-	background: $main-color;
 	font-size: $base-font-size;
 	color: $text-color;
-	
 }
 	body,
 	.ui-dialog,
@@ -93,7 +90,7 @@ a {
 	margin-top: 0.7em;
 }
 #wrapper{
-	box-shadow: $main-shadow;
+
 	position: relative;
 	z-index: 0;
 }
@@ -104,8 +101,7 @@ a {
 	margin-top: 1em;
 	z-index: 5;
 	> .container{
-		background:$topnav-link-bg;
-
+		transition: height 0.8s linear;
 	}
 }
 #topnav {
@@ -120,19 +116,17 @@ a {
 		padding: 0;
 		margin: 0;
 		list-style: none;
+		float: left;	
 		display: inline;
 		text-transform: uppercase;
 	}
 
 	> li > a {
 		// background: $topnav-link-bg;
-		color: $topnav-link-color;
+		// color: $topnav-link-color;
 		display: block;
-		float: left;
-		// margin: 0 2px 0 0;
+		// float: left;
 		padding: 0.7em 0.9em;
-		// border-top-right-radius: $tabs-radius;
-		// border-top-left-radius: $tabs-radius;
 		font-weight: $tabs-font-weight;
 	}
 
@@ -152,6 +146,59 @@ a {
 	}
 
 
+
+}
+#collapse-topnav-menu{
+	background: $headline-bg;
+	color: #fff;
+	padding: 0.6em 1em;
+	position: absolute;
+	z-index: 100;
+	// bottom: 0;
+	top: 100%;
+	right: 0;
+	float: left;
+	cursor: pointer;
+	text-align: center;
+	display: none;
+}
+.collapse-topnav #collapse-topnav-menu{
+	display: block;
+}
+
+.collapse-topnav{
+	// margin-top: 1em;
+	#masthead{
+		> .container{
+			max-height: 0;
+			float: none;
+			border-top: 6px solid;
+			overflow: hidden;
+
+
+		}
+		&.is-open{
+			.container{
+				max-height: 800px;
+				// overflow: auto;
+			}
+		}
+	} 
+
+	#topnav {
+		float: none;
+		> li{
+			display: block;
+			clear: both;
+			float: none;
+		}
+		&.is-open{
+			height: auto;
+		}
+	}
+	.dropdown-menu{
+		display: none !important;
+	}
 }
 
 
@@ -159,7 +206,7 @@ a {
 	padding: 0;
 	line-height: 1em;
 	// margin-bottom: 1em;
-	color: $breadcrumbs-color;
+	color: $gray;
 	-webkit-font-smoothing: antialiased;
 
 	ul {
@@ -183,6 +230,7 @@ a {
 			font-size: 1.3em;
 			font-weight: bold;
 			text-transform: none;
+			white-space: normal; 
 		}
 		a {
 			color: $gray;
@@ -215,7 +263,7 @@ a {
 	position: relative;
 
 	> label{
-		color: $search-input-color;
+		// color: $search-input-color;
 		position: absolute !important;
 		right: 0.7em !important;
 		padding: 0;
@@ -252,7 +300,7 @@ a {
 		position: absolute;
 		top: 0.7em;
 		left: 0.6em;
-		color: $search-input-color;
+		// color: $search-input-color;
 		font-weight: bold;
 	}
 
@@ -814,11 +862,6 @@ a {
 			text-decoration: none;
 		}
 
-		.PageListItemOpen > a.PageListPage  {
-			color: $pagelist-link-open-color;
-			// background-color: $pagelist-link-open-bg;
-		}
-
 		.PageListStatusHidden:not(.PageListItemOpen) > a.PageListPage {
 			opacity: 0.75;
 		}
@@ -1185,12 +1228,12 @@ a {
 #footer {
 	padding: 2em 0;
 	font-size: $footer-font-size;
-	color: $footer-color;
+	// color: $footer-color;
 	-webkit-font-smoothing: antialiased;
 	// background: $footer-bg;
-	a {
-		color: $footer-link-color;
-	}
+	// a {
+	// 	color: $footer-link-color;
+	// }
 	a:hover {
 		text-decoration: underline;
 	}
@@ -1375,6 +1418,85 @@ body.modal {
 
 
 /***********************************************************************************************
+ * LOGIN
+ *
+ */
+
+#login-box{
+	background:#fff;
+	// overflow: hidden;
+	width: 300px;
+	max-width: 100%;
+	height: 300px;
+	padding: 20px;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	margin: -150px 0 0 -150px;
+	
+	#logo{
+		text-align: center;
+		margin-bottom: 1em;
+		width: 100%;
+		img{
+			max-width: 75% !important;
+		}
+	} 
+	.Inputfield{
+		padding: 0;
+
+	}
+	ul.Inputfields .Inputfield{
+		width: 100%;
+		background: transparent !important;
+		.InputfieldContent,
+		.InputfieldHeader{
+			border: 0;
+			background: transparent !important;
+			margin: 0 !important;
+			padding: 0.4em 0;
+		}
+		.InputfieldHeader{
+			text-align: center;
+			color: $gray;
+		}
+		input{
+			width: 100%;
+			// border: 0;
+		}
+	}
+	#wrap_login_name,
+	#wrap_login_pass{
+
+	}
+	.InputfieldSubmit {
+		width: 100%;
+	}
+	#Inputfield_login_submit{
+		width: 100%;
+		border-radius: 0;
+		box-shadow: none;
+	}
+	.toggle-icon{
+		display: none;
+	}
+	> div{
+		// text-align: center;
+		> div{
+			margin-top: 0.4em;
+			padding: 0.4em 0;
+		}
+		a{
+			color: $gray;
+			&:hover{
+				color: $blue;
+			}
+		}
+	}
+}
+
+
+/***********************************************************************************************
  * MISC
  *
  */
@@ -1495,6 +1617,12 @@ button.install{
 	margin-right: auto;
 }
 
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
 /***********************************************************************************************
  * MEDIA QUERIES
  *
@@ -1510,18 +1638,33 @@ button.install{
 @media only screen and (max-width: 767px) {
 
 
-
+	#masthead{
+		margin: 0;
+	}
+	.container {
+		width: 100%;
+	}
+	#topnav{
+		float: none;
+		clear: both;
+	}
 	#ProcessPageSearchForm{
 		width: 100%;
 		max-width: 100%;
 		margin-bottom: 1em;
 
 		#ProcessPageSearchQuery{
-			padding: 0.6em;
-			padding-right: 2.2em;
+			padding: 1em 0.6em;
+			padding-left: 2.6em;
 			width: 100%;
-			background: lighten($main-color, 5%);
-			border: 1px solid darken($main-color, 5%);
+			border-width: 0 !important;
+			text-align: left;
+			// background: lighten($main-color, 5%);
+			// border: 1px solid darken($main-color, 5%);
+		}
+		> label{
+			left: 1em;
+			right: auto !important;
 		}
 	}
 
@@ -1530,9 +1673,10 @@ button.install{
 		padding: 0.6em;
 	}
 
-	#logo {
-		display: none;
-	}
+
+	// #logo {
+	// 	display: none;
+	// }
 
 
 	#head_button {
@@ -1545,21 +1689,9 @@ button.install{
 
 }
 
-/* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
-@media only screen and (min-width: 480px) and (max-width: 767px) {
-}
 
 /* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
 @media only screen and (max-width: 479px) {
-
-	/**
-	 * Disregard column width when at mobile size
-	 *
-	 */
-	#ProcessPageSearchQuery{
-		text-align: center;
-		border-width: 0 0 1px 0 !important;
-	}
 
 	.Inputfield {
 		clear: both !important;
@@ -1567,20 +1699,39 @@ button.install{
 		margin-left: 0 !important;
 	}
 
-	.container {
-		width: 100%;
-	}
+
 	#footer #userinfo {
 		float: none;
 	}
 	#footer {
 		text-align: center;
 	}
- 	#breadcrumbs,
+
+	#headline #head_button{
+		position: static !important;
+		clear: both !important;
+		margin-top: 1em;
+	}
+
+
+
 	.AjaxUploadDropHere {
 		display: none !important;
 	}
 
+
+}
+
+@media only screen and (max-width: 320px) {
+
+	#login-box{
+		padding-top: 0;
+		height: auto;
+		top: 0;
+		margin: 0;
+		left: 0;
+		width: 100%;
+	}
 
 }
 

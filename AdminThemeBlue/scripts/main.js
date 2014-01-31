@@ -18,6 +18,7 @@ var ProcessWireAdminTheme = {
 		this.setupTooltips();
 		this.setupSearch();
 		this.setupDropdowns();
+		this.setupMobile();
 		// this.sizeTitle();
 		if($("body").hasClass('hasWireTabs') && $("ul.WireTabs").size() == 0) $("body").removeClass('hasWireTabs');
 		$('#content').removeClass('fouc_fix'); // FOUC fix
@@ -237,6 +238,75 @@ var ProcessWireAdminTheme = {
 		});
 
 	},
+
+
+
+	setupMobile: function() {
+		// collapse or expand the topnav menu according to whether it is wrapping to multiple lines
+		var collapsedWidth_topnav = 0;
+		var collapsedWidth_tabs = 0;
+
+		var windowResize = function() {
+
+			// top navigation
+			var $topnav = $("#topnav"); 
+			var $masthead = $("#masthead");
+			var $navContainer = $("#masthead > .container");
+			var $collapseButton = $('#collapse-topnav-menu');
+			var $body = $("body"); 
+			var height = $topnav.height();
+
+			if(height > 50 && collapsedWidth_topnav == 0) {
+				// topnav has wordwrapped
+				if(!$body.hasClass('collapse-topnav')) {
+					$body.addClass('collapse-topnav'); 
+					collapsedWidth_topnav = $body.width();
+					console.log(collapsedWidth_topnav);
+				}
+			} else if(collapsedWidth_topnav > 0) {
+				// topnav is on 1 line
+				var width = $body.width();
+
+				if(width > collapsedWidth_topnav) {
+					$body.removeClass('collapse-topnav'); 
+					$navContainer.removeClass('is-open'); 
+					collapsedWidth_topnav = 0;
+				}
+			}
+
+			$collapseButton.on("click",function() {
+				console.log("click");	
+				$masthead.toggleClass("is-open");
+			}); 
+
+			// wiretabs
+			var $wiretabs = $(".WireTabs"); 
+			if($wiretabs.size < 1) return;
+
+			$wiretabs.each(function() {
+				var $tabs = $(this);
+				var height = $tabs.height();
+				if(height > 65) {
+					if(!$body.hasClass('collapse-wiretabs')) {
+						$body.addClass('collapse-wiretabs'); 
+						collapsedWidth_tabs = $body.width();
+						// console.log('collapse wiretabs'); 
+					}
+				} else if(collapsedWidth_tabs > 0) {
+					var width = $body.width();
+					if($body.hasClass('collapse-wiretabs') && width > collapsedWidth_tabs) {
+						$body.removeClass('collapse-wiretabs'); 
+						collapsedWidth_tabs = 0;
+						// console.log('un-collapse wiretabs'); 
+					}
+				}
+			}); 
+		};
+
+		windowResize();
+		$(window).resize(windowResize);
+
+	}, 
 
 	/**
 	 * Give a notice to IE versions we don't support

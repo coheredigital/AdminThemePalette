@@ -1,0 +1,31 @@
+body {
+  background: #ab9889;
+}
+#login-box,
+#wrapper {
+  box-shadow: 0 0 4px #a08b7a;
+}
+#collapse-topnav-menu,
+#masthead > .container {
+  background: #9e8877;
+}
+.collapse-topnav #masthead > .container {
+  border-color: #9e8877;
+}
+#topnav > li > a,
+#ProcessPageSearchForm > label,
+#footer {
+  color: #e0d9d3;
+}
+#footer a {
+  color: #ffffff;
+}
+#ProcessPageSearchForm #ProcessPageSearchQuery:hover {
+  background: #907967;
+}
+@media only screen and (max-width: 767px) {
+  #ProcessPageSearchForm #ProcessPageSearchQuery {
+    background: #b6a598;
+    border: 1px solid #a08b7a;
+  }
+}

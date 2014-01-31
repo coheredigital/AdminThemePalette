@@ -1,29 +1,27 @@
 body {
-  background: #555;
+  background: #9a64ad;
 }
+#login-box,
 #wrapper {
-  box-shadow: 0 0 4px #484848;
+  box-shadow: 0 0 4px #8e56a2;
 }
 #masthead > .container {
-  background: #464646;
+  background: #8b549f;
 }
 #topnav > li > a,
 #ProcessPageSearchForm > label,
 #footer {
-  color: #959595;
+  color: #d0b7d9;
 }
 #footer a {
-  color: #bbbbbb;
+  color: #f1e9f4;
 }
 #ProcessPageSearchForm #ProcessPageSearchQuery:hover {
-  background: #363636;
+  background: #7a498b;
 }
 @media only screen and (max-width: 767px) {
   #ProcessPageSearchForm #ProcessPageSearchQuery {
-    background: #626262;
-    border: 1px solid #484848;
+    background: #a575b6;
+    border: 1px solid #8e56a2;
   }
-}
-#login-page {
-  background: #555;
 }

@@ -112,35 +112,39 @@ if(!$browserTitle) $browserTitle = __(strip_tags($page->get('title|name')), __FI
 </head>
 <!-- adminTheme id used for overrides -->
 <body id="adminTheme" <?php if($bodyClass) echo " class='$bodyClass'"; ?>>
+<?php if(count($notices)) include($config->paths->adminTemplates . "includes/notices.inc"); ?>
+<?php if($user->isGuest()): ?>
+	<div id="login-box">
+		<div id="logo">
+        	<img src="<?php echo $config->urls->adminTemplates ?>styles/images/pw-logo.png">
+        </div>
+        <div class="login-form">
+        	<?php echo $content?>
+        </div>
+	    <?php if(count($notices)) include("notices.inc"); ?>
+	    <div id="skyline"></div>
+	</div>
+	<script>
+	$(document).ready(function() {
+		$(".Inputfields > .Inputfield > .InputfieldHeader").unbind('click');
+	});
+	</script>
 
-	<?php if(count($notices)) include($config->paths->adminTemplates . "includes/notices.inc"); ?>
+<?php else: ?>
 
-	<?php if(!$user->isGuest()): ?>
-
-
-
-	<?php endif; ?>
 
 	<div id="masthead" class="masthead ui-helper-clearfix">
+		<div id="collapse-topnav-menu">
+			<i class="fa fa-bars"></i>
+		</div>
 		<div class="container">
 
 
 			<?php echo tabIndent($searchForm, 3); ?>
 
-			<ul id='topnav'>
+			<ul id='topnav' class="clearfix">
+				
 				<?php include($config->paths->adminTemplates . "includes/topnav.inc"); ?>
-				<?php if(!$user->isGuest()): ?>
-				<li>
-					<?php $class = $page->name == "profile" ? "on" : "" ?>
-					<a class='dropdown-toggle <?php echo $class ?>' href='<?php echo $config->urls->admin?>profile/'><i class='fa fa-user'></i></a>
-					<ul class='dropdown-menu topnav' data-my='left-1 top' data-at='left bottom'>
-						<?php if($user->hasPermission('profile-edit')): ?>
-						<li><a href='<?php echo $config->urls->admin?>profile/'><?php echo __('Profile', __FILE__); ?> <small><?php echo $user->name?></small></a></li>
-						<?php endif; ?>
-						<li><a href='<?php echo $config->urls->admin?>login/logout/'><?php echo __('Logout', __FILE__); ?> <i class='fa fa-sign-out'></i></a></li>
-					</ul>
-				</li>
-				<?php endif; ?>
 			</ul>
 
 		</div>
@@ -216,8 +220,7 @@ if(!$browserTitle) $browserTitle = __(strip_tags($page->get('title|name')), __FI
 			
 		</div>
 	</div>
-	
 
-	
+<?php endif; ?>
 </body>
 </html>
