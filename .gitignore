@@ -215,3 +215,7 @@ pip-log.txt
 
 #Mr Developer
 .mr.developer.cfg
+
+
+styles/theme_colors/*.css
+!styles/theme_colors/theme_default.css

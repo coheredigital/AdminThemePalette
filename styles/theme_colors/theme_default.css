@@ -1,11 +1,16 @@
 body {
   background: #555;
 }
+#login-box,
 #wrapper {
   box-shadow: 0 0 4px #484848;
 }
+#collapse-topnav-menu,
 #masthead > .container {
   background: #464646;
+}
+.collapse-topnav #masthead > .container {
+  border-color: #464646;
 }
 #topnav > li > a,
 #ProcessPageSearchForm > label,
@@ -23,7 +28,4 @@ body {
     background: #626262;
     border: 1px solid #484848;
   }
-}
-#login-page {
-  background: #555;
 }

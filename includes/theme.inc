@@ -12,5 +12,5 @@ $theme_color_name = $adminTheme->theme_color ? $sanitizer->pageName($adminTheme-
 $less->setVariables(array(
   "theme_color" => $theme_color
 ));
-$theme_css = $less->checkedCompile("{$config->paths->AdminThemeBlue}styles/theme_colors/theme.less", "{$config->paths->AdminThemeBlue}styles/theme_colors/theme_{$theme_color_name}.css");
-$config->styles->append("{$config->urls->AdminThemeBlue}styles/theme_colors/theme_{$theme_color_name}.css");
+$theme_css = $less->checkedCompile("{$config->paths->AdminThemePalette}styles/theme_colors/theme.less", "{$config->paths->AdminThemePalette}styles/theme_colors/theme_{$theme_color_name}.css");
+$config->styles->append("{$config->urls->AdminThemePalette}styles/theme_colors/theme_{$theme_color_name}.css");
