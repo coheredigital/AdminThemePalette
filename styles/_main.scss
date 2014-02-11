@@ -574,6 +574,7 @@ a {
 			bottom: -($pagelist-item-height/2);
 			border-left: 1px dotted #ccc;
 		}
+
 		.PageListItem {
 			// border-bottom: 1px solid lighten($subtle-border, 4%);
 			position: relative;
@@ -598,6 +599,7 @@ a {
 				border-bottom: 1px solid #ccc;
 				z-index: 1;
 			}
+
 			&:after {
 				content: "";
 				position: absolute;
@@ -608,8 +610,14 @@ a {
 				z-index: -1;
 			}
 			&:first-child:after {
-				top: -($pagelist-item-height/6);
-			}
+				top: -($pagelist-item-height/8);
+				height: 68%;
+			}			
+
+
+			&:nth-last-child(2) + .PageList:before {
+				content: none !important;
+			}			
 
 
 			&.PageListSortItem{
@@ -1098,12 +1106,9 @@ a {
 	 */
 	position: relative;
 	background: $white;
-	padding: 0;
 	z-index: 4;
-	padding: 1.2em 1em;
-	// padding-bottom: 0;
+	padding: 1.6em 1em 2.4em;
 	overflow: hidden;
-	// padding-bottom: 1em;
 	.WireTabs {
 		background: darken($subtle-bg,2%);
 		position: relative;

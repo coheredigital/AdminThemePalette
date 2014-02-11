@@ -5,7 +5,7 @@ class AdminThemePalette extends AdminTheme implements Module, ConfigurableModule
 	public static function getModuleInfo() {
 		return array(
 			'title' => 'Palette: Admin Theme',
-			'version' => 003,
+			'version' => 004,
 			'summary' => 'Beautiful, simple, sensible, customizable admin theme.',
 			'autoload' => 'template=admin'
 			); 
