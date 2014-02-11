@@ -1,6 +1,6 @@
 <?php
 
-class AdminThemeBlue extends AdminTheme implements Module, ConfigurableModule {
+class AdminThemePalette extends AdminTheme implements Module, ConfigurableModule {
 
 	public static function getModuleInfo() {
 		return array(
