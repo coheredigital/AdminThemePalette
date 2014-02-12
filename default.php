@@ -21,9 +21,8 @@ if ($adminTheme->disable_dots) {
 
 
 $config->styles->append($config->urls->root . "wire/templates-admin/styles/font-awesome/css/font-awesome.min.css");
-
-
-include("includes/theme.inc");
+// custom theme colors
+$config->styles->append("{$config->urls->AdminThemePalette}styles/theme_colors/theme.css");
 
 $config->scripts->append($config->urls->root . "wire/templates-admin/scripts/inputfields.js?v=5");
 $config->scripts->append($config->urls->adminTemplates . "scripts/main.js?v=5");

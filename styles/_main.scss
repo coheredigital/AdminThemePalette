@@ -25,14 +25,6 @@ body {
 		background-color: $text-bg;
 	}
 
-// this shouldn't be needed, set body font-size to a pixel value and go from there
-// .container,
-// .ui-dialog,
-// .ui-menu .ui-menu-item a {
-	// line-height: $base-line-height;
-	// font-size: $base-font-size;
-// }
-
 .container {
 	position: relative;
 	width: 95%;
@@ -1231,14 +1223,14 @@ a {
  */
 
 #footer {
-	padding: 2em 0;
+
 	font-size: $footer-font-size;
-	// color: $footer-color;
 	-webkit-font-smoothing: antialiased;
-	// background: $footer-bg;
-	// a {
-	// 	color: $footer-link-color;
-	// }
+	> .container{
+		padding: 2em 1em;
+		margin-bottom: 2em;
+	}
+
 	a:hover {
 		text-decoration: underline;
 	}
@@ -1568,13 +1560,9 @@ button.install{
 				font-weight: bold;
 				margin: 0  0.4em;
 			}
-			&.ui-state-focus{
-				background: $link-color;
-				color: $white;
-			}
+			&.ui-state-focus,
 			&.ui-state-active{
-				background: lighten($dark-gray, 12%);
-				color: $gray;
+				color: $white;
 			}
 		}
 		a.on{

@@ -1,45 +1,87 @@
 
+// VARIATIONS
+// MAIN
+@dark-main: darken(@main, 10%);
+@darker-main: darken(@main, 20%);
+@darkest-main: darken(@main, 30%);
+
+@light-main: lighten(@main, 10%);
+@lighter-main: lighten(@main, 20%);
+@lightest-main: lighten(@main, 30%);
+
+// ACCENT
+@dark-accent: desaturate(darken(@accent, 8%), 10%);
+@darker-accent: darken(@accent, 20%);
+@darkest-accent: darken(@accent, 30%);
+
+@light-accent: lighten(@accent, 10%);
+@lighter-accent: lighten(@accent, 15%);
+@lightest-accent: lighten(@accent, 25%);
+
+
+
+// MAIN COLOR APPLICATIONS 
 body{
-	background: @theme_color;
+	background: @main;
 }
 
-
-#login-box,
-#wrapper{
-	box-shadow: 0 0 4px darken(@theme_color, 5%);
-}
 
 #collapse-topnav-menu,
+#footer > .container,
 #masthead > .container{
-	background: darken(@theme_color, 6%);
+	background: @dark-main;
 }
-
 
 .collapse-topnav #masthead > .container{
-	border-color: darken(@theme_color, 6%);
+	border-color: @dark-main;
 }
 
+#footer,
+#footer a,
 #topnav > li > a,
-#ProcessPageSearchForm > label,
-#footer{
-	color: lighten(@theme_color, 25%);
+#ProcessPageSearchForm > label{
+	color: @lighter-main;
 }
 
-#footer a{
-	color: lighten(@theme_color, 40%);
-}
+
 
 #ProcessPageSearchForm #ProcessPageSearchQuery:hover {
-	background: darken(@theme_color, 12%);
+	background: @darker-main;
 }
 
+// ACCENT APPLICATIONS 
+
+.ui-menu .ui-menu-item a.ui-state-focus,
+.ui-menu .ui-menu-item a.ui-state-active{
+	background: @light-accent;
+	color: @dark-accent;
+}
+#headline,
+#topnav a.on{
+	background: @accent !important;
+}
+#headline{
+	border-color: @dark-accent !important;
+}
+
+
+
+#breadcrumbs ul a,
+#breadcrumbs ul li{
+	color: @lightest-accent !important;
+}
+#footer a:hover,
+#topnav a.on,
+#breadcrumbs ul li.title,
+#breadcrumbs ul a:hover{
+	color: #fff !important;
+}
 @media only screen and (max-width: 767px) {
 
 	#ProcessPageSearchForm{
 		#ProcessPageSearchQuery{
-			background: lighten(@theme_color, 5%);
-			border: 1px solid darken(@theme_color, 5%);
+			background: lighten(@main, 5%);
+			border: 1px solid darken(@main, 5%);
 		}
 	}
-
 }
