@@ -55,7 +55,7 @@ class AdminThemePalette extends AdminTheme implements Module, ConfigurableModule
 		// main
 		$field = wire('modules')->get('InputfieldText');
 		$field->label = "Main Color";
-		$field->notes = "Color is primarily applied to the background.";
+		$field->notes = "Primarily applied to the background.";
 		$field->attr('name', 'theme_color_main');
 		$field->attr('value', isset($data['theme_color_main']) ? $data['theme_color_main'] : ""); 
 		$field->set('columnWidth', 25);
@@ -63,8 +63,8 @@ class AdminThemePalette extends AdminTheme implements Module, ConfigurableModule
 
 		// accent
 		$field = wire('modules')->get('InputfieldText');
-		$field->label = "Main Color";
-		$field->notes = "Color is used in highlightinf active items and other suble elements.";
+		$field->label = "Accent Color";
+		$field->notes = "Used in highlightinf active items and other suble elements.";
 		$field->attr('name', 'theme_color_accent');
 		$field->attr('value', isset($data['theme_color_accent']) ? $data['theme_color_accent'] : ""); 
 		$field->set('columnWidth', 25);

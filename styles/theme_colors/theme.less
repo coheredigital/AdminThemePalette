@@ -10,7 +10,7 @@
 @lightest-main: lighten(@main, 30%);
 
 // ACCENT
-@dark-accent: desaturate(darken(@accent, 8%), 10%);
+@dark-accent: desaturate(darken(@accent, 6%), 10%);
 @darker-accent: darken(@accent, 20%);
 @darkest-accent: darken(@accent, 30%);
 
@@ -26,8 +26,27 @@ body{
 }
 
 
+
+a,
+.content .AdminDataList td a,
+.content .PageListActions a:hover,
+.Inputfields .InputfieldHeader:hover{
+	/* standard link color */
+	color: @accent;
+}
+
+a:hover,
+.content .AdminDataList td a:hover {
+	/* hovered link color */
+	color: @main;
+}
+
+
 #collapse-topnav-menu,
 #footer > .container,
+#masthead > .container{
+	background: @dark-main;
+}
 #masthead > .container{
 	background: @dark-main;
 }
@@ -45,6 +64,9 @@ body{
 
 
 
+.ui-menu,
+#topnav > li > a.hover,
+#topnav > li > a:hover,
 #ProcessPageSearchForm #ProcessPageSearchQuery:hover {
 	background: @darker-main;
 }
@@ -53,8 +75,7 @@ body{
 
 .ui-menu .ui-menu-item a.ui-state-focus,
 .ui-menu .ui-menu-item a.ui-state-active{
-	background: @light-accent;
-	color: @dark-accent;
+	background: @light-main;
 }
 #headline,
 #topnav a.on{

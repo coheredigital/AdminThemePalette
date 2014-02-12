@@ -41,25 +41,6 @@ body {
 	padding: 0;
 	margin: 0 1em;
 }
-a {
-	/* standard link color */
-	color: $link-color;
-}
-	a:hover {
-		/* hovered link color */
-		color: $link-hover-color;
-		background: $link-hover-bg;
-	}
-
-	a.on {
-		/* on/active link color */
-		background: $link-current-bg;
-		color: $link-current-color;
-	}
-	a:active {
-		color: $link-active-color;
-		background: $link-active-bg;
-	}
 
 .WireFatalError {
 	background: $error-bg;
@@ -219,7 +200,7 @@ a {
 			display: block;
 			margin-top: 0.2em;
 			color: $dark-gray;
-			font-size: 1.3em;
+			font-size: 1.4em;
 			font-weight: bold;
 			text-transform: none;
 			white-space: normal; 
@@ -327,6 +308,11 @@ a {
 			margin-right: 0;
 			margin-left: 10px;
 			float: right;
+			background: #fff !important;
+			color: $gray !important;
+		}		
+		button.hover {
+			color: $dark-gray !important;
 		}
 	}
 
@@ -443,15 +429,15 @@ a {
 
 	.PageListActions {
 		margin-left: 1em !important;
-		background: $action-link-bg;
-		border: 1px solid $action-link-border;
+		background: #fff;
+		border: 1px solid #ccc;
 		border-radius: 1em;
 		padding: 2px;
 		-webkit-font-smoothing: antialiased;
 		vertical-align: baseline !important;
 		// opacity: 0.5;
 		li{
-		    border-left: 1px solid $subtle-border !important;
+		    border-left: 1px solid #ccc !important;
 		    line-height: 0.9em !important;
 		    &:first-child{
 		    	 border-left: 0 !important;
@@ -990,10 +976,10 @@ a {
 
 	ul.MarkupPagerNav,
 	ul.PageListPagination{
-		padding: 0 !important;
+		padding: 0 4px !important;
 		border-radius: 2em;
 		position: relative;
-		z-index: 50;
+		z-index: 150;
 		background: $white;
 		// background-color: transparent !important;
 		border: 1px solid #ccc;
@@ -1121,7 +1107,7 @@ a {
 		}
 		a {
 			font-weight: $tabs-font-weight;
-			padding: 0.7em 1em;
+			padding: 0.9em 1em;
 			display: inline-block;
 			line-height: 1em;
 			border: $wiretab-link-border;
@@ -1227,7 +1213,7 @@ a {
 	font-size: $footer-font-size;
 	-webkit-font-smoothing: antialiased;
 	> .container{
-		padding: 2em 1em;
+		padding: 2em 1.2em;
 		margin-bottom: 2em;
 	}
 
@@ -1538,7 +1524,7 @@ button.install{
 	padding: 0 0 4px 0;
 	border-radius: 0 !important;
 	border: 0 !important;
-	background: $dark-gray;
+	// background: $dark-gray;
 	i{
 		font-size: 14px !important;
 	}
@@ -1550,7 +1536,7 @@ button.install{
 		border: 0 !important;
 		a{
 			border-radius: 0 !important;
-			color: $white;
+			color: $white !important;
 			span.ui-icon{
 				float: right;
 			}
@@ -1564,10 +1550,6 @@ button.install{
 			&.ui-state-active{
 				color: $white;
 			}
-		}
-		a.on{
-			background: $link-color !important;
-			color: $white;
 		}
 	}
 

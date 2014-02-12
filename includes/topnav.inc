@@ -82,12 +82,12 @@ foreach($pages->get($wire->config->adminRootPageID)->children("check_access=0") 
 if(!$user->isGuest()): ?>
 <li>
 	<?php $class = $page->name == "profile" ? "on" : "" ?>
-	<a class='dropdown-toggle <?php echo $class ?>' href='<?php echo $config->urls->admin?>profile/'><i class='fa fa-user'></i></a>
+<!-- 	<a class='dropdown-toggle <?php echo $class ?>' href='<?php echo $config->urls->admin?>profile/'><i class='fa fa-user'></i></a>
 	<ul class='dropdown-menu topnav' data-my='left-1 top' data-at='left bottom'>
 		<?php if($user->hasPermission('profile-edit')): ?>
 		<li><a href='<?php echo $config->urls->admin?>profile/'><?php echo __('Profile', __FILE__); ?> <small><?php echo $user->name?></small></a></li>
 		<?php endif; ?>
 		<li><a href='<?php echo $config->urls->admin?>login/logout/'><?php echo __('Logout', __FILE__); ?> <i class='fa fa-sign-out'></i></a></li>
-	</ul>
+	</ul> -->
 </li>
 <?php endif;
