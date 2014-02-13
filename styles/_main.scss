@@ -214,13 +214,13 @@ a:hover,
 			white-space: normal; 
 		}
 		a {
-			color: $gray;
+			color: $gray !important;
 			margin-right: 0.5em;
 			font-size: 0.85em;
 		}
 
 		a:hover {
-			color: $breadcrumbs-link-hover-color;
+			color: $breadcrumbs-link-hover-color !important;
 			background: none;
 			text-decoration: underline;
 		}

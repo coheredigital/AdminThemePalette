@@ -120,8 +120,6 @@ if(!$browserTitle) $browserTitle = __(strip_tags($page->get('title|name')), __FI
         <div class="login-form">
         	<?php echo $content?>
         </div>
-	    <?php if(count($notices)) include("notices.inc"); ?>
-	    <div id="skyline"></div>
 	</div>
 	<script>
 	$(document).ready(function() {
@@ -153,7 +151,7 @@ if(!$browserTitle) $browserTitle = __(strip_tags($page->get('title|name')), __FI
 		<div id="wrapper">
 			<div id="headline">
 				<div class="container">
-					<?php include("includes/breadcrumbs.inc") ?>
+					<?php include("{$config->paths->AdminThemePalette}includes/breadcrumbs.inc") ?>
 
 					<?php
 					if(in_array($page->id, array(2,3,8))) { // page-list
