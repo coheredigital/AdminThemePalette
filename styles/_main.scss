@@ -726,17 +726,18 @@ a:hover,
 				
 				text-transform: uppercase;
 				font-weight: bold;
+				float: left;
 				padding: 0;
 				clear: both;
-				margin: 0 -6px;
+				margin: 2px -6px 10px !important;
 				a{
-					background: $blue;
+					background: #eee;
 					box-shadow: $button-shadow;
-					padding: 5px 12px 6px;
-					border-radius: 3px;
-					
+					padding: 4px 8px 6px !important;
+					// border-radius: 3px;
+					text-decoration: none;
 					margin: 0 !important;
-					color: $white !important;
+					color: $dark-gray !important;
 				}
 				border: 0 !important;
 				&:hover{
@@ -904,6 +905,21 @@ a:hover,
 		display: none !important;
 	}
 	/* MarkupAdminDataTable */
+	.AdminDataTable{
+		.action{
+			background: #eee;
+			text-transform: uppercase;
+			text-decoration: none !important;
+			padding: 2px 6px;
+			color: $dark-gray;
+			font-size: 0.9em;
+			font-weight: bold;
+			&:hover{
+				background: $dark-gray;
+				color: #fff;
+			}
+		}
+	}
 	.AdminDataList th,
 	.AdminDataList td {
 		border-bottom: 1px solid $subtle-border;
@@ -986,6 +1002,8 @@ a:hover,
 	ul.PageListPagination{
 		padding: 0 4px !important;
 		border-radius: 2em;
+		border-top-left-radius: 0;
+		border-bottom-left-radius: 0;
 		position: relative;
 		z-index: 150;
 		background: $white;
@@ -994,7 +1012,7 @@ a:hover,
 		float: left;
 		height: auto !important;
 		display: block !important;
-		margin: 2px -16px 4px!important;
+		margin: 8px -4px 8px!important;
 		li{
 			margin: 0 0 0 1px;
 			// line-height: 12px;
@@ -1004,14 +1022,17 @@ a:hover,
 			// float: left;
 			background: transparent;
 			border: none;
+			text-transform: uppercase;
+			font-size: 13px;
+			line-height: 13px;
 			a{
 				background: transparent ;
 				color: $gray;
-				padding: 6px;
+				padding: 4px !important;
 				min-width:20px;
-				height: 20px;
+				height: 20px !important;
 				font-weight: bold;
-				line-height: 5px;
+				line-height: 13px;
 				text-align: center;
 				margin:  0 0 !important;
 				display: inline-block;
@@ -1071,15 +1092,15 @@ a:hover,
 		content: "";
 		position: absolute;
 		width: 0;
-		left: 11px;
+		left: -1px;
 		margin-top: -0.2em;
-		top: -5px;
+		top: -7px;
 		z-index: -1;
 		bottom: 100%;
 		border-left: 1px solid #ccc;
 	}
 	#ProcessPageSearchResults > .MarkupPagerNav{
-		margin-top: 0 !important;
+		margin: 0 0 1em 0 !important;
 	}
 
 
