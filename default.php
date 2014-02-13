@@ -177,36 +177,8 @@ if(!$browserTitle) $browserTitle = __(strip_tags($page->get('title|name')), __FI
 		</div>
 
 	</div>
-
-
+	<?php include($config->paths->adminTemplates . "includes/footer.inc"); ?>
 	<?php if($config->debug && $this->user->isSuperuser()) include($config->paths->adminTemplates . "includes/debug.inc"); ?>
-	<div id="footer" class="footer">
-		<div class="container">
-
-			<?php if(!$user->isGuest()): ?>
-
-
-
-			<span id='userinfo'>
-				<i class='fa fa-user'></i>
-				<?php
-				if($user->hasPermission('profile-edit')): ?>
-				<a class='action' href='<?php echo $config->urls->admin; ?>profile/'><?php echo $user->name; ?></a> |
-				<?php endif; ?>
-
-				<a class='action' href='<?php echo $config->urls->admin; ?>login/logout/'><?php echo __('Logout', __FILE__); ?></a> <i class='fa fa-sign-out'></i>
-			</span>
-			<!-- <a id='logo' href='<?php echo $config->urls->admin?>'><img width='130' src="<?php echo $config->urls->adminTemplates?>styles/images/logo.png" alt="ProcessWire" /></a> -->
-			<?php endif; ?>
-			<p>
-				ProcessWire <?php echo $config->version . ' <!--v' . $config->systemVersion; ?>--> &copy; <?php echo date("Y"); ?> Ryan Cramer
-			</p>
-
-
-
-			
-		</div>
-	</div>
 
 <?php endif; ?>
 </body>

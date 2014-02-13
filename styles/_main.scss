@@ -13,17 +13,25 @@ body {
 	font-size: $base-font-size;
 	color: $text-color;
 }
-	body,
-	.ui-dialog,
-	.ui-button,
-	input,
-	textarea {
-		font-family: $regular-font;
-		
-	}
-	body.modal {
-		background-color: $text-bg;
-	}
+body,
+.ui-dialog,
+.ui-button,
+input,
+textarea {
+	font-family: $regular-font;
+	
+}
+body.modal {
+	background-color: $text-bg;
+}
+
+
+
+a:hover,
+.content .AdminDataList td a:hover {
+	text-decoration: underline;
+}
+
 
 .container {
 	position: relative;
@@ -1213,8 +1221,10 @@ body {
 	font-size: $footer-font-size;
 	-webkit-font-smoothing: antialiased;
 	> .container{
-		padding: 2em 1.2em;
+		padding: 0;
 		margin-bottom: 2em;
+		background: $subtle-bg;
+		border-top: 1px solid $subtle-border;
 	}
 
 	a:hover {
@@ -1223,18 +1233,102 @@ body {
 
 	p {
 		margin-top: 0;
+		color: $gray;
 	}
 
-	#userinfo {
-		display: block;
-		float: right;
-
-		a{
-			font-weight: bold;
-			text-transform: uppercase;
+	.brand{
+		padding: 0 1.3em;
+		height: 100%;
+		position: absolute;
+		bottom: 0;
+		top: 0;
+		// margin-left: 30%;
+		&:before{
+			content: " ";
+			height: 100%;
+			width: 1px;
+			display: inline-block;
+			vertical-align: middle;
+		}
+		.logo{
+			vertical-align: middle;
+			display: inline-block;
+		}
+		img{
+			max-width: 220px;
+			
+			
 		}
 	}
 
+	.view-site{
+		position: absolute;
+		width: 70%;
+		color: $gray;
+		height: 30px;
+		margin-left: -35%;
+		margin-top: -15px;
+		left: 50%;
+		top: 50%;
+		text-align: center;
+		font-size: 0.9em;
+		font-weight: bold;
+		a{
+			font-size: 1.2em;
+		}
+	}
+	
+}
+
+#userinfo {
+	float: right;
+	position: relative;
+	color: $gray;
+	background: #f7f7f7;
+	border-left: 1px solid $subtle-border;
+	padding: 1.2em;
+	a{
+		font-weight: bold;
+		// text-transform: uppercase;
+	}
+	.user_name{
+		font-size: 1.2em;
+		font-weight: bold;
+	}	
+	.user_email{
+		font-size: 0.9em;
+	}
+	.user_image,
+	.user_details{
+		display: inline-block;
+		vertical-align: middle;
+	}
+	.user_image{
+		width: 56px;
+		border-radius: 50%;
+		overflow: hidden;
+		border: 3px solid #fff;
+		img{
+			display: block;
+		}
+
+	}
+	.user_actions{
+		a{
+			text-transform: uppercase;
+			text-decoration: none !important;
+			font-size: 0.9em !important;
+			color: $gray;
+			&:hover{
+				color: $dark-gray;
+			}
+		}
+	}
+	&.has-gravatar{
+		.user_details{
+			margin-left: 0.8em;
+		}
+	}
 }
 
 #notices{
@@ -1261,11 +1355,12 @@ body {
 		li{
 			padding: 0.6em 0;
 			margin: 0 !important;
+			color: #fff;
 			// font-weight: bold;
 			// text-transform: uppercase;
 			&.notice-success{
 				background: $green;
-				color: lighten($green, 40%);
+				// color: lighten($green, 40%);
 				a{
 					color: darken($dark-green, 10%);
 					font-weight: bold;
@@ -1273,8 +1368,6 @@ body {
 			}
 			&.notice-error{
 				background: $red;
-
-				color: lighten($red, 40%);
 				a{
 					color: darken($dark-red, 10%);
 					font-weight: bold;
@@ -1484,11 +1577,7 @@ body.modal {
  *
  */
 
-#delete_AdminBar
 
-button.install{
-	float: none !important;
-}
 
 .hasWireTabs #content  {
 	/* context selection in field editor */

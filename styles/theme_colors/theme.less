@@ -30,6 +30,7 @@ body{
 a,
 .content .AdminDataList td a,
 .content .PageListActions a:hover,
+#userinfo .user_name,
 .Inputfields .InputfieldHeader:hover{
 	/* standard link color */
 	color: @accent;
@@ -41,9 +42,8 @@ a:hover,
 	color: @main;
 }
 
-
+// #footer > .container,
 #collapse-topnav-menu,
-#footer > .container,
 #masthead > .container{
 	background: @dark-main;
 }
@@ -55,8 +55,8 @@ a:hover,
 	border-color: @dark-main;
 }
 
-#footer,
-#footer a,
+// #footer,
+// #footer a,
 #topnav > li > a,
 #ProcessPageSearchForm > label{
 	color: @lighter-main;
@@ -72,12 +72,12 @@ a:hover,
 }
 
 // ACCENT APPLICATIONS 
-
 .ui-menu .ui-menu-item a.ui-state-focus,
 .ui-menu .ui-menu-item a.ui-state-active{
-	background: @light-main;
+	background: @light-main !important;
 }
 #headline,
+#footer .brand img,
 #topnav a.on{
 	background: @accent !important;
 }
@@ -91,7 +91,7 @@ a:hover,
 #breadcrumbs ul li{
 	color: @lightest-accent !important;
 }
-#footer a:hover,
+// #footer a:hover,
 #topnav a.on,
 #breadcrumbs ul li.title,
 #breadcrumbs ul a:hover{

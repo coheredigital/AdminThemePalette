@@ -71,6 +71,15 @@ class AdminThemePalette extends AdminTheme implements Module, ConfigurableModule
 		$inputfields->add($field); 		
 
 
+		// disable gravatar
+		$field = wire('modules')->get('InputfieldCheckbox');
+		$field->label = "Disable Gravatar";
+		$field->attr('name', 'disable_gravatar');
+		if ($data['disable_gravatar']) $field->attr('checked', 'checked'); 
+		$field->set('columnWidth', 30);
+		$inputfields->add($field); 		
+
+
 		// css override field (define custom css for easy small tweaks)
 		$field = wire('modules')->get('InputfieldTextarea');
 		$field->label = "Custom CSS (define custom css for easy small tweaks)";
@@ -103,13 +112,16 @@ function compileThemeLess(HookEvent $event) {
 	$main_color = wire("input")->post->theme_color_main ? wire("input")->post->theme_color_main : "#444";
 	$accent_color = wire("input")->post->theme_color_accent ? wire("input")->post->theme_color_accent : "#e0814a";
 
+	// only compile if colors were changed
+	if ($main_color !=  wire("adminTheme")->theme_color_main ||  $accent_color !=  wire("adminTheme")->theme_color_accent ) {
+		$less->setVariables(array(
+		  "main" => $main_color,
+		  "accent" => $accent_color
+		));
+		$theme_css = $less->compileFile(wire("config")->paths->AdminThemePalette."styles/theme_colors/theme.less", wire("config")->paths->AdminThemePalette."styles/theme_colors/theme.css");
+		wire()->message('Palette: theme.css - compiled successfully');
+	}
 
 
-	$less->setVariables(array(
-	  "main" => $main_color,
-	  "accent" => $accent_color
-	));
-	$theme_css = $less->compileFile(wire("config")->paths->AdminThemePalette."styles/theme_colors/theme.less", wire("config")->paths->AdminThemePalette."styles/theme_colors/theme.css");
-	
 
 }
