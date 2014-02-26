@@ -141,21 +141,48 @@
  * ui-dialog
  *
  */
+.ui-dialog{
 
-.ui-dialog .ui-dialog-title {
-	font-weight: normal;
-	/* same color as label.ui-widget-header */
-	color: $label-link-color; /* BROWN */
-}
+	z-index: 9999 !important;
+	
 
-.ui-dialog .ui-dialog-content {
-	padding: 0;
-	max-width: 100%; /* prevents safari overflow */
+	.ui-dialog-title {
+		font-weight: normal;
+		/* same color as label.ui-widget-header */
+		color: $label-link-color; /* BROWN */
+	}
+
+	.ui-dialog-content {
+		padding: 0;
+		max-width: 100%; /* prevents safari overflow */
+
+	}
 
 }
 
 .ui-widget-overlay {
 	background: $text-color; /* BLACK */
+	position: fixed;
+	bottom: 0;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 9998 !important;
+}
+
+// selected image settings
+#selected_image_settings{
+	select,
+	input{
+		padding: 0.3em;
+	}
+	#wrap_link_original{
+		padding: 0.4em 0;
+		input{
+			vertical-align: bottom;
+			margin-bottom: 0.1em;
+		}
+	}
 }
 
 /**
