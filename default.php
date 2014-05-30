@@ -7,8 +7,7 @@ if(!isset($content)) $content = '';
 
 
 
-if(is_file(dirname(__FILE__) . "/styles/main-$colors.css")) $session->adminThemeColors = $colors;
-	else $session->adminThemeColors = $defaultColorTheme;
+
 $config->styles->prepend($config->urls->adminTemplates . "styles/main-default.css?v=6");
 $config->styles->prepend($config->urls->adminTemplates . "styles/jquery-ui.css");
 
@@ -22,7 +21,7 @@ if ($adminTheme->disable_dots) {
 
 $config->styles->append($config->urls->root . "wire/templates-admin/styles/font-awesome/css/font-awesome.min.css");
 // custom theme colors
-$config->styles->append("{$config->urls->AdminThemePalette}styles/theme_colors/theme.css");
+$config->styles->append("{$config->urls->AdminThemePalette}styles/main.css");
 
 $config->scripts->append($config->urls->root . "wire/templates-admin/scripts/inputfields.js?v=5");
 $config->scripts->append($config->urls->adminTemplates . "scripts/main.js?v=5");

@@ -40,44 +40,44 @@
 
 	li.ui-state-default,
 	.ui-widget-content li.ui-state-default {
-		background: $ui-state-default-bg; /* LIGHT-ORANGE */
-		border: 1px solid $ui-state-default-border;  /* LIGHT-ORANGE */
-		color: $text-color; /* WHITE */
+		background: @ui-state-default-bg; /* LIGHT-ORANGE */
+		border: 1px solid @ui-state-default-border;  /* LIGHT-ORANGE */
+		color: @text-color; /* WHITE */
 	}
 	li.ui-state-default a,
 	.ui-widget-content li.ui-state-default a {
-		color: $link-color; /* WHITE */
+		color: @link-color; /* WHITE */
 	}
 	li.ui-state-hover,
 	.ui-widget-content li.ui-state-hover {
-		background: $ui-state-hover-bg; /* LIGHT-KHAKI */
-		border-color: $ui-state-hover-border; /* LIGHT-KHAKI */
-		color: $ui-state-hover-color;
+		background: @ui-state-hover-bg; /* LIGHT-KHAKI */
+		border-color: @ui-state-hover-border; /* LIGHT-KHAKI */
+		color: @ui-state-hover-color;
 	}
 	li.ui-state-hover a,
 	.ui-widget-content li.ui-state-hover a {
-		color: $ui-state-hover-color; /* BLACK */
+		color: @ui-state-hover-color; /* BLACK */
 	}	
 
 	li.ui-state-highlight a,
 	.ui-widget-content li.ui-state-highlight a {
-		background: $ui-state-hover-bg; /* LIGHT-KHAKI */
-		border-color: $ui-state-hover-border; /* LIGHT-KHAKI */
-		color: $ui-state-hover-color;
+		background: @ui-state-hover-bg; /* LIGHT-KHAKI */
+		border-color: @ui-state-hover-border; /* LIGHT-KHAKI */
+		color: @ui-state-hover-color;
 	}
 }
 
 .InputfieldForm .ui-accordion-header,
 .ui-accordion-header {
 	padding-left: 1.5em;
-	background: $button-bg;
+	background: @button-bg;
 	border: none;
-	color: $reverse-text-color;
+	color: @reverse-text-color;
 }
 	// .InputfieldForm .ui-accordion-header a,
 	// .ui-accordion-header a,
 	// #footer .ui-accordion-header a {
-	// 	color: $reverse-text-color;
+	// 	color: @reverse-text-color;
 	// }
 // .ui-accordion-content,
 // .content .InputfieldForm .ui-accordion-content,
@@ -94,16 +94,16 @@
 .ui-state-highlight,
 .ui-widget-content .ui-state-highlight,
 .ui-widget-header .ui-state-highlight {
-	color: $highlight-color;
-	background: $highlight-bg; /* HIGHLIGHT */
-	// border: $highlight-border;
+	color: @highlight-color;
+	background: @highlight-bg; /* HIGHLIGHT */
+	// border: @highlight-border;
 }
 
 
 .ui-state-error,
 .ui-widget-content .ui-state-error {
-	background: $error-bg;
-	color: $error-color;
+	background: @error-bg;
+	color: @error-color;
 	border: none;
 	font-weight: bold;
 }
@@ -112,7 +112,7 @@
 #notices .ui-state-error {
 	padding: 0.25em 0;
 	border: none;
-	// border-top: $highlight-border;
+	// border-top: @highlight-border;
 }
 	#notices .ui-state-highlight .ui-icon,
 	#notices .ui-state-error .ui-icon {
@@ -122,7 +122,7 @@
 
 	#notices .notice-remove {
 		float: right;
-		color: $highlight-color;
+		color: @highlight-color;
 		text-decoration: none;
 		padding: 0 1em;
 	}
@@ -149,7 +149,7 @@
 	.ui-dialog-title {
 		font-weight: normal;
 		/* same color as label.ui-widget-header */
-		color: $label-link-color; /* BROWN */
+		color: @label-link-color; /* BROWN */
 	}
 
 	.ui-dialog-content {
@@ -161,7 +161,7 @@
 }
 
 .ui-widget-overlay {
-	background: $text-color; /* BLACK */
+	background: @text-color; /* BLACK */
 	position: fixed;
 	bottom: 0;
 	top: 0;
@@ -194,10 +194,10 @@
 	button,
 	button.ui-button.ui-state-default,
 	.ui-button.ui-state-default {
-		box-shadow: $button-shadow !important;
-		color: $button-color; /* WHITE */
-		background: $button-bg; /* LIGHT-GREEN */
-		border: $button-border; /* LIGHT-GREEN */
+		box-shadow: @button-shadow !important;
+		color: @button-color; /* WHITE */
+		background: @button-bg; /* LIGHT-GREEN */
+		border: @button-border; /* LIGHT-GREEN */
 		border: 0 !important; /* LIGHT-GREEN */
 		outline: 0 !important;
 		font-weight: bold;
@@ -205,7 +205,7 @@
 		cursor: pointer;
 		text-transform: uppercase;
 		font-size: 1em !important;
-		border-radius: $button-radius;
+		border-radius: @button-radius;
 	}
 	button.ui-button span {
 		// text-shadow: none !important;
@@ -215,10 +215,10 @@
 	button:hover,
 	button.ui-button.ui-state-hover,
 	.ui-button.ui-state-hover {
-		color: $reverse-text-color;
-		box-shadow: $button-shadow !important;
-		background: $button-hover-bg; /* CYAN */
-		// border: 1px solid $button-hover-border; /* CYAN */
+		color: @reverse-text-color;
+		box-shadow: @button-shadow !important;
+		background: @button-hover-bg; /* CYAN */
+		// border: 1px solid @button-hover-border; /* CYAN */
 		font-weight: bold;
 		font-size: 1em !important;
 		text-decoration: none;
@@ -262,7 +262,7 @@
 .ui-autocomplete li,
 .ui-menu .ui-menu-item {
 	display: block;
-	border-bottom: 1px solid darken($subtle-bg, 5%); /* LIGHT-KHAKI */
+	border-bottom: 1px solid darken(@subtle-bg, 5%); /* LIGHT-KHAKI */
 }
 .ui-menu .ui-menu-item a,
 .ui-autocomplete li a {
@@ -274,7 +274,7 @@
 }
 .ui-menu .ui-menu-item a:hover,
 .ui-autocomplete li a:hover {
-	color: $label-link-color;
+	color: @label-link-color;
 }
 
 .ui-autocomplete li small {
@@ -288,15 +288,15 @@
 .ui-autocomplete .ui-widget-header a,
 .ui-autocomplete .ui-widget-header a:hover {
 	font-weight: bold;
-	background: $link-color;
-	color: $reverse-text-color;
+	background: @link-color;
+	color: @reverse-text-color;
 	text-shadow: none;
 	margin-top: 1px;
 }
 
 #content .InputfieldForm .ui-tabs-nav {
-	background: transparentize($subtle-bg, 0.5);
-	background: -webkit-linear-gradient(top, transparentize($subtle-bg, 0.4) 0%, $subtle-bg 100%);
+	background: transparentize(@subtle-bg, 0.5);
+	background: -webkit-linear-gradient(top, transparentize(@subtle-bg, 0.4) 0%, @subtle-bg 100%);
 	border: none;
 	padding-bottom: 0;
 	padding-left: 0;
@@ -324,14 +324,14 @@
  */
 .ui-tooltip {
 	padding: 10px 20px;
-	color: $reverse-text-color;
-	border-radius: $button-radius;
+	color: @reverse-text-color;
+	border-radius: @button-radius;
 	font: bold 12px "Helvetica Neue", Sans-Serif;
-	box-shadow: 0 0 7px $text-color;
+	box-shadow: 0 0 7px @text-color;
 }
 	.ui-tooltip, .arrow:after {
-		background: $text-color;
-		border: 2px solid $reverse-text-color;
+		background: @text-color;
+		border: 2px solid @reverse-text-color;
 	}
 
 
@@ -342,7 +342,7 @@
     margin: 0 -6px -6px 6px !important;
 	border: none;
 	padding: 0.6em 1em;
-	background: $dark-gray;
+	background: @dark-gray;
 	color: #fff;
     border-radius: 0;
 	box-shadow: 0 0 6px rgba(0,0,0,.3);
@@ -364,7 +364,7 @@
     height: 0;
     border-style: solid;
     border-width: 6px 6px 0 6px;
-    border-color: $dark-gray transparent transparent transparent;
+    border-color: @dark-gray transparent transparent transparent;
 }
 .tooltip{
     background-color: transparent !important;

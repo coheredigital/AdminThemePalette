@@ -66,8 +66,8 @@
 			padding: 3px 4px 3px 5px;
 			border: 1px solid transparent;
 			border-left: 0;
-			color: $gray;
-			// background: $subtle-bg;
+			color: @gray;
+			// background: @subtle-bg;
 			position: absolute !important;
 			z-index: 50;
 			top: 0 !important;
@@ -80,17 +80,17 @@
 		li:hover > .itemRemove,
 		.asmListItem:hover > .asmListItemRemove {
 			// display: block;
-			color: $white;
-			background: $red;
-			border-color:$dark-red;
+			color: @white;
+			background: @red;
+			border-color:@dark-red;
 
 		}
 		li:hover  .itemRemove:hover,
 		.asmListItem:hover .asmListItemRemove:hover {
-			// background: darken($red, 10%);
-			border-color: $red;
-			box-shadow: 0 0 6px 1px $light-red;
-			color: lighten($light-red, 10%);
+			// background: darken(@red, 10%);
+			border-color: @red;
+			box-shadow: 0 0 6px 1px @light-red;
+			color: lighten(@light-red, 10%);
 
 		}
 		.itemLabel,
@@ -108,7 +108,7 @@
 		.InputfieldPageListSelectMultiple ol li > .ui-icon:first-child,
 		.InputfieldPageAutocomplete ol li > .ui-icon:first-child,
 		.asmListItemHandle{
-			color: $gray !important;
+			color: @gray !important;
 		}
 		.InputfieldPageAutocomplete{
 			> p{
@@ -131,7 +131,7 @@
 				border: 0;
 				font-weight: bold;
 				border-left: 1px solid #ddd;
-				// color: $green;
+				// color: @green;
 				font-size: 0.8em;
 				br{
 					display: none;
@@ -207,7 +207,7 @@
 	input,
 	textarea {
 		/* slight padding for input and textarea elements... */
-		border: 1px solid $light-gray;
+		border: 1px solid @light-gray;
 		
 		line-height: 1.3em;
 	}
@@ -226,7 +226,7 @@
 	.Inputfield {
 		margin: 0; 
 		margin-bottom: -1px;
-		background: $text-bg;
+		background: @text-bg;
 	}
 
 
@@ -246,7 +246,7 @@
 		i.toggle-icon {
 			padding-right: 0.5em;
 			vertical-align: middle;
-			// color: lighten($label-link-color, 60%);
+			// color: lighten(@label-link-color, 60%);
 			// line-height: 1.7em;  WHHHHHHY!?!!?!?
 		}
 
@@ -261,16 +261,16 @@
 		.InputfieldHeader {
 			/* different style for collapsed header */
 			// padding-bottom: 0.75em;
-			background: $label-link-collapsed-bg; /* WHITE */
-			border: 1px solid $subtle-border; /* LIGHT-KHAKI */
+			background: @label-link-collapsed-bg; /* WHITE */
+			border: 1px solid @subtle-border; /* LIGHT-KHAKI */
 			// border-bottom: 0;
-			color: $label-link-collapsed-color;
+			color: @label-link-collapsed-color;
 			opacity: 0.6;
 			&:hover {
 				/* style for collapsed header when hovered */
-				// color: $label-link-hover-color;
-				border-color: $subtle-border; /* LIGHT-KHAKI */
-				background: $text-bg; /* WHITE */
+				// color: @label-link-hover-color;
+				border-color: @subtle-border; /* LIGHT-KHAKI */
+				background: @text-bg; /* WHITE */
 			}
 		}
 		.InputfieldContent {
@@ -281,13 +281,13 @@
 
 	.InputfieldHeader,
 	.InputfieldWrapper > .description {
-		background: $label-link-bg; /* WHITE */
-		border: 1px solid $subtle-border; /* LIGHT-KHAKI */
+		background: @label-link-bg; /* WHITE */
+		border: 1px solid @subtle-border; /* LIGHT-KHAKI */
 		border-bottom: none;
-		color: $dark-gray; /* BROWN */
+		color: @dark-gray; /* BROWN */
 	}
 		.InputfieldHeader:hover {
-			color: $label-link-hover-color;
+			color: @label-link-hover-color;
 		}
 		.InputfieldWrapper > .description {
 			margin: 0;
@@ -297,11 +297,11 @@
 
 	.InputfieldHeader + .InputfieldContent {
 		padding: 0.25em 1em 1.25em 1em;
-		border: 1px solid $subtle-border; /* LIGHT-KHAKI */
+		border: 1px solid @subtle-border; /* LIGHT-KHAKI */
 		border-top: none;
 
 		// border-bottom: none;
-		background: $text-bg; /* WHITE */
+		background: @text-bg; /* WHITE */
 	}
 
 	/**
@@ -310,7 +310,7 @@
 	 */
 
 	.InputfieldMarkup .InputfieldContent {
-		border: 1px solid $subtle-border; /* LIGHT-KHAKI */
+		border: 1px solid @subtle-border; /* LIGHT-KHAKI */
 		margin-top: 1em;
 		padding: 1em;
 	}
@@ -329,23 +329,23 @@
 
 		.InputfieldRepeaterItem > .InputfieldHeader {
 			border: none;
-			background: $item-header-bg; /* LIGHT-GREEN */
-			color: $item-header-color; /* WHITE */
+			background: @item-header-bg; /* LIGHT-GREEN */
+			color: @item-header-color; /* WHITE */
 			padding: 0.25em 0.25em 0.25em 2em;
 
 			a {
-				color: $item-header-color; /* WHITE */
+				color: @item-header-color; /* WHITE */
 				cursor: pointer;
 			}
 
 			&:hover {
-				background: $item-header-hover-bg;
-				color: $item-header-hover-color;
+				background: @item-header-hover-bg;
+				color: @item-header-hover-color;
 				border: none;
 			}
 
 			i.toggle-icon {
-				color: $item-header-color;
+				color: @item-header-color;
 			}
 		}
 
@@ -364,7 +364,7 @@
 
 		.InputfieldRepeaterItem > .InputfieldHeader.ui-state-error {
 			text-decoration: line-through;
-			background: $error-bg;
+			background: @error-bg;
 			border: none;
 		}
 		.InputfieldRepeaterItem > .InputfieldHeader .InputfieldRepeaterTrash {
@@ -388,22 +388,22 @@
 	.InputfieldFileList > li {
 		margin-top: 0;
 		.InputfieldFileDescription input{
-			border: 1px solid $light-gray;
+			border: 1px solid @light-gray;
 			width: 100%;
 			padding: 0.4em 0.6em;
 		}
 
 	}
 	.InputfieldFileList .InputfieldFileItem {
-		// border: $item-border;
+		// border: @item-border;
 	}
 	.InputfieldFileMove{
 		float: right;
 	}
 	.InputfieldFileList .InputfieldFileItem .ui-widget-content {
-		border: $headline-border;
+		border: @headline-border;
 		border-top: 0;
-		background: $subtle-bg;
+		background: @subtle-bg;
 	}
 
 
@@ -416,8 +416,8 @@
 	.InputfieldItemList .InputfieldItemHeader {
 		/* file or repeater item header */
 		border: none;
-		background: $item-header-bg; /* LIGHT-GREEN */
-		color: $item-header-color; /* WHITE */
+		background: @item-header-bg; /* LIGHT-GREEN */
+		color: @item-header-color; /* WHITE */
 		padding: 0.4em 0.25em 0.4em 0.5em;
 		cursor: move;
 		font-weight: normal;
@@ -425,16 +425,16 @@
 
 		a {
 			/* link in file or repeater item header */
-			color: $item-header-color; /* WHITE */
+			color: @item-header-color; /* WHITE */
 		}
 
 		&:hover {
 			/* file or repeater item header in hover state */
-			background: $item-header-hover-bg;
-			color: $item-header-hover-color;
+			background: @item-header-hover-bg;
+			color: @item-header-hover-color;
 			border: none;
 			a {
-				color: $item-header-hover-color;
+				color: @item-header-hover-color;
 			}
 		}
 
@@ -446,7 +446,7 @@
 	.InputfieldItemList .InputfieldItemHeader.ui-state-error {
 		/* deleted item state */
 		text-decoration: line-through;
-		background: $error-bg;
+		background: @error-bg;
 		border: none;
 	}
 
@@ -515,7 +515,7 @@
 .InputfieldStateRequired > .InputfieldHeader:first-child:after {
 	/* Add asterisk to indicate field is required */
 	content: ' *';
-	color: $red;
+	color: @red;
 }
 
 /****************************************************************************

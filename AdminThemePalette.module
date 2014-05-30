@@ -33,7 +33,7 @@ class AdminThemePalette extends AdminTheme implements Module, ConfigurableModule
 		$field->label = "Disable Page Status Dots";
 		$field->attr('name', 'disable_dots');
 		if ($data['disable_dots']) $field->attr('checked', 'checked'); 
-		$field->set('columnWidth', 30);
+		$field->set('columnWidth', 33);
 		$inputfields->add($field); 		
 
 
@@ -44,18 +44,26 @@ class AdminThemePalette extends AdminTheme implements Module, ConfigurableModule
 		$field->attr('value', !is_null($data['dropdown_depth']) ? $data['dropdown_depth'] : 1); 
 		// $selected = !is_null($data['dropdown_depth']) ? $data['dropdown_depth'] : 1; // default to one level dropdown
 		$selected = $data['dropdown_depth']; // default to one level dropdown
-		$field->addOption(0, __("None (disbale dropdown menus)"), $selected == 0 ? array("selected"=>"selected") : null);
+		$field->addOption(0, __("None (disable dropdown menus)"), $selected == 0 ? array("selected"=>"selected") : null);
 		$field->addOption(1, __("One"), $selected == 1 ? array("selected"=>"selected") : null);
 		$field->addOption(2, __("Two"), $selected == 2 ? array("selected"=>"selected") : null);
-		$field->set('columnWidth', 20);
+		$field->set('columnWidth', 34);
 		$inputfields->add($field); 		
+
+		// disable gravatar
+		$field = wire('modules')->get('InputfieldCheckbox');
+		$field->label = __("Disable Gravatar");
+		$field->attr('name', 'disable_gravatar');
+		if ($data['disable_gravatar']) $field->attr('checked', 'checked'); 
+		$field->set('columnWidth', 33);
+		$inputfields->add($field); 	
 
 
 		// theme color selection
 		// main
 		$field = wire('modules')->get('InputfieldText');
-		$field->label = "Main Color";
-		$field->notes = "Primarily applied to the background.";
+		$field->label = __("Main Color");
+		$field->notes = __("Primarily applied to the background.");
 		$field->attr('name', 'theme_color_main');
 		$field->attr('value', isset($data['theme_color_main']) ? $data['theme_color_main'] : ""); 
 		$field->set('columnWidth', 25);
@@ -63,26 +71,37 @@ class AdminThemePalette extends AdminTheme implements Module, ConfigurableModule
 
 		// accent
 		$field = wire('modules')->get('InputfieldText');
-		$field->label = "Accent Color";
-		$field->notes = "Used in highlightinf active items and other suble elements.";
+		$field->label = __("Accent Color");
+		$field->notes = __("Used in highlightinf active items and other suble elements.");
 		$field->attr('name', 'theme_color_accent');
 		$field->attr('value', isset($data['theme_color_accent']) ? $data['theme_color_accent'] : ""); 
+		$field->set('columnWidth', 25);
+		$inputfields->add($field); 	
+
+		// button color
+		$field = wire('modules')->get('InputfieldText');
+		$field->label = __("Button Color");
+		$field->notes = __("Default button color");
+		$field->attr('name', 'theme_color_button');
+		$field->attr('value', isset($data['theme_color_button']) ? $data['theme_color_button'] : ""); 
+		$field->set('columnWidth', 25);
+		$inputfields->add($field); 		
+
+		// link color
+		$field = wire('modules')->get('InputfieldText');
+		$field->label = __("Link Color");
+		$field->notes = __("Hover color will use a darkened variation of this color");
+		$field->attr('name', 'theme_color_link');
+		$field->attr('value', isset($data['theme_color_link']) ? $data['theme_color_link'] : ""); 
 		$field->set('columnWidth', 25);
 		$inputfields->add($field); 		
 
 
-		// disable gravatar
-		$field = wire('modules')->get('InputfieldCheckbox');
-		$field->label = "Disable Gravatar";
-		$field->attr('name', 'disable_gravatar');
-		if ($data['disable_gravatar']) $field->attr('checked', 'checked'); 
-		$field->set('columnWidth', 30);
-		$inputfields->add($field); 		
 
 
 		// css override field (define custom css for easy small tweaks)
 		$field = wire('modules')->get('InputfieldTextarea');
-		$field->label = "Custom CSS (define custom css for easy small tweaks)";
+		$field->label = __("Custom CSS (define custom css for easy small tweaks)");
 		$field->attr('name', 'custom_css');
 		$field->attr('value', isset($data['custom_css']) ? $data['custom_css'] : ''); 
 		$field->set('columnWidth', 100);
@@ -112,15 +131,15 @@ function compileThemeLess(HookEvent $event) {
 	$main_color = wire("input")->post->theme_color_main ? wire("input")->post->theme_color_main : "#444";
 	$accent_color = wire("input")->post->theme_color_accent ? wire("input")->post->theme_color_accent : "#e0814a";
 
-	// only compile if colors were changed
-	if ($main_color !=  wire("adminTheme")->theme_color_main ||  $accent_color !=  wire("adminTheme")->theme_color_accent ) {
-		$less->setVariables(array(
-		  "main" => $main_color,
-		  "accent" => $accent_color
-		));
-		$theme_css = $less->compileFile(wire("config")->paths->AdminThemePalette."styles/theme_colors/theme.less", wire("config")->paths->AdminThemePalette."styles/theme_colors/theme.css");
-		wire()->message('Palette: theme.css - compiled successfully');
-	}
+
+	
+	$less->setVariables(array(
+	  "bg" => $main_color,
+	  "accent" => $accent_color
+	));
+	$theme_css = $less->compileFile(wire("config")->paths->AdminThemePalette."styles/main.less", wire("config")->paths->AdminThemePalette."styles/main.css");
+	wire()->message('Palette: main.css - compiled successfully');
+	
 
 
 

@@ -1,3 +1,24 @@
+
+@regular-font:  Verdana, Geneva, sans-serif;
+@button-radius: 5px;
+@tabs-radius: 6px;
+@tabs-height: 35px;
+@tabs-font-weight: normal;
+@base-font-size: 0.875em;
+@base-line-height: 1.6em;
+@footer-font-size: 0.875em;
+@form-top-margin-adjustment: -2px;
+
+
+@import '_colors-default.less';
+@import '_reset.less';
+// @import 'jquery-ui';
+@import '_ui.less';
+@import '_inputfields.less';
+@import '_cke.less';
+@import '_fa-tweaks.less';
+
+
 /**
  * Theme colors passed in by lessphp
  */
@@ -109,12 +130,13 @@ a:hover,
 }
 
 #masthead {
-	background: @dark-bg;
+	
 	position: relative;
 	margin-top: 1em;
 	z-index: 5;
 	> .container{
 		transition: height 0.8s linear;
+		background: @dark-bg;
 	}
 }
 #topnav {
@@ -235,7 +257,7 @@ a:hover,
 		li.title{
 			display: block;
 			margin-top: 0.2em;
-			color: @dark-gray;
+			color: #fff;
 			font-size: 1.4em;
 			font-weight: bold;
 			text-transform: none;
