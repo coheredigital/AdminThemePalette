@@ -1,5 +1,5 @@
 <div id="footer" class="footer">
-	<div class="container">
+
 		<?php 
 		if (!$adminTheme->disable_gravatar){
 			$gravatar = "http://www.gravatar.com/avatar/" . md5( strtolower( trim( $user->email ) ) ) . "?d=mm&s=50";
@@ -49,8 +49,4 @@
 			</a> 
 		</div>
 
-
-
-		
-	</div>
 </div>

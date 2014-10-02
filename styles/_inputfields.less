@@ -227,6 +227,10 @@
 		margin: 0; 
 		margin-bottom: -1px;
 		background: @text-bg;
+<<<<<<< HEAD:styles/_inputfields.less
+		overflow: visible !important;
+=======
+>>>>>>> origin/master:styles/_inputfields.less
 	}
 
 
@@ -377,22 +381,18 @@
 	 *
 	 */
 
-	.InputfieldImage,
-	.InputfieldFile{
-		input{
-			padding: 0;
-			margin: 0;
-			border: 0;
-		}
-	}
+
 	.InputfieldFileList > li {
 		margin-top: 0;
+<<<<<<< HEAD:styles/_inputfields.less
+=======
 		.InputfieldFileDescription input{
 			border: 1px solid @light-gray;
 			width: 100%;
 			padding: 0.4em 0.6em;
 		}
 
+>>>>>>> origin/master:styles/_inputfields.less
 	}
 	.InputfieldFileList .InputfieldFileItem {
 		// border: @item-border;
@@ -538,7 +538,7 @@
 .InputfieldForm .Inputfields .InputfieldSubmit,
 .InputfieldForm .Inputfields .InputfieldButton {
 	/* enable horizontal stack of buttons */
-	padding: 1em 0 0.5em 0;
+	padding: 1em;
 	margin: 0;
 	clear: none;
 	background: none;
@@ -549,8 +549,7 @@
 	}
 
 	.InputfieldContent {
-		/* we don't need our visual furniture for buttons */
-		padding: 0 1em;
+		padding: 1em 0 0 0;
 		margin: 0;
 		margin-top: 0.5em;
 		background: none;

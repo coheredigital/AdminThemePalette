@@ -7,7 +7,8 @@ if(!isset($content)) $content = '';
 
 
 
-
+if(is_file(dirname(__FILE__) . "/styles/main-$colors.css")) $session->adminThemeColors = $colors;
+	else $session->adminThemeColors = $defaultColorTheme;
 $config->styles->prepend($config->urls->adminTemplates . "styles/main-default.css?v=6");
 $config->styles->prepend($config->urls->adminTemplates . "styles/jquery-ui.css");
 
@@ -21,7 +22,7 @@ if ($adminTheme->disable_dots) {
 
 $config->styles->append($config->urls->root . "wire/templates-admin/styles/font-awesome/css/font-awesome.min.css");
 // custom theme colors
-$config->styles->append("{$config->urls->AdminThemePalette}styles/main.css");
+$config->styles->append("{$config->urls->AdminThemePalette}styles/theme_colors/theme.css");
 
 $config->scripts->append($config->urls->root . "wire/templates-admin/scripts/inputfields.js?v=5");
 $config->scripts->append($config->urls->adminTemplates . "scripts/main.js?v=5");
@@ -110,6 +111,8 @@ if(!$browserTitle) $browserTitle = __(strip_tags($page->get('title|name')), __FI
 </head>
 <!-- adminTheme id used for overrides -->
 <body id="adminTheme" <?php if($bodyClass) echo " class='$bodyClass'"; ?>>
+	
+
 <?php if(count($notices)) include($config->paths->adminTemplates . "includes/notices.inc"); ?>
 <?php if($user->isGuest()): ?>
 	<div id="login-box">
@@ -127,56 +130,48 @@ if(!$browserTitle) $browserTitle = __(strip_tags($page->get('title|name')), __FI
 	</script>
 
 <?php else: ?>
-
-
-	<div id="masthead" class="masthead ui-helper-clearfix">
-		<div id="collapse-topnav-menu">
-			<i class="fa fa-bars"></i>
-		</div>
-		<div class="container">
-
-
+	<div id="wrapper">
+		<div id="masthead" class="masthead ui-helper-clearfix">
+			<div id="collapse-topnav-menu">
+				<i class="fa fa-bars"></i>
+			</div>
 			<?php echo tabIndent($searchForm, 3); ?>
-
 			<ul id='topnav' class="clearfix">
-				
 				<?php include($config->paths->adminTemplates . "includes/topnav.inc"); ?>
 			</ul>
-
-		</div>
-	</div>
-
-	<div class="container">
-		<div id="wrapper">
-			<div id="headline">
-				<div class="container">
-					<?php include("{$config->paths->AdminThemePalette}includes/breadcrumbs.inc") ?>
-
-					<?php
-					if(in_array($page->id, array(2,3,8))) { // page-list
-						echo "<div id='head_button'>";
-						include($config->paths->adminTemplates . "includes/shortcuts.inc");
-						echo "</div>";
-					}
-					?>
-
-
-				</div>
-			</div>
-			<div id="content" class="content fouc_fix">
-
-					<?php if(trim($page->summary)) echo "<h2>{$page->summary}</h2>"; ?>
-
-					<?php if($page->body) echo $page->body; ?>
-
-					<?php echo $content?>
-			</div>
 		</div>
 
+
+		<div id="headline">
+			<div class="container">
+				<?php include("{$config->paths->AdminThemePalette}includes/breadcrumbs.inc") ?>
+
+				<?php
+				if(in_array($page->id, array(2,3,8))) { // page-list
+					echo "<div id='head_button'>";
+					include($config->paths->adminTemplates . "includes/shortcuts.inc");
+					echo "</div>";
+				}
+				?>
+
+
+			</div>
+		</div>
+		<div id="content" class="content fouc_fix">
+
+				<?php if(trim($page->summary)) echo "<h2>{$page->summary}</h2>"; ?>
+
+				<?php if($page->body) echo $page->body; ?>
+
+				<?php echo $content?>
+		</div>
+		<?php include($config->paths->adminTemplates . "includes/footer.inc"); ?>
 	</div>
-	<?php include($config->paths->adminTemplates . "includes/footer.inc"); ?>
+	
 	<?php if($config->debug && $this->user->isSuperuser()) include($config->paths->adminTemplates . "includes/debug.inc"); ?>
 
 <?php endif; ?>
+		
+	
 </body>
 </html>

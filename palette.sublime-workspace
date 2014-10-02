@@ -4,634 +4,334 @@
 		"selected_items":
 		[
 			[
-				"com",
-				"console.log(message);"
-			],
-			[
-				"theme",
-				"theme_color"
-			],
-			[
-				"Def",
-				"default"
-			],
-			[
-				"if",
-				"if	<?php if (…) ?> … <?php endif ?>"
-			],
-			[
-				"light",
-				"light-gray"
-			],
-			[
-				"isn",
-				"is_null"
-			],
-			[
-				"dar",
-				"dark-gray"
-			],
-			[
-				"gray",
-				"dark-gray"
-			],
-			[
-				"cas",
-				"casino"
-			],
-			[
-				"mc",
-				"mcOptions"
-			],
-			[
-				"fun",
-				"function"
-			],
-			[
-				"is-",
-				"is-hidden"
+				"date",
+				"dateStart"
 			],
 			[
 				"min",
-				"min-width"
+				"min-height"
 			],
 			[
-				"ma",
-				"max-height"
+				"s",
+				"subitems"
 			],
 			[
-				"re",
-				"return"
+				"strto",
+				"strtotime"
 			],
 			[
-				"po",
-				"position"
+				"dark",
+				"dark-gray"
 			],
 			[
-				"las",
-				"lastOpen"
+				"box-d",
+				"box-shadow"
 			],
 			[
-				"con",
-				"console"
-			],
-			[
-				"last",
-				"lastHover"
-			],
-			[
-				"too",
-				"tooltip-header"
-			],
-			[
-				"mar",
-				"marker"
-			],
-			[
-				"inp",
-				"input-get	input-get"
-			],
-			[
-				"in",
-				"input-get	input-get()"
+				"incld",
+				"include"
 			],
 			[
 				"w",
-				"wow-n	word-wrap: none;"
-			],
-			[
-				"sanit",
-				"sanitizer-text()	sanitizer-text()"
-			],
-			[
-				"c",
-				"console"
-			],
-			[
-				"l",
-				"lng"
-			],
-			[
-				"get",
-				"getBounds"
-			],
-			[
-				"da",
-				"data-selector"
-			],
-			[
-				"f",
-				"font-size"
-			],
-			[
-				"text",
-				"text-top"
-			],
-			[
-				"va",
-				"values"
-			],
-			[
-				"var",
-				"var_dump"
-			],
-			[
-				"rg",
-				"rgba(r,g,b,a)"
-			],
-			[
-				"fixed",
-				"fixed-nav"
-			],
-			[
-				"windo",
-				"windowP"
-			],
-			[
-				"tem",
-				"template"
-			],
-			[
-				"sub",
-				"subcategories"
-			],
-			[
-				"map",
-				"mapList"
-			],
-			[
-				"json",
-				"json_encode"
-			],
-			[
-				"search",
-				"search-result-heading"
-			],
-			[
-				"add",
-				"address_street"
-			],
-			[
-				"h",
-				"hour"
-			],
-			[
-				"pa",
-				"pageFooter"
-			],
-			[
-				"te",
-				"textClass"
-			],
-			[
-				"max",
-				"max-width"
-			],
-			[
-				"border",
-				"border-radius"
-			],
-			[
-				"even",
-				"eventsRemove"
-			],
-			[
-				"str_rep",
-				"str_replace"
-			],
-			[
-				"boo",
-				"bookwidget_css"
-			],
-			[
-				"hi",
-				"hideLogo"
-			],
-			[
-				"im",
-				"imgBlur"
+				"width"
 			],
 			[
 				"tr",
 				"transparent"
 			],
 			[
+				"dis",
+				"disable_share"
+			],
+			[
+				"bor",
+				"border-collapse"
+			],
+			[
+				"trans",
+				"transform"
+			],
+			[
+				"ima",
+				"imagePages"
+			],
+			[
 				"for",
 				"foreach	foreach …"
 			],
 			[
-				"j",
-				"json"
+				"va",
+				"var_dump"
 			],
 			[
-				"ha",
-				"hadGallery"
+				"content",
+				"contest_entry"
 			],
 			[
-				"print",
-				"print_r"
+				"mi",
+				"min-width"
 			],
 			[
-				"Js",
-				"json_encode"
+				"no",
+				"nowrap"
 			],
 			[
-				"filter",
-				"filter_var"
+				"san",
+				"sanitizedQuery"
 			],
 			[
-				"pri",
-				"print_r"
+				"S",
+				"Sunday"
 			],
 			[
-				"unsub",
-				"unsubscribe"
+				"le",
+				"letter-spacing"
 			],
 			[
-				"q",
-				"query"
+				"main",
+				"mainImage"
 			],
 			[
-				"parent",
-				"parents"
+				"conte",
+				"contest"
 			],
 			[
-				"pas",
-				"pass1_status"
+				"p",
+				"postal"
 			],
 			[
-				"pass",
-				"pass_match"
+				"c",
+				"country"
 			],
 			[
-				"B",
-				"BOOLEAN"
+				"a",
+				"address"
 			],
 			[
-				"m",
-				"members"
+				"font",
+				"font-size"
 			],
 			[
-				"med",
-				"media query ipad portrait	ipad portrait"
-			],
-			[
-				"arrp",
-				"array_push"
-			],
-			[
-				"ta",
-				"tablesArray"
-			],
-			[
-				"row",
-				"rowExpand"
-			],
-			[
-				"ul",
-				"ulClass"
-			],
-			[
-				"mih",
-				"min-height"
-			],
-			[
-				"sta",
-				"starInput"
-			],
-			[
-				"di",
-				"display"
-			],
-			[
-				"mo",
-				"modified"
-			],
-			[
-				"ch",
-				"chats"
-			],
-			[
-				"cha",
-				"chat_list"
-			],
-			[
-				"user",
-				"username"
-			],
-			[
-				"mysql_num",
-				"mysql_num_rows"
-			],
-			[
-				"cw_mess",
-				"cw_message"
-			],
-			[
-				"out",
-				"output"
-			],
-			[
-				"cw",
-				"cw_form"
-			],
-			[
-				"cw_",
-				"cw_close"
-			],
-			[
-				"require",
-				"require_login"
+				"isn",
+				"is_null"
 			],
 			[
 				"is",
 				"isset"
 			],
 			[
-				"fav",
-				"fav_only"
+				"url",
+				"urlencode"
+			],
+			[
+				"ur",
+				"urlencode"
+			],
+			[
+				"micro",
+				"ming_setcubicthreshold"
+			],
+			[
+				"fun",
+				"function"
 			],
 			[
 				"pu",
 				"public"
 			],
 			[
-				"se",
-				"session"
+				"video",
+				"video_name"
 			],
 			[
-				"page",
-				"pageNum"
+				"e",
+				"entry"
 			],
 			[
-				"ho",
-				"hour_ago"
+				"isi",
+				"is_int"
 			],
 			[
-				"files",
-				"filesize"
+				"count",
+				"country"
 			],
 			[
-				"bo",
-				"border"
+				"templa",
+				"template	template"
 			],
 			[
-				"new",
-				"newTotal"
+				"fie",
+				"fieldName"
 			],
 			[
-				"su",
-				"submitQuery"
+				"template",
+				"templates"
 			],
 			[
-				"me",
-				"message"
+				"co",
+				"color"
 			],
 			[
-				"fo",
-				"form_valid"
-			],
-			[
-				"li",
-				"liClass"
-			],
-			[
-				"to",
-				"todayInt"
-			],
-			[
-				"fon",
-				"font-style"
-			],
-			[
-				"ca",
-				"categories"
-			],
-			[
-				"pre",
-				"prevIndex"
-			],
-			[
-				"curren",
-				"imgCurrent"
-			],
-			[
-				"ui-widget",
-				"ui-widget-content"
-			],
-			[
-				"bor",
-				"border-radius"
-			],
-			[
-				"lan",
-				"language"
-			],
-			[
-				"html",
-				"htmlspecialchars"
-			],
-			[
-				"op",
-				"opacity"
-			],
-			[
-				"lh",
-				"line-height"
-			],
-			[
-				"padd",
-				"padding"
-			],
-			[
-				"strp",
-				"strpos"
-			],
-			[
-				"b",
-				"bottom"
+				"gallery",
+				"gallery-href"
 			],
 			[
 				"lis",
-				"list-style"
-			],
-			[
-				"form",
-				"form_title"
-			],
-			[
-				"fl",
-				"float"
-			],
-			[
-				"wh",
-				"whs-nw	white-space: nowrap;"
-			],
-			[
-				"fu",
-				"full_url"
-			],
-			[
-				"cur",
-				"cursor"
-			],
-			[
-				"ov",
-				"overflow"
-			],
-			[
-				"pos",
-				"position"
-			],
-			[
-				"wid",
-				"width"
-			],
-			[
-				"fe",
-				"featured_count"
-			],
-			[
-				"str",
-				"strtolower"
-			],
-			[
-				"ling",
 				"listings"
 			],
 			[
-				"margi",
-				"margin"
+				"strre",
+				"str_replace"
 			],
 			[
-				"include",
-				"includes"
+				"gray",
+				"grayDark"
 			],
 			[
-				"remove",
-				"removeClass"
+				"fon",
+				"font	font-weight: weight"
 			],
 			[
-				"font",
-				"font-size"
+				"print",
+				"print_r"
+			],
+			[
+				"ma",
+				"margin	margin-right: length"
+			],
+			[
+				"mar",
+				"margin	margin-left: length"
+			],
+			[
+				"selec",
+				"select"
+			],
+			[
+				"h",
+				"height"
+			],
+			[
+				"in",
+				"input"
+			],
+			[
+				"lin",
+				"line-height"
+			],
+			[
+				"n",
+				"nowrap	(nw)"
+			],
+			[
+				"white",
+				"white-space"
+			],
+			[
+				"v",
+				"visible	(v)"
+			],
+			[
+				"ver",
+				"vertical-align"
+			],
+			[
+				"z",
+				"z-index"
+			],
+			[
+				"str_r",
+				"str_replace"
+			],
+			[
+				"re",
+				"relative"
+			],
+			[
+				"get_templ",
+				"get_template_part"
+			],
+			[
+				"ul",
+				"url"
+			],
+			[
+				"max",
+				"max-width"
 			]
 		]
 	},
 	"buffers":
 	[
+		{
+			"file": "styles/_main.less",
+			"settings":
+			{
+				"buffer_size": 30605,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "includes/notices.inc",
+			"settings":
+			{
+				"buffer_size": 514,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "default.php",
+			"settings":
+			{
+				"buffer_size": 5226,
+				"line_ending": "Windows"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 113.0,
+		"height": 375.0,
 		"selected_items":
 		[
-			[
-				"inst",
-				"Package Control: Install Package"
-			],
-			[
-				"remo",
-				"Package Control: Remove Package"
-			],
-			[
-				"sj",
-				"Set Syntax: JavaScript"
-			],
 			[
 				"ins",
 				"Package Control: Install Package"
 			],
 			[
-				"syjs",
-				"Set Syntax: JavaScript"
-			],
-			[
-				"synp",
-				"Set Syntax: PHP"
-			],
-			[
-				"syp",
-				"Set Syntax: PHP"
-			],
-			[
-				"sy",
-				"Set Syntax: PHP"
-			],
-			[
-				"syx",
-				"Set Syntax: XML"
-			],
-			[
-				"syxml",
-				"Set Syntax: XML"
+				"inst",
+				"Package Control: Install Package"
 			],
 			[
 				"rem",
 				"Package Control: Remove Package"
 			],
 			[
-				"sphp",
-				"Set Syntax: PHP"
-			],
-			[
-				"re",
+				"remov",
 				"Package Control: Remove Package"
 			],
 			[
-				"ti",
-				"Tidy HTML"
-			],
-			[
-				"sy ht",
-				"Set Syntax: HTML"
+				"remo",
+				"Delete Remote File"
 			],
 			[
 				"insta",
 				"Package Control: Install Package"
 			],
 			[
-				"git",
-				"Git: Commit"
-			],
-			[
-				"syn php",
-				"Set Syntax: PHP"
-			],
-			[
-				"syn xm",
-				"Set Syntax: XML"
-			],
-			[
 				"instal",
 				"Package Control: Install Package"
 			],
 			[
-				"tas",
-				"Tasks: New document"
-			],
-			[
-				"pac",
-				"Package Control: Add Repository"
-			],
-			[
-				"install",
-				"Package Control: Install Package"
-			],
-			[
-				"upgr",
-				"Package Control: Upgrade/Overwrite All Packages"
-			],
-			[
-				"upda",
-				"Package Control: Upgrade Package"
+				"re",
+				"Package Control: Remove Package"
 			]
 		],
-		"width": 402.0
+		"width": 498.0
 	},
 	"console":
 	{
-		"height": 45.0
+		"height": 129.0
 	},
 	"distraction_free":
 	{
@@ -644,177 +344,150 @@
 	},
 	"file_history":
 	[
-		"/C/wamp/www/nft_korea/site/modules/AdminThemeDefault/scripts/main.js",
-		"/C/Users/aspruijt/Documents/GitHub/Blue/AdminThemeBlue/scripts/main.js",
-		"/C/Users/aspruijt/Documents/GitHub/Blue/AdminThemeBlue/styles/_inputfields.scss",
-		"/C/Users/aspruijt/Documents/GitHub/Blue/AdminThemeBlue/styles/_colors-default.scss",
-		"/C/Users/aspruijt/Documents/GitHub/Blue/AdminThemeBlue/styles/_main.scss",
-		"/C/Users/aspruijt/Documents/GitHub/Blue/AdminThemeBlue/styles/theme_colors/theme.less",
-		"/C/Users/aspruijt/Documents/GitHub/Blue/AdminThemeBlue/default.php",
-		"/C/Users/aspruijt/Documents/GitHub/Blue/AdminThemeBlue/includes/theme.inc",
-		"/C/Users/aspruijt/Documents/GitHub/Blue/AdminThemeBlue/includes/topnav.inc",
-		"/C/Users/aspruijt/Documents/GitHub/Blue/AdminThemeBlue/includes/shortcuts.inc",
-		"/C/Users/aspruijt/Documents/GitHub/Blue/AdminThemeBlue/styles/jquery-ui.scss",
-		"/C/wamp/www/nft/site/config-dev.php",
-		"/C/Users/aspruijt/Documents/GitHub/Blue/AdminThemeBlue/scripts/jquery.minicolors.css",
-		"/C/Users/aspruijt/Documents/GitHub/Blue/AdminThemeBlue/styles/_ui.scss",
-		"/C/Users/aspruijt/Documents/GitHub/Blue/AdminThemeBlue/scripts/jquery.minicolors.min.js",
-		"/C/wamp/www/nft_korea/wire/core/AdminTheme.php",
-		"/C/Users/aspruijt/Documents/GitHub/Blue/AdminThemeBlue/includes/debug.inc",
-		"/C/wamp/www/nft_korea/site/modules/AdminThemeBlue/AdminThemeBlue.module",
-		"/C/wamp/www/nft_korea/site/modules/PageEditFieldPermission/PageEditFieldPermission.module",
-		"/C/wamp/www/nft_korea/site/modules/AdminThemeDefault/AdminThemeDefault.module",
-		"/C/wamp/www/nft_korea/site/config.php",
-		"/C/Users/aspruijt/Documents/GitHub/Blue/AdminThemeBlue/styles/theme_color.scss",
-		"/C/wamp/www/nft_korea/site/modules/AdminThemeBlue/styles/_main.scss",
-		"/C/wamp/www/nft_korea/wire/modules/Inputfield/InputfieldSelect.module",
-		"/C/wamp/www/nft_korea/site/modules/AdminThemeBlue/default.php",
-		"/C/wamp/www/nft_korea/site/modules/AdminThemeBlue/styles/nodots.scss",
-		"/C/wamp/www/nft_korea/site/modules/AdminThemeBlue/styles/_inputfields.scss",
-		"/C/wamp/www/nft_korea/site/modules/AdminThemeBlue/topnav.inc",
-		"/C/wamp/www/nft_korea/site/modules/AdminThemeBlue/notices.inc",
-		"/C/wamp/www/nft_korea/site/modules/AdminThemeBlue/styles/_colors-default.scss",
-		"/C/Users/aspruijt/Documents/GitHub/Blue/AdminThemeBlue/includes/theme.php",
-		"/C/Users/aspruijt/Documents/GitHub/Blue/templates-admin/styles/_main.scss",
-		"/C/Users/aspruijt/Documents/GitHub/Blue/AdminThemeBlue/AdminThemeBlue.php",
-		"/C/Users/aspruijt/Documents/GitHub/Unify-PWadmin/templates-admin/styles/less/InputFields.less",
-		"/C/Users/aspruijt/Documents/GitHub/Unify-PWadmin/templates-admin/styles/less/misc.less",
-		"/C/Users/aspruijt/Documents/GitHub/Unify-PWadmin/templates-admin/default.php",
-		"/C/Users/aspruijt/Documents/GitHub/Unify-PWadmin/templates-admin/styles/less/type.less",
-		"/C/Users/aspruijt/Documents/GitHub/Unify-PWadmin/templates-admin/styles/less/layout.less",
-		"/C/Users/aspruijt/Documents/GitHub/Unify-PWadmin/templates-admin/styles/less/breadcrumbs.less",
-		"/C/Users/aspruijt/Documents/GitHub/Blue/templates-admin/scripts/main.js",
-		"/C/Users/aspruijt/Documents/GitHub/Blue/templates-admin/notices.inc",
-		"/C/Users/aspruijt/Documents/GitHub/Blue/templates-admin/styles/_fa-tweaks.scss",
-		"/C/Users/aspruijt/Documents/GitHub/Blue/templates-admin/styles/font-awesome/css/font-awesome.css",
-		"/C/Users/aspruijt/Documents/GitHub/Blue/templates-admin/styles/_colors-default.scss",
-		"/C/Users/aspruijt/Documents/GitHub/Blue/templates-admin/styles/main-default.scss",
-		"/C/Users/aspruijt/Documents/GitHub/Blue/templates-admin/styles/less/pageList.less",
-		"/C/Users/aspruijt/Documents/GitHub/Blue/templates-admin/styles/main-nodots.scss",
-		"/C/Users/aspruijt/Documents/GitHub/Blue/templates-admin/styles/_inputfields.scss",
-		"/C/Users/aspruijt/Documents/GitHub/Blue/templates-admin/default.php",
-		"/C/Users/aspruijt/Documents/GitHub/Blue/templates-admin/shortcuts.inc",
-		"/C/Users/aspruijt/Documents/GitHub/Blue/templates-admin/debug.inc",
-		"/C/Users/aspruijt/Documents/GitHub/Blue/templates-admin/styles/main-sass.scss",
-		"/C/Users/aspruijt/Documents/GitHub/Blue/templates-admin/styles/_ui.scss",
-		"/C/Users/aspruijt/Documents/GitHub/Blue/templates-admin/styles/main-default.less",
-		"/C/Users/aspruijt/Documents/GitHub/Blue/templates-admin/styles/_pageList.scss",
-		"/C/Users/aspruijt/Documents/GitHub/Default Theme/templates-admin/new.php",
-		"/C/Users/aspruijt/Documents/GitHub/Blue/templates-admin/topnav.inc",
-		"/C/Users/aspruijt/Documents/GitHub/Blue/templates-admin/styles/less/nav.less",
-		"/C/Users/aspruijt/Documents/GitHub/Blue/templates-admin/styles/less/InputFields.less",
-		"/C/Users/aspruijt/Documents/GitHub/Blue/templates-admin/styles/less/breadcrumbs.less",
-		"/C/Users/aspruijt/Documents/GitHub/Default Theme/templates-admin/default.php",
-		"/C/Users/aspruijt/Downloads/client_secret_950702391295.apps.googleusercontent.com.json",
-		"/C/wamp/www/nft/site/templates/markup/snippets/social-sidebar.php",
-		"/C/wamp/www/nft/site/templates/css/screen.css",
-		"/C/wamp/www/nft/dev.php",
-		"/C/wamp/www/nft/site/templates/markup/snippets/sponsored-list.php",
-		"/C/wamp/www/nft/site/templates/markup/snippets/packages-featured.php",
-		"/C/wamp/www/nft/site/templates/markup/snippets/book-widget.php",
-		"/C/wamp/www/nft/site/templates/markup/snippets/related-events.php",
-		"/C/wamp/www/nft/wire/modules/Inputfield/InputfieldPageAutocomplete/InputfieldPageAutocomplete.module",
-		"/C/wamp/www/nft/site/templates/markup/snippets/home-features.php",
-		"/C/wamp/www/nft/site/templates/markup/snippets/home-sidebar.php",
-		"/C/wamp/www/nft/site/templates/home.php",
-		"/C/wamp/www/nft/site/templates/markup/output/default.php",
-		"/C/wamp/www/nft/site/templates-admin/default.php",
-		"/C/wamp/www/nft/site/templates-admin/styles/_colors-smooth.scss",
-		"/C/wamp/www/nft/site/templates-admin/styles/main-smooth.scss",
-		"/C/wamp/www/nft/site/templates/map.php",
-		"/C/wamp/www/nft/site/templates/css/templates/map.css",
-		"/C/wamp/www/nft/site/templates-admin/styles/_colors-warm.scss",
-		"/C/wamp/www/nft/site/templates/js/map.js",
-		"/C/wamp/www/nft/site/templates/markup/map/data.php",
-		"/C/wamp/www/nft/site/templates/markup/snippets/listing-info.php",
-		"/C/wamp/www/nft/site/templates-admin/styles/main-unify.css",
-		"/C/users/aspruijt/appdata/local/temp/sublime-sftp-browse-1380915461/mapped/home/niagara/public_html/site/config.php",
-		"/C/wamp/www/nft/site/config.php",
-		"/C/wamp/www/nft/site/templates/markup/map/layout.php",
-		"/C/wamp/www/nft/site/templates/markup/map/item.php",
-		"/C/wamp/www/nft/wire/templates-admin/scripts/main.js",
-		"/C/wamp/www/nft/site/templates/js/map.clusterer.js",
-		"/C/wamp/www/nft/site/templates/js/map.markermanager.js",
-		"/C/wamp/www/nft/site/templates/markup/map/data.v2.php",
-		"/C/wamp/www/nft/site/templates/js/map.v2.js",
-		"/C/wamp/www/nft/site/templates/markup/snippets/banner-home.php",
-		"/C/wamp/www/nft/site/templates/js/map.v1.js",
-		"/C/wamp/www/nft/site/templates/markup/map/data_OLD.php",
-		"/C/wamp/www/nft/site/templates/_init.php",
-		"/C/wamp/www/nft/site/templates/markup/snippets/map-full.php",
-		"/C/wamp/www/nft/site/templates/markup/forms/contact.php",
-		"/C/wamp/www/nft/site/templates/markup/snippets/contact-form.php",
-		"/C/wamp/www/nft/site/templates/js/nprogress.js",
-		"/C/wamp/www/nft/site/templates/markup/output/map.php",
-		"/C/wamp/www/nft/site/templates/js/pace.js",
-		"/C/wamp/www/nft/site/templates/markup/snippets/map-data.php",
-		"/C/Users/aspruijt/AppData/Local/Temp/7zED734.tmp/LanguageFieldTabs.module",
-		"/C/wamp/www/nft/site/templates/event.php",
-		"/C/Users/aspruijt/Desktop/LanguageFieldTabs.module",
-		"/C/wamp/www/nft/site/templates/_out.php",
-		"/C/wamp/www/nft/site/templates/markup/layouts/listing.php",
-		"/C/wamp/www/nft/site/templates/markup/emails/css/email.css",
-		"/C/wamp/www/nft/site/templates/markup/emails/contact.php",
-		"/C/wamp/www/nft/site/templates/markup/snippets/contact-body.php",
-		"/C/wamp/www/nft/site/modules/FieldtypeConcat/FieldtypeConcat.module",
-		"/C/wamp/www/nft/site/modules/FieldtypeMapMarker/InputfieldMapMarker.module",
-		"/C/wamp/www/nft/site/modules/FieldtypeMapMarker/InputfieldMapMarker.js",
-		"/C/wamp/www/nft/site/templates-admin/styles/less/InputFields.less",
-		"/C/wamp/www/nft/site/templates-admin/styles/less/ui.less",
-		"/C/wamp/www/nft/site/templates-admin/styles/less/type.less",
-		"/C/wamp/www/nft/site/templates/markup/snippets/banner-single.php",
-		"/C/wamp/www/nft/site/templates-admin/styles/less/pageList.less",
-		"/C/wamp/www/nft/site/templates-admin/styles/less/nav.less",
-		"/C/wamp/www/nft/site/templates-admin/styles/style.less",
-		"/C/wamp/www/nft/site/templates-admin/styles/less/overrides.less",
-		"/C/Users/aspruijt/Documents/GitHub/Dirby/templates-admin/styles/style.less",
-		"/C/wamp/www/nft/site/templates-admin/styles/font-awesome/css/font-awesome.css",
-		"/C/wamp/www/nft/site/templates-admin/scripts/main.js",
-		"/C/wamp/www/nft/site/templates/experience.php",
-		"/C/wamp/www/nft/site/templates/includes/sidebar.inc"
+		"/C/Users/aspruijt/Documents/GitHub/AdminThemePalette/init.php",
+		"/C/Users/aspruijt/Documents/GitHub/AdminThemePalette/AdminThemePalette.module",
+		"/C/Users/aspruijt/Documents/GitHub/AdminThemePalette/styles/theme_colors/theme.less",
+		"/C/Users/aspruijt/Documents/GitHub/AdminThemePalette/includes/breadcrumbs.inc",
+		"/C/Users/aspruijt/Documents/GitHub/AdminThemePalette/default.php",
+		"/C/Users/aspruijt/Documents/GitHub/AdminThemePalette/styles/_ui.less",
+		"/C/Users/aspruijt/Documents/GitHub/AdminThemePalette/styles/main-default.less",
+		"/C/Users/aspruijt/Documents/GitHub/AdminThemePalette/styles/_reset.less",
+		"/C/Users/aspruijt/Documents/GitHub/AdminThemePalette/styles/_main.less",
+		"/C/Users/aspruijt/Documents/GitHub/AdminThemePalette/styles/_inputfields.less",
+		"/C/Users/aspruijt/Documents/GitHub/AdminThemePalette/styles/_colors-default.less",
+		"/C/Users/aspruijt/Documents/GitHub/AdminThemePalette/styles/_cke.less",
+		"/C/Users/aspruijt/Documents/GitHub/AdminThemePalette/styles/jquery-ui.less",
+		"/C/Users/aspruijt/Documents/GitHub/AdminThemePalette/styles/_fa-tweaks.less",
+		"/C/xampp2/htdocs/nft/main/public/site/templates/season.php",
+		"/C/xampp2/htdocs/nft/main/public/site/templates/markup/snippets/banner-season.php",
+		"/C/xampp2/htdocs/nft/main/public/site/templates/styles/_variables.scss",
+		"/C/xampp2/htdocs/nft/main/public/site/templates/styles/_base.scss",
+		"/C/xampp2/htdocs/nft/main/public/site/templates/includes/functions.php",
+		"/C/xampp2/htdocs/nft/main/public/site/templates/markup/season-events-all.php",
+		"/C/xampp2/htdocs/nft/main/public/site/templates/styles/screen.scss",
+		"/C/xampp2/htdocs/nft/main/public/site/templates/_init.php",
+		"/C/xampp2/htdocs/nft/main/public/site/templates/markup/season-events.php",
+		"/C/xampp2/htdocs/nft/main/public/site/assets/logs/errors.txt",
+		"/C/xampp2/htdocs/nft/main/public/site/templates/styles/templates/holidays.scss",
+		"/C/xampp2/htdocs/nft/main/public/site/templates/markup/holiday-events.php",
+		"/C/Users/aspruijt/AppData/Roaming/Sublime Text 2/Packages/User/Preferences.sublime-settings",
+		"/C/xampp2/htdocs/nft/main/public/site/templates/seasons.php",
+		"/C/xampp2/htdocs/nft/main/public/site/templates/markup/seasons-list.php",
+		"/C/xampp2/htdocs/nft/main/public/site/templates/styles/templates/gallery.scss",
+		"/C/xampp2/htdocs/nft/main/public/site/templates/page-basic.php",
+		"/C/xampp2/htdocs/nft/main/public/site/templates/gallery.php",
+		"/C/xampp2/htdocs/nft/main/public/site/templates/markup/gallery-list.php",
+		"/C/xampp2/htdocs/nft/main/public/site/templates/markup/snippets/related-listings.php",
+		"/C/xampp2/htdocs/nft/main/public/site/templates/markup/snippets/related-events.php",
+		"/C/xampp2/htdocs/nft/main/public/site/templates/markup/layouts/wide.php",
+		"/C/xampp2/htdocs/nft/main/public/site/templates/holiday.php",
+		"/C/xampp2/htdocs/nft/main/public/site/templates/markup/snippets/banner-holiday-noimage.php",
+		"/C/xampp2/htdocs/nft/main/public/site/templates/markup/holidays-small.php",
+		"/C/xampp2/htdocs/nft/main/public/site/templates/markup/holidays-item.php",
+		"/C/xampp2/htdocs/nft/main/public/site/templates/holidays.php",
+		"/C/xampp2/htdocs/nft/main/public/site/templates/markup/output/default.php",
+		"/C/xampp2/htdocs/nft/main/public/site/templates/listing.php",
+		"/C/xampp2/htdocs/nft/main/public/site/templates/markup/listing-review-success.php",
+		"/C/xampp2/htdocs/nft/main/public/site/templates/styles/templates/listing.scss",
+		"/C/xampp2/htdocs/nft/main/public/site/modules/FieldtypeReviews/ReviewForm.php",
+		"/C/xampp2/htdocs/nft/main/public/site/templates/markup/holidays-large.php",
+		"/C/xampp2/htdocs/nft/main/public/files/newletters/images/clear.gif",
+		"/C/Users/aspruijt/Desktop/imex2014/index.html",
+		"/C/xampp2/htdocs/nft/main/public/site/templates/markup/snippets/nav-dropdowns.php",
+		"/C/xampp2/htdocs/nft/main/public/site/templates/category.php",
+		"/C/xampp2/htdocs/nft/main/public/site/templates/markup/snippets/banner-holiday.php",
+		"/C/xampp2/htdocs/nft/main/public/site/templates/markup/dropdowns/discover.php",
+		"/C/Users/aspruijt/AppData/Local/Temp/7zE2561.tmp/index.html",
+		"/C/Users/aspruijt/AppData/Local/Temp/7zEE38.tmp/index.html",
+		"/C/xampp2/htdocs/nft/main/public/site/templates/styles/templates/holidays.css",
+		"/C/xampp2/htdocs/nft/main/public/site/templates/js/plugins.js",
+		"/C/xampp2/htdocs/nft/main/public/site/templates/js/plugins.min.js",
+		"/C/xampp2/htdocs/nft/main/public/site/templates/markup/article/header.php",
+		"/C/xampp2/htdocs/nft/main/public/site/modules/TextformatterImageInterceptor/TextformatterImageInterceptor.module",
+		"/C/xampp2/htdocs/nft/main/public/site/templates/js/scripts.js",
+		"/C/xampp2/htdocs/nft/main/public/site/templates/markup/snippets/banner.php",
+		"/C/xampp2/htdocs/nft/main/public/site/templates/markup/home-social.php",
+		"/C/xampp2/htdocs/nft/main/public/site/templates/markup/snippets/banner-home.php",
+		"/C/xampp2/htdocs/nft/main/public/site/templates/markup/layouts/category.php",
+		"/C/xampp2/htdocs/nft/main/public/site/templates/styles/templates/home.css",
+		"/C/xampp2/htdocs/nft/main/nft.sublime-project",
+		"/C/xampp2/htdocs/nft/main/public/site/templates/forecast.php",
+		"/C/xampp2/htdocs/nft2/site/templates/markup/dropdowns/plan.php",
+		"/C/xampp2/htdocs/nft2/site/templates/styles/screen.scss",
+		"/C/xampp2/htdocs/nft2/site/meridian/dropdown-widget/index.php",
+		"/C/xampp2/htdocs/nft2/site/templates/includes/functions.php",
+		"/C/xampp2/htdocs/nft2/site/templates/markup/output/default.php",
+		"/C/xampp2/htdocs/nft2/site/templates/markup/layouts/wide.php",
+		"/C/xampp2/htdocs/nft2/site/templates/markup/layouts/sections.php",
+		"/C/xampp2/htdocs/nft2/site/templates/markup/layouts/full.php",
+		"/C/xampp2/htdocs/nft2/site/templates/markup/layouts/events.php",
+		"/C/xampp2/htdocs/nft2/site/templates/markup/layouts/default.php",
+		"/C/xampp2/htdocs/nft2/site/templates/markup/layouts/category.php",
+		"/C/xampp2/htdocs/nft2/site/templates/markup/layouts/article.php",
+		"/C/xampp2/htdocs/nft2/site/templates/markup/layouts/404.php",
+		"/C/xampp2/htdocs/nft2/site/templates/styles/_base.scss",
+		"/C/xampp2/htdocs/nft2/site/templates/markup/dropdowns/discover.php",
+		"/C/xampp2/htdocs/nft2/site/templates/markup/search-results.php",
+		"/C/xampp2/htdocs/nft2/site/templates/markup/snippets/nav-dropdowns.php",
+		"/C/xampp2/htdocs/nft2/site/templates/styles/templates/page-sections.css",
+		"/C/xampp2/htdocs/nft2/site/templates/styles/templates/package-sections.css",
+		"/C/xampp2/htdocs/nft2/site/templates/_init.php",
+		"/C/xampp2/htdocs/nft2/site/templates/search.php",
+		"/C/xampp2/htdocs/nft2/site/templates/markup/snippets/search-box.php",
+		"/C/xampp2/htdocs/nft2/site/templates/markup/search-advanced.php",
+		"/C/xampp2/htdocs/nft2/site/templates/markup/snippets/banner.php",
+		"/C/xampp2/htdocs/nft2/site/templates/page-basic.php",
+		"/C/xampp2/htdocs/nft2/site/templates/markup/snippets/header.php",
+		"/C/xampp2/htdocs/nft2/site/templates/markup/layouts/listing.php",
+		"/C/xampp2/htdocs/nft2/site/templates/markup/layouts/home.php",
+		"/C/xampp2/htdocs/nft2/site/templates/markup/snippets/packages-sections.php",
+		"/C/xampp2/htdocs/nft2/site/templates/home.php",
+		"/C/xampp2/htdocs/nft2/site/meridian/attractions-widget/css/style.css",
+		"/C/xampp2/htdocs/nft2/site/meridian/attractions-widget/scripts/jquery.js",
+		"/C/xampp2/htdocs/nft2/site/meridian/attractions-widget/AttractionBundle.html",
+		"/C/xampp2/htdocs/nft2/site/templates/markup/home-features.php",
+		"/C/xampp2/htdocs/nft2/site/meridian/attractions-widget/scripts/booking.js",
+		"/C/xampp2/htdocs/nft2/site/meridian/attractions-widget/scripts/child.age.js",
+		"/C/xampp2/htdocs/nft2/site/assets/ProCache-f95d3f504ce1183b107ccbac699/info/directors/index.html",
+		"/C/xampp2/htdocs/nft2/test.php",
+		"/C/xampp2/htdocs/nft2/site/templates/articles.php",
+		"/C/xampp2/htdocs/nft2/site/templates/contact-page.php",
+		"/C/xampp2/htdocs/nft2/site/templates/forecast.php",
+		"/C/xampp2/htdocs/nft2/site/templates/jobs.php",
+		"/C/xampp2/htdocs/nft2/site/templates/markup/snippets/banner-home.php",
+		"/C/xampp2/htdocs/nft2/site/templates/experience.php",
+		"/C/xampp2/htdocs/nft2/site/templates/markup/home-adbar.php",
+		"/C/xampp2/htdocs/nft2/site/templates/events.php",
+		"/C/xampp2/htdocs/nft2/site/templates/js/scripts.js",
+		"/C/xampp2/htdocs/nft2/site/assets/logs/errors.txt",
+		"/C/xampp2/htdocs/nft2/site/config-dev.php",
+		"/C/xampp2/htdocs/nft2/site/config.php",
+		"/C/xampp2/htdocs/nft2/site/templates/markup/jobs-list.php",
+		"/C/xampp2/htdocs/nft2/site/templates/category.php",
+		"/C/xampp2/htdocs/nft2/site/templates/js/plugins.js",
+		"/C/xampp2/htdocs/nft2/site/templates/js/plugins.min.js",
+		"/C/xampp2/htdocs/nft2/site/templates/styles/templates/listing.scss",
+		"/C/xampp2/htdocs/nft2/site/templates/markup/listing-about.php",
+		"/C/xampp2/htdocs/nft2/site/bookwidget.php",
+		"/C/xampp2/htdocs/nft2/site/templates/markup/snippets/slidey.php",
+		"/C/xampp2/htdocs/nft2/site/templates/markup/gallery-list.php",
+		"/C/xampp2/htdocs/nft2/site/templates/markup/output/empty.php"
 	],
 	"find":
 	{
-		"height": 36.0
+		"height": 32.0
 	},
 	"find_in_files":
 	{
 		"height": 0.0,
 		"where_history":
 		[
-			"C:\\Users\\aspruijt\\Documents\\GitHub\\Unify-PWadmin\\templates-admin\\styles\\less",
-			"C:\\wamp\\www\\nft\\site\\templates-admin\\styles\\less",
-			"C:\\wamp\\www\\nft\\site\\templates",
-			"C:\\wamp\\www\\nft\\wire",
-			"C:\\wamp\\www\\nft\\site\\templates",
-			"C:\\wamp\\www\\nft\\site\\templates\\css\\less",
-			"C:\\wamp\\www\\nft\\site\\templates",
-			"C:\\wamp\\www\\nft_newsletters\\wp-content\\plugins\\wysija-newsletters",
-			"C:\\wamp\\www\\nft\\site\\templates",
-			"C:\\wamp\\www\\nft\\site\\templates\\less",
+			"C:\\xampp2\\htdocs\\nft\\main\\public\\site\\templates",
 			"<project>",
-			"C:\\wamp\\www\\nft\\site\\templates\\less",
-			"C:\\wamp\\www\\members\\site\\templates",
-			"C:\\wamp\\www\\nft_pw_ml\\site\\modules\\FieldtypeReviews",
-			"C:\\wamp\\www\\nft_pw_ml\\site\\templates\\less",
-			"<open files>",
-			"C:\\wamp\\www\\members\\wire",
-			"C:\\wamp\\www\\nft_pw_ml\\site\\templates\\less",
-			"C:\\Users\\aspruijt\\Documents\\Code Projects\\ProcessWire\\Admin Themes\\metrowire\\templates-admin\\styles\\less",
-			"C:\\wamp\\www\\nft_pw_ml\\site\\templates\\less",
-			"C:\\Users\\aspruijt\\Documents\\Code Projects\\ProcessWire\\Admin Themes\\compliance\\templates-admin\\styles\\less",
-			"C:\\wamp\\www\\nft_pw_ml\\site\\modules",
-			"C:\\wamp\\www\\nft_pw_ml\\wire",
-			"C:\\wamp\\www\\nft_pw_ml\\site\\templates",
-			"C:\\wamp\\www\\nft_pw_ml\\site\\templates\\less",
-			"C:\\wamp\\www\\nft_pw_ml\\site\\templates\\admin.php,C:\\wamp\\www\\nft_pw_ml\\site\\templates\\article.php,C:\\wamp\\www\\nft_pw_ml\\site\\templates\\articles.php,C:\\wamp\\www\\nft_pw_ml\\site\\templates\\book.php,C:\\wamp\\www\\nft_pw_ml\\site\\templates\\book_alts.php,C:\\wamp\\www\\nft_pw_ml\\site\\templates\\books.php,C:\\wamp\\www\\nft_pw_ml\\site\\templates\\category.php,C:\\wamp\\www\\nft_pw_ml\\site\\templates\\contact-entry.php,C:\\wamp\\www\\nft_pw_ml\\site\\templates\\contact-page.php,C:\\wamp\\www\\nft_pw_ml\\site\\templates\\event.php,C:\\wamp\\www\\nft_pw_ml\\site\\templates\\events.php,C:\\wamp\\www\\nft_pw_ml\\site\\templates\\home.php,C:\\wamp\\www\\nft_pw_ml\\site\\templates\\import.php,C:\\wamp\\www\\nft_pw_ml\\site\\templates\\listing.php,C:\\wamp\\www\\nft_pw_ml\\site\\templates\\map.php,C:\\wamp\\www\\nft_pw_ml\\site\\templates\\package.php,C:\\wamp\\www\\nft_pw_ml\\site\\templates\\packages.php,C:\\wamp\\www\\nft_pw_ml\\site\\templates\\page-basic.php,C:\\wamp\\www\\nft_pw_ml\\site\\templates\\page-listings.php,C:\\wamp\\www\\nft_pw_ml\\site\\templates\\search.php,C:\\wamp\\www\\nft_pw_ml\\site\\templates\\sitemap.php,C:\\wamp\\www\\nft_pw_ml\\site\\templates\\subcategory.php,C:\\wamp\\www\\nft_pw_ml\\site\\templates\\video.php,C:\\wamp\\www\\nft_pw_ml\\site\\templates\\videos.php",
-			"C:\\Users\\aspruijt\\Dropbox\\Web\\Processwire\\Admin Themes\\sleek-monster\\templates-admin\\styles\\less",
-			"C:\\wamp\\www\\nft\\wp-content\\themes\\NFT2\\library\\less",
-			"C:\\Users\\aspruijt\\Dropbox\\Web\\Processwire\\Admin Themes\\sleek-monster\\templates-admin\\styles\\less",
-			"C:\\wamp\\www\\nft\\wp-content\\themes\\NFT2",
-			"C:\\wamp\\www\\nft\\wp-content\\themes\\NFT2\\library\\less",
-			"C:\\wamp\\www\\nft\\wp-content",
-			"C:\\wamp\\www\\nft\\wp-content\\plugins\\wpsearch",
+			"C:\\xampp2\\htdocs\\nft2\\site\\templates",
+			"C:\\xampp2\\htdocs\\tt_pw\\site",
+			"C:\\wamp\\www\\tt_pw\\site\\templates",
+			"C:\\wamp\\www\\tt_pw\\site\\templates-admin\\styles\\less",
 			"C:\\wamp\\www\\wp\\wp-content\\themes\\NFT\\library\\less",
 			"C:\\Users\\aspruijt\\Sites\\WOWniagara\\wp-content\\themes\\Boot\\stylesheets"
 		]
@@ -824,134 +497,134 @@
 		"case_sensitive": false,
 		"find_history":
 		[
-			"top: 1",
+			"accent",
+			"ACCENT",
+			"accent",
+			"button",
+			"ui-button",
+			"button",
+			"$",
+			"8em",
+			"0.6",
+			" ?>",
+			"<?php echo ",
 			"\"",
-			"collapsedTabsAt",
-			"collapsedTopnavAt",
-			"collapsedTabsAtBodyWidth",
-			"collapsedTopnavAtBodyWidth",
-			"topnav",
-			"{\n",
-			"headl",
-			"topna",
-			"19",
-			"logo",
-			"topna",
-			"top",
-			"$main-color",
-			"main-colo",
-			"$name",
-			"compile",
-			"scss",
-			"acc",
-			"10",
-			" $gray",
-			"light-text-color",
-			"inc",
-			"Inputfields",
-			"InputfieldS",
-			"Inputfields",
-			"InputfieldS",
-			"inputfields",
-			"Inputfields",
-			"InputfieldS",
-			"Inputfields",
-			"InputfieldS",
-			"Inputfields",
-			"InputfieldS",
-			"Inputfields",
-			"fa-",
-			"icon",
-			"1",
-			"inputfieldcon",
-			"inputfieldhe",
-			"inputfieldcon",
-			"$adminTheme",
-			"size",
-			"disabledots",
-			"colors",
-			"admindatalis",
-			".icon",
-			"4px",
-			"view-site",
-			",\n",
-			"nav",
-			"men",
-			"more",
+			"|date_end",
+			"$eventsStartBefore",
+			"\n$eventsStartBefore = $pages->find(\"$defaultSelector, date_end>={$page->dateStart},  date_end<={$page->dateEnd}\");\n$events->append($eventsStartBefore);\n",
+			"$eventsBefore",
+			"dateEnd",
+			"date",
 			";\n",
-			"5em",
-			"toggle",
-			"dd",
-			"adminda",
-			"#content",
-			"  ",
-			"mast",
-			"container",
-			"topna",
-			"@",
-			"notic",
-			"menu",
-			"dropdo",
-			"$button",
-			"footer",
-			"pagelist",
-			"topnav",
-			"topnav'",
-			"topnav",
-			"bread",
-			"pagelistc",
-			"wire",
-			"#cont",
-			"$tabs-height",
-			"height",
-			"46",
-			"mast",
-			"dotted",
-			"dottet",
-			"dotter",
-			"@grayDark",
-			"PageListRoot",
-			"darken($subtle-bg, 3%)",
-			"pagelistpa",
-			"*",
-			"@",
-			"pagelistpa",
-			"$import",
-			"@",
-			"tabs",
+			"image_banner",
+			" rotateY( -5deg )",
+			".4em",
+			"season",
+			";\n",
+			"7",
+			"10em",
+			"> ",
+			"=",
+			"php echo ",
+			"green",
+			"blue",
+			" ?>",
+			"<?php echo ",
 			"\"",
-			"Test",
-			"banner",
-			"#content",
-			"content",
-			"topnav",
-			"mast",
-			"container",
-			"topna",
+			"blue",
+			"\n	&.blue{\n		background: $blue;\n	}",
+			"\n	.holiday-name{\n		line-height: 1em;\n	}",
+			"70",
+			"related",
+			"\"",
+			"\n	// REVIEWS  -----------------------------------------------------------\n	if ( $page->reviews ) {\n		$t = new TemplateFile(wire('config')->paths->templates . 'markup/listing-reviews.php');\n		$page->outMain .= $t->render();\n	}\n",
+			"20",
+			"green",
 			"nav",
-			"bread",
-			"listing",
-			"collapsed",
-			"NProgress",
-			"creatMarker",
-			"markers",
-			"Markers",
-			"markers",
-			"Markers",
-			"markers",
-			"Markers",
-			"markers",
-			"Markers",
-			"markers",
-			"gMarkers",
-			"cluster",
-			"mcOptions",
-			"mapCluster",
-			"updatePoints",
-			"g.current",
-			"showMarkers",
-			"getPoints",
-			"MarkerClusterer"
+			"http://niagarafallstourism.com/files/newletters/images",
+			"$p->",
+			"\";",
+			"\n		case 'american-thanksgiving':\n			$string = \"fourth Thursday November\";\n			break;",
+			"holiday->next",
+			"$holiday->next",
+			"data-src",
+			"laz",
+			"data-original",
+			");\n",
+			"subitems",
+			"$holiday",
+			"$p->",
+			"startDate",
+			"()\n",
+			"@",
+			"stackBlurImage",
+			"$page->children(\"sort=date\")",
+			"next",
+			" $p->date",
+			"\n		case 'fathers-day':\n			$year = date(\"Y\");\n			$string = \"third Sunday of June\";\n			$date = strtotime(\"$string $year\");\n			if ($date < date(\"U\")) {\n				$year++;\n				$date = strtotime(\"$string $year\");\n			}\n			$p->date = $date;\n			break;",
+			"\n	.holiday-name,\n	.holiday-small-date{\n		color: $red;\n	}",
+			"30",
+			"55",
+			"page",
+			"green",
+			"background",
+			"red",
+			"\n	&.holiday-to-red{\n		background: -moz-linear-gradient(top,  transparent 0%, $red 100%); /* FF3.6+ */\n		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,transparent), color-stop(100%,$red)); /* Chrome,Safari4+ */\n		background: -webkit-linear-gradient(top,  transparent 0%,$red 100%); /* Chrome10+,Safari5.1+ */\n		background: -o-linear-gradient(top,  transparent 0%,$red 100%); /* Opera 11.10+ */\n		background: -ms-linear-gradient(top,  transparent 0%,$red 100%); /* IE10+ */\n		background: linear-gradient(to bottom,  transparent 0%,$red 100%); /* W3C */\n		// filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='transparent', endColorstr='#7db9e8',GradientType=0 ); /* IE6-9 */\n\n	}",
+			"#7db9e8",
+			"#1e5799",
+			"green",
+			"\n\n	&.holiday-from-green{\n		background: $green;\n	}",
+			"	.holiday-name{",
+			"\n	.holiday-date{\n		background: $green;\n	}",
+			"span",
+			"\n	.holiday-small-title{\n		text-transform: uppercase;\n		position: relative;\n		font-weight: bold;\n	}",
+			"green",
+			"\n.holiday-green{\n	.holiday-name{\n		color: $green;\n	}\n	.holiday-date{\n		background: $green;\n	}\n}",
+			"div",
+			"\n	.holiday-name{\n		color: $green;\n	}",
+			"\n.holiday-date{\n	width: 4em;\n	height: 4em;\n	background: #333;\n	font-size: 3em;\n	text-align: center;\n}",
+			".holiday-name{\n	font-size: 1.8em;\n	font-weight: bold;\n	text-transform: uppercase;\n}\n",
+			".holiday-title{\n	position: absolute;\n	top: 50%;\n}",
+			"48",
+			" ?>",
+			"<?php echo ",
+			"\"",
+			"nav-con",
+			" class=\"link\"",
+			"/nft2/",
+			"\n.dropdown-section-2{\n  width: 34%;\n}",
+			";\n",
+			"\n					<div class=\"dropdown-section\">\n						<a class=\"link\" href=\"/nft2/blog/\">\n							Blog\n							<span class=\"description\">The latest news &amp; exciting dicoveries in Niagara Falls and the area</span>\n						</a>\n						<a class=\"link\" href=\"/nft2/experience/\">Experiences</a>\n					</div>",
+			"angle",
+			"fa",
+			"header",
+			"0.2em",
+			"0",
+			"default-text",
+			"/a><",
+			"><a",
+			"i><",
+			"\";\n",
+			"green",
+			"book",
+			"nav-ma",
+			"nav",
+			"nav-ma",
+			"book",
+			"\"",
+			"span",
+			"disableShare",
+			"disable_share",
+			"thumbnail_nav",
+			"<br />",
+			"span",
+			"<span class=\"smtxt\">",
+			"http://pwa.niagarafallstourism.com/",
+			"event",
+			"');\n",
+			"content",
+			"div",
+			"\n  .slidey-button {\n    position: absolute;\n    z-index: 508;\n    color: #fff;\n    cursor: pointer;\n\n  }\n"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -959,17 +632,10 @@
 		"regex": false,
 		"replace_history":
 		[
-			"out->main",
-			"css/",
+			"styles/images/",
+			". \"styles/images/",
 			"styles/",
-			"NFT Member Portal",
-			"review",
-			"Review",
-			"review",
-			"",
-			"class=\"article-header\"",
-			";\n",
-			"'",
+			"<?php ",
 			"(905) 735-1616"
 		],
 		"reverse": false,
@@ -981,23 +647,376 @@
 	"groups":
 	[
 		{
+			"selected": 2,
 			"sheets":
 			[
-			]
-		},
-		{
-			"sheets":
-			[
+				{
+					"buffer": 0,
+					"file": "styles/_main.less",
+					"settings":
+					{
+						"buffer_size": 30605,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								345,
+								345
+							]
+						],
+						"settings":
+						{
+							"annotations":
+							[
+								"TODO",
+								"README",
+								"FIXME"
+							],
+							"csslint_options":
+							{
+								"adjoining-classes": "warning",
+								"box-model": true,
+								"box-sizing": "warning",
+								"compatible-vendor-prefixes": "warning",
+								"display-property-grouping": true,
+								"duplicate-background-images": "warning",
+								"duplicate-properties": true,
+								"empty-rules": true,
+								"errors": true,
+								"fallback-colors": "warning",
+								"floats": "warning",
+								"font-faces": "warning",
+								"font-sizes": "warning",
+								"gradients": "warning",
+								"ids": "warning",
+								"import": "warning",
+								"important": "warning",
+								"known-properties": true,
+								"outline-none": "warning",
+								"overqualified-elements": "warning",
+								"qualified-headings": "warning",
+								"regex-selectors": "warning",
+								"rules-count": "warning",
+								"shorthand": "warning",
+								"star-property-hack": "warning",
+								"text-indent": "warning",
+								"underscore-property-hack": "warning",
+								"unique-headings": "warning",
+								"universal-selector": "warning",
+								"vendor-prefix": true,
+								"zero-units": "warning"
+							},
+							"gjslint_ignore":
+							[
+								110
+							],
+							"gjslint_options":
+							[
+							],
+							"incomplete_sync": null,
+							"javascript_linter": "jshint",
+							"jshint_options":
+							{
+								"browser": true,
+								"evil": true,
+								"regexdash": true,
+								"sub": true,
+								"trailing": true,
+								"wsh": true
+							},
+							"pep8": true,
+							"pep8_ignore":
+							[
+								"E501"
+							],
+							"perl_linter": "perlcritic",
+							"pyflakes_ignore":
+							[
+							],
+							"pyflakes_ignore_import_*": true,
+							"remote_loading": false,
+							"sublimelinter": true,
+							"sublimelinter_delay": 2,
+							"sublimelinter_disable":
+							[
+							],
+							"sublimelinter_executable_map":
+							{
+							},
+							"sublimelinter_fill_outlines": false,
+							"sublimelinter_gutter_marks": true,
+							"sublimelinter_gutter_marks_theme": "simple",
+							"sublimelinter_mark_style": "none",
+							"sublimelinter_notes": false,
+							"sublimelinter_objj_check_ascii": false,
+							"sublimelinter_popup_errors_on_save": false,
+							"sublimelinter_syntax_map":
+							{
+								"C++": "c",
+								"Python Django": "python",
+								"Ruby on Rails": "ruby"
+							},
+							"sublimelinter_wrap_find": true,
+							"synced": false,
+							"syntax": "Packages/LESS/LESS.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "includes/notices.inc",
+					"settings":
+					{
+						"buffer_size": 514,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"annotations":
+							[
+								"TODO",
+								"README",
+								"FIXME"
+							],
+							"csslint_options":
+							{
+								"adjoining-classes": "warning",
+								"box-model": true,
+								"box-sizing": "warning",
+								"compatible-vendor-prefixes": "warning",
+								"display-property-grouping": true,
+								"duplicate-background-images": "warning",
+								"duplicate-properties": true,
+								"empty-rules": true,
+								"errors": true,
+								"fallback-colors": "warning",
+								"floats": "warning",
+								"font-faces": "warning",
+								"font-sizes": "warning",
+								"gradients": "warning",
+								"ids": "warning",
+								"import": "warning",
+								"important": "warning",
+								"known-properties": true,
+								"outline-none": "warning",
+								"overqualified-elements": "warning",
+								"qualified-headings": "warning",
+								"regex-selectors": "warning",
+								"rules-count": "warning",
+								"shorthand": "warning",
+								"star-property-hack": "warning",
+								"text-indent": "warning",
+								"underscore-property-hack": "warning",
+								"unique-headings": "warning",
+								"universal-selector": "warning",
+								"vendor-prefix": true,
+								"zero-units": "warning"
+							},
+							"gjslint_ignore":
+							[
+								110
+							],
+							"gjslint_options":
+							[
+							],
+							"incomplete_sync": null,
+							"javascript_linter": "jshint",
+							"jshint_options":
+							{
+								"browser": true,
+								"evil": true,
+								"regexdash": true,
+								"sub": true,
+								"trailing": true,
+								"wsh": true
+							},
+							"pep8": true,
+							"pep8_ignore":
+							[
+								"E501"
+							],
+							"perl_linter": "perlcritic",
+							"pyflakes_ignore":
+							[
+							],
+							"pyflakes_ignore_import_*": true,
+							"remote_loading": false,
+							"sublimelinter": true,
+							"sublimelinter_delay": 2,
+							"sublimelinter_disable":
+							[
+							],
+							"sublimelinter_executable_map":
+							{
+							},
+							"sublimelinter_fill_outlines": false,
+							"sublimelinter_gutter_marks": true,
+							"sublimelinter_gutter_marks_theme": "simple",
+							"sublimelinter_mark_style": "none",
+							"sublimelinter_notes": false,
+							"sublimelinter_objj_check_ascii": false,
+							"sublimelinter_popup_errors_on_save": false,
+							"sublimelinter_syntax_map":
+							{
+								"C++": "c",
+								"Python Django": "python",
+								"Ruby on Rails": "ruby"
+							},
+							"sublimelinter_wrap_find": true,
+							"synced": false,
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "default.php",
+					"settings":
+					{
+						"buffer_size": 5226,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4194,
+								4194
+							]
+						],
+						"settings":
+						{
+							"annotations":
+							[
+								"TODO",
+								"README",
+								"FIXME"
+							],
+							"csslint_options":
+							{
+								"adjoining-classes": "warning",
+								"box-model": true,
+								"box-sizing": "warning",
+								"compatible-vendor-prefixes": "warning",
+								"display-property-grouping": true,
+								"duplicate-background-images": "warning",
+								"duplicate-properties": true,
+								"empty-rules": true,
+								"errors": true,
+								"fallback-colors": "warning",
+								"floats": "warning",
+								"font-faces": "warning",
+								"font-sizes": "warning",
+								"gradients": "warning",
+								"ids": "warning",
+								"import": "warning",
+								"important": "warning",
+								"known-properties": true,
+								"outline-none": "warning",
+								"overqualified-elements": "warning",
+								"qualified-headings": "warning",
+								"regex-selectors": "warning",
+								"rules-count": "warning",
+								"shorthand": "warning",
+								"star-property-hack": "warning",
+								"text-indent": "warning",
+								"underscore-property-hack": "warning",
+								"unique-headings": "warning",
+								"universal-selector": "warning",
+								"vendor-prefix": true,
+								"zero-units": "warning"
+							},
+							"gjslint_ignore":
+							[
+								110
+							],
+							"gjslint_options":
+							[
+							],
+							"incomplete_sync": null,
+							"javascript_linter": "jshint",
+							"jshint_options":
+							{
+								"browser": true,
+								"evil": true,
+								"regexdash": true,
+								"sub": true,
+								"trailing": true,
+								"wsh": true
+							},
+							"pep8": true,
+							"pep8_ignore":
+							[
+								"E501"
+							],
+							"perl_linter": "perlcritic",
+							"pyflakes_ignore":
+							[
+							],
+							"pyflakes_ignore_import_*": true,
+							"remote_loading": false,
+							"sublimelinter": true,
+							"sublimelinter_delay": 2,
+							"sublimelinter_disable":
+							[
+							],
+							"sublimelinter_executable_map":
+							{
+							},
+							"sublimelinter_fill_outlines": false,
+							"sublimelinter_gutter_marks": true,
+							"sublimelinter_gutter_marks_theme": "simple",
+							"sublimelinter_mark_style": "none",
+							"sublimelinter_notes": false,
+							"sublimelinter_objj_check_ascii": false,
+							"sublimelinter_popup_errors_on_save": false,
+							"sublimelinter_syntax_map":
+							{
+								"C++": "c",
+								"Python Django": "python",
+								"Ruby on Rails": "ruby"
+							},
+							"sublimelinter_wrap_find": true,
+							"synced": false,
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 2580.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
 			]
 		}
 	],
 	"incremental_find":
 	{
-		"height": 36.0
+		"height": 0.0
 	},
 	"input":
 	{
-		"height": 32.0
+		"height": 31.0
 	},
 	"layout":
 	{
@@ -1008,18 +1027,11 @@
 				0,
 				1,
 				1
-			],
-			[
-				1,
-				0,
-				2,
-				1
 			]
 		],
 		"cols":
 		[
 			0.0,
-			0.468730456535,
 			1.0
 		],
 		"rows":
@@ -1033,17 +1045,13 @@
 	{
 		"height": 257.0
 	},
-	"output.git":
-	{
-		"height": 96.0
-	},
 	"output.sftp":
 	{
-		"height": 121.0
+		"height": 279.0
 	},
 	"replace":
 	{
-		"height": 60.0
+		"height": 0.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -1052,112 +1060,8 @@
 		"selected_items":
 		[
 			[
-				"pagehe",
-				"site/templates/markup/snippets/page-header.php"
-			],
-			[
-				"pagehea",
-				"site/templates/includes/snippets/page-header.inc"
-			],
-			[
-				"scre",
-				"site/templates/css/screen.css"
-			],
-			[
-				"sub",
-				"site/templates/includes/snippets/subnav.inc"
-			],
-			[
-				"out",
-				"site/templates/_out.php"
-			],
-			[
-				"searc",
-				"site/templates/markup/search-results.php"
-			],
-			[
-				"sear",
-				"site/templates/search.php"
-			],
-			[
-				"review",
-				"site/modules/FieldtypeReviews/ReviewList.php"
-			],
-			[
-				"homside",
-				"site/templates/markup/snippets/home-sidebar.php"
-			],
-			[
-				"listing",
-				"site/templates/listing.php"
-			],
-			[
-				"gall",
-				"site/templates/markup/snippets/gallery.php"
-			],
-			[
-				"brea",
-				"site/templates-admin/breadcrumbs.inc"
-			],
-			[
-				"laylis",
-				"mcit_pw/site/templates/markup/layouts/listing.php"
-			],
-			[
-				"lisn",
-				"mcit_pw/site/templates/listing.php"
-			],
-			[
-				"lay",
-				"nft_pw_ml/site/templates/less/layout.less"
-			],
-			[
-				"archiveev",
-				"nft/wp-content/themes/NFT/archive-event.php"
-			],
-			[
-				"header",
-				"nft/wp-content/themes/NFT/header.php"
-			],
-			[
-				"boot",
-				"nft/wp-content/themes/NFT/library/css/bootstrap.less"
-			],
-			[
-				"forms",
-				"nft/wp-content/themes/NFT/library/less/forms.less"
-			],
-			[
-				"mcitfunc",
-				"nft_mcit/wp-content/themes/NFT/functions.php"
-			],
-			[
-				"ttheader",
-				"nft_tt/wp-content/themes/NFT/header.php"
-			],
-			[
-				"ttfun",
-				"nft_tt/wp-content/themes/NFT/functions.php"
-			],
-			[
-				"funt",
-				"nft/wp-content/themes/NFT/functions.php"
-			],
-			[
-				"funtion",
-				"nft/wp-content/themes/NFT/functions.php"
-			],
-			[
-				"mcitphpadmin",
-				"nft_mcit/wp-content/themes/NFT/library/php/admin.php"
-			],
-			[
-				"blogcontentphpadmin",
-				"nft_blog/wp-content/themes/NFT/library/php/admin.php"
-			],
-			[
-				"blogadmin",
-				"nft_blog/wp-admin/admin.php"
+				"layhom",
+				"site/templates/markup/layouts/home.php"
 			]
 		],
 		"width": 0.0
@@ -1168,72 +1072,76 @@
 		"selected_items":
 		[
 			[
-				"nf",
-				"/C/wamp/www/nft/nft.sublime-project"
-			],
-			[
 				"nft",
-				"/C/wamp/www/nft/nft.sublime-project"
-			],
-			[
-				"cha",
-				"/C/Users/aspruijt/Apps/nft-chat/chat.sublime-project"
-			],
-			[
-				"mct",
-				"/C/wamp/www/mcit_pw/mcit_pw.sublime-project"
-			],
-			[
-				"xp",
-				"/C/Users/aspruijt/Documents/GitHub/xpages/xpages.sublime-project"
+				"/C/xampp2/htdocs/nft/main/nft.sublime-project"
 			],
 			[
 				"pwa",
-				"/C/wamp/www/pwa/pwa.sublime-project"
-			],
-			[
-				"a",
-				"/C/Users/aspruijt/Documents/Code Projects/ProcessWire/Admin Themes/adminthemes.sublime-project"
-			],
-			[
-				"",
-				"/C/wamp/www/pwa/pwa.sublime-project"
+				"/C/xampp2/htdocs/pwa/pwa.sublime-project"
 			],
 			[
 				"mcit",
-				"/C/wamp/www/mcit_pw/mcit_pw.sublime-project"
+				"/C/xampp2/htdocs/mcit_pw/mcit.sublime-project"
 			],
 			[
-				"mem",
-				"/C/wamp/www/members/members.sublime-project"
+				"ch",
+				"/C/xampp2/htdocs/nft_china/China.sublime-project"
 			],
 			[
-				"ad",
-				"/C/Users/aspruijt/Documents/Code Projects/ProcessWire/Admin Themes/adminthemes.sublime-project"
-			],
-			[
-				"tt",
-				"/C/wamp/www/tt_pw/Travel Trade.sublime-project"
+				"pwaw",
+				"/C/xampp2/htdocs/pwa/pwa.sublime-project"
 			],
 			[
 				"mc",
-				"/C/wamp/www/mcit_pw/mcit_pw.sublime-project"
+				"/C/xampp2/htdocs/mcit_pw/mcit.sublime-project"
+			],
+			[
+				"mem",
+				"/C/xampp2/htdocs/members/members.sublime-project"
+			],
+			[
+				"xpa",
+				"/C/xampp2/htdocs/xpages/xpages.sublime-project"
+			],
+			[
+				"ja",
+				"/C/xampp2/htdocs/nft_japan/japan.sublime-project"
+			],
+			[
+				"",
+				"/C/Users/aspruijt/Apps/mad/mad.sublime-project"
+			],
+			[
+				"mci",
+				"/C/xampp2/htdocs/mcit_pw/mcit.sublime-project"
+			],
+			[
+				"fre",
+				"/C/xampp2/htdocs/nft_fr/french.sublime-project"
+			],
+			[
+				"japa",
+				"/C/xampp2/htdocs/nft_japan/japan.sublime-project"
+			],
+			[
+				"sim",
+				"/C/Users/aspruijt/Documents/simpleDateSelect.sublime-project"
+			],
+			[
+				"fr",
+				"/C/xampp2/htdocs/nft_fr/french.sublime-project"
 			],
 			[
 				"adm",
-				"/C/Users/aspruijt/Documents/Code Projects/ProcessWire/Admin Themes/adminthemes.sublime-project"
+				"/C/Users/aspruijt/Sites/AdminThemes.sublime-project"
 			],
 			[
-				"t",
-				"/C/wamp/www/tt_pw/Travel Trade.sublime-project"
+				"chat",
+				"/C/Users/aspruijt/Apps/nft-chat/chat.sublime-project"
 			],
 			[
 				"bfg",
 				"/C/wamp/www/bfg/bfg.sublime-project"
-			],
-			[
-				"mci",
-				"/C/wamp/www/nft_mcit/mcit.sublime-project"
 			]
 		],
 		"width": 380.0
@@ -1242,6 +1150,6 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 207.0,
+	"side_bar_width": 431.0,
 	"status_bar_visible": true
 }
