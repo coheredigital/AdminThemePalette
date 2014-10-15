@@ -1,5 +1,5 @@
 
-@main: #4b7dcd;
+@main: #89519e;
 
 // VARIATIONS
 // MAIN
@@ -11,9 +11,17 @@
 @lighter-main: lighten(@main, 20%);
 @lightest-main: lighten(@main, 30%);
 
+// contrast colors
+@contrast-main: contrast(@main, #333, #fff);
+@medium-contrast-main: contrast(@main,@darker-main,@lighter-main);
+@high-contrast-main: contrast(@main,@darkest-main,@lightest-main);
+@low-contrast-main: contrast(@main,@dark-main,@light-main);
+
 // MAIN COLOR APPLICATIONS
 body{
-	background: #232323;
+	background: @medium-contrast-main;
+	background: @darker-main;
+	// background: #333;
 }
 
 
@@ -36,10 +44,10 @@ a:hover,
 // #footer > .container,
 #collapse-topnav-menu,
 #masthead > .container{
-	background: @dark-main;
+	background: @main;
 }
 #masthead{
-	background: @dark-main;
+	background: @main;
 }
 
 .collapse-topnav #masthead > .container{
@@ -59,7 +67,7 @@ a:hover,
 #topnav > li > a.hover,
 #topnav > li > a:hover,
 #ProcessPageSearchForm #ProcessPageSearchQuery:hover {
-	background: @darker-main;
+	background: @dark-main;
 }
 
 // main APPLICATIONS
@@ -72,6 +80,9 @@ a:hover,
 #topnav a.on{
 	background: @main !important;
 }
+#topnav a.on{
+	color: @contrast-main !important;
+}
 
 .WireTabs{
 	background: lighten(@main, 15%)!important;
@@ -82,18 +93,20 @@ a:hover,
 
 #breadcrumbs{
 	background: @main;
+	ul a,
+	ul li{
+		color: @medium-contrast-main;
+		&:hover{
+			color: @contrast-main;
+		}
+	}
+	.title{
+		color: @high-contrast-main !important;
+	}
 }
 
-#breadcrumbs ul a,
-#breadcrumbs ul li{
-	color: @lightest-main !important;
-}
-// #footer a:hover,
-#topnav a.on,
-#breadcrumbs ul li.title,
-#breadcrumbs ul a:hover{
-	color: #fff !important;
-}
+
+
 @media only screen and (max-width: 767px) {
 
 	#ProcessPageSearchForm{
