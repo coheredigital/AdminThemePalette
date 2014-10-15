@@ -1,0 +1,56 @@
+.WireTabs {
+	position: relative;
+	margin: 0 !important;
+	margin-bottom: -1px !important;
+	left: 0 !important;
+	width: 100%;
+	z-index: 104;
+	overflow: visible;
+	text-transform: uppercase;
+
+	li {
+		background: none;
+		margin: 0 !important;
+		padding: 0 !important;
+		margin-bottom: 0;
+	}
+	a {
+		padding: 0.8em 1em;
+		display: inline-block;
+		line-height: 1em;
+		border: 0 !important;
+		color: #fff;
+	}
+
+
+	a:hover {
+		color: @dark-gray;
+		em {
+			border: none;
+		}
+	}
+
+
+	a.on:hover,
+	a.on {
+		color: @dark-gray;
+		background: #fff;
+	}
+
+	a em {
+		font-weight: @tabs-font-weight;
+		font-style: normal;
+		text-decoration: none;
+		border: 0;
+	}
+
+
+	#_ProcessPageEditView {
+		position: absolute;
+		right: 0;
+		margin-right: 0;
+		font-weight: bold;
+	}
+
+
+}

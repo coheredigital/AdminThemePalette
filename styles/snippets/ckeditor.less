@@ -1,0 +1,43 @@
+.cke,
+.cke_reset{
+
+	box-shadow: 0 0 0 transparent !important;
+	.cke_top,
+	.cke_bottom {
+		background: @subtle-bg !important;
+		border-top: none !important;
+		box-shadow: none !important;
+	}
+	.cke_bottom {
+		border-top: 1px solid #ccc !important;
+	}
+	.cke_combo_button,
+	.cke_toolgroup{
+		border-radius: 0 !important;
+	}
+	.cke_combo_off:hover a.cke_combo_button,
+	.cke_button_off:hover{
+		background: #fff !important;
+		box-shadow: none !important;
+	}
+	.cke_button_on,
+	.cke_combo_on a.cke_combo_button{
+		background: @blue;
+		box-shadow: none !important;
+		span{
+			opacity: 0.5;
+		}
+	}
+	.cke_combo_on:hover a.cke_combo_button{
+		box-shadow: none !important;
+		background: lighten(@blue, 15%);
+	}
+	.cke_button_on:hover{
+		box-shadow: none !important;
+		background: lighten(@blue, 15%);
+	}
+}
+.cke_focus.cke{
+	box-shadow: none !important;
+	border: 1px solid @blue !important;
+}

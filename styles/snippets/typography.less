@@ -1,0 +1,130 @@
+
+
+
+h2 {
+	margin: 1em 0;
+	font-size: 1.4em;
+	line-height: 1.2em;
+	color: @medium-text-color;
+}
+	h2 a {
+		text-decoration: underline;
+	}
+	h2 a:hover {
+		color: @reverse-text-color;
+		background: @link-hover-color;
+		text-decoration: none;
+	}
+
+h3 {
+	margin: 1em 0;
+	font-size: 1.2em;
+}
+
+h4 {
+	margin: 1em 0 0.25em 0;
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 0.916666666666667em;
+}
+
+li {
+	margin: 1em 0;
+	display: block;
+	list-style: disc;
+}
+
+ol li {
+	display: list-item;
+	list-style-type: decimal;
+	margin-left: 1em;
+}
+
+
+
+a:hover {
+	text-decoration: underline;
+}
+
+
+p,
+ul
+ol,
+table {
+	margin: 1em 0;
+}
+
+
+/**
+ * Content navigation like when on the root page of "templates" or "access"
+ *
+ */
+dl {
+	margin: 0;
+}
+dt,
+dt {
+	display: block;
+	font-weight: bold;
+	// padding-top: 1em;
+}
+dt a {
+	// text-transform: none;
+	color: @link-color;
+}
+dt a:hover {
+	color: @link-hover-color;
+}
+dl dd {
+	// padding-bottom: 1em;
+	// border-bottom: 1px solid @subtle-border;
+}
+dd + dt{
+	margin-top: 1.5em;
+}
+
+
+
+
+.description {
+	color: @medium-text-color;
+	font-style: italic;
+
+	margin: 0.5em 0;
+}
+
+.notes,
+.detail {
+	color: @medium-text-color;
+	font-size: 0.875em;
+	line-height: 1.3em;
+}
+.notes {
+	background: @notes-bg;
+	color: @notes-color;
+	border: @notes-border;
+	padding: 0.3em 0.6em !important;
+	clear: both; 
+	display: inline-block;
+	margin-top: 0.3em;
+}
+
+
+.align_left,
+.align-left {
+	float: left;
+	margin: 0 1em 0.5em 0;
+}
+
+.align_right,
+.align-right {
+	float: right;
+	margin: 0 0 0.5em 1em;
+}
+
+.align_center,
+.align-center {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}

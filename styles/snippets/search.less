@@ -1,0 +1,83 @@
+
+
+
+
+
+
+#ProcessPageSearchForm {
+	float: right;
+	margin: 0;
+	width: 294px;
+	max-width: 30%;
+	min-width: 90px;
+	position: relative;
+
+	> label{
+		color: @lighter-bg;
+		position: absolute !important;
+		right: 0.7em !important;
+		padding: 0;
+		line-height: 14px !important;
+		font-size: 14px;
+		top: 50% !important;
+		display: block !important;
+		opacity: 1 !important;
+		z-index: 120;
+		margin-top: -0.55em !important;
+	}
+	#ProcessPageSearchQuery {
+		margin: 0;
+		height: 100%;
+		padding: 0.7em 0.8em;
+		padding-right: 2.3em;
+		font-size: 1em;
+		width: 100%;
+		background: transparent;
+		text-align: right;
+		// border: 1px solid darken(@breadcrumbs-bg, 10%);
+		border: none;
+		// border-radius: @button-radius;
+		outline: none;
+		&:hover{
+			background: @darker-bg;
+		}
+		&:focus {
+			background: @text-bg !important;
+			color: @text-color;
+			text-transform: none;
+			font-weight: normal;
+		}
+	}
+// <<<<<<< HEAD:styles/_main.less
+// 	#ProcessPageSearchQuery:focus {
+// 		background: @text-bg !important;
+// 		color: @text-color;
+// 		text-transform: none;
+// 		font-weight: normal;
+// 	}
+// =======
+
+// >>>>>>> origin/master:styles/_main.less
+
+	#ProcessPageSearchStatus {
+		position: absolute;
+		top: 0.7em;
+		left: 0.6em;
+		// color: @search-input-color;
+		font-weight: bold;
+	}
+
+}
+#ProcessPageSearchAutocomplete{
+	margin-left: 17px;
+}
+
+@media only screen and (max-width: 767px) {
+
+	#ProcessPageSearchForm{
+		#ProcessPageSearchQuery{
+			background: lighten(@bg, 5%);
+			border: 1px solid darken(@bg, 5%);
+		}
+	}
+}

@@ -1,0 +1,75 @@
+	table th,
+	table th.header,
+	table.AdminDataList th,
+	h4 {
+		color: @table-th-color;
+	}
+
+	table.AdminDataList th.headerSortUp,
+	table.AdminDataList th.headerSortDown,
+	table th.headerSortUp,
+	table th.headerSortDown,
+	table th:hover {
+		color: @table-th-active-color;
+	}
+
+	table.AdminDataList {
+		margin-top: 0;
+	}
+
+	/* MarkupAdminDataTable */
+	.AdminDataTable{
+		.action{
+			background: #eee;
+			text-transform: uppercase;
+			text-decoration: none !important;
+			padding: 2px 6px;
+			color: @dark-gray;
+			font-size: 0.9em;
+			font-weight: bold;
+			&:hover{
+				background: @dark-gray;
+				color: #fff;
+			}
+		}
+	}
+	.AdminDataList th,
+	.AdminDataList td {
+		border-bottom: 1px solid @subtle-border;
+		padding: 0.4em 0.6em;
+		vertical-align: middle !important;
+	}
+	.AdminDataList td {
+		border-bottom: 0;
+	}
+	.AdminDataList button{
+		font-size: 0.9em !important;
+		margin: 0 1em 1em;
+		line-height: 15px;
+		vertical-align: middle;
+		float: right;
+	}
+	.AdminDataList tr:nth-child(odd) td {
+		background: lighten(@subtle-bg, 5%);
+	}
+	.AdminDataList tr:hover td{
+		background: @subtle-bg !important;
+	}
+
+	.AdminDataList td a {
+		color: @link-color;
+		// vertical-align: middle;
+	}
+	.AdminDataList td a:hover {
+		color: @link-hover-color;
+	}
+	.AdminDataList td i,
+	.AdminDataList td .fieldFlag{
+		vertical-align: top;
+		margin-right: 2px;
+		line-height: 14px;
+		font-size: 14px;
+	}
+	.AdminDataList td .fieldFlag:hover{
+			color: @dark-gray;
+	}

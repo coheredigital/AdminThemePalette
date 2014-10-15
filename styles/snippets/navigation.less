@@ -1,0 +1,152 @@
+#topnav {
+	z-index: 5;
+	position: relative;
+	float: left;
+	-webkit-font-smoothing: antialiased;
+
+	> li {
+		padding: 0;
+		margin: 0;
+		list-style: none;
+		float: left;	
+		display: inline;
+		text-transform: uppercase;
+	}
+
+	> li > a {
+		color: @lighter-bg;
+		display: block;
+		padding: 0.7em 0.9em;
+		font-weight: @tabs-font-weight;
+	}
+
+
+	> li > a.hover,
+	> li > a:hover {
+
+		background: @dark-gray;
+		color: @topnav-link-hover-color;
+		text-decoration: none;
+	}
+
+	a.on:hover,
+	a.on {
+		color: @topnav-link-current-color;
+		background: @accent;
+		text-decoration: none;
+	}
+
+
+
+}
+
+.collapse-topnav-menu{
+	background: @dark-bg;
+	color: #fff;
+	padding: 0.6em 1em;
+	position: absolute;
+	z-index: 100;
+	// bottom: 0;
+	top: 100%;
+	right: 0;
+	float: left;
+	cursor: pointer;
+	text-align: center;
+	display: none !important;
+}
+.collapse-topnav #collapse-topnav-menu{
+	display: block;
+}
+
+.collapse-topnav{
+	// margin-top: 1em;
+	#masthead{
+		> .container{
+			max-height: 0;
+			float: none;
+			border-top: 6px solid;
+			overflow: hidden;
+			border-color: @dark-bg;
+
+		}
+		&.is-open{
+			.container{
+				max-height: 800px;
+				// overflow: auto;
+			}
+		}
+	} 
+
+	#topnav {
+		float: none;
+		> li{
+			display: block;
+			clear: both;
+			float: none;
+		}
+		&.is-open{
+			height: auto;
+		}
+	}
+	.dropdown-menu{
+		display: none !important;
+	}
+}
+
+
+
+.dropdown-menu{
+	display: none;
+	padding: 0 0 4px 0;
+	border-radius: 0 !important;
+	border: 0 !important;
+	background: @darker-bg;
+	i{
+		font-size: 14px !important;
+	}
+	.ui-menu{
+		position: absolute !important;
+	}
+	.ui-menu-item{
+		min-width: 120px;
+		border: 0 !important;
+		a{
+			border-radius: 0 !important;
+			color: @white !important;
+			span.ui-icon{
+				float: right;
+			}
+			small{
+				font-size: 1em;
+				color: @gray;
+				font-weight: bold;
+				margin: 0  0.4em;
+			}
+			&.ui-state-focus,
+			&.ui-state-active{
+				color: @white;
+				background: @light-bg !important;
+			}
+		}
+	}
+
+	li.add > a{
+		background: @green;
+		color: @white !important;
+		box-shadow: @button-shadow;
+		border-radius: 4px !important;
+		margin: 4px;
+		// font-size: 14px;
+		// border-bottom: 1px solid @subtle-bg;
+		color: @green;
+		text-transform: uppercase; 
+		vertical-align: middle;
+		// text-align: center;
+		font-weight: bold;
+	}	
+	li.add > a.ui-state-focus{
+		background: @dark-green;
+		color: @dark-green;
+	}
+}
+

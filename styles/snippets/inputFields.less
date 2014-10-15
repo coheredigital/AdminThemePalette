@@ -3,6 +3,7 @@
 .InputfieldForm {
 	position: relative;
 	z-index: 105;
+	overflow: hidden;
 	// margin-bottom: 1em;
 
 	.Inputfields,
@@ -534,7 +535,7 @@
 .InputfieldForm .Inputfields .InputfieldSubmit,
 .InputfieldForm .Inputfields .InputfieldButton {
 	/* enable horizontal stack of buttons */
-	padding: 1em;
+	padding: 0 1em;
 	margin: 0;
 	clear: none;
 	background: none;
@@ -597,3 +598,35 @@
 }
 
 
+
+/* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
+@media only screen and (max-width: 479px) {
+
+	.Inputfield {
+		clear: both !important;
+		width: 100% !important;
+		margin-left: 0 !important;
+	}
+
+
+	#footer #userinfo {
+		float: none;
+	}
+	#footer {
+		text-align: center;
+	}
+
+	#headline #head_button{
+		position: static !important;
+		clear: both !important;
+		margin-top: 1em;
+	}
+
+
+
+	.AjaxUploadDropHere {
+		display: none !important;
+	}
+
+
+}

@@ -1,0 +1,69 @@
+body {
+  background: #232323;
+}
+a,
+.content .AdminDataList td a,
+.content .PageListActions a:hover,
+#userinfo .user_name,
+.Inputfields .InputfieldHeader:hover {
+  /* standard link color */
+  color: #4b7dcd;
+}
+a:hover,
+.content .AdminDataList td a:hover {
+  /* hovered link color */
+  color: #4b7dcd;
+}
+#collapse-topnav-menu,
+#masthead > .container {
+  background: #3264b3;
+}
+#masthead {
+  background: #3264b3;
+}
+.collapse-topnav #masthead > .container {
+  border-color: #3264b3;
+}
+#topnav > li > a,
+#ProcessPageSearchForm > label {
+  color: #9bb7e3;
+}
+.ui-menu,
+#topnav > li > a.hover,
+#topnav > li > a:hover,
+#ProcessPageSearchForm #ProcessPageSearchQuery:hover {
+  background: #274d8b;
+}
+.ui-menu .ui-menu-item a.ui-state-focus,
+.ui-menu .ui-menu-item a.ui-state-active {
+  background: #739ad8 !important;
+}
+#headline,
+#footer .brand img,
+#topnav a.on {
+  background: #4b7dcd !important;
+}
+.WireTabs {
+  background: #87a8de !important;
+}
+.WireTabs #_ProcessPageEditView {
+  color: #3264b3 !important;
+}
+#breadcrumbs {
+  background: #4b7dcd;
+}
+#breadcrumbs ul a,
+#breadcrumbs ul li {
+  color: #c3d3ee !important;
+}
+#topnav a.on,
+#breadcrumbs ul li.title,
+#breadcrumbs ul a:hover {
+  color: #fff !important;
+}
+@media only screen and (max-width: 767px) {
+  #ProcessPageSearchForm #ProcessPageSearchQuery {
+    background: #5f8bd3;
+    border: 1px solid #376fc7;
+  }
+}

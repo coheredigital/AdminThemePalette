@@ -1,0 +1,106 @@
+	/* Pagination */
+
+	ul.MarkupPagerNav,
+	ul.PageListPagination{
+		padding: 0 4px !important;
+		border-radius: 2em;
+		border-top-left-radius: 0;
+		border-bottom-left-radius: 0;
+		position: relative;
+		z-index: 150;
+		background: @white;
+		// background-color: transparent !important;
+		border: 1px solid #ccc;
+		float: left;
+		height: auto !important;
+		display: block !important;
+		margin: 8px -4px 8px!important;
+		li{
+			margin: 0 0 0 1px;
+			// line-height: 12px;
+			// background-color: transparent !important;
+			padding: 0 !important;
+			display: inline-block;
+			// float: left;
+			background: transparent;
+			border: none;
+			text-transform: uppercase;
+			font-size: 13px;
+			line-height: 13px;
+			a{
+				background: transparent ;
+				color: @gray;
+				padding: 4px !important;
+				min-width:20px;
+				height: 20px !important;
+				font-weight: bold;
+				line-height: 13px;
+				text-align: center;
+				margin:  0 0 !important;
+				display: inline-block;
+			}
+			a:hover{
+				// background-color: #444;
+				color: @dark-gray;
+			}
+			&:first-child{
+				margin: 0;
+			}
+		}
+
+		.PageListPaginationCurrent{
+			a{
+				// background: @dark-gray !important;
+				color: @blue !important;
+				opacity: 1!important;
+			}
+		}
+
+		a.ui-priority-secondary{
+			color: transparent !important;
+			background: transparent !important;
+		font-size: 0;
+		margin: 0 !important;
+			// background: url(jqueryui/images/ui-icons.png) -32px -16px no-repeat;
+			&:hover,
+			&.ui-state-hover{
+				border-color: transparent !important;
+				opacity: 1 ;
+			}
+		}
+		a.ui-priority-secondary:before{
+			color: #bbb;
+			font-size: 12px;
+			vertical-align: middle;
+			line-height: 12px;
+			  font-family: FontAwesome;
+			display: inline-block;
+			text-align: center;
+			content: "\f054";
+		}
+
+		li:first-child .ui-priority-secondary:before{
+			content: "\f053";
+		}
+		li:first-child a{
+			margin: 0 !important;
+		}
+		.ui-priority-secondary:hover:before{
+			color: @blue !important;
+			background-color: transparent !important;
+		}
+	}
+	.PageListPagination:before {
+		content: "";
+		position: absolute;
+		width: 0;
+		left: -1px;
+		margin-top: -0.2em;
+		top: -7px;
+		z-index: -1;
+		bottom: 100%;
+		border-left: 1px solid #ccc;
+	}
+	#ProcessPageSearchResults > .MarkupPagerNav{
+		margin: 0 0 1em 0 !important;
+	}

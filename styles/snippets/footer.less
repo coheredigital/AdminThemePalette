@@ -1,0 +1,130 @@
+
+/***********************************************************************************************
+ * FOOTER
+ *
+ */
+
+#footer {
+
+	font-size: @footer-font-size;
+	-webkit-font-smoothing: antialiased;
+// <<<<<<< HEAD:styles/_main.less
+
+	overflow: hidden;
+	padding: 0;
+	// margin-bottom: 2em;
+	background: @subtle-bg;
+	border-top: 1px solid @subtle-border;
+	position: relative;
+// =======
+	> .container{
+		padding: 0;
+		margin-bottom: 2em;
+		background: @subtle-bg;
+		border-top: 1px solid @subtle-border;
+	}
+// >>>>>>> origin/master:styles/_main.less
+
+	a:hover {
+		text-decoration: underline;
+	}
+
+	p {
+		margin-top: 0;
+		color: @gray;
+	}
+
+	.brand{
+		padding: 0 1.3em;
+		height: 100%;
+		position: absolute;
+		bottom: 0;
+		top: 0;
+		// margin-left: 30%;
+		&:before{
+			content: " ";
+			height: 100%;
+			width: 1px;
+			display: inline-block;
+			vertical-align: middle;
+		}
+		.logo{
+			vertical-align: middle;
+			display: inline-block;
+		}
+		img{
+			max-width: 220px;
+			background: @accent;
+			
+		}
+	}
+
+	.view-site{
+		position: absolute;
+		width: 70%;
+		color: @gray;
+		height: 30px;
+		margin-left: -35%;
+		margin-top: -15px;
+		left: 50%;
+		top: 50%;
+		text-align: center;
+		font-size: 0.9em;
+		font-weight: bold;
+		a{
+			font-size: 1.2em;
+		}
+	}
+	
+}
+
+#userinfo {
+	float: right;
+	position: relative;
+	color: @gray;
+	background: #f7f7f7;
+	border-left: 1px solid @subtle-border;
+	padding: 1.2em;
+	a{
+		font-weight: bold;
+		// text-transform: uppercase;
+	}
+	.user_name{
+		font-size: 1.2em;
+		font-weight: bold;
+	}	
+	.user_email{
+		font-size: 0.9em;
+	}
+	.user_image,
+	.user_details{
+		display: inline-block;
+		vertical-align: middle;
+	}
+	.user_image{
+		width: 56px;
+		border-radius: 50%;
+		overflow: hidden;
+		border: 3px solid #fff;
+		img{
+			display: block;
+		}
+
+	}
+	.user_actions{
+		a{
+			text-transform: uppercase;
+			text-decoration: none !important;
+			font-size: 0.9em !important;
+			color: @gray;
+			&:hover{
+				color: @dark-gray;
+			}
+		}
+	}
+	&.has-gravatar{
+		.user_details{
+			margin-left: 0.8em;
+		}
+	}
+}

@@ -1,4 +1,6 @@
 
+@main: #4b7dcd;
+
 // VARIATIONS
 // MAIN
 @dark-main: darken(@main, 10%);
@@ -9,13 +11,9 @@
 @lighter-main: lighten(@main, 20%);
 @lightest-main: lighten(@main, 30%);
 
-
-
-
-// MAIN COLOR APPLICATIONS 
+// MAIN COLOR APPLICATIONS
 body{
-	background: @main;
-	background: #333;
+	background: #232323;
 }
 
 
@@ -64,7 +62,7 @@ a:hover,
 	background: @darker-main;
 }
 
-// main APPLICATIONS 
+// main APPLICATIONS
 .ui-menu .ui-menu-item a.ui-state-focus,
 .ui-menu .ui-menu-item a.ui-state-active{
 	background: @light-main !important;
@@ -74,15 +72,16 @@ a:hover,
 #topnav a.on{
 	background: @main !important;
 }
-// #headline{
-// 	border-color: @dark-main !important;
-// }
 
 .WireTabs{
 	background: lighten(@main, 15%)!important;
 	#_ProcessPageEditView{
 		color: @dark-main !important;
 	}
+}
+
+#breadcrumbs{
+	background: @main;
 }
 
 #breadcrumbs ul a,
