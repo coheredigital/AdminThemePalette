@@ -117,34 +117,15 @@
 	font-weight: bold;
 }
 
-#notices .ui-state-highlight,
-#notices .ui-state-error {
-	padding: 0.25em 0;
-	border: none;
-	// border-top: @highlight-border;
+
+.ui-state-highlight a,
+.ui-state-error a {
+	text-decoration: underline;
 }
-	#notices .ui-state-highlight .ui-icon,
-	#notices .ui-state-error .ui-icon {
-		position: relative;
-		top: 2px;
-	}
 
-	#notices .notice-remove {
-		float: right;
-		color: @highlight-color;
-		text-decoration: none;
-		padding: 0 1em;
-	}
-
-
-	.ui-state-highlight a,
-	.ui-state-error a {
-		text-decoration: underline;
-	}
-
-	p span.ui-state-error {
-		padding: 0.25em 0.5em;
-	}
+p span.ui-state-error {
+	padding: 0.25em 0.5em;
+}
 
 /**
  * ui-dialog
