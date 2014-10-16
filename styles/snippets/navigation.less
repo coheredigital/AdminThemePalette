@@ -8,7 +8,7 @@
 		padding: 0;
 		margin: 0;
 		list-style: none;
-		float: left;	
+		float: left;
 		display: inline;
 		text-transform: uppercase;
 	}
@@ -23,16 +23,13 @@
 
 	> li > a.hover,
 	> li > a:hover {
-
-		background: @dark-gray;
-		color: @topnav-link-hover-color;
+		color: #fff;
 		text-decoration: none;
 	}
 
 	a.on:hover,
 	a.on {
-		color: @topnav-link-current-color;
-		background: @accent;
+		color: #fff;
 		text-decoration: none;
 	}
 
@@ -75,7 +72,7 @@
 				// overflow: auto;
 			}
 		}
-	} 
+	}
 
 	#topnav {
 		float: none;
@@ -93,28 +90,46 @@
 	}
 }
 
-
+#dropdowns{
+	margin-top: -1px;
+}
 
 .dropdown-menu{
-	display: none;
-	padding: 0 0 4px 0;
+	// display: none;
+	padding: 0 !important;
 	border-radius: 0 !important;
 	border: 0 !important;
-	background: @darker-bg;
+	// background: transparent !important;
+	position: absolute !important;
+	z-index: 200;
+	width: 100% ;
 	i{
 		font-size: 14px !important;
 	}
 	.ui-menu{
 		position: absolute !important;
+		right: 0;
 	}
 	.ui-menu-item{
-		min-width: 120px;
+		width: 100%;
+		clear: none !important;
 		border: 0 !important;
+		.has-items-icon{
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			right: 0;
+			padding: 0.8em 1.3em;
+			background: #222;
+		}
 		a{
 			border-radius: 0 !important;
-			color: @white !important;
+			white-space: nowrap;
+			padding: 1em !important;
+			line-height: 1em !important;
+			position: relative;
 			span.ui-icon{
-				float: right;
+				display: none !important;
 			}
 			small{
 				font-size: 1em;
@@ -124,29 +139,57 @@
 			}
 			&.ui-state-focus,
 			&.ui-state-active{
-				color: @white;
+				color: @white !important;
 				background: @light-bg !important;
 			}
 		}
+
+		> .ui-menu{
+			// width: 600px;
+			> .ui-menu-item{
+				float: left;
+				width: 33.333%;
+
+
+				&.add{
+					width: 100%;
+				}
+			}
+
+		}
+
 	}
 
 	li.add > a{
 		background: @green;
-		color: @white !important;
-		box-shadow: @button-shadow;
-		border-radius: 4px !important;
-		margin: 4px;
-		// font-size: 14px;
-		// border-bottom: 1px solid @subtle-bg;
-		color: @green;
-		text-transform: uppercase; 
-		vertical-align: middle;
-		// text-align: center;
+		background: @dark-gray;
+		color: #fff;
+		white-space: nowrap;
+		text-transform: uppercase;
 		font-weight: bold;
-	}	
+	}
 	li.add > a.ui-state-focus{
 		background: @dark-green;
 		color: @dark-green;
 	}
-}
 
+
+	&.shortcuts{
+
+		.ui-menu-item{
+			background: @lightest-gray;
+			&:first-child{
+				margin-top: 0.3em;
+			}
+			> a{
+				color: @dark-gray;
+			}
+		}
+
+	}
+	
+	&.is-open{
+		display: block !important;
+	}
+
+}

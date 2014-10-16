@@ -2,18 +2,18 @@
 
 /**
  * default.php
- * 
+ *
  * Main markup template file for AdminThemeDefault
- * 
+ *
  * __('FOR TRANSLATORS: please translate the file /wire/templates-admin/default.php rather than this one.');
- * 
- * 
+ *
+ *
  */
 
 if(!defined("PROCESSWIRE")) die();
 
 if(!isset($content)) $content = '';
-	
+
 $searchForm = $user->hasPermission('page-edit') ? $modules->get('ProcessPageSearch')->renderSearchForm() : '';
 $version = $adminTheme->version;
 
@@ -21,13 +21,16 @@ $config->styles->append($config->urls->root . "wire/templates-admin/styles/font-
 $config->styles->prepend("{$config->urls->AdminThemePalette}styles/main.css");
 $config->styles->append("{$config->urls->AdminThemePalette}styles/theme.css");
 if ($adminTheme->disable_dots) $config->styles->append($config->urls->adminTemplates . "styles/nodots.css?v=6");
-	
+
+$config->scripts->append($config->urls->root . "wire/templates-admin/scripts/inputfields.js?v=$version");
+$config->scripts->append($config->urls->adminTemplates . "scripts/main.js?v=$version");
+
 require_once(dirname(__FILE__) . "/AdminThemePaletteHelpers.php");
 $helpers = new AdminThemePaletteHelpers();
 $extras = $adminTheme->getExtraMarkup();
 
 ?><!DOCTYPE html>
-<html lang="<?php echo $helpers->_('en'); 
+<html lang="<?php echo $helpers->_('en');
 	/* this intentionally on a separate line */ ?>">
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
@@ -42,7 +45,7 @@ $extras = $adminTheme->getExtraMarkup();
 	<?php foreach($config->styles as $file) echo "\n\t<link type='text/css' href='$file' rel='stylesheet' />"; ?>
 
 	<?php foreach($config->scripts as $file) echo "\n\t<script type='text/javascript' src='$file'></script>"; ?>
-	
+
 	<?php echo $extras['head']; ?>
 
 </head>
@@ -50,9 +53,9 @@ $extras = $adminTheme->getExtraMarkup();
 
 <body class='<?php echo $helpers->renderBodyClass(); ?>'>
 <div id="wrapper">
-<?php 
-echo $helpers->renderAdminNotices($notices); 
-echo $extras['notices']; 
+<?php
+echo $helpers->renderAdminNotices($notices);
+echo $extras['notices'];
 ?>
 
 <?php if($user->isGuest()): ?>
@@ -71,29 +74,33 @@ echo $extras['notices'];
 	</script>
 
 <?php else: ?>
-	
+
 		<div id="masthead" class="masthead ui-helper-clearfix">
 			<div class="container">
 
-				
 
-				<?php 
+
+				<?php
 				if($user->isLoggedin()) {
 					echo $searchForm;
 					echo "\n\n<ul id='topnav'>" . $helpers->renderTopNavItems() . "</ul>";
 				}
-				echo $extras['masthead']; 
+				echo $extras['masthead'];
 				?>
 
 			</div>
 		</div><!--/#masthead-->
 
+		<div id="dropdowns">
+			
+		</div>
+
 		<div id='breadcrumbs'>
 			<div class='container'>
 
-				<?php 
+				<?php
 				if($page->process == 'ProcessPageList' || ($page->name == 'lister' && $page->parent->name == 'page')) {
-					echo $helpers->renderAdminShortcuts(); 
+					echo $helpers->renderAdminShortcuts();
 				}
 				?>
 
@@ -105,10 +112,10 @@ echo $extras['notices'];
 		<div id="content" class="content fouc_fix">
 			<div class="container">
 
-				<?php 
-				if(trim($page->summary)) echo "<h2>$page->summary</h2>"; 
-				if($page->body) echo $page->body; 
-				echo $content; 
+				<?php
+				if(trim($page->summary)) echo "<h2>$page->summary</h2>";
+				if($page->body) echo $page->body;
+				echo $content;
 				echo $extras['content'];
 				?>
 
@@ -119,7 +126,7 @@ echo $extras['notices'];
 
 
 
-	
+
 
 		<?php echo $extras['body']; ?>
 

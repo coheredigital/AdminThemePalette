@@ -1,9 +1,11 @@
 
-@main: #89519e;
+@main: #3d535c;
+@main: #ef8a7a;
+@main: #684d7e;
 
 // VARIATIONS
 // MAIN
-@dark-main: darken(@main, 10%);
+@dark-main: darken(@main, 8%);
 @darker-main: darken(@main, 20%);
 @darkest-main: darken(@main, 30%);
 
@@ -16,12 +18,16 @@
 @medium-contrast-main: contrast(@main,@darker-main,@lighter-main);
 @high-contrast-main: contrast(@main,@darkest-main,@lightest-main);
 @low-contrast-main: contrast(@main,@dark-main,@light-main);
+@minimum-contrast-main: contrast(@main,darken(@main, 4%),lighten(@main, 4%));
+
+@background-color: saturate(darken(@main, 20%), -30%);
 
 // MAIN COLOR APPLICATIONS
 body{
 	background: @medium-contrast-main;
-	background: @darker-main;
-	// background: #333;
+	// background: @darker-main;
+	background: #333;
+	background: @background-color;
 }
 
 
@@ -48,6 +54,7 @@ a:hover,
 }
 #masthead{
 	background: @main;
+	border-bottom: 1px solid @minimum-contrast-main;
 }
 
 .collapse-topnav #masthead > .container{
@@ -58,28 +65,49 @@ a:hover,
 // #footer a,
 #topnav > li > a,
 #ProcessPageSearchForm > label{
-	color: @lighter-main;
+	color: @high-contrast-main;
 }
 
 
 
 .ui-menu,
+.ui-menu .ui-menu-item,
+.dropdown-menu .ui-menu-item>.ui-menu,
 #topnav > li > a.hover,
 #topnav > li > a:hover,
+#topnav > li > a.dropdown-toggle.hover:hover,
+#topnav a.on.dropdown-toggle:hover,
 #ProcessPageSearchForm #ProcessPageSearchQuery:hover {
 	background: @dark-main;
+	color: @contrast-main;
 }
+.dropdown-menu .ui-menu-item .has-items-icon{
+	background: lighten(@dark-main, 3%);
+}
+
+.ui-menu{
+	.ui-menu-item{
+		a{
+			color: @high-contrast-main;
+		}
+	}
+}
+
 
 // main APPLICATIONS
 .ui-menu .ui-menu-item a.ui-state-focus,
 .ui-menu .ui-menu-item a.ui-state-active{
 	background: @light-main !important;
+	color: @contrast-main !important;
 }
+
+
 #headline,
 #footer .brand img,
-#topnav a.on{
-	background: @main !important;
+#topnav .on{
+	background: @main;
 }
+
 #topnav a.on{
 	color: @contrast-main !important;
 }
@@ -95,7 +123,7 @@ a:hover,
 	background: @main;
 	ul a,
 	ul li{
-		color: @medium-contrast-main;
+		color: @high-contrast-main;
 		&:hover{
 			color: @contrast-main;
 		}
@@ -105,6 +133,19 @@ a:hover,
 	}
 }
 
+#head_button{
+	button{
+			background: @dark-main;
+			border: 1px solid @low-contrast-main !important;
+			&:hover{
+				background: @darker-main;
+			}
+			background: @dark-main;
+			&.ui-state-focus{
+				background: @light-main !important;
+			}
+	}
+}
 
 
 @media only screen and (max-width: 767px) {

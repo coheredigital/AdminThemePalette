@@ -1,6 +1,7 @@
 body {
-  background: #b78fc6;
-  background: #4f2e5b;
+  background: #9b80b1;
+  background: #333;
+  background: #333333;
 }
 a,
 .content .AdminDataList td a,
@@ -8,68 +9,91 @@ a,
 #userinfo .user_name,
 .Inputfields .InputfieldHeader:hover {
   /* standard link color */
-  color: #89519e;
+  color: #684d7e;
 }
 a:hover,
 .content .AdminDataList td a:hover {
   /* hovered link color */
-  color: #89519e;
+  color: #684d7e;
 }
 #collapse-topnav-menu,
 #masthead > .container {
-  background: #89519e;
+  background: #684d7e;
 }
 #masthead {
-  background: #89519e;
+  background: #684d7e;
+  border-bottom: 1px solid #72558b;
 }
 .collapse-topnav #masthead > .container {
-  border-color: #6c407c;
+  border-color: #533e65;
 }
 #topnav > li > a,
 #ProcessPageSearchForm > label {
-  color: #b78fc6;
+  color: #b49fc5;
 }
 .ui-menu,
+.ui-menu .ui-menu-item,
+.dropdown-menu .ui-menu-item > .ui-menu,
 #topnav > li > a.hover,
 #topnav > li > a:hover,
+#topnav > li > a.dropdown-toggle.hover:hover,
+#topnav a.on.dropdown-toggle:hover,
 #ProcessPageSearchForm #ProcessPageSearchQuery:hover {
-  background: #6c407c;
+  background: #533e65;
+  color: #ffffff;
+}
+.dropdown-menu .ui-menu-item .has-items-icon {
+  background: #5b436e;
+}
+.ui-menu .ui-menu-item a {
+  color: #b49fc5;
 }
 .ui-menu .ui-menu-item a.ui-state-focus,
 .ui-menu .ui-menu-item a.ui-state-active {
-  background: #a16eb4 !important;
+  background: #82609e !important;
+  color: #ffffff !important;
 }
 #headline,
 #footer .brand img,
-#topnav a.on {
-  background: #89519e !important;
+#topnav .on {
+  background: #684d7e;
 }
 #topnav a.on {
   color: #ffffff !important;
 }
 .WireTabs {
-  background: #ac7ebd !important;
+  background: #8f70a8 !important;
 }
 .WireTabs #_ProcessPageEditView {
-  color: #6c407c !important;
+  color: #533e65 !important;
 }
 #breadcrumbs {
-  background: #89519e;
+  background: #684d7e;
 }
 #breadcrumbs ul a,
 #breadcrumbs ul li {
-  color: #b78fc6;
+  color: #b49fc5;
 }
 #breadcrumbs ul a:hover,
 #breadcrumbs ul li:hover {
   color: #ffffff;
 }
 #breadcrumbs .title {
-  color: #cdb1d7 !important;
+  color: #b49fc5 !important;
+}
+#head_button button {
+  border: 1px solid #82609e !important;
+  background: #533e65;
+}
+#head_button button:hover {
+  background: #34263f;
+}
+#head_button button.ui-state-focus {
+  background: #82609e !important;
 }
 @media only screen and (max-width: 767px) {
   #ProcessPageSearchForm #ProcessPageSearchQuery {
-    background: #965dac;
-    border: 1px solid #7a488d;
+    background: #75578e;
+    border: 1px solid #5b436e;
   }
 }
