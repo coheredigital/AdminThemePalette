@@ -1,13 +1,13 @@
 
-@main: #3d535c;
-@main: #ef8a7a;
-@main: #684d7e;
+// @main: #3d535c;
+// @main: #ef8a7a;
+// @main: #684d7e;
 
 // VARIATIONS
 // MAIN
 @dark-main: darken(@main, 8%);
 @darker-main: darken(@main, 20%);
-@darkest-main: darken(@main, 30%);
+@darkest-main: desaturate(darken(@main, 30%), 15%);
 
 @light-main: lighten(@main, 10%);
 @lighter-main: lighten(@main, 20%);
@@ -16,7 +16,7 @@
 // contrast colors
 @contrast-main: contrast(@main, #333, #fff);
 @medium-contrast-main: contrast(@main,@darker-main,@lighter-main);
-@high-contrast-main: contrast(@main,@darkest-main,@lightest-main);
+@high-contrast-main: contrast(@main, @darkest-main, @lightest-main, 80%);
 @low-contrast-main: contrast(@main,@dark-main,@light-main);
 @minimum-contrast-main: contrast(@main,darken(@main, 4%),lighten(@main, 4%));
 
@@ -135,15 +135,15 @@ a:hover,
 
 #head_button{
 	button{
-			background: @dark-main;
-			border: 1px solid @low-contrast-main !important;
-			&:hover{
-				background: @darker-main;
-			}
-			background: @dark-main;
-			&.ui-state-focus{
-				background: @light-main !important;
-			}
+		background: @dark-main;
+		border: 1px solid lighten(@main, 5%) !important;
+		&:hover{
+			background: @darker-main;
+		}
+		background: @dark-main;
+		&.ui-state-focus{
+			background: @light-main !important;
+		}
 	}
 }
 

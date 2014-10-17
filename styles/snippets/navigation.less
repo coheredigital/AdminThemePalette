@@ -95,11 +95,10 @@
 }
 
 .dropdown-menu{
-	// display: none;
+	display: none;
 	padding: 0 !important;
 	border-radius: 0 !important;
 	border: 0 !important;
-	// background: transparent !important;
 	position: absolute !important;
 	z-index: 200;
 	width: 100% ;
@@ -108,7 +107,8 @@
 	}
 	.ui-menu{
 		position: absolute !important;
-		right: 0;
+		left: 0;
+		z-index: 200;
 	}
 	.ui-menu-item{
 		width: 100%;
@@ -148,7 +148,7 @@
 			// width: 600px;
 			> .ui-menu-item{
 				float: left;
-				width: 33.333%;
+				width: 25%;
 
 
 				&.add{

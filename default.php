@@ -74,40 +74,31 @@ echo $extras['notices'];
 	</script>
 
 <?php else: ?>
-
-		<div id="masthead" class="masthead ui-helper-clearfix">
-			<div class="container">
-
-
-
-				<?php
-				if($user->isLoggedin()) {
-					echo $searchForm;
-					echo "\n\n<ul id='topnav'>" . $helpers->renderTopNavItems() . "</ul>";
-				}
-				echo $extras['masthead'];
-				?>
-
-			</div>
-		</div><!--/#masthead-->
-
-		<div id="dropdowns">
-			
+		<div id="header">
+			<div id="masthead" class="masthead ui-helper-clearfix">
+				<div class="container">
+					<?php
+					if($user->isLoggedin()) {
+						echo $searchForm;
+						echo "\n\n<ul id='topnav'>" . $helpers->renderTopNavItems() . "</ul>";
+					}
+					echo $extras['masthead'];
+					?>
+				</div>
+			</div><!--/#masthead-->
+			<div id="dropdowns"></div>
+			<div id='breadcrumbs'>
+				<div class='container'>
+					<?php
+					if($page->process == 'ProcessPageList' || ($page->name == 'lister' && $page->parent->name == 'page')) {
+						echo $helpers->renderAdminShortcuts();
+					}
+					?>
+					<ul class='nav'><?php echo $helpers->renderBreadcrumbs(); ?></ul>
+				</div>
+			</div><!--/#breadcrumbs-->
 		</div>
 
-		<div id='breadcrumbs'>
-			<div class='container'>
-
-				<?php
-				if($page->process == 'ProcessPageList' || ($page->name == 'lister' && $page->parent->name == 'page')) {
-					echo $helpers->renderAdminShortcuts();
-				}
-				?>
-
-				<ul class='nav'><?php echo $helpers->renderBreadcrumbs(); ?></ul>
-
-			</div>
-		</div><!--/#breadcrumbs-->
 
 		<div id="content" class="content fouc_fix">
 			<div class="container">

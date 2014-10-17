@@ -16,7 +16,7 @@ var ProcessWireAdminTheme = {
 		var $button = $("#head_button > button.dropdown-toggle").hide();
 
 		this.setupCloneButton();
-		this.setupButtonStates();
+		// this.setupButtonStates();
 		this.setupFieldFocus();
 		this.setupTooltips();
 		this.setupSearch();
@@ -42,16 +42,6 @@ var ProcessWireAdminTheme = {
 			position: {
 				my: "center bottom", // bottom-20
 				at: "center top"
-				/*
-				using: function(position, feedback) {
-					$(this).css(position);
-					$("<div>")
-						.addClass("arrow")
-						.addClass(feedback.vertical)
-						.addClass(feedback.horizontal)
-						.appendTo(this);
-				}
-				*/
 			}
 		}).hover(function() {
 			$(this).addClass('ui-state-hover');

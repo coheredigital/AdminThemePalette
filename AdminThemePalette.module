@@ -114,7 +114,10 @@ function compileThemeLess(HookEvent $event) {
 		  "main" => $main_color,
 		  "accent" => $accent_color
 		));
-		$theme_css = $less->compileFile(wire("config")->paths->AdminThemePalette."styles/theme_colors/theme.less", wire("config")->paths->AdminThemePalette."styles/theme_colors/theme.css");
+		$theme_css = $less->compileFile( 
+			wire("config")->paths->AdminThemePalette."styles/theme.less", 
+			wire("config")->paths->AdminThemePalette."styles/theme.css"
+			);
 		wire()->message('Palette: theme.css - compiled successfully');
 	}
 
