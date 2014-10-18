@@ -112,13 +112,14 @@ body{
 	background: @main;
 	ul a,
 	ul li{
-		color: @high-contrast-main;
+		color: contrast(@main, darken(@main, 45%), lighten(@main, 40%), 50%);
 		&:hover{
-			color: @contrast-main;
+			color: contrast(@main, @darkest-main, #fff, 50%);
 		}
 	}
-	.title{
-		color: contrast(@main, @darker-main, white, 50%) !important;
+	.title,
+	.title:hover{
+		color: contrast(@main,  darken(@main, 45%), lighten(@main, 50%), 50%) !important;
 	}
 }
 
@@ -180,7 +181,7 @@ body{
 		li{
 			padding: 0.2em 0;
 			margin: 0 !important;
-			color: @contrast-main;
+			color: contrast(@background-color, black, white);
 	
 			.notice-remove{
 				i{

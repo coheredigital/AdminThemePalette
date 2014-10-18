@@ -33,20 +33,6 @@ class AdminThemePalette extends AdminTheme implements Module, ConfigurableModule
 		$inputfields->add($field); 		
 
 
-		// dropdown menu level
-		$field = wire('modules')->get('InputfieldSelect');
-		$field->label = "Dropdown menu depth";
-		$field->attr('name', 'dropdown_depth');
-		$field->attr('value', !is_null($data['dropdown_depth']) ? $data['dropdown_depth'] : 1); 
-		// $selected = !is_null($data['dropdown_depth']) ? $data['dropdown_depth'] : 1; // default to one level dropdown
-		$selected = $data['dropdown_depth']; // default to one level dropdown
-		$field->addOption(0, __("None (disbale dropdown menus)"), $selected == 0 ? array("selected"=>"selected") : null);
-		$field->addOption(1, __("One"), $selected == 1 ? array("selected"=>"selected") : null);
-		$field->addOption(2, __("Two"), $selected == 2 ? array("selected"=>"selected") : null);
-		$field->set('columnWidth', 20);
-		$inputfields->add($field); 		
-
-
 		// theme color selection
 		// main
 		$field = wire('modules')->get('InputfieldText');
@@ -54,18 +40,8 @@ class AdminThemePalette extends AdminTheme implements Module, ConfigurableModule
 		$field->notes = "Primarily applied to the background.";
 		$field->attr('name', 'theme_color_main');
 		$field->attr('value', isset($data['theme_color_main']) ? $data['theme_color_main'] : ""); 
-		$field->set('columnWidth', 50);
+		$field->set('columnWidth', 40);
 		$inputfields->add($field); 		
-
-		// accent
-		// $field = wire('modules')->get('InputfieldText');
-		// $field->label = "Accent Color";
-		// $field->notes = "Used in highlightinf active items and other suble elements.";
-		// $field->attr('name', 'theme_color_accent');
-		// $field->attr('value', isset($data['theme_color_accent']) ? $data['theme_color_accent'] : ""); 
-		// $field->set('columnWidth', 25);
-		// $inputfields->add($field); 		
-
 
 		// disable gravatar
 		$field = wire('modules')->get('InputfieldCheckbox');
