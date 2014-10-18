@@ -12,8 +12,6 @@
 		top: 0.3em;
 		right: 0;
 		color: @white;
-
-
 		&:hover{
 			color: @dark-gray;
 		}
@@ -34,49 +32,28 @@
 			border: 0 !important;
 			display: block;
 			background: transparent;
-			> i{
-				text-shadow: 0 0 2px #333;
-			}
 			&.NoticeMessage{
 
 				i{
 					color: @green;
-				}
-				a{
-					color: darken(@dark-green, 10%);
-					font-weight: bold;
 				}
 			}
 			&.NoticeError{
 				i{
 					color: @red;
 				}
-				a{
-					color: darken(@dark-red, 10%);
-					font-weight: bold;
-				}
 			}
 			&.NoticeWarning{
 				i{
 					color: @orange;
 				}
-				a{
-					color: darken(@orange, 10%);
-					font-weight: bold;
-				}
 			}
-
-	
 			.notice-remove{
 				i{
 					float: right;
-					text-shadow: 0 0 2px #333;
-					color: #fff !important;
 					font-size: 1.4em;
 				}
-
 			}
-
 		}
 	}
 }

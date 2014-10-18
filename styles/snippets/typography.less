@@ -1,4 +1,9 @@
-
+a{
+	color: @blue;
+	&:hover{
+		color: @light-blue;
+	}
+}
 
 
 h2 {
@@ -6,15 +11,18 @@ h2 {
 	font-size: 1.4em;
 	line-height: 1.2em;
 	color: @medium-text-color;
-}
-	h2 a {
+
+	a {
 		text-decoration: underline;
 	}
-	h2 a:hover {
+	a:hover {
 		color: @reverse-text-color;
 		background: @link-hover-color;
 		text-decoration: none;
 	}
+
+
+}
 
 h3 {
 	margin: 1em 0;
@@ -87,7 +95,7 @@ dd + dt{
 
 
 .description {
-	color: @medium-text-color;
+	// color: @medium-text-color;
 	font-style: italic;
 
 	margin: 0.5em 0;
@@ -95,17 +103,17 @@ dd + dt{
 
 .notes,
 .detail {
-	color: @medium-text-color;
+	// color: @medium-text-color;
 	font-size: 0.875em;
 	line-height: 1.3em;
 }
 .notes {
-	background: @notes-bg;
-	color: @notes-color;
-	border: @notes-border;
-	padding: 0.3em 0.6em !important;
-	clear: both; 
-	display: inline-block;
+	// background: @light-yellow;
+	color: @dark-yellow;
+	border: @yellow;
+	// padding: 0.3em 0.6em !important;
+	clear: both !important; 
+	// display: inline-block;
 	margin-top: 0.3em;
 }
 

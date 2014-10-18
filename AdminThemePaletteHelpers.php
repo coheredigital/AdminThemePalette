@@ -116,13 +116,13 @@ class AdminThemePaletteHelpers extends WireData {
 
 		$defaults = array(
 			'messageClass' => 'ui-state-highlight NoticeMessage', // class for messages
-			'messageIcon' => 'check-square', // default icon to show with notices
+			'messageIcon' => 'check', // default icon to show with notices
 
 			'warningClass' => 'NoticeWarning', // class for warnings
-			'warningIcon' => 'warning', // icon for warnings
+			'warningIcon' => 'question', // icon for warnings
 
 			'errorClass' => 'NoticeError', // class for errors
-			'errorIcon' => 'exclamation-triangle', // icon for errors
+			'errorIcon' => 'exclamation', // icon for errors
 
 			'debugClass' => 'NoticeDebug', // class for debug items (appended)
 			'debugIcon' => 'gear', // icon for debug notices

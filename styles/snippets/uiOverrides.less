@@ -36,40 +36,40 @@
 
 	li.ui-state-default,
 	.ui-widget-content li.ui-state-default {
-		background: @ui-state-default-bg; /* LIGHT-ORANGE */
-		border: 1px solid @ui-state-default-border;  /* LIGHT-ORANGE */
-		color: @text-color; /* WHITE */
+		background: @lighter-gray; 
+		border: 1px solid darken(@lighter-gray, 10%);
+		color: @text-color;
 	}
 	li.ui-state-default a,
 	.ui-widget-content li.ui-state-default a {
-		color: @link-color; /* WHITE */
+		color: @link-color;
 	}
 	li.ui-state-hover,
 	.ui-widget-content li.ui-state-hover {
-		background: @ui-state-hover-bg; /* LIGHT-KHAKI */
-		border-color: @ui-state-hover-border; /* LIGHT-KHAKI */
+		background: @ui-state-hover-bg;
+		border-color: @ui-state-hover-border;
 		color: @ui-state-hover-color;
 	}
 	li.ui-state-hover a,
 	.ui-widget-content li.ui-state-hover a {
-		color: @ui-state-hover-color; /* BLACK */
+		color: @ui-state-hover-color;
 	}
 
 	li.ui-state-highlight a,
 	.ui-widget-content li.ui-state-highlight a {
-		background: @ui-state-hover-bg; /* LIGHT-KHAKI */
-		border-color: @ui-state-hover-border; /* LIGHT-KHAKI */
+		background: @ui-state-hover-bg;
+		border-color: @ui-state-hover-border;
 		color: @ui-state-hover-color;
 	}
 }
 
-.InputfieldForm .ui-accordion-header,
-.ui-accordion-header {
-	padding-left: 1.5em;
-	background: @button-bg;
-	border: none;
-	color: @reverse-text-color;
-}
+// .InputfieldForm .ui-accordion-header,
+// .ui-accordion-header {
+// 	padding-left: 1.5em;
+// 	background: @button-bg;
+// 	border: none;
+// 	color: @reverse-text-color;
+// }
 
 .ui-slider-horizontal{
 	width: 100%;

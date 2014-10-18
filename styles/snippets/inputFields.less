@@ -1,11 +1,8 @@
 
 
 .InputfieldForm {
-	position: relative;
-	z-index: 105;
+	// position: relative;
 	overflow: hidden;
-	// margin-bottom: 1em;
-
 	h2{
 		padding: 0 0.7em;
 	}
@@ -539,10 +536,14 @@
 .InputfieldForm .Inputfields .InputfieldSubmit,
 .InputfieldForm .Inputfields .InputfieldButton {
 	/* enable horizontal stack of buttons */
-	padding: 1.5em 1em;
+	padding: 1.5em 0;
 	margin: 0;
 	clear: none;
 	background: none;
+	
+	&.InputfieldColumnWidthFirst{
+		margin-left: 1em;
+	}
 
 	.InputfieldHeader {
 		/* no need for a header with buttons */

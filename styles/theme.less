@@ -16,11 +16,11 @@
 // contrast colors
 @contrast-main: contrast(@main, #333, #fff);
 @medium-contrast-main: contrast(@main,@darker-main,@lighter-main);
-@high-contrast-main: contrast(@main, @darkest-main, @lightest-main, 80%);
+@high-contrast-main: contrast(@main, @darkest-main, @lightest-main, 50%);
 @low-contrast-main: contrast(@main,@dark-main,@light-main);
 @minimum-contrast-main: contrast(@main,darken(@main, 4%),lighten(@main, 4%));
 
-@background-color: saturate(darken(@main, 20%), -30%);
+@background-color: desaturate(darken(@main, 10%), 30%);
 
 // MAIN COLOR APPLICATIONS
 body{
@@ -31,19 +31,8 @@ body{
 }
 
 
-
-a,
-.content .AdminDataList td a,
-.content .PageListActions a:hover,
 #userinfo .user_name,
 .Inputfields .InputfieldHeader:hover{
-	/* standard link color */
-	color: @main;
-}
-
-a:hover,
-.content .AdminDataList td a:hover {
-	/* hovered link color */
 	color: @main;
 }
 
@@ -113,7 +102,7 @@ a:hover,
 }
 
 .WireTabs{
-	background: lighten(@main, 15%)!important;
+	background: lighten(@main, 5%)!important;
 	#_ProcessPageEditView{
 		color: @dark-main !important;
 	}
@@ -129,7 +118,7 @@ a:hover,
 		}
 	}
 	.title{
-		color: @high-contrast-main !important;
+		color: contrast(@main, @darker-main, white, 50%) !important;
 	}
 }
 
@@ -154,6 +143,52 @@ a:hover,
 		#ProcessPageSearchQuery{
 			background: lighten(@main, 5%);
 			border: 1px solid darken(@main, 5%);
+		}
+	}
+}
+
+
+
+#notices{
+	font-size: 0.85em;
+	padding-bottom: 1.2em;
+	.notices-remove{
+		position: absolute;
+		z-index: 20;
+		top: 0.4em;
+		right: 1.5em;
+		color: #fff;
+		font-size: 1em;
+		top: 0.3em;
+		right: 0;
+		color: #fff;
+
+
+		&:hover{
+			// color: @dark-gray;
+		}
+	}	
+
+
+	ul{
+		width: 100%;
+		margin: 0 !important;
+		padding: 0 !important;
+		list-style: none;
+		position: relative;
+		
+		li{
+			padding: 0.2em 0;
+			margin: 0 !important;
+			color: @contrast-main;
+	
+			.notice-remove{
+				i{
+					color: @contrast-main !important;
+				}
+
+			}
+
 		}
 	}
 }
