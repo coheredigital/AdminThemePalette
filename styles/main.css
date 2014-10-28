@@ -9,28 +9,6 @@
     opacity: 0;
   }
 }
-@-moz-keyframes loading {
-  0% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-@-o-keyframes loading {
-  0% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
 @keyframes loading {
   0% {
     opacity: 0;
@@ -281,7 +259,8 @@ textarea {
   position: relative;
 }
 #masthead > .container {
-  transition: height 0.8s linear;
+  -webkit-transition: height 0.8s linear;
+          transition: height 0.8s linear;
 }
 #head_button {
   float: right;
@@ -2069,7 +2048,8 @@ td.ui-datepicker-unselectable {
   /*must have*/
   z-index: -1;
   /*must have*/
-  filter: mask();
+  -webkit-filter: mask();
+          filter: mask();
   /*must have*/
   top: -4px;
   /*must have*/
@@ -2173,6 +2153,7 @@ button.ui-button.ui-state-focus {
  * Actions: like the "|edit|view|new" in the PageList
  *
  */
+.actions,
 .PageListActions {
   margin-left: 1em !important;
   background: #fff;
@@ -2182,13 +2163,16 @@ button.ui-button.ui-state-focus {
   -webkit-font-smoothing: antialiased;
   vertical-align: baseline !important;
 }
+.actions li,
 .PageListActions li {
   border-left: 1px solid #ccc !important;
   line-height: 0.9em !important;
 }
+.actions li:first-child,
 .PageListActions li:first-child {
   border-left: 0 !important;
 }
+.actions a,
 .PageListActions a {
   margin: 0 !important;
   vertical-align: text-top;
@@ -2199,6 +2183,7 @@ button.ui-button.ui-state-focus {
   font-weight: bold;
   font-size: 0.85em;
 }
+.actions a:hover,
 .PageListActions a:hover {
   color: #668bc0;
 }
@@ -2243,6 +2228,9 @@ li.action {
   margin: 0!important;
   background: #fff !important;
   padding: 0 0 0 23px;
+}
+.PageList img {
+  display: inline-block;
 }
 .PageList:before {
   content: "";
@@ -2422,7 +2410,8 @@ li.action {
   top: 50%;
   z-index: 5 !important;
   border-radius: 50%;
-  animation: loading 0.5s infinite;
+  -webkit-animation: loading 0.5s infinite;
+          animation: loading 0.5s infinite;
 }
 .PageList .PageList > .PageListLoading {
   background: transparent;
@@ -2438,7 +2427,8 @@ li.action {
   border-radius: 0;
   border: 0;
   border-left: 1px dotted #ffffff;
-  animation: loading 0.8s infinite;
+  -webkit-animation: loading 0.8s infinite;
+          animation: loading 0.8s infinite;
 }
 .PageList a.PageListPage {
   color: #333333;
@@ -2574,11 +2564,11 @@ table.AdminDataList {
 .AdminDataList th,
 .AdminDataList td {
   border-bottom: 1px solid #dfdfdf;
-  padding: 0.4em 0.6em;
+  padding: 0.6em !important;
   vertical-align: middle !important;
 }
 .AdminDataList td {
-  border-bottom: 0;
+  border: 1px solid #dfdfdf;
 }
 .AdminDataList td i,
 .AdminDataList td .fieldFlag {
@@ -2590,15 +2580,11 @@ table.AdminDataList {
 .AdminDataList td .fieldFlag:hover {
   color: #444444;
 }
-.AdminDataList tr:nth-child(odd) td {
-  background: #fbfbfb;
-}
 .AdminDataList tr:hover td {
-  background: #eeeeee !important;
+  background: #fbfbfb !important;
 }
 .AdminDataList tr.open td {
-  background: #444444;
-  color: #fff;
+  background: #eeeeee !important;
 }
 .AdminDataList button {
   font-size: 0.9em !important;
@@ -2711,6 +2697,9 @@ ul.PageListPagination .ui-priority-secondary:hover:before {
 }
 #ProcessPageSearchResults > .MarkupPagerNav {
   margin: 0 0 1em 0 !important;
+}
+ul.MarkupPagerNav {
+  border-radius: 2em;
 }
 .WireTabs.nav {
   position: relative;
@@ -3165,8 +3154,8 @@ ul.PageListPagination .ui-priority-secondary:hover:before {
   -webkit-user-select: none;
   -khtml-user-select: none;
   -moz-user-select: none;
-  -o-user-select: none;
-  user-select: none;
+  -ms-user-select: none;
+      user-select: none;
   /* prevent selection of this element */
   display: block;
   padding: 1em 0.25em 1em 1em;
@@ -3536,6 +3525,17 @@ body.modal #headline {
 .PageList.ProcessPageListerPro:before {
   display: none !important;
 }
+#ProcessListerResults + a button {
+  margin-left: 1em;
+}
+.detail.version {
+  text-align: center;
+  color: #999999;
+}
+.lister_headline {
+  font-size: 1.3em;
+  margin-top: 0.1em;
+}
 .WireFatalError {
   background: #d12b33;
   color: #ffffff;
@@ -3817,8 +3817,6 @@ div + a > .ui-button {
 .ui-autocomplete {
   box-shadow: 0 1px 3px 3px rgba(0, 0, 0, 0.15);
   z-index: 200 !important;
-  -webkit-border-radius: 0;
-  -moz-border-radius: 0;
   border-radius: 0;
 }
 .ui-autocomplete li {
@@ -3837,8 +3835,6 @@ div + a > .ui-button {
   opacity: 0.7;
 }
 .ui-autocomplete a {
-  -webkit-border-radius: 0;
-  -moz-border-radius: 0;
   border-radius: 0;
 }
 .ui-autocomplete .ui-widget-header a,

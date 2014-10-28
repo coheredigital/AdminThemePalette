@@ -2,7 +2,7 @@
  * Actions: like the "|edit|view|new" in the PageList
  *
  */
-
+.actions,
 .PageListActions {
 	margin-left: 1em !important;
 	background: #fff;
@@ -34,6 +34,7 @@
 	a:hover{
 		color: @action-link-hover-color;
 	}
+
 }
 .PageListItem:hover .PageListActions{
 	opacity: 1;
@@ -88,6 +89,10 @@
 	margin: 0!important;
 	background: #fff !important;
 	padding: 0 0 0 23px;
+	img{
+		display: inline-block;
+	}
+
 	&:before {
 		content: "";
 		position: absolute;

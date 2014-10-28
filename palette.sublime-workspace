@@ -264,10 +264,13 @@
 	"buffers":
 	[
 		{
+			"contents": "",
 			"file": "styles/_main.less",
+			"file_size": -1,
+			"file_write_time": -1,
 			"settings":
 			{
-				"buffer_size": 30605,
+				"buffer_size": 0,
 				"line_ending": "Windows"
 			}
 		},
@@ -283,7 +286,15 @@
 			"file": "default.php",
 			"settings":
 			{
-				"buffer_size": 5226,
+				"buffer_size": 3679,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/xampp2/php/php.ini",
+			"settings":
+			{
+				"buffer_size": 76433,
 				"line_ending": "Windows"
 			}
 		}
@@ -647,7 +658,7 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 0,
 			"sheets":
 			[
 				{
@@ -655,15 +666,15 @@
 					"file": "styles/_main.less",
 					"settings":
 					{
-						"buffer_size": 30605,
+						"buffer_size": 0,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								345,
-								345
+								0,
+								0
 							]
 						],
 						"settings":
@@ -893,15 +904,15 @@
 					"file": "default.php",
 					"settings":
 					{
-						"buffer_size": 5226,
+						"buffer_size": 3679,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								4194,
-								4194
+								0,
+								0
 							]
 						],
 						"settings":
@@ -1002,7 +1013,125 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 2580.0,
+						"translation.y": 2540.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/C/xampp2/php/php.ini",
+					"settings":
+					{
+						"buffer_size": 76433,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								76057,
+								76057
+							]
+						],
+						"settings":
+						{
+							"annotations":
+							[
+								"TODO",
+								"README",
+								"FIXME"
+							],
+							"csslint_options":
+							{
+								"adjoining-classes": "warning",
+								"box-model": true,
+								"box-sizing": "warning",
+								"compatible-vendor-prefixes": "warning",
+								"display-property-grouping": true,
+								"duplicate-background-images": "warning",
+								"duplicate-properties": true,
+								"empty-rules": true,
+								"errors": true,
+								"fallback-colors": "warning",
+								"floats": "warning",
+								"font-faces": "warning",
+								"font-sizes": "warning",
+								"gradients": "warning",
+								"ids": "warning",
+								"import": "warning",
+								"important": "warning",
+								"known-properties": true,
+								"outline-none": "warning",
+								"overqualified-elements": "warning",
+								"qualified-headings": "warning",
+								"regex-selectors": "warning",
+								"rules-count": "warning",
+								"shorthand": "warning",
+								"star-property-hack": "warning",
+								"text-indent": "warning",
+								"underscore-property-hack": "warning",
+								"unique-headings": "warning",
+								"universal-selector": "warning",
+								"vendor-prefix": true,
+								"zero-units": "warning"
+							},
+							"gjslint_ignore":
+							[
+								110
+							],
+							"gjslint_options":
+							[
+							],
+							"incomplete_sync": null,
+							"javascript_linter": "jshint",
+							"jshint_options":
+							{
+								"browser": true,
+								"evil": true,
+								"regexdash": true,
+								"sub": true,
+								"trailing": true,
+								"wsh": true
+							},
+							"pep8": true,
+							"pep8_ignore":
+							[
+								"E501"
+							],
+							"perl_linter": "perlcritic",
+							"pyflakes_ignore":
+							[
+							],
+							"pyflakes_ignore_import_*": true,
+							"remote_loading": false,
+							"sublimelinter": true,
+							"sublimelinter_delay": 2,
+							"sublimelinter_disable":
+							[
+							],
+							"sublimelinter_executable_map":
+							{
+							},
+							"sublimelinter_fill_outlines": false,
+							"sublimelinter_gutter_marks": true,
+							"sublimelinter_gutter_marks_theme": "simple",
+							"sublimelinter_mark_style": "none",
+							"sublimelinter_notes": false,
+							"sublimelinter_objj_check_ascii": false,
+							"sublimelinter_popup_errors_on_save": false,
+							"sublimelinter_syntax_map":
+							{
+								"C++": "c",
+								"Python Django": "python",
+								"Ruby on Rails": "ruby"
+							},
+							"sublimelinter_wrap_find": true,
+							"synced": false,
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 40999.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"

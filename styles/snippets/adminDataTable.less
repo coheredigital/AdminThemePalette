@@ -38,12 +38,13 @@ table.AdminDataList {
 	th,
 	td {
 		border-bottom: 1px solid @subtle-border;
-		padding: 0.4em 0.6em;
+		padding: 0.6em !important;
 		vertical-align: middle !important;
 	}
 
 	td {
-		border-bottom: 0;
+
+		border: 1px solid @subtle-border;
 		i,
 		.fieldFlag{
 			vertical-align: top;
@@ -58,18 +59,17 @@ table.AdminDataList {
 	}
 
 	tr{
-		&:nth-child(odd) td {
-			background: lighten(@subtle-bg, 5%);
-		}
+		// &:nth-child(odd) td {
+		// 	background: lighten(@subtle-bg, 5%);
+		// }
 
 		&:hover td{
-			background: @subtle-bg !important;
+			background: lighten(@subtle-bg, 5%) !important;
 		}
 
 		&.open{
 			td{
-				background: @dark-gray;
-				color: #fff;
+				background: @lighter-gray !important;
 			}
 		}
 
