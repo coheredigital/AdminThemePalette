@@ -46,6 +46,8 @@ body{
 	border-bottom: 1px solid @minimum-contrast-main;
 }
 
+
+
 .collapse-topnav #masthead > .container{
 	border-color: @dark-main;
 }
@@ -62,8 +64,6 @@ body{
 .ui-menu,
 .ui-menu .ui-menu-item,
 .dropdown-menu .ui-menu-item>.ui-menu,
-#topnav > li > a.hover,
-#topnav > li > a:hover,
 #topnav > li > a.dropdown-toggle.hover:hover,
 #topnav a.on.dropdown-toggle:hover,
 #ProcessPageSearchForm #ProcessPageSearchQuery:hover {
@@ -97,9 +97,29 @@ body{
 	background: @main;
 }
 
-#topnav a.on{
-	color: @contrast-main !important;
-}
+#topnav{
+	a{
+		border-right: 1px solid @minimum-contrast-main;
+		&:hover{
+			color: @contrast-main;
+		}
+		&.on{
+			color: @contrast-main !important;
+		}
+	}
+	
+	.dropdown-toggle{
+		&:hover{
+			background: @minimum-contrast-main;
+		}
+		&.on{
+			background: @dark-main;
+		}
+	}
+
+} 
+
+
 
 .WireTabs{
 	background: lighten(@main, 5%)!important;

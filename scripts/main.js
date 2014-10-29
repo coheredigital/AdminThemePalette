@@ -193,9 +193,21 @@ var ProcessWireAdminTheme = {
 
 	setupDropdowns: function() {
 
+		var $dropdownToggles = $('.dropdown-toggle');
+		var $dropdownMenus = $('.dropdown-menu');
+
+
+
 		$("ul.dropdown-menu").each(function() {
+
+
 			var $ul = $(this).hide();
-			var $a = $ul.siblings(".dropdown-toggle"); 
+			var $a = $ul.siblings('a').children(".dropdown-toggle"); 
+
+			function closeDropdowns(){
+				$dropdownToggles.removeClass('on');
+				$dropdownMenus.removeClass('is-open');
+			}
 
 			if($a.is("button")) {
 				$a.button();
@@ -212,24 +224,36 @@ var ProcessWireAdminTheme = {
 				$(this).prepend($icon);
 			}); 
 
-			$a.mouseenter(function() {
-				if(!$ul.hasClass('dropdown-ready')) {
-					$ul.prependTo($('#dropdowns')).addClass('dropdown-ready').menu();
-				}
-				$ul.addClass("is-open");
-				lastOffset = offset; 
+			$a.click(function(event) {
+				event.preventDefault();
 
-			}).mouseleave(function() {
-				setTimeout(function() {
-					if($ul.is(":hover")) return;
+				var $this = $(this);
+				if ($this.hasClass('on')) {
+					
+					$this.removeClass('on');
 					$ul.find('ul').removeClass('is-open');
 					$ul.removeClass('is-open');
-				}, 50); 
-			}); 
+
+				}
+				else{
+
+					closeDropdowns();
+
+					$this.addClass('on');
+					if(!$ul.hasClass('dropdown-ready')) {
+						$ul.prependTo($('#dropdowns')).addClass('dropdown-ready').menu();
+					}
+					$ul.addClass("is-open");
+					lastOffset = offset; 
+				}
+
+
+			})
+
 
 			$ul.mouseleave(function() {
 				if($a.is(":hover")) return;
-				$ul.removeClass('is-open');
+				closeDropdowns();
 			}); 
 
 		});
@@ -246,8 +270,11 @@ var ProcessWireAdminTheme = {
 		}
 		
 		// ajax loading of fields and templates
-		$(document).on('mouseenter', 'ul.dropdown-menu a.has-ajax-items:not(.ajax-items-loaded)', function() {
-			var $a = $(this); 
+		$(document).on('click', 'ul.dropdown-menu a.has-ajax-items:not(.ajax-items-loaded) i.has-items-icon', function(event) {
+
+			event.preventDefault();
+
+			var $a = $(this).parent("a"); 
 			$hoveredItem = $a;
 			
 			setTimeout(function() { 

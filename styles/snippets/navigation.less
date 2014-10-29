@@ -55,6 +55,23 @@
 	display: block;
 }
 
+.dropdown-toggle{
+	padding: 0.7em 1em;
+	margin-right: -1.1em;
+	margin-left: 0.6em;
+	.fa.fa-caret-up{
+		display: none;
+	}
+	&.on{
+		.fa.fa-caret-up{
+			display: inline;
+		}
+		.fa.fa-caret-down{
+			display: none;
+		}
+	}
+}
+
 .collapse-topnav{
 	// margin-top: 1em;
 	#masthead{

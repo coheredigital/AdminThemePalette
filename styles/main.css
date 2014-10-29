@@ -311,6 +311,20 @@ textarea {
 .collapse-topnav #collapse-topnav-menu {
   display: block;
 }
+.dropdown-toggle {
+  padding: 0.7em 1em;
+  margin-right: -1.1em;
+  margin-left: 0.6em;
+}
+.dropdown-toggle .fa.fa-caret-up {
+  display: none;
+}
+.dropdown-toggle.on .fa.fa-caret-up {
+  display: inline;
+}
+.dropdown-toggle.on .fa.fa-caret-down {
+  display: none;
+}
 .collapse-topnav #masthead > .container {
   max-height: 0;
   float: none;

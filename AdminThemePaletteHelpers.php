@@ -255,8 +255,11 @@ class AdminThemePaletteHelpers extends WireData {
 
 		if(!$level && count($children)) {
 
-			$class = trim("$class dropdown-toggle");
-			$out .= "<a href='$p->url' id='topnav-page-$p' data-from='topnav-page-{$p->parent}' class='$class'>$title</a>";
+			// $class = trim("$class ");
+
+			$toggleButton = "<span class='dropdown-toggle'><i class='fa fa-caret-down'></i><i class='fa fa-caret-up'></i></span>";
+
+			$out .= "<a href='$p->url' id='topnav-page-$p' data-from='topnav-page-{$p->parent}' class='$class'>{$title}{$toggleButton}</a>";
 			$my = 'left-1 top';
 			if(in_array($p->name, array('access', 'page', 'module'))) $my = 'left top';
 			$out .= "<ul class='dropdown-menu topnav' data-my='$my' data-at='left bottom'>";
