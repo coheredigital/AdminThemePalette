@@ -132,12 +132,14 @@ var ProcessWireAdminTheme = {
 				var currentType = "";
 				$.each(items, function(index, item) {
 					if (item.type != currentType) {
-						ul.append("<li class='ui-widget-header'><a>" + item.type + "</a></li>" );
+						ul.append("<li><a>" + item.type + "</a></li>" );
 						currentType = item.type;
 					}
 					ul.attr('id', 'ProcessPageSearchAutocomplete'); 
 					that._renderItemData(ul, item);
 				});
+
+				ul.detach().appendTo('#ProcessPageSearchForm'); // move for better styling and easier positioning
 			},
 			_renderItemData: function(ul, item) {
 				if(item.label == item.template) item.template = '';
@@ -150,15 +152,8 @@ var ProcessWireAdminTheme = {
 		
 		$input.adminsearchautocomplete({
 			minLength: 2,
-			position: { my : "right top", at: "right bottom" },
 			search: function(event, ui) {
 				$status.html("<img src='" + config.urls.modules + "Process/ProcessPageList/images/loading.gif'>");
-			},
-			open: function(event, ui) {
-				$("#topnav").hide();
-			},
-			close: function(event, ui) {
-				$("#topnav").show();
 			},
 			source: function(request, response) {
 				var url = $input.parents('form').attr('data-action') + 'for?get=template_label,title&include=all&admin_search=' + request.term;
