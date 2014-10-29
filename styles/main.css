@@ -2762,7 +2762,6 @@ ul.MarkupPagerNav {
   z-index: 10;
   overflow: visible;
   text-transform: uppercase;
-  border-top: 1px solid;
 }
 .WireTabs.nav li {
   background: none !important;
@@ -3557,7 +3556,11 @@ ul.MarkupPagerNav {
   }
 }
 body.modal #wrapper {
-  box-shadow: none;
+  max-width: 100%;
+  margin: 0;
+}
+body.modal #header {
+  display: none;
 }
 body.modal .container {
   margin: 0;
@@ -3573,6 +3576,18 @@ body.modal #footer,
 body.modal #masthead,
 body.modal #headline {
   display: none;
+}
+.ui-dialog {
+  z-index: 9999 !important;
+}
+.ui-dialog .ui-dialog-title {
+  font-weight: normal;
+  color: #fff !important;
+}
+.ui-dialog .ui-dialog-content {
+  padding: 0;
+  max-width: 100%;
+  /* prevents safari overflow */
 }
 .PageList.ProcessPageListerPro {
   padding: 0 1em;
@@ -3765,24 +3780,6 @@ body.modal #headline {
 }
 p span.ui-state-error {
   padding: 0.25em 0.5em;
-}
-/**
- * ui-dialog
- *
- */
-.ui-dialog {
-  z-index: 9999 !important;
-}
-.ui-dialog .ui-dialog-title {
-  font-weight: normal;
-  /* same color as label.ui-widget-header */
-  color: #668bc0;
-  /* BROWN */
-}
-.ui-dialog .ui-dialog-content {
-  padding: 0;
-  max-width: 100%;
-  /* prevents safari overflow */
 }
 .ui-widget-overlay {
   background: #444444;
