@@ -86,7 +86,7 @@ class AdminThemePaletteHelpers extends WireData {
 				$qs = "?template_id=$template->id";
 			}
 			$icon = $template->getIcon();
-			if(!$icon) $icon = "plus-circle";
+			if(!$icon) $icon = "plus";
 			$label = $this->wire('sanitizer')->entities1($template->getLabel());
 			$out .= "<li><a href='$url$qs'><i class='fa fa-fw fa-$icon'></i>&nbsp;$label</a></li>";
 		}
@@ -246,7 +246,7 @@ class AdminThemePaletteHelpers extends WireData {
 		$title = strip_tags((string) $p->title);
 		if(!strlen($title)) $title = $p->name;
 		$title = $this->_($title); // translate from context of default.php
-		$out .= "<li>";
+		$out .= "<li class='menu-item'>";
 
 		if(!$numChildren && $p->template == 'admin' && $p->process) {
 			$moduleInfo = $this->wire('modules')->getModuleInfo($p->process);
@@ -262,7 +262,7 @@ class AdminThemePaletteHelpers extends WireData {
 			$out .= "<a href='$p->url' id='topnav-page-$p' data-from='topnav-page-{$p->parent}' class='$class'>{$title}{$toggleButton}</a>";
 			$my = 'left-1 top';
 			if(in_array($p->name, array('access', 'page', 'module'))) $my = 'left top';
-			$out .= "<ul class='dropdown-menu topnav' data-my='$my' data-at='left bottom'>";
+			$out .= "<ul class='menu' data-my='$my' data-at='left bottom'>";
 
 			if($children instanceof PageArray) foreach($children as $c) {
 
@@ -280,14 +280,14 @@ class AdminThemePaletteHelpers extends WireData {
 					$title = $this->_($c->title);
 					if(!$title) $title = $c->name;
 					$out .=
-						"<li><a class='has-items' data-from='topnav-page-$p' href='$c->url'>$icon$title</a>" .
-						"<ul>" . $this->renderTopNavItemArray($c, $moduleInfo['nav']) . "</ul></li>";
+						"<li class='menu-item'><a class='has-items' data-from='topnav-page-$p' href='$c->url'>{$icon}{$title}</a>" .
+						"<ul class='menu'>" . $this->renderTopNavItemArray($c, $moduleInfo['nav']) . "</ul></li>";
 
 				} else if(!empty($moduleInfo['useNavJSON'])) {
 					// has ajax items
 					$icon = $this->getPageIcon($c);
 					$out .=
-						"<li><a class='has-items has-ajax-items' data-from='topnav-page-$p' data-json='{$c->url}navJSON/' " .
+						"<li class='menu-item'><a class='has-items has-ajax-items' data-from='topnav-page-$p' data-json='{$c->url}navJSON/' " .
 						"href='$c->url'>$icon" . $this->_($c->title) . "</a><ul></ul></li>";
 
 				} else {
@@ -336,10 +336,10 @@ class AdminThemePaletteHelpers extends WireData {
 			$icon = empty($item['icon']) ? '' : "<i class='fa fa-fw fa-$item[icon]'></i>&nbsp;";
 			$label = __($item['label'], $textdomain); // translate from context of Process module
 			if(empty($item['navJSON'])) {
-				$out .= "<li><a href='{$p->url}$item[url]'>$icon$label</a></li>";
+				$out .= "<li class='menu-item'><a href='{$p->url}$item[url]'>$icon$label</a></li>";
 			} else {
 				$out .=
-					"<li><a class='has-items has-ajax-items' data-from='topnav-page-$p' data-json='{$p->url}$item[navJSON]' " .
+					"<li class='menu-item'><a class='has-items has-ajax-items' data-from='topnav-page-$p' data-json='{$p->url}$item[navJSON]' " .
 					"href='{$p->url}$item[url]'>$icon$label</a><ul></ul></li>";
 			}
 		}

@@ -1,6 +1,5 @@
 #topnav {
 	z-index: 5;
-	position: relative;
 	float: left;
 	-webkit-font-smoothing: antialiased;
 
@@ -49,14 +48,14 @@
 	float: left;
 	cursor: pointer;
 	text-align: center;
-	display: none !important;
+	display: none;
 }
 .collapse-topnav #collapse-topnav-menu{
 	display: block;
 }
 
 .dropdown-toggle{
-	padding: 0.7em 1em;
+	padding: 0.7em 1.1em;
 	margin-right: -1.1em;
 	margin-left: 0.6em;
 	.fa.fa-caret-up{
@@ -102,111 +101,157 @@
 			height: auto;
 		}
 	}
-	.dropdown-menu{
-		display: none !important;
+	.menu{
+		display: none;
 	}
 }
 
 #dropdowns{
 	margin-top: -1px;
 }
-
-.dropdown-menu{
-	display: none;
-	padding: 0 !important;
-	border-radius: 0 !important;
-	border: 0 !important;
-	position: absolute !important;
-	z-index: 100 ;
-	width: 100% ;
-	i{
-		font-size: 14px !important;
-	}
-	.ui-menu{
-		position: absolute !important;
+#topnav{
+	.menu{
+		display: none;
+		padding: 0.4em 0;
+		border-radius: 0;
+		border: 0;
+		position: absolute;
+		z-index: 100 ;
 		left: 0;
-		z-index: 200;
-	}
-	.ui-menu-item{
-		width: 100%;
-		clear: none !important;
-		border: 0 !important;
-		.has-items-icon{
-			position: absolute;
-			top: 0;
-			bottom: 0;
-			right: 0;
-			padding: 0.8em 1.3em;
-			background: #222;
+		width: 100% ;
+		i{
+			font-size: 14px;
 		}
-		a{
-			border-radius: 0 !important;
-			white-space: nowrap;
-			padding: 1em !important;
-			line-height: 1em !important;
+
+		.menu-item{
+			width: 100%;
+			clear: none;
+			
+			margin: 0;
 			position: relative;
-			span.ui-icon{
-				display: none !important;
+			.has-items-icon{
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				right: 0;
+				padding: 0.8em 1.3em;
 			}
-			small{
-				font-size: 1em;
-				color: @gray;
-				font-weight: bold;
-				margin: 0  0.4em;
+			a.on{			
+				.has-items-icon{
+					background: #333;
+				}
 			}
-			&.ui-state-focus,
-			&.ui-state-active{
-				color: @white !important;
-				background: @light-bg !important;
+			a{
+				border-radius: 0;
+				border: 0 !important;
+				white-space: nowrap;
+				text-decoration: none !important;
+				text-transform: none;
+				padding: 0.6em 1em;
+				margin: 0;
+				line-height: 1em;
+				position: relative;
+				display: block;
+				span.ui-icon{
+					display: none;
+				}
+				small{
+					font-size: 1em;
+					color: @gray;
+					font-weight: bold;
+					margin: 0  0.4em;
+				}
+				&.ui-state-focus,
+				&.ui-state-active{
+					color: @white;
+					background: @light-bg;
+				}
 			}
+
+
+
+			> .menu{
+				// width: 600px;
+				background: #333;
+				> .menu-item{
+					float: left;
+					width: 25%;
+					border: 0 !important;
+					&:hover{
+						background: #222;
+					}
+					> a{
+						color: @gray;
+						
+					}
+				}
+
+			}
+
+			&.add{
+				display: block;
+				width: 100%;
+				background: transparent !important;
+				padding-bottom: 0;
+				> a{
+					background: @green;
+
+					margin: .8em 1em;
+					margin-bottom: 0;
+					border-radius: 2em;
+					display: inline-block;
+					color: #fff !important;
+					white-space: nowrap;
+					text-transform: uppercase !important;
+					font-weight: bold;
+				}
+				> a.ui-state-focus{
+					background: @dark-green;
+					color: @dark-green;
+				}
+			}
+
+
 		}
 
-		> .ui-menu{
-			// width: 600px;
-			> .ui-menu-item{
-				float: left;
-				width: 25%;
+
+		.menu{
+			position: absolute;
+			left: 0;
+			width: 100%;
+			top: 100%;
+			margin: 0;
+			z-index: 200;
+
+		}
 
 
-				&.add{
-					width: 100%;
+
+
+		&.shortcuts{
+
+			.ui-menu-item{
+				background: @lightest-gray;
+				&:first-child{
+					margin-top: 0.3em;
+				}
+				> a{
+					color: @dark-gray;
 				}
 			}
 
 		}
-
-	}
-
-	li.add > a{
-		background: @green;
-		background: @dark-gray;
-		color: #fff;
-		white-space: nowrap;
-		text-transform: uppercase;
-		font-weight: bold;
-	}
-	li.add > a.ui-state-focus{
-		background: @dark-green;
-		color: @dark-green;
-	}
-
-
-	&.shortcuts{
-
-		.ui-menu-item{
-			background: @lightest-gray;
-			&:first-child{
-				margin-top: 0.3em;
-			}
-			> a{
-				color: @dark-gray;
-			}
+		
+		&.is-open{
+			display: block;
 		}
 
 	}
-	
-	&.is-open{
-		display: block !important;
-	}
+}
 
+@media screen and (max-width:770px) {
+	#topnav .menu .menu-item a.on .has-items-icon,
+	#topnav .menu .menu-item > .menu{
+		display: none !important;
+	}
 }

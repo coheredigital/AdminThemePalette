@@ -38,26 +38,17 @@
 		border: none;
 		// border-radius: @button-radius;
 		outline: none;
+		color: #fff;
 		&:hover{
 			background: @darker-bg;
 		}
 		&:focus {
 			background: @text-bg !important;
-			color: @text-color;
+			color: @text-color !important;
 			text-transform: none;
 			font-weight: normal;
 		}
 	}
-// <<<<<<< HEAD:styles/_main.less
-// 	#ProcessPageSearchQuery:focus {
-// 		background: @text-bg !important;
-// 		color: @text-color;
-// 		text-transform: none;
-// 		font-weight: normal;
-// 	}
-// =======
-
-// >>>>>>> origin/master:styles/_main.less
 
 	#ProcessPageSearchStatus {
 		position: absolute;
@@ -69,7 +60,7 @@
 
 }
 #ProcessPageSearchAutocomplete{
-	margin-left: 17px;
+	// margin-left: 17px;
 }
 
 @media only screen and (max-width: 767px) {

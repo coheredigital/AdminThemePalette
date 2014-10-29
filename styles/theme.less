@@ -61,21 +61,17 @@ body{
 
 
 
-.ui-menu,
-.ui-menu .ui-menu-item,
-.dropdown-menu .ui-menu-item>.ui-menu,
+.menu,
 #topnav > li > a.dropdown-toggle.hover:hover,
 #topnav a.on.dropdown-toggle:hover,
 #ProcessPageSearchForm #ProcessPageSearchQuery:hover {
 	background: @dark-main;
 	color: @contrast-main;
 }
-.dropdown-menu .ui-menu-item .has-items-icon{
-	background: lighten(@dark-main, 3%);
-}
 
-.ui-menu{
-	.ui-menu-item{
+
+.menu{
+	.menu-item{
 		a{
 			color: @high-contrast-main;
 		}
@@ -84,8 +80,8 @@ body{
 
 
 // main APPLICATIONS
-.ui-menu .ui-menu-item a.ui-state-focus,
-.ui-menu .ui-menu-item a.ui-state-active{
+.menu .menu-item a:focus,
+.menu .menu-item a:active{
 	background: @light-main !important;
 	color: @contrast-main !important;
 }
@@ -107,7 +103,7 @@ body{
 			color: @contrast-main !important;
 		}
 	}
-	
+
 	.dropdown-toggle{
 		&:hover{
 			background: @minimum-contrast-main;

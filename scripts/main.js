@@ -179,11 +179,8 @@ var ProcessWireAdminTheme = {
 				});
 			},
 			select: function(event, ui) { }
-		}).focus(function() {
-			$(this).siblings('label').find('i').hide(); // hide icon
 		}).blur(function() {
 			$status.text('');	
-			$(this).siblings('label').find('i').show(); // show icon
 		});
 		
 	},
@@ -194,14 +191,11 @@ var ProcessWireAdminTheme = {
 	setupDropdowns: function() {
 
 		var $dropdownToggles = $('.dropdown-toggle');
-		var $dropdownMenus = $('.dropdown-menu');
+		var $dropdownMenus = $('.menu');
 
+		$dropdownMenus.each(function() {
 
-
-		$("ul.dropdown-menu").each(function() {
-
-
-			var $ul = $(this).hide();
+			var $ul = $(this);
 			var $a = $ul.siblings('a').children(".dropdown-toggle"); 
 
 			function closeDropdowns(){
@@ -213,14 +207,8 @@ var ProcessWireAdminTheme = {
 				$a.button();
 			}
 
-			// hide nav when an item is selected to avoid the whole nav getting selected
-			$ul.find('a').click(function() {
-				$ul.hide();
-				return true; 
-			});
-
 			$ul.find(".has-items").each(function() {
-				var $icon = $("<i class='has-items-icon fa fa-angle-right ui-priority-secondary'></i>");
+				var $icon = $("<i class='has-items-icon fa fa-caret-down'></i>");
 				$(this).prepend($icon);
 			}); 
 
@@ -241,94 +229,81 @@ var ProcessWireAdminTheme = {
 
 					$this.addClass('on');
 					if(!$ul.hasClass('dropdown-ready')) {
-						$ul.prependTo($('#dropdowns')).addClass('dropdown-ready').menu();
+						// $ul.prependTo($('#dropdowns')).addClass('dropdown-ready').menu();
 					}
 					$ul.addClass("is-open");
-					lastOffset = offset; 
 				}
-
 
 			})
 
-
 			$ul.mouseleave(function() {
 				if($a.is(":hover")) return;
+
 				closeDropdowns();
 			}); 
 
 		});
 
-		var $hoveredItem = null; 
-		
-		function dropdownHover($a) {
-			var fromAttr = $a.attr('data-from');
-			if(!fromAttr) return;
-			var $from = $('#' + $a.attr('data-from'));
-			if($from.length > 0) setTimeout(function() {
-				var $ul = $a.closest('li').parent('ul');
-			}, 500); 
-		}
 		
 		// ajax loading of fields and templates
-		$(document).on('click', 'ul.dropdown-menu a.has-ajax-items:not(.ajax-items-loaded) i.has-items-icon', function(event) {
+		$(document).on('click', 'ul.menu a.has-ajax-items:not(.ajax-items-loaded) i.has-items-icon', function(event) {
 
 			event.preventDefault();
 
 			var $a = $(this).parent("a"); 
-			$hoveredItem = $a;
-			
-			setTimeout(function() { 
-				if(!$hoveredItem || $hoveredItem != $a) return; // user wasn't hovered long enough for this to be their intent
-				
-				$a.addClass('ajax-items-loaded'); 	
-				// var url = $a.attr('href');
+		
+			if (!$a.hasClass('ajax-items-loaded')) {
+
+				 	
 				var url = $a.attr('data-json');
-				var $ul = $a.siblings('ul'); 
-				var setupDropdownHover = false;
+				var $ul = $a.siblings('ul').addClass('menu'); 
 				var $itemsIcon =  $a.children('.has-items-icon');
-				$itemsIcon.removeClass('fa-angle-right').addClass('fa-spinner fa-spin'); 
-	
+				$itemsIcon.addClass('loading'); 
+
 				$.getJSON(url, function(data) {
-					$itemsIcon.removeClass('fa-spinner fa-spin').addClass('fa-angle-right'); 
-	
-					// now add new event to monitor menu positions
-					if(!ProcessWireAdminTheme.dropdownPositionsMonitored && data.list.length > 10) {
-						ProcessWireAdminTheme.dropdownPositionsMonitored = true; 
-						setupDropdownHover = true; 
-						$(document).on('hover', 'ul.dropdown-menu a', function() {
-							dropdownHover($(this));
-						}); 
-					}
-	
+					$itemsIcon.removeClass('loading fa-caret-down').addClass('fa-caret-up'); 
+
 					if(data.add) {				
-						var $li = $("<li class='ui-menu-item add'><a href='" + data.url + data.add.url + "'><i class='fa fa-fw fa-plus-circle'></i>" + data.add.label + "</a></li>");
+						var $li = $("<li class='menu-item add'><a href='" + data.url + data.add.url + "'><i class='fa fa-fw fa-plus'></i>" + data.add.label + "</a></li>");
 						$ul.append($li);
 					}
 					// populate the retrieved items
 					$.each(data.list, function(n) {
 						var icon = '';
 						if(this.icon) icon = "<i class='ui-priority-secondary fa fa-fw fa-" + this.icon + "'></i>";
-						var $li = $("<li class='ui-menu-item'><a href='" + data.url + this.url + "'>" + icon + this.label + "</a></li>");
+						var $li = $("<li class='menu-item'><a href='" + data.url + this.url + "'>" + icon + this.label + "</a></li>");
 						$ul.append($li);
 					}); 
 					
-					$ul.addClass('navJSON').addClass('length' + parseInt(data.list.length)); 
-	
+					$ul.addClass('navJSON length' + parseInt(data.list.length)); 
+
 					$ul.find("a").click(function() {
 						// prevent a clicked link from jumping back to the top of page (makes the UI nicer)
 						window.location.href = $(this).attr('href');
 						return false; 
 					}); 
-
-					// trigger the first call
-					dropdownHover($a);
 					
+					
+
+				}).done(function() {
+				    $a.addClass('ajax-items-loaded'); // add confirmation after success state
 				}); // getJSON
+
+			}
+
+
+			if ($a.hasClass('on')) {
+				$a.siblings(".menu").removeClass('is-open');
+			}
+			else{
+				$a.addClass('on');
+				$a.siblings(".menu").addClass('is-open');
+			}
+
+
 				
-			}, 250); // setTimeout
+
 			
-		}).on('mouseleave', 'ul.dropdown-menu a.has-ajax-items', function() {
-			$hoveredItem = null;
 		});
 
 
