@@ -1,0 +1,3 @@
+# AdminThemePalette
+
+ProcessWire Admin Theme
